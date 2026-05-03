@@ -159,7 +159,7 @@
   .hero-headline .l2{ display:block;}
   .hero-headline em{ font-style:italic; font-weight:400; color:var(--ink-soft);}
   .hero-headline .period{color:var(--accent);}
-  .hero-headline .strike{position:relative; display:inline-block; white-space:nowrap;}
+  .hero-headline .strike{position:relative; display:inline-block;}
   .hero-headline .strike::after{
     content:""; position:absolute; left:-3%; right:-3%; top:56%; height:7px;
     background:var(--accent); transform:scaleX(0); transform-origin:left;
