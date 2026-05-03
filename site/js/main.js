@@ -182,3 +182,7 @@
     }
   }
   countEls.forEach(el=>countIO.observe(el));
+
+  // Expose vennActivate globally so inline onclick attributes work with type="module"
+  window._vennActive = null;
+  window.vennActivate = vennActivate;
