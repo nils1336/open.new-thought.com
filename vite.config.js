@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import { resolve } from 'path'
 
 export default defineConfig({
   root: 'site',
@@ -8,8 +7,8 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'site/index.html'),
-        assessment: resolve(__dirname, 'site/lead-assessment.html')
+        main: 'site/index.html',
+        assessment: 'site/lead-assessment.html'
       }
     }
   }
