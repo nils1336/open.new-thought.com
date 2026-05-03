@@ -13,6 +13,11 @@
   }
   document.addEventListener('keydown', e=>{ if(e.key==='Escape') document.querySelectorAll('.modal-overlay.open').forEach(m=>{ m.classList.remove('open'); document.body.style.overflow=''; }); });
 
+  // Expose modal helpers globally (required for inline onclick with type="module")
+  window.openModal = openModal;
+  window.closeModal = closeModal;
+  window.closeModalOnBg = closeModalOnBg;
+
   // Hamburger menu
   const hamburger = document.getElementById('hamburger');
   const navMobile = document.getElementById('nav-mobile');
