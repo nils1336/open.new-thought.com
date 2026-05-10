@@ -12,6 +12,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'site/index.html'),
+        programme: resolve(__dirname, 'site/programme.html'),
+        academy: resolve(__dirname, 'site/academy.html'),
         assessment: resolve(__dirname, 'site/lead-assessment.html')
       }
     }
