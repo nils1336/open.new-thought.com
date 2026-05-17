@@ -29,10 +29,10 @@ html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
   --sans: 'Inter', sans-serif;
   --mono: 'JetBrains Mono', monospace;
 
-  --pw: 176mm;
-  --ph: 250mm;
-  --mg: 15mm;       /* outer margin */
-  --mg-i: 16mm;     /* inner (binding) */
+  --pw: 210mm;
+  --ph: 297mm;
+  --mg: 18mm;       /* outer margin */
+  --mg-i: 20mm;     /* inner (binding) */
 }
 
 /* ── PAGE SHELL ─────────────────────────────────────────── */
@@ -49,7 +49,7 @@ html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; 
 
 /* ── PRINT ──────────────────────────────────────────────── */
 @media print {
-  @page { size: 176mm 250mm; margin: 0; }
+  @page { size: 210mm 297mm; margin: 0; }
   body  { background: none; padding: 0; }
   .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
   .page:last-child { page-break-after: avoid; break-after: avoid; }

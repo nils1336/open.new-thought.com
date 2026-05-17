@@ -10,6 +10,56 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/styles.css">
 <style>
+  /* Three-zone nav layout */
+  nav.top .wrap.row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 0; }
+  .nav-left  { display: flex; align-items: center; gap: 20px; }
+  .nav-center { display: flex; align-items: center; gap: 8px; justify-content: center; }
+  .nav-right { display: flex; align-items: center; gap: 12px; justify-content: flex-end; }
+  @media(max-width:760px){ nav.top .wrap.row { display: flex; } .nav-center,.nav-right { display: none; } }
+
+  /* Dropdown nav */
+  .nav-dropdown {
+    position: relative;
+  }
+  .nav-dropdown-trigger {
+    display: flex; align-items: center; gap: 5px;
+    font-family: var(--sans); font-size: 15px; font-weight: 700;
+    letter-spacing: -0.02em; text-transform: none;
+    color: var(--ink); cursor: pointer;
+    padding: 0; white-space: nowrap;
+    background: none; border: none; line-height: 1;
+    transition: color .15s;
+  }
+  .nav-dropdown-trigger::after {
+    content: '▾'; font-size: 10px; opacity: 0.4; transition: transform .2s; margin-top: 1px;
+  }
+  .nav-dropdown:hover .nav-dropdown-trigger,
+  .nav-dropdown.open .nav-dropdown-trigger { color: var(--ink); }
+  .nav-dropdown.open .nav-dropdown-trigger::after { transform: rotate(180deg); }
+
+  .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%);
+    background: #fff; border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    min-width: 160px; padding: 6px 0;
+    opacity: 0; pointer-events: none;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity .18s, transform .18s;
+    z-index: 200;
+  }
+  .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1; pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+  .nav-dropdown-menu a {
+    display: block; padding: 9px 20px;
+    font-size: 13px; font-weight: 500; color: var(--ink-soft);
+    text-decoration: none; white-space: nowrap;
+    transition: color .12s, background .12s;
+  }
+  .nav-dropdown-menu a:hover { color: var(--ink); background: var(--bg-soft); }
+  .nav-dropdown-menu a.active { color: var(--ink); font-weight: 600; }
   .compare-grid {
     display: grid; grid-template-columns: 1fr 1fr; gap: 0;
     border-top: 1px solid rgba(255,255,255,0.2); border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -35,34 +85,56 @@
 <!-- ====== NAV ====== -->
 <nav class="top">
   <div class="wrap row">
-    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
-    <div class="nav-links">
+    <!-- Left: brand + back -->
+    <div class="nav-left">
+      <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
       <a href="index.html" class="nav-back">← Start</a>
-      <span class="nav-divider"></span>
-      <a href="#diagnose">01 Diagnose</a>
-      <a href="#prinzipien">02 Prinzipien</a>
-      <a href="#kairon">03 KAIRON</a>
-      <a href="#rechner">04 Rechner</a>
-      <a href="#ki-adoption">05 KAIDOP</a>
-      <a href="#kailead">06 KAILEAD</a>
-      <a href="academy.html" class="nav-pill">Academy →</a>
     </div>
-    <a class="nav-cta" href="#cta">Erstgespräch buchen</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
+    <!-- Center: dropdowns -->
+    <div class="nav-center">
+      <div class="nav-dropdown" id="dd-methode">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-methode')">Methode</button>
+        <div class="nav-dropdown-menu">
+          <a href="#diagnose">Diagnose</a>
+          <a href="#prinzipien">Prinzipien</a>
+          <a href="#rechner">Rechner</a>
+        </div>
+      </div>
+      <span style="width:1px; height:20px; background:var(--ink-mute); opacity:0.15; display:inline-block;"></span>
+      <div class="nav-dropdown" id="dd-produkte">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-produkte')">Produkte</button>
+        <div class="nav-dropdown-menu">
+          <a href="#kairon">KAIRON</a>
+          <a href="#ki-adoption">KAIDOP</a>
+          <a href="#kailead">KAILEAD</a>
+          <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:4px 0;">
+          <a href="kairon-executive.html">Fractional AI Officer</a>
+        </div>
+      </div>
+    </div>
+    <!-- Right: academy + cta + hamburger -->
+    <div class="nav-right">
+      <a href="academy.html" class="nav-pill">Academy →</a>
+      <a class="nav-cta" href="#cta">Erstgespräch buchen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
 <div class="nav-mobile" id="nav-mobile">
   <div class="mob-nav-section">
-    <span class="mob-nav-section-label">/ / Programme</span>
-    <a href="#diagnose" class="mob-link">01 Diagnose</a>
-    <a href="#prinzipien" class="mob-link">02 Prinzipien</a>
-    <a href="#kairon" class="mob-link">03 KAIRON</a>
-    <a href="#rechner" class="mob-link">04 Rechner</a>
-    <a href="#ki-adoption" class="mob-link">05 KAIDOP</a>
-    <a href="#kailead" class="mob-link">06 KAILEAD</a>
+    <span class="mob-nav-section-label">Methode</span>
+    <a href="#diagnose" class="mob-link">Diagnose</a>
+    <a href="#prinzipien" class="mob-link">Prinzipien</a>
+    <a href="#rechner" class="mob-link">Rechner</a>
+  </div>
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Produkte</span>
+    <a href="#kairon" class="mob-link">KAIRON</a>
+    <a href="#ki-adoption" class="mob-link">KAIDOP</a>
+    <a href="#kailead" class="mob-link">KAILEAD</a>
   </div>
   <a href="academy.html" class="mob-link" style="color:var(--accent); font-weight:600;">→ Academy ansehen</a>
   <a href="#cta" class="mob-cta">Erstgespräch buchen →</a>
@@ -1120,7 +1192,6 @@
 
       <div class="btn-row">
         <a class="btn-primary" id="lagebild-cta" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Erstgespräch buchen</a>
-        <p style="margin-top:14px; font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-mute);">/ / Kostenlos · Schriftliche Einschätzung inklusive</p>
       </div>
 
     </div>
@@ -1135,6 +1206,8 @@
       <a href="#diagnose">Diagnose</a>
       <a href="#ki-adoption">KAIDOP</a>
       <a href="#kairon">KAIRON</a>
+      <a href="#kailead">KAILEAD</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
       <a href="#rechner">Rechner</a>
       <a href="academy.html">Academy</a>
     </div>
@@ -1205,6 +1278,25 @@
     };
     if (cta && labels[val]) cta.textContent = labels[val];
   }
+
+  // Dropdown nav
+  function toggleDropdown(id) {
+    const all = document.querySelectorAll('.nav-dropdown');
+    all.forEach(d => { if (d.id !== id) d.classList.remove('open'); });
+    document.getElementById(id).classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+  // Close dropdown when a link inside is clicked
+  document.querySelectorAll('.nav-dropdown-menu a').forEach(a => {
+    a.addEventListener('click', () => {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    });
+  });
+  window.toggleDropdown = toggleDropdown;
 </script>
 <script type="module" src="js/main.js"></script>
 

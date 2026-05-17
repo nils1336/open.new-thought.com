@@ -114,12 +114,44 @@
   .landing-foot a:hover { color: var(--accent); }
 
   /* ── Nav landing ── */
-  .nav-landing { display: flex; gap: 24px; align-items: center; }
-  .nav-landing a {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink-mute); transition: color .15s;
+  nav.top .wrap.row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .nav-landing { display: flex; gap: 32px; align-items: center; justify-content: center; }
+  .nav-landing > a {
+    font-family: var(--sans); font-size: 15px; letter-spacing: -0.02em; text-transform: none;
+    color: var(--ink); font-weight: 700; transition: color .15s;
   }
-  .nav-landing a:hover { color: var(--ink); }
+  .nav-landing > a:hover { color: var(--ink-soft); }
+  .nav-cta-wrap { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+  @media(max-width: 760px) { nav.top .wrap.row { display: flex; } .nav-landing { display: none; } }
+
+  /* Dropdown (reused from programme.html style) */
+  .nav-landing .nav-dropdown { position: relative; }
+  .nav-landing .nav-dropdown-trigger {
+    font-family: var(--sans); font-size: 15px; font-weight: 700;
+    letter-spacing: -0.02em; color: var(--ink); cursor: pointer;
+    background: none; border: none; padding: 0; display: flex; align-items: center; gap: 5px; line-height: 1;
+    transition: color .15s;
+  }
+  .nav-landing .nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.4; margin-top: 1px; transition: transform .2s; }
+  .nav-landing .nav-dropdown.open .nav-dropdown-trigger::after { transform: rotate(180deg); }
+  .nav-landing .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff; border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    min-width: 200px; padding: 6px 0;
+    opacity: 0; pointer-events: none;
+    transition: opacity .18s, transform .18s; z-index: 200;
+  }
+  .nav-landing .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .nav-landing .nav-dropdown-menu a {
+    display: block; padding: 9px 20px; font-size: 13px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+    transition: color .12s, background .12s;
+  }
+  .nav-landing .nav-dropdown-menu a:hover { color: var(--ink); background: var(--bg-soft); }
 
   @media(max-width: 760px) {
     .landing-hero { padding: 80px 0 60px; min-height: auto; }
@@ -142,13 +174,24 @@
   <div class="wrap row">
     <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
     <div class="nav-landing">
-      <a href="programme.html">Programme</a>
+      <div class="nav-dropdown" id="dd-programme">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-programme')">Programme</button>
+        <div class="nav-dropdown-menu">
+          <a href="programme.html#kairon">KAIRON</a>
+          <a href="programme.html#ki-adoption">KAIDOP</a>
+          <a href="programme.html#kailead">KAILEAD</a>
+          <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:4px 0;">
+          <a href="kairon-executive.html">Fractional AI Officer</a>
+        </div>
+      </div>
       <a href="academy.html">Academy</a>
     </div>
-    <a class="nav-cta" href="programme.html#cta">Erstgespräch buchen</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-cta-wrap">
+      <a class="nav-cta" href="programme.html#cta">Erstgespräch buchen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -217,6 +260,10 @@
     <div>© new.thought</div>
     <div style="display:flex; gap:24px; flex-wrap:wrap;">
       <a href="programme.html">Programme</a>
+      <a href="programme.html#kairon">KAIRON</a>
+      <a href="programme.html#ki-adoption">KAIDOP</a>
+      <a href="programme.html#kailead">KAILEAD</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
       <a href="academy.html">Academy</a>
       <a href="programme.html#cta">KI Readiness</a>
     </div>
@@ -281,6 +328,16 @@
   function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = ''; }
   function closeModalOnBg(e, id) { if (e.target === e.currentTarget) closeModal(id); }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay').forEach(m => { m.style.display='none'; }); document.body.style.overflow=''; } });
+
+  // Nav dropdown
+  function toggleDropdown(id) {
+    document.querySelectorAll('.nav-dropdown').forEach(d => { if (d.id !== id) d.classList.remove('open'); });
+    document.getElementById(id).classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  });
+  window.toggleDropdown = toggleDropdown;
 </script>
 
 </body>
