@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Ressourcen für Unternehmen: Guides, Artikel & Leitfäden | new.thought</title>
+<meta name="description" content="Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement im Mittelstand. Kostenlose Leitfäden, Artikel und Checklisten von new.thought.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/ressourcen.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.new-thought.com/ressourcen.html">
+<meta property="og:title" content="KI-Ressourcen für Unternehmen | new.thought">
+<meta property="og:description" content="Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement im Mittelstand. Kostenlose Leitfäden von new.thought.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.new-thought.com/#organization",
+      "name": "new.thought",
+      "url": "https://www.new-thought.com"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.new-thought.com/ressourcen.html",
+      "url": "https://www.new-thought.com/ressourcen.html",
+      "name": "KI-Ressourcen für Unternehmen | new.thought",
+      "description": "Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement für den Mittelstand.",
+      "publisher": { "@id": "https://www.new-thought.com/#organization" },
+      "inLanguage": "de-DE"
+    }
+  ]
+}
+</script>
+<style>
+  .hub-hero {
+    padding: 120px 0 80px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .hub-tag {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em;
+    text-transform: uppercase; color: var(--ink-mute); margin-bottom: 28px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .hub-tag::before { content: "/ /"; color: var(--accent); }
+  .hub-headline {
+    font-size: clamp(32px, 5vw, 72px); font-weight: 600;
+    letter-spacing: -0.04em; line-height: 1.0; color: var(--ink);
+    margin-bottom: 20px;
+  }
+  .hub-headline em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .hub-sub {
+    font-size: 18px; color: var(--ink-soft); max-width: 56ch;
+    line-height: 1.55; margin-bottom: 0;
+  }
+
+  /* Filter bar */
+  .hub-filter {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    padding: 32px 0 40px; border-bottom: 1px solid var(--rule);
+  }
+  .filter-btn {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; padding: 8px 16px;
+    border: 1px solid var(--rule); color: var(--ink-mute);
+    background: none; cursor: pointer; transition: all .15s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    border-color: var(--ink); color: var(--ink); background: var(--ink);
+    color: var(--bg);
+  }
+
+  /* Article grid */
+  .hub-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-left: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+    margin-top: 48px;
+  }
+  @media(max-width: 960px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(max-width: 600px) { .hub-grid { grid-template-columns: 1fr; } }
+
+  .article-card {
+    display: flex; flex-direction: column;
+    padding: 36px 32px; gap: 16px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none; color: inherit;
+    transition: background .18s;
+    position: relative;
+  }
+  .article-card:hover { background: var(--bg-soft); }
+  .article-card:hover .ac-arrow { color: var(--accent); transform: translate(3px, -3px); }
+
+  .ac-meta {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .ac-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
+    text-transform: uppercase; padding: 4px 9px;
+    border: 1px solid var(--rule); color: var(--ink-mute);
+  }
+  .ac-tag--guide { border-color: var(--accent); color: var(--accent); }
+  .ac-tag--pillar { border-color: #2f7a4f; color: #2f7a4f; }
+  .ac-readtime {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-mute);
+  }
+
+  .ac-title {
+    font-size: clamp(17px, 1.6vw, 21px); font-weight: 600;
+    letter-spacing: -0.025em; line-height: 1.25; color: var(--ink);
+  }
+  .ac-excerpt {
+    font-size: 14px; color: var(--ink-soft); line-height: 1.6; flex: 1;
+  }
+  .ac-arrow {
+    font-size: 20px; color: var(--rule);
+    transition: color .18s, transform .18s;
+    margin-top: auto; align-self: flex-end;
+  }
+  .ac-date {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--ink-mute); margin-top: 4px;
+  }
+
+  /* Featured card (spans 2 cols) */
+  .article-card--featured {
+    grid-column: span 2;
+    background: var(--bg-deep); color: #f3f2ee;
+  }
+  .article-card--featured:hover { background: #1a1a16; }
+  .article-card--featured .ac-title { color: #fff; font-size: clamp(22px, 2.2vw, 30px); }
+  .article-card--featured .ac-excerpt { color: rgba(243,242,238,.65); }
+  .article-card--featured .ac-arrow { color: rgba(255,255,255,.2); }
+  .article-card--featured:hover .ac-arrow { color: var(--accent); }
+  .article-card--featured .ac-tag { border-color: var(--accent); color: var(--accent); }
+  .article-card--featured .ac-readtime,
+  .article-card--featured .ac-date { color: rgba(243,242,238,.4); }
+  @media(max-width: 960px) { .article-card--featured { grid-column: span 1; } }
+
+  /* Coming soon cards */
+  .article-card--soon {
+    opacity: .5; pointer-events: none;
+  }
+  .article-card--soon .ac-title::after {
+    content: " — demnächst";
+    font-size: 11px; font-weight: 400; font-style: italic;
+    color: var(--ink-mute);
+  }
+
+  /* CTA section */
+  .hub-cta {
+    margin-top: 80px; padding: 64px 0;
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 32px; flex-wrap: wrap;
+  }
+  .hub-cta-text h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 8px; }
+  .hub-cta-text p { color: var(--ink-soft); font-size: 16px; }
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="wrap row">
+    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
+    <div style="display:flex; gap:28px; align-items:center;">
+      <a href="programme.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Programme</a>
+      <a href="academy.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Academy</a>
+      <a href="ressourcen.html" style="font-size:15px; font-weight:600; color:var(--accent);">Ressourcen</a>
+    </div>
+    <div style="display:flex; justify-content:flex-end;">
+      <a class="nav-cta" href="programme.html#cta">Erstgespräch buchen</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== HERO ====== -->
+<section class="hub-hero">
+  <div class="wrap">
+    <div class="hub-tag">Ressourcen & Wissen</div>
+    <h1 class="hub-headline">
+      KI-Adoption im Mittelstand.<br>
+      <em>Praxiswissen, das trägt.</em>
+    </h1>
+    <p class="hub-sub">
+      Leitfäden, Definitionen und Praxisartikel zu KI-Governance, KI-Einführung und KI-Projektmanagement — für Entscheider, die KI nicht nur einsetzen, sondern steuern wollen.
+    </p>
+  </div>
+</section>
+
+<!-- ====== FILTER ====== -->
+<div class="wrap">
+  <div class="hub-filter">
+    <button class="filter-btn active" onclick="filterCards('all', this)">Alle</button>
+    <button class="filter-btn" onclick="filterCards('adoption', this)">KI-Adoption</button>
+    <button class="filter-btn" onclick="filterCards('governance', this)">KI-Governance</button>
+    <button class="filter-btn" onclick="filterCards('change', this)">Change Management</button>
+    <button class="filter-btn" onclick="filterCards('organisation', this)">KI-Organisation</button>
+  </div>
+</div>
+
+<!-- ====== ARTICLE GRID ====== -->
+<section style="padding-bottom: 0;">
+  <div class="wrap">
+    <div class="hub-grid" id="hub-grid">
+
+      <!-- FEATURED: Artikel 1 -->
+      <a href="ressourcen/warum-ki-projekte-scheitern.html" class="article-card article-card--featured" data-cats="adoption governance">
+        <div class="ac-meta">
+          <span class="ac-tag ac-tag--guide">Leitfaden</span>
+          <span class="ac-tag">KI-Adoption</span>
+          <span class="ac-readtime">9 Min. Lesezeit</span>
+        </div>
+        <div class="ac-title">Warum KI-Projekte im Mittelstand scheitern — und was wirklich hilft</div>
+        <p class="ac-excerpt">65 % aller KI-Initiativen ohne benannten Owner versanden still. Nicht weil die Technologie versagt, sondern weil das System fehlt. Die fünf echten Ursachen — und wie man sie systematisch löst.</p>
+        <span class="ac-date">Mai 2026</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+      <!-- Artikel 2 -->
+      <a href="ressourcen/was-ist-ki-governance.html" class="article-card" data-cats="governance">
+        <div class="ac-meta">
+          <span class="ac-tag ac-tag--guide">Definition</span>
+          <span class="ac-tag">KI-Governance</span>
+          <span class="ac-readtime">7 Min.</span>
+        </div>
+        <div class="ac-title">Was ist KI-Governance? Definition und Praxis für Unternehmen</div>
+        <p class="ac-excerpt">KI-Governance ist kein Compliance-Thema — sondern die Voraussetzung dafür, dass KI-Projekte Geschäftswert schaffen. Was es bedeutet und wie es konkret aussieht.</p>
+        <span class="ac-date">Mai 2026</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+      <!-- Artikel 3 -->
+      <a href="ressourcen/ki-strategie-vs-ki-governance.html" class="article-card" data-cats="governance adoption">
+        <div class="ac-meta">
+          <span class="ac-tag">KI-Strategie</span>
+          <span class="ac-tag">KI-Governance</span>
+          <span class="ac-readtime">6 Min.</span>
+        </div>
+        <div class="ac-title">KI-Strategie vs. KI-Governance: Was ist der Unterschied?</div>
+        <p class="ac-excerpt">Viele Unternehmen haben eine KI-Strategie, aber kein KI-Steuerungssystem. Warum der Unterschied entscheidend ist — und welches von beiden zuerst kommt.</p>
+        <span class="ac-date">Mai 2026</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+      <!-- Coming soon: Artikel 4 -->
+      <a href="#" class="article-card article-card--soon" data-cats="adoption change">
+        <div class="ac-meta">
+          <span class="ac-tag">Change Management</span>
+          <span class="ac-readtime">8 Min.</span>
+        </div>
+        <div class="ac-title">KI-Widerstände bei Mitarbeitenden: Die 5 Typen und wie man sie überwindet</div>
+        <p class="ac-excerpt">Angst, Gleichgültigkeit, Machtkonflikte, Trauma, Lähmung — die fünf Widerstandsmuster, die jede KI-Einführung blockieren, und konkrete Interventionen für jedes.</p>
+        <span class="ac-date">Demnächst</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+      <!-- Coming soon: Artikel 5 -->
+      <a href="#" class="article-card article-card--soon" data-cats="adoption">
+        <div class="ac-meta">
+          <span class="ac-tag ac-tag--pillar">Pillar Guide</span>
+          <span class="ac-readtime">18 Min.</span>
+        </div>
+        <div class="ac-title">KI-Adoption im Mittelstand: Der vollständige Leitfaden 2025</div>
+        <p class="ac-excerpt">Von der ersten KI-Initiative bis zum laufenden Steuerungssystem: Der Schritt-für-Schritt-Leitfaden für Unternehmen, die KI strukturiert einführen wollen.</p>
+        <span class="ac-date">Demnächst</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+      <!-- Coming soon: Artikel 6 -->
+      <a href="#" class="article-card article-card--soon" data-cats="organisation governance">
+        <div class="ac-meta">
+          <span class="ac-tag">KI-Organisation</span>
+          <span class="ac-readtime">10 Min.</span>
+        </div>
+        <div class="ac-title">KI-Organisation aufbauen: Rollen, Verantwortlichkeiten und Struktur</div>
+        <p class="ac-excerpt">Wer macht was im KI-Betrieb? Die wichtigsten Rollen — AI Owner, AI Sponsor, AI Orchestrator — und wie sie in bestehende Strukturen integriert werden.</p>
+        <span class="ac-date">Demnächst</span>
+        <span class="ac-arrow">↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section style="padding: 0;">
+  <div class="wrap">
+    <div class="hub-cta">
+      <div class="hub-cta-text">
+        <h3>Bereit, KI im Unternehmen zu steuern?</h3>
+        <p>Erfahren Sie in einem 30-minütigen Erstgespräch, welches Programm zu Ihrem Kontext passt.</p>
+      </div>
+      <a href="programme.html#cta" class="btn-primary">Erstgespräch buchen →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer>
+  <div class="wrap row">
+    <div>© new.thought</div>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;">
+      <a href="programme.html">Programme</a>
+      <a href="academy.html">Academy</a>
+      <a href="ressourcen.html">Ressourcen</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
+    </div>
+    <div style="display:flex; gap:20px;">
+      <a href="index.html" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute);">Impressum</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterCards(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.article-card').forEach(card => {
+    if (cat === 'all') {
+      card.style.display = '';
+    } else {
+      const cats = card.dataset.cats || '';
+      card.style.display = cats.includes(cat) ? '' : 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>
