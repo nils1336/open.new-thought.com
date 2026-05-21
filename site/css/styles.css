@@ -120,7 +120,6 @@
     transition:background .15s, transform .15s;
   }
   .nav-cta:hover{background:var(--accent); transform:translateY(-1px);}
-  .nav-cta::after{content:"→"; font-size:14px;}
   @media(max-width:760px){ .nav-links{display:none;} }
 
   /* ============ REVEAL ============ */
