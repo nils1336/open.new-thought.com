@@ -1,0 +1,1110 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>new.thought — Unternehmensbroschüre 2025</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ── RESET ──────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+* { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+
+/* ── TOKENS ─────────────────────────────────────────────── */
+:root {
+  --white:   #ffffff;
+  --cream:   #f5f3ee;
+  --sand:    #ede9e1;
+  --ink:     #0d0d0b;
+  --ink-2:   #3a3a35;
+  --ink-3:   #888880;
+  --rule:    #d8d6d0;
+  --accent:  #E8198B;
+  --dark:    #0d0d0b;
+
+  --sans: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  --pw: 210mm;
+  --ph: 297mm;
+  --mg: 18mm;       /* outer margin */
+  --mg-i: 20mm;     /* inner (binding) */
+}
+
+/* ── PAGE SHELL ─────────────────────────────────────────── */
+.page {
+  width: var(--pw);
+  height: var(--ph);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 4mm;
+  box-shadow: 0 2px 32px rgba(0,0,0,.15);
+}
+
+/* ── PRINT ──────────────────────────────────────────────── */
+@media print {
+  @page { size: 210mm 297mm; margin: 0; }
+  body  { background: none; padding: 0; }
+  .page { margin: 0; box-shadow: none; page-break-after: always; break-after: page; }
+  .page:last-child { page-break-after: avoid; break-after: avoid; }
+  .ui   { display: none !important; }
+}
+@media screen {
+  body { background: #e8e6e1; padding: 44px 0 24px; font-family: var(--sans); }
+}
+
+/* ── PRINT BAR (screen only) ────────────────────────────── */
+.ui {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: 44px;
+  background: var(--ink);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px;
+  font-family: var(--mono); font-size: 9px; letter-spacing: .18em; text-transform: uppercase;
+}
+.ui-left  { color: rgba(255,255,255,.4); }
+.ui-left strong { color: #fff; margin-right: 8px; }
+.ui-btn {
+  background: var(--accent); color: #fff; border: none; cursor: pointer;
+  font-family: var(--mono); font-size: 9px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase;
+  padding: 9px 18px; transition: opacity .15s;
+}
+.ui-btn:hover { opacity: .85; }
+
+/* ── SHARED ATOMS ───────────────────────────────────────── */
+.label {
+  font-family: var(--mono); font-size: 6pt; font-weight: 400;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3);
+  display: flex; align-items: center; gap: 6px;
+}
+.label.light   { color: rgba(255,255,255,.35); }
+.label .dot    { width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.label .line   { width: 14px; height: .5px; background: var(--accent); flex-shrink: 0; }
+
+.folio-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-family: var(--mono); font-size: 5.5pt; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-3);
+}
+.folio-row .brand { font-weight: 500; color: var(--ink); font-family: var(--sans); font-size: 7pt; letter-spacing: -.01em; }
+.folio-row .brand .dot { color: var(--accent); }
+.folio-row.light { color: rgba(255,255,255,.3); }
+.folio-row.light .brand { color: rgba(255,255,255,.6); }
+
+.rule-h { width: 100%; height: .3pt; background: var(--rule); }
+.rule-h.light { background: rgba(255,255,255,.12); }
+
+.accent-line { display: block; width: 20px; height: 1.5pt; background: var(--accent); }
+
+
+/* ═══════════════════════════════════════════════════
+   P1 — COVER
+   White. Large air. Brand statement.
+═══════════════════════════════════════════════════ */
+.p1 { background: var(--white); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p1-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.p1-wordmark {
+  font-family: var(--sans); font-weight: 700; font-size: 10.5pt;
+  letter-spacing: -.03em; color: var(--ink);
+}
+.p1-wordmark .dot { color: var(--accent); }
+.p1-meta {
+  font-family: var(--mono); font-size: 6pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-3); text-align: right; line-height: 1.8;
+}
+
+.p1-center { flex: 1; display: flex; align-items: flex-end; padding-bottom: 12mm; }
+.p1-headline {
+  font-family: var(--sans); font-weight: 800; font-size: 38pt;
+  line-height: .96; letter-spacing: -.04em; color: var(--ink);
+}
+.p1-headline strong { font-weight: 800; display: block; }
+.p1-headline .a { color: var(--accent); }
+.p1-strike {
+  text-decoration: line-through;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1.8pt;
+}
+.p1-answer {
+  display: block; margin-top: 4mm;
+  font-weight: 300; font-style: italic; color: var(--ink-2);
+}
+
+.p1-bottom { border-top: .3pt solid var(--rule); padding-top: 6mm; display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+.p1-tag { padding-right: 4mm; border-right: .3pt solid var(--rule); }
+.p1-tag:last-child { border-right: none; padding-right: 0; padding-left: 4mm; }
+.p1-tag:nth-child(2) { padding-left: 4mm; }
+.p1-tag-k { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2mm; }
+.p1-tag-n { font-family: var(--sans); font-size: 9.5pt; font-weight: 700; letter-spacing: -.025em; color: var(--ink); }
+.p1-tag-n .a { color: var(--accent); }
+.p1-tag-d { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 1mm; }
+
+
+/* ═══════════════════════════════════════════════════
+   P2 — THE PROBLEM
+   Near-full-page statement. Maximum air.
+═══════════════════════════════════════════════════ */
+.p2 { background: var(--white); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p2-center { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 7mm; }
+.p2-stat {
+  font-family: var(--sans); font-weight: 800; font-size: 13pt;
+  letter-spacing: -.02em; line-height: 1.1; color: var(--accent);
+}
+.p2-headline {
+  font-family: var(--sans); font-weight: 800; font-size: 32pt;
+  line-height: .97; letter-spacing: -.05em; color: var(--ink);
+}
+.p2-headline em { font-weight: 200; font-style: italic; display: block; color: var(--ink-2); }
+.p2-body {
+  font-size: 8.5pt; font-weight: 300; line-height: 1.75; color: var(--ink-2);
+  max-width: 112mm;
+}
+.p2-body strong { font-weight: 600; color: var(--ink); }
+
+
+/* ═══════════════════════════════════════════════════
+   P3 — THESIS: ZWEI INVESTITIONEN
+   The core insight. Visual split.
+═══════════════════════════════════════════════════ */
+.p3 { background: var(--cream); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p3-claim {
+  font-family: var(--sans); font-weight: 800; font-size: 22pt;
+  line-height: 1.0; letter-spacing: -.04em; color: var(--ink);
+}
+.p3-claim em { font-weight: 200; font-style: italic; display: block; color: var(--ink-3); }
+.p3-claim .a { color: var(--accent); }
+
+.p3-split { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin: 8mm 0; }
+.p3-half {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 7mm 5mm 7mm 0; border-right: .3pt solid var(--rule);
+}
+.p3-half:last-child { border-right: none; padding-right: 0; padding-left: 5mm; }
+.p3-h-num {
+  font-family: var(--mono); font-size: 28pt; font-weight: 300; letter-spacing: -.03em;
+  color: var(--rule); line-height: 1;
+}
+.p3-h-icon { font-size: 18pt; margin-bottom: 3mm; line-height: 1; }
+.p3-h-title {
+  font-family: var(--sans); font-size: 12pt; font-weight: 700;
+  letter-spacing: -.025em; color: var(--ink); line-height: 1.1;
+}
+.p3-h-title .a { color: var(--accent); }
+.p3-h-body {
+  font-size: 7.5pt; font-weight: 300; line-height: 1.7; color: var(--ink-2);
+  margin-top: 3mm;
+}
+.p3-h-body strong { font-weight: 600; color: var(--ink); }
+.p3-h-tag {
+  font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--accent); margin-top: 4mm;
+}
+
+.p3-bridge {
+  border-top: .3pt solid var(--rule); padding-top: 5mm;
+  font-size: 8pt; font-weight: 300; color: var(--ink-2); line-height: 1.65;
+}
+.p3-bridge strong { color: var(--ink); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════════════════
+   P4 — KAIRON
+   White. Spacious. Product intro.
+═══════════════════════════════════════════════════ */
+.p4 { background: var(--white); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p4-label-row { display: flex; align-items: center; gap: 5mm; }
+.p4-prod-num { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; color: var(--accent); }
+.p4-prod-type { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); }
+
+.p4-name {
+  font-family: var(--sans); font-weight: 800; font-size: 58pt;
+  letter-spacing: -.06em; line-height: .87; color: var(--ink);
+  margin: 5mm 0 3mm;
+}
+.p4-name .a { color: var(--accent); }
+
+.p4-tagline {
+  font-family: var(--sans); font-size: 10pt; font-weight: 200;
+  letter-spacing: -.01em; color: var(--ink-2); line-height: 1.4;
+  max-width: 110mm;
+}
+
+.p4-divider { margin: 7mm 0; height: .3pt; background: var(--rule); }
+
+.p4-what {
+  font-size: 7.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.75;
+  max-width: 112mm;
+}
+.p4-what strong { font-weight: 600; color: var(--ink); }
+
+.p4-cycles {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 0;
+  border-top: .3pt solid var(--ink); margin-top: 7mm;
+}
+.p4-cycle { padding: 5mm 4mm 5mm 0; border-right: .3pt solid var(--rule); }
+.p4-cycle:last-child { border-right: none; padding-left: 4mm; padding-right: 0; }
+.p4-cycle:nth-child(2) { padding-left: 4mm; }
+.p4-cycle-k { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); margin-bottom: 2mm; }
+.p4-cycle-n { font-family: var(--sans); font-size: 8.5pt; font-weight: 700; letter-spacing: -.015em; color: var(--ink); margin-bottom: 1.5mm; }
+.p4-cycle-d { font-size: 6.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.65; }
+
+
+/* ═══════════════════════════════════════════════════
+   P5 — KAIDOP (dark page)
+   Black background. High contrast.
+═══════════════════════════════════════════════════ */
+.p5 { background: var(--white); color: var(--ink); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p5-label-row { display: flex; align-items: center; gap: 5mm; }
+.p5-prod-num { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; color: var(--accent); }
+.p5-prod-type { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); }
+
+.p5-name {
+  font-family: var(--sans); font-weight: 800; font-size: 58pt;
+  letter-spacing: -.06em; line-height: .87; color: var(--ink);
+  margin: 5mm 0 3mm;
+}
+.p5-name .a { color: var(--accent); }
+
+.p5-tagline {
+  font-family: var(--sans); font-size: 10pt; font-weight: 200;
+  letter-spacing: -.01em; color: var(--ink-2); line-height: 1.4; max-width: 110mm;
+}
+
+.p5-divider { margin: 7mm 0; height: .3pt; background: var(--rule); }
+
+.p5-phases { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: space-between; }
+.p5-phase {
+  display: grid; grid-template-columns: 8mm 42mm 1fr; gap: 4mm;
+  padding: 4.5mm 0; border-bottom: .3pt solid var(--rule);
+  align-items: start;
+}
+.p5-phase:last-child { border-bottom: none; }
+.p5-pn { font-family: var(--mono); font-size: 6.5pt; letter-spacing: .15em; color: var(--accent); padding-top: .5mm; }
+.p5-pt { font-size: 8pt; font-weight: 600; letter-spacing: -.01em; color: var(--ink); line-height: 1.25; }
+.p5-ps { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); margin-top: 1mm; }
+.p5-pd { font-size: 6.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.65; }
+.p5-pd strong { color: var(--ink); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════════════════
+   P6 — KAIDOP DELIVERY
+   White. The two paths.
+═══════════════════════════════════════════════════ */
+.p6 { background: var(--white); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p6-intro-headline {
+  font-family: var(--sans); font-weight: 700; font-size: 16pt;
+  letter-spacing: -.035em; line-height: 1.05; color: var(--ink);
+}
+.p6-intro-headline em { font-style: italic; font-weight: 200; color: var(--ink-3); }
+
+.p6-intro-sub {
+  font-size: 7.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.7;
+  max-width: 110mm; margin-top: 4mm;
+}
+.p6-intro-sub strong { font-weight: 600; color: var(--ink); }
+
+.p6-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; margin-top: 7mm; }
+.p6-panel {
+  display: flex; flex-direction: column; gap: 3mm;
+  padding: 6mm 5mm 6mm 0; border-right: .3pt solid var(--rule);
+  border-top: .3pt solid var(--rule);
+}
+.p6-panel.right { border-right: none; padding-right: 0; padding-left: 5mm; background: var(--ink); border-top-color: transparent; padding: 6mm 5mm; }
+.p6-panel-tag { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.p6-panel-name { font-family: var(--sans); font-size: 12pt; font-weight: 700; letter-spacing: -.025em; line-height: 1.1; color: var(--ink); }
+.p6-panel.right .p6-panel-name { color: #fff; }
+.p6-panel-for { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-3); }
+.p6-panel.right .p6-panel-for { color: rgba(255,255,255,.3); }
+.p6-panel-desc { font-size: 7pt; font-weight: 300; color: var(--ink-2); line-height: 1.7; }
+.p6-panel.right .p6-panel-desc { color: rgba(255,255,255,.5); }
+.p6-panel-desc strong { font-weight: 600; color: var(--ink); display: block; margin-bottom: 1.5mm; }
+.p6-panel.right .p6-panel-desc strong { color: #fff; }
+.p6-panel-list { display: flex; flex-direction: column; gap: 2mm; margin-top: 2mm; }
+.p6-li { display: flex; gap: 2.5mm; font-size: 6.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.5; }
+.p6-panel.right .p6-li { color: rgba(255,255,255,.45); }
+.p6-li::before { content: "→"; color: var(--accent); font-family: var(--mono); font-size: 6pt; flex-shrink: 0; }
+
+.p6-tools {
+  margin-top: 5mm; padding: 5mm; background: var(--cream);
+  border-top: .3pt solid var(--rule);
+}
+.p6-tools-title { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 3mm; }
+.p6-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 5mm; }
+.p6-tool { display: flex; gap: 2.5mm; font-size: 6.5pt; font-weight: 300; color: var(--ink-2); }
+.p6-tool::before { content: "—"; color: var(--accent); font-family: var(--mono); font-size: 6pt; flex-shrink: 0; }
+.p6-tool strong { font-weight: 600; color: var(--ink); }
+
+
+/* ═══════════════════════════════════════════════════
+   P7 — KAILEAD
+   Sand background. Both sides.
+═══════════════════════════════════════════════════ */
+.p7 { background: var(--sand); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p7-label-row { display: flex; align-items: center; gap: 5mm; }
+.p7-prod-num { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; color: var(--accent); }
+.p7-prod-type { font-family: var(--mono); font-size: 6pt; letter-spacing: .22em; text-transform: uppercase; color: rgba(0,0,0,.3); }
+
+.p7-name {
+  font-family: var(--sans); font-weight: 800; font-size: 52pt;
+  letter-spacing: -.06em; line-height: .87; color: var(--ink);
+  margin: 5mm 0 3mm;
+}
+.p7-name .a { color: var(--accent); }
+
+.p7-tagline {
+  font-family: var(--sans); font-size: 10pt; font-weight: 200;
+  color: var(--ink-2); line-height: 1.4; max-width: 110mm;
+}
+
+.p7-divider { margin: 7mm 0; height: .3pt; background: rgba(0,0,0,.15); }
+
+.p7-modules { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.p7-module { padding: 5mm 5mm 5mm 0; border-right: .3pt solid rgba(0,0,0,.12); display: flex; flex-direction: column; gap: 2.5mm; }
+.p7-module:last-child { border-right: none; padding-right: 0; padding-left: 5mm; }
+.p7-mk { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: var(--accent); }
+.p7-mn { font-family: var(--sans); font-size: 10pt; font-weight: 700; letter-spacing: -.02em; color: var(--ink); }
+.p7-ms { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .14em; text-transform: uppercase; color: rgba(0,0,0,.35); }
+.p7-md { font-size: 6.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.7; }
+.p7-md strong { font-weight: 600; color: var(--ink); }
+
+.p7-outcomes { margin-top: 7mm; border-top: .3pt solid rgba(0,0,0,.12); padding-top: 5mm; }
+.p7-outcomes-title { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: rgba(0,0,0,.35); margin-bottom: 3.5mm; }
+.p7-outcomes-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2mm 5mm; }
+.p7-outcome { display: flex; gap: 2.5mm; font-size: 6.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.55; }
+.p7-outcome::before { content: "→"; color: var(--accent); font-family: var(--mono); font-size: 6pt; flex-shrink: 0; }
+.p7-outcome strong { font-weight: 600; color: var(--ink); }
+
+
+/* ═══════════════════════════════════════════════════
+   P8 — DAS SYSTEM
+   White. The connection.
+═══════════════════════════════════════════════════ */
+.p8 { background: var(--white); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p8-headline {
+  font-family: var(--sans); font-weight: 800; font-size: 22pt;
+  letter-spacing: -.045em; line-height: .97; color: var(--ink);
+}
+.p8-headline em { font-weight: 200; font-style: italic; color: var(--ink-3); }
+.p8-headline .a { color: var(--accent); }
+
+.p8-sub {
+  font-size: 8pt; font-weight: 300; color: var(--ink-2); line-height: 1.7;
+  max-width: 110mm; margin-top: 5mm;
+}
+.p8-sub strong { font-weight: 600; color: var(--ink); }
+
+.p8-system { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 0; margin: 7mm 0; }
+.p8-sys-row {
+  display: grid; grid-template-columns: 36mm 1fr 1fr;
+  gap: 5mm; padding: 6mm 0;
+  border-bottom: .3pt solid var(--rule); align-items: center;
+}
+.p8-sys-row:first-child { border-top: .3pt solid var(--ink); }
+.p8-sys-row:last-child { border-bottom: .3pt solid var(--ink); }
+.p8-sys-name { font-family: var(--sans); font-size: 12pt; font-weight: 800; letter-spacing: -.03em; color: var(--ink); }
+.p8-sys-name .a { color: var(--accent); }
+.p8-sys-role { font-family: var(--mono); font-size: 6pt; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-3); margin-top: 1.5mm; }
+.p8-sys-what { font-size: 7pt; font-weight: 300; color: var(--ink-2); line-height: 1.6; }
+.p8-sys-what strong { font-weight: 600; color: var(--ink); }
+.p8-sys-answers { display: flex; flex-direction: column; gap: 1.5mm; }
+.p8-sys-ans { display: flex; gap: 2mm; font-size: 6.5pt; font-weight: 300; color: var(--ink-3); line-height: 1.45; }
+.p8-sys-ans::before { content: "→"; color: var(--accent); font-family: var(--mono); font-size: 6pt; flex-shrink: 0; }
+
+.p8-note {
+  padding: 5mm; background: var(--cream);
+  font-size: 7.5pt; font-weight: 300; color: var(--ink-2); line-height: 1.65;
+}
+.p8-note strong { font-weight: 600; color: var(--ink); }
+
+
+/* ═══════════════════════════════════════════════════
+   P9 — CLOSING / CTA
+   Black. Editorial. Definitive.
+═══════════════════════════════════════════════════ */
+.p9 { background: var(--dark); color: #f5f4f0; padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+
+.p9-headline {
+  font-family: var(--sans); font-weight: 200; font-size: 52pt;
+  letter-spacing: -.045em; line-height: .93; color: rgba(255,255,255,.15);
+  position: absolute; bottom: var(--mg); left: var(--mg-i); right: var(--mg);
+  pointer-events: none;
+}
+.p9-headline strong { font-weight: 900; color: rgba(255,255,255,.08); }
+
+.p9-center { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 8mm; position: relative; z-index: 1; }
+.p9-claim {
+  font-family: var(--sans); font-weight: 800; font-size: 28pt;
+  letter-spacing: -.05em; line-height: .95; color: #fff;
+}
+.p9-claim em { font-weight: 200; font-style: italic; display: block; color: rgba(255,255,255,.35); }
+.p9-claim .a { color: var(--accent); }
+.p9-body {
+  font-size: 8pt; font-weight: 300; color: rgba(255,255,255,.5); line-height: 1.75;
+  max-width: 100mm;
+}
+.p9-body strong { color: rgba(255,255,255,.85); font-weight: 400; }
+
+.p9-contact {
+  padding-top: 6mm; border-top: .3pt solid rgba(255,255,255,.12);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; align-items: end;
+}
+.p9-contact-label { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 2.5mm; }
+.p9-contact-name { font-family: var(--sans); font-size: 10pt; font-weight: 700; letter-spacing: -.02em; color: #fff; margin-bottom: 2mm; }
+.p9-contact-detail { font-size: 7.5pt; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.9; }
+.p9-contact-detail a { color: var(--accent); text-decoration: none; }
+.p9-contact-url { font-family: var(--mono); font-size: 7pt; letter-spacing: .08em; color: rgba(255,255,255,.25); margin-top: 3mm; }
+.p9-brand-large {
+  align-self: end;
+  text-align: right;
+}
+
+/* ═══════════════════════════════════════════════════
+   P-EINSTIEG — DER EINSTIEG
+═══════════════════════════════════════════════════ */
+.pe { background: var(--ink); padding: var(--mg) var(--mg) var(--mg) var(--mg-i); justify-content: space-between; }
+.pe-headline {
+  font-family: var(--sans); font-weight: 200; font-size: 44pt;
+  line-height: .92; letter-spacing: -.045em; color: #fff; margin-top: 4mm;
+}
+.pe-headline strong { font-weight: 800; display: block; }
+.pe-headline .a { color: var(--accent); }
+.pe-sub { font-size: 7.5pt; font-weight: 300; color: rgba(255,255,255,.4); margin-top: 4mm; line-height: 1.7; max-width: 90mm; }
+.pe-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 7mm; }
+.pe-outcomes { }
+.pe-outcomes-label { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; color: var(--accent); text-transform: uppercase; margin-bottom: 3mm; }
+.pe-outcome { display: flex; align-items: baseline; gap: 2.5mm; padding: 2.5mm 0; border-bottom: .3pt solid rgba(255,255,255,.08); font-size: 7pt; font-weight: 300; color: rgba(255,255,255,.65); line-height: 1.4; }
+.pe-outcome:last-child { border-bottom: none; }
+.pe-outcome::before { content: '→'; color: var(--accent); flex-shrink: 0; font-size: 6pt; }
+.pe-timeline { }
+.pe-timeline-label { font-family: var(--mono); font-size: 5.5pt; letter-spacing: .22em; color: rgba(255,255,255,.25); text-transform: uppercase; margin-bottom: 3mm; }
+.pe-day { padding: 3mm 0; border-bottom: .3pt solid rgba(255,255,255,.08); }
+.pe-day:last-child { border-bottom: none; }
+.pe-day-tag { font-family: var(--mono); font-size: 5pt; letter-spacing: .18em; color: var(--accent); text-transform: uppercase; margin-bottom: 1mm; }
+.pe-day-name { font-size: 7.5pt; font-weight: 600; color: #fff; letter-spacing: -.01em; margin-bottom: 1mm; }
+.pe-day-desc { font-size: 6pt; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.55; }
+
+/* ── LOGO IMAGES ─────────────────────────────────── */
+.brand-logo { height: 15mm; mix-blend-mode: multiply; display: block; }
+.brand-logo-dark { mix-blend-mode: screen; }
+
+</style>
+</head>
+<body>
+
+<div class="ui">
+  <div class="ui-left"><strong>new.thought</strong> Unternehmensbroschüre 2025 &nbsp;·&nbsp; B5 &nbsp;·&nbsp; 9 Seiten</div>
+  <button class="ui-btn" onclick="window.print()">Als PDF speichern →</button>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 1 — COVER
+═══════════════════════════════════════════════ -->
+<div class="page p1">
+  <div class="p1-top">
+    <img src="logo-light.png" class="brand-logo" style="height:26mm;" alt="new.thought">
+  </div>
+
+  <div class="p1-center">
+    <div class="p1-headline">
+      Der Umgang mit KI ist keine<br>
+      <span class="p1-strike">Technologie-Frage<span class="a">.</span></span>
+      <em class="p1-answer">Er ist eine<br>Organisations-Frage<span class="a">.</span></em>
+    </div>
+  </div>
+
+  <div class="p1-bottom">
+    <div class="p1-tag">
+      <div class="p1-tag-k">01 · Betriebssystem</div>
+      <div class="p1-tag-n">KAI<span class="a">RON</span></div>
+      <div class="p1-tag-d">AI Operating System</div>
+    </div>
+    <div class="p1-tag">
+      <div class="p1-tag-k">02 · Adoption</div>
+      <div class="p1-tag-n">KAI<span class="a">DOP</span></div>
+      <div class="p1-tag-d">KI Adoption Model</div>
+    </div>
+    <div class="p1-tag">
+      <div class="p1-tag-k">03 · Leadership</div>
+      <div class="p1-tag-n">KAI<span class="a">LEAD</span></div>
+      <div class="p1-tag-d">Führungsprogramm</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 2 — DAS PROBLEM
+═══════════════════════════════════════════════ -->
+<div class="page p2">
+  <div class="folio-row">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Das Problem</div>
+  </div>
+
+  <div class="p2-center">
+    <div class="p2-stat">70 % aller KI-Projekte scheitern.</div>
+    <div class="p2-headline">
+      Nicht an der<br>Technologie —<br>
+      <em>an den Menschen.</em>
+    </div>
+    <span class="accent-line" style="margin-top:2mm;"></span>
+    <div class="p2-body" style="margin-top:6mm;">
+      Studien zeigen es, Praxis bestätigt es: Die größten Hürden bei der KI-Einführung sind <strong>Widerstand der Mitarbeitenden, fehlende Führungskompetenz und mangelnde Struktur</strong>. Nicht die Technologie selbst.<br><br>
+      Unternehmen, die nur in Tools investieren, investieren in Chaos. Unternehmen, die in <strong>Menschen und Methode</strong> investieren, gewinnen.
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:.3pt solid var(--rule);padding-top:5mm;">
+    <div style="padding-right:4mm;border-right:.3pt solid var(--rule);">
+      <div style="font-family:var(--sans);font-weight:800;font-size:22pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">70 %</div>
+      <div style="font-size:6.5pt;font-weight:300;color:var(--ink-2);line-height:1.55;margin-top:1.5mm;">aller KI-Projekte scheitern. Der häufigste Grund: mangelnde Adoption und fehlende Führungskompetenz. <span style="color:var(--ink-3);">(McKinsey, 2023)</span></div>
+    </div>
+    <div style="padding:0 4mm;border-right:.3pt solid var(--rule);">
+      <div style="font-family:var(--sans);font-weight:800;font-size:22pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">30 %</div>
+      <div style="font-size:6.5pt;font-weight:300;color:var(--ink-2);line-height:1.55;margin-top:1.5mm;">Produktivitätsgewinn erzielen Unternehmen, die KI strukturiert einführen und Mitarbeitende aktiv einbinden. <span style="color:var(--ink-3);">(McKinsey, 2024)</span></div>
+    </div>
+    <div style="padding-left:4mm;">
+      <div style="font-family:var(--sans);font-weight:800;font-size:22pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">6×</div>
+      <div style="font-size:6.5pt;font-weight:300;color:var(--ink-2);line-height:1.55;margin-top:1.5mm;">höhere Erfolgsquote haben Transformationsprojekte mit professionellem Change Management. <span style="color:var(--ink-3);">(Prosci, 2023)</span></div>
+    </div>
+  </div>
+
+  <div class="folio-row">
+    <div></div>
+    <div></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 3 — THESE: ZWEI INVESTITIONEN
+═══════════════════════════════════════════════ -->
+<div class="page p3">
+  <div class="folio-row" style="border-bottom:.3pt solid var(--rule); padding-bottom:5mm; margin-bottom:6mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Die Antwort</div>
+  </div>
+
+  <div class="p3-claim">
+    Erfolgreiche KI-Transformation<br>
+    braucht <span class="a">zwei Investitionen.</span><br>
+    <em>Nicht eine.</em>
+  </div>
+
+  <div class="p3-split">
+    <div class="p3-half">
+      <div>
+        <div class="p3-h-num">01</div>
+        <div class="p3-h-title">Technologie<br><span class="a">&amp; Struktur</span></div>
+        <div class="p3-h-body">
+          KI braucht ein Betriebssystem. Ein <strong>Regelwerk, das entscheidet</strong>, welche Projekte gestartet werden, wie Fortschritte gemessen werden und wie Wissen skaliert. Bevor das nächste Tool gekauft wird.
+        </div>
+      </div>
+      <div class="p3-h-tag">→ KAIRON</div>
+    </div>
+    <div class="p3-half">
+      <div>
+        <div class="p3-h-num">02</div>
+        <div class="p3-h-title">Menschen<br><span class="a">&amp; Führung</span></div>
+        <div class="p3-h-body">
+          KI braucht Adoption. <strong>Mitarbeitende müssen abgeholt werden</strong>, Widerstände müssen gelöst werden, Führungskräfte müssen KI verstehen und vorleben. Sonst bleibt die Organisation stehen.
+        </div>
+      </div>
+      <div class="p3-h-tag">→ KAIDOP &amp; KAILEAD</div>
+    </div>
+  </div>
+
+  <div class="p3-bridge">
+    <strong>new.thought</strong> hat drei Methoden entwickelt, die genau diese beiden Dimensionen abdecken: als einzelne Produkte oder als integriertes System.
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid var(--rule); padding-top:4mm; margin-top:5mm;">
+    <div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 8 — DAS SYSTEM
+═══════════════════════════════════════════════ -->
+<div class="page p8">
+  <div class="folio-row" style="border-bottom:.3pt solid var(--rule); padding-bottom:4mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Das System</div>
+  </div>
+
+  <div style="padding-top:5mm;">
+    <div class="p8-headline">
+      Drei Produkte<span class="a">.</span><br>
+      <em>Drei Probleme.</em>
+    </div>
+    <div class="p8-sub">
+      Jedes Produkt löst ein konkretes Problem — einzeln buchbar, sofort wirksam. Wer alle drei einsetzt, deckt die volle KI-Transformation ab.
+    </div>
+  </div>
+
+  <div class="p8-system">
+    <div class="p8-sys-row">
+      <div>
+        <div class="p8-sys-name">KAI<span class="a">RON</span></div>
+        <div class="p8-sys-role">Problem: Kein klares KI-System</div>
+      </div>
+      <div class="p8-sys-what">
+        KI-Initiativen laufen parallel, unkontrolliert, ohne Messung. <strong>KAIRON schafft Struktur:</strong> klare Rollen, Rhythmen und Entscheidungsrahmen auf allen Ebenen.
+      </div>
+      <div class="p8-sys-answers">
+        <div class="p8-sys-ans">Welche KI-Projekte starten wir?</div>
+        <div class="p8-sys-ans">Wie messen wir Erfolg?</div>
+        <div class="p8-sys-ans">Wie skalieren wir Wissen?</div>
+      </div>
+    </div>
+    <div class="p8-sys-row">
+      <div>
+        <div class="p8-sys-name">KAI<span class="a">DOP</span></div>
+        <div class="p8-sys-role">Problem: Mitarbeitende ziehen nicht mit</div>
+      </div>
+      <div class="p8-sys-what">
+        Tools werden eingeführt, aber nicht genutzt. <strong>KAIDOP holt Menschen ab:</strong> Widerstände werden sichtbar gemacht, Use Cases gemeinsam entwickelt, Adoption verankert.
+      </div>
+      <div class="p8-sys-answers">
+        <div class="p8-sys-ans">Wo sind die echten Use Cases?</div>
+        <div class="p8-sys-ans">Was blockiert unsere Mitarbeiter?</div>
+        <div class="p8-sys-ans">Wie schaffen wir Akzeptanz?</div>
+      </div>
+    </div>
+    <div class="p8-sys-row">
+      <div>
+        <div class="p8-sys-name">KAI<span class="a">LEAD</span></div>
+        <div class="p8-sys-role">Problem: Führung versteht KI nicht</div>
+      </div>
+      <div class="p8-sys-what">
+        Transformation scheitert, wenn sie nicht von oben getragen wird. <strong>KAILEAD befähigt Führungskräfte:</strong> KI verstehen, Wandel steuern, Veränderung vorleben.
+      </div>
+      <div class="p8-sys-answers">
+        <div class="p8-sys-ans">Wie führe ich durch KI-Wandel?</div>
+        <div class="p8-sys-ans">Was muss ich als FK verstehen?</div>
+        <div class="p8-sys-ans">Wie löse ich Widerstände auf?</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p8-note">
+    Welches Produkt passt zu Ihrer Situation? Das finden wir im <strong>KI-Lagebild</strong> heraus.
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid var(--rule); padding-top:4mm; margin-top:5mm;">
+    <div>Das System</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 4 — KAIRON
+═══════════════════════════════════════════════ -->
+<div class="page p4">
+  <div class="folio-row" style="border-bottom:.3pt solid var(--rule); padding-bottom:4mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Methodik 01 · Struktur</div>
+  </div>
+
+  <div style="padding-top:5mm;">
+    <div class="p4-label-row">
+      <span class="p4-prod-num">01 /</span>
+      <span class="p4-prod-type">AI Operating System</span>
+    </div>
+    <div class="p4-name">KAI<span class="a">RON</span></div>
+    <div class="p4-tagline">Das Betriebssystem für KI im Unternehmen. Kein einzelnes Tool, sondern das System, das alle KI-Aktivitäten koordiniert.</div>
+
+    <div class="p4-divider"></div>
+
+    <div class="p4-what">
+      <strong>Das Problem:</strong> KI-Initiativen starten mit Euphorie und enden nach 90 Tagen. Marketing nutzt ChatGPT, HR nutzt Copilot. Niemand lernt voneinander, niemand steuert das Ganze.<br><br>
+      <strong>KAIRON gibt Struktur:</strong> Ein übergeordnetes System mit <strong>festen Rollen</strong>, klaren Rhythmen und messbaren Metriken: von der Strategie bis zur operativen Umsetzung.
+    </div>
+  </div>
+
+  <div class="p4-cycles">
+    <div class="p4-cycle">
+      <div class="p4-cycle-k">// Ebene 01</div>
+      <div class="p4-cycle-n">Direction Cycle</div>
+      <div class="p4-cycle-d">Strategische Steuerung: Quartalsziele, OKRs und Entscheidungsrahmen für die Führungsebene.</div>
+    </div>
+    <div class="p4-cycle">
+      <div class="p4-cycle-k">// Ebene 02</div>
+      <div class="p4-cycle-n">Sprint Cycle</div>
+      <div class="p4-cycle-d">Operative Umsetzung: Use Cases werden in klaren Iterationen gebaut, getestet und integriert.</div>
+    </div>
+    <div class="p4-cycle">
+      <div class="p4-cycle-k">// Ebene 03</div>
+      <div class="p4-cycle-n">Compound Cycle</div>
+      <div class="p4-cycle-d">Organisationales Lernen: Wissen wird gesichert, repliziert und skaliert.</div>
+    </div>
+  </div>
+
+  <div style="margin: 5mm 0 0; padding: 4mm; background: var(--cream); display: flex; align-items: flex-start; gap: 5mm;">
+    <div style="flex:0 0 auto;">
+      <div style="font-family:var(--mono);font-size:5pt;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:1.5mm;">// Schlüsselrolle</div>
+      <div style="font-size:8pt;font-weight:700;letter-spacing:-.01em;color:var(--ink);">KI-Orchestrator</div>
+    </div>
+    <div style="width:.3pt;background:var(--rule);align-self:stretch;flex-shrink:0;"></div>
+    <div style="font-size:6pt;font-weight:300;color:var(--ink-2);line-height:1.7;">
+      Die zentrale Rolle im KAIRON-System koordiniert alle KI-Aktivitäten, sichert Qualität und treibt die interne Weiterentwicklung. <strong style="font-weight:500;color:var(--ink);">Intern ausbilden</strong> oder <strong style="font-weight:500;color:var(--ink);">new.thought übernimmt die Rolle</strong> interim.
+    </div>
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid var(--rule); padding-top:4mm; margin-top:4mm;">
+    <div>KAIRON</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 5 — KAIDOP (dark)
+═══════════════════════════════════════════════ -->
+<div class="page p5">
+  <div class="folio-row" style="border-bottom:.3pt solid var(--rule); padding-bottom:4mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Methodik 02 · Menschen</div>
+  </div>
+
+  <div style="padding-top:5mm;">
+    <div class="p5-label-row">
+      <span class="p5-prod-num">02 /</span>
+      <span class="p5-prod-type">KI Adoption Model</span>
+    </div>
+    <div class="p5-name">KAI<span class="a">DOP</span></div>
+    <div class="p5-tagline">Das Adoptionsmodell, das Mitarbeitende dort abholt, wo sie stehen, und sie dorthin führt, wo KI wirklich wirkt.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:.3pt solid var(--rule);margin-top:5mm;padding-top:4mm;">
+      <div style="padding-right:3mm;border-right:.3pt solid var(--rule);">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">+30 %</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">Produktivität bei strukturierter KI-Einführung mit Mitarbeiterbeteiligung <span style="opacity:.7">(McKinsey)</span></div>
+      </div>
+      <div style="padding:0 3mm;border-right:.3pt solid var(--rule);">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">74 %</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">der Mitarbeitenden nutzen KI-Tools häufiger, wenn sie in den Prozess eingebunden wurden <span style="opacity:.7">(Microsoft, 2024)</span></div>
+      </div>
+      <div style="padding-left:3mm;">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">4 Phasen</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">strukturierter Prozess von Readiness bis zur skalierten Umsetzung eigener Use Cases</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p5-divider"></div>
+
+  <div class="p5-phases">
+    <div class="p5-phase">
+      <div class="p5-pn">01</div>
+      <div>
+        <div class="p5-pt">Readiness Assessment</div>
+        <div class="p5-ps">Wo steht die Organisation?</div>
+      </div>
+      <div class="p5-pd">Technologie, Kultur, Kompetenz: eine ehrliche Bestandsaufnahme. Messbar, nicht gefühlt.</div>
+    </div>
+    <div class="p5-phase">
+      <div class="p5-pn">02</div>
+      <div>
+        <div class="p5-pt">Widerstände sichtbar machen</div>
+        <div class="p5-ps">Was blockiert, muss benannt werden</div>
+      </div>
+      <div class="p5-pd">Strukturierte Erhebung von Bedenken und Ängsten: anonym, offen, ohne Wertung. <strong>Was nicht ausgesprochen wird, kann nicht gelöst werden.</strong></div>
+    </div>
+    <div class="p5-phase">
+      <div class="p5-pn">03</div>
+      <div>
+        <div class="p5-pt">Use Cases identifizieren</div>
+        <div class="p5-ps">Potenziale, nicht Annahmen</div>
+      </div>
+      <div class="p5-pd">Gemeinsam mit den Mitarbeitenden: Wo steckt echtes Potenzial? Priorisiert nach Wirkung und Umsetzbarkeit.</div>
+    </div>
+    <div class="p5-phase">
+      <div class="p5-pn">04</div>
+      <div>
+        <div class="p5-pt">Ausgewählte Use Cases umsetzen</div>
+        <div class="p5-ps">Vom Pilot zur Praxis</div>
+      </div>
+      <div class="p5-pd">Pilotierung, Lernen, Skalierung. Mit klaren Erfolgskriterien und begleitenden Werkzeugen.</div>
+    </div>
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid var(--rule); padding-top:4mm; margin-top:5mm;">
+    <div>KAIDOP</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 6 — KAIDOP DELIVERY
+═══════════════════════════════════════════════ -->
+<div class="page p6">
+  <div class="folio-row" style="border-bottom:.3pt solid var(--rule); padding-bottom:4mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>KAIDOP · Delivery</div>
+  </div>
+
+  <div style="padding-top:5mm;">
+    <div class="p6-intro-headline">
+      Wir lehren die Methodik.<br>
+      <em>Oder wir kommen selbst.</em>
+    </div>
+    <div class="p6-intro-sub">
+      KAIDOP gibt es in zwei Formaten: je nachdem, ob Sie <strong>langfristige interne Kompetenz</strong> aufbauen oder <strong>sofort und fokussiert starten</strong> wollen.
+    </div>
+  </div>
+
+  <div class="p6-duo">
+    <div class="p6-panel">
+      <div class="p6-panel-tag">// Format A</div>
+      <div class="p6-panel-name">KAIDOP Manager</div>
+      <div class="p6-panel-for">Für interne Skalierung</div>
+      <div class="p6-panel-desc">
+        <strong>Wir lehren die Methodik.</strong>
+        Ihre eigenen Führungskräfte und Change Agents werden zu zertifizierten KAIDOP Managern und rollen das Modell eigenständig aus. Das schafft Kompetenz statt Abhängigkeit.
+      </div>
+      <div class="p6-panel-list">
+        <div class="p6-li">Zertifiziertes Ausbildungsprogramm</div>
+        <div class="p6-li">Vollständiges Methodenpaket inklusive</div>
+        <div class="p6-li">Nachhaltige, interne Kompetenz</div>
+      </div>
+    </div>
+    <div class="p6-panel right">
+      <div class="p6-panel-tag">// Format B</div>
+      <div class="p6-panel-name">KAIDOP Facilitation</div>
+      <div class="p6-panel-for">Für sofortigen Start</div>
+      <div class="p6-panel-desc">
+        <strong>Wir gehen direkt rein.</strong>
+        new.thought facilitiert den gesamten Prozess im Unternehmen: von der Erhebung bis zur Umsetzung der ersten Use Cases. Schnell, messbar, fokussiert.
+      </div>
+      <div class="p6-panel-list">
+        <div class="p6-li">Kein interner Vorlauf nötig</div>
+        <div class="p6-li">Externe Neutralität im Prozess</div>
+        <div class="p6-li">Klare Meilensteine &amp; Deliverables</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p6-tools">
+    <div class="p6-tools-title">// Werkzeuge im KAIDOP-Ökosystem</div>
+    <div class="p6-tools-grid">
+      <div class="p6-tool"><span><strong>Widerstandskarte:</strong> strukturierte Erhebungsvorlage</span></div>
+      <div class="p6-tool"><span><strong>Use-Case-Canvas:</strong> Bewertungsmatrix für Potenziale</span></div>
+      <div class="p6-tool"><span><strong>Adoptions-Dashboard:</strong> Fortschrittsübersicht für Führung</span></div>
+      <div class="p6-tool"><span><strong>Kommunikations-Templates:</strong> für interne Rollouts</span></div>
+    </div>
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid var(--rule); padding-top:4mm; margin-top:5mm;">
+    <div>KAIDOP Delivery</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 7 — KAILEAD
+═══════════════════════════════════════════════ -->
+<div class="page p7">
+  <div class="folio-row" style="border-bottom:.3pt solid rgba(0,0,0,.12); padding-bottom:4mm;">
+    <img src="logo-light.png" class="brand-logo" alt="new.thought">
+    <div>Methodik 03 · Leadership</div>
+  </div>
+
+  <div style="padding-top:5mm;">
+    <div class="p7-label-row">
+      <span class="p7-prod-num">03 /</span>
+      <span class="p7-prod-type">Leadership Programm</span>
+    </div>
+    <div class="p7-name">KAI<span class="a">LEAD</span></div>
+    <div class="p7-tagline">Das Führungsprogramm für das KI-Zeitalter. Technologie verstehen. Menschen führen. Beide Seiten, in einem Programm.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:.3pt solid rgba(0,0,0,.12);margin-top:5mm;padding-top:4mm;">
+      <div style="padding-right:3mm;border-right:.3pt solid rgba(0,0,0,.1);">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">2,4×</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">höhere Wahrscheinlichkeit, Unternehmensziele zu erreichen, bei gezielter Führungsentwicklung <span style="opacity:.7">(Deloitte)</span></div>
+      </div>
+      <div style="padding:0 3mm;border-right:.3pt solid rgba(0,0,0,.1);">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">13×</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">häufiger outperformen Unternehmen mit starken Führungsentwicklungsprogrammen ihre Wettbewerber <span style="opacity:.7">(DDI, 2023)</span></div>
+      </div>
+      <div style="padding-left:3mm;">
+        <div style="font-family:var(--sans);font-weight:800;font-size:16pt;letter-spacing:-.04em;color:var(--ink);line-height:1;">70 %</div>
+        <div style="font-size:5.5pt;font-weight:300;color:var(--ink-3);line-height:1.55;margin-top:1mm;">aller Transformationen scheitern an Menschen und Kultur, nicht an der Technologie <span style="opacity:.7">(McKinsey)</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p7-divider"></div>
+
+  <div class="p7-modules">
+    <div class="p7-module">
+      <div class="p7-mk">// Modul 01</div>
+      <div class="p7-mn">Technologie</div>
+      <div class="p7-ms">Verstehen, nicht programmieren</div>
+      <div class="p7-md">
+        Führungskräfte erhalten fundiertes, nicht-technisches KI-Verständnis: <strong>Was kann KI wirklich? Welche Risiken entstehen? Wo liegt der strategische Hebel?</strong><br><br>
+        Marktüberblick, Fallstudien, ROI-Bewertung, strategische Einordnung.
+      </div>
+    </div>
+    <div class="p7-module">
+      <div class="p7-mk">// Modul 02</div>
+      <div class="p7-mn">Menschen</div>
+      <div class="p7-ms">Führen durch Wandel</div>
+      <div class="p7-md">
+        Wie löst man Widerstände auf? Wie kommuniziert man Transformation glaubwürdig? Wie nimmt man Teams mit, ohne sie zu verlieren?<br><br>
+        <strong>Methodik:</strong> Auf Basis von KAIDOP: erprobt, strukturiert, partizipativ.
+      </div>
+    </div>
+  </div>
+
+  <div class="p7-outcomes">
+    <div class="p7-outcomes-title">// Was Führungskräfte mitnehmen</div>
+    <div class="p7-outcomes-grid">
+      <div class="p7-outcome"><span><strong>KI-Lagebild</strong> für die Einordnung im Wettbewerb</span></div>
+      <div class="p7-outcome"><span><strong>Entscheidungssicherheit</strong> bei KI-Investitionen</span></div>
+      <div class="p7-outcome"><span><strong>Kommunikationshandwerk</strong> für Veränderung</span></div>
+      <div class="p7-outcome"><span><strong>Widerstandsauflösung</strong> mit KAIDOP-Methode</span></div>
+      <div class="p7-outcome"><span><strong>Peer-Netzwerk</strong> erfahrener KI-Führungskräfte</span></div>
+      <div class="p7-outcome"><span><strong>Führungsklarheit</strong> in unsicheren Zeiten</span></div>
+    </div>
+  </div>
+
+  <div class="folio-row" style="border-top:.3pt solid rgba(0,0,0,.12); padding-top:4mm; margin-top:5mm;">
+    <div>KAILEAD</div>
+  </div>
+</div>
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE — DER EINSTIEG
+═══════════════════════════════════════════════ -->
+<div class="page pe">
+  <div class="folio-row light" style="border-bottom:.3pt solid rgba(255,255,255,.1); padding-bottom:4mm;">
+    <img src="logo-dark.png" class="brand-logo brand-logo-dark" alt="new.thought">
+    <div>Der Einstieg</div>
+  </div>
+
+  <!-- Positioning statement -->
+  <div style="padding-top:5mm; border-bottom:.3pt solid rgba(255,255,255,.1); padding-bottom:5mm;">
+    <div style="font-size:9pt;font-weight:300;color:rgba(255,255,255,.35);line-height:1.6;">Die meisten Unternehmen kaufen zuerst Tools.</div>
+    <div style="font-size:9pt;font-weight:600;color:#fff;line-height:1.6;letter-spacing:-.01em;">Wir beginnen mit Klarheit.</div>
+  </div>
+
+  <!-- Das Lagebild -->
+  <div style="padding-top:5mm; display:grid; grid-template-columns:1fr 1fr; gap:5mm; border-bottom:.3pt solid rgba(255,255,255,.1); padding-bottom:5mm;">
+    <div>
+      <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:2mm;">// Das Lagebild</div>
+      <div style="font-family:var(--sans);font-weight:700;font-size:13pt;color:#fff;letter-spacing:-.03em;line-height:1.1;margin-bottom:2mm;">30 Min<span style="color:var(--accent)">.</span></div>
+      <div style="font-size:6.5pt;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65;">Wir analysieren Ihre Situation und liefern eine priorisierte Handlungsliste mit konkreter Produktempfehlung.</div>
+    </div>
+    <div>
+      <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.22em;color:rgba(255,255,255,.25);text-transform:uppercase;margin-bottom:2mm;">// Ihr Deliverable</div>
+      <div class="pe-outcome" style="font-size:6.5pt;">Priorisierte KI-Handlungsliste</div>
+      <div class="pe-outcome" style="font-size:6.5pt;">Klare Empfehlung: KAIRON, KAIDOP oder KAILEAD</div>
+      <div class="pe-outcome" style="font-size:6.5pt;">Sofort umsetzbare nächste Schritte</div>
+    </div>
+  </div>
+
+  <!-- Three outcomes -->
+  <div style="padding-top:5mm; border-bottom:.3pt solid rgba(255,255,255,.1); padding-bottom:5mm;">
+    <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.22em;color:rgba(255,255,255,.25);text-transform:uppercase;margin-bottom:3mm;">// Je nach Diagnose empfehlen wir</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;">
+      <div style="padding:3mm;background:rgba(255,255,255,.04);">
+        <div style="font-size:7.5pt;font-weight:700;color:var(--accent);letter-spacing:-.01em;margin-bottom:1mm;">KAI<span style="color:#fff">RON</span></div>
+        <div style="font-size:5.5pt;font-weight:300;color:rgba(255,255,255,.4);line-height:1.55;">Wenn Struktur und ein einheitliches KI-System fehlen.</div>
+      </div>
+      <div style="padding:3mm;background:rgba(255,255,255,.04);">
+        <div style="font-size:7.5pt;font-weight:700;color:var(--accent);letter-spacing:-.01em;margin-bottom:1mm;">KAI<span style="color:#fff">DOP</span></div>
+        <div style="font-size:5.5pt;font-weight:300;color:rgba(255,255,255,.4);line-height:1.55;">Wenn Adoption stockt und Mitarbeitende nicht mitziehen.</div>
+      </div>
+      <div style="padding:3mm;background:rgba(255,255,255,.04);">
+        <div style="font-size:7.5pt;font-weight:700;color:var(--accent);letter-spacing:-.01em;margin-bottom:1mm;">KAI<span style="color:#fff">LEAD</span></div>
+        <div style="font-size:5.5pt;font-weight:300;color:rgba(255,255,255,.4);line-height:1.55;">Wenn Führung KI nicht versteht oder nicht dahintersteht.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="folio-row light" style="border-top:.3pt solid rgba(255,255,255,.1); padding-top:4mm; margin-top:auto;">
+    <div>Der Einstieg</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════
+     SEITE 9 — ÜBER NEW.THOUGHT + CLOSING
+═══════════════════════════════════════════════ -->
+<div class="page p9">
+  <div class="folio-row light" style="border-bottom:.3pt solid rgba(255,255,255,.1); padding-bottom:4mm;">
+    <img src="logo-dark.png" class="brand-logo brand-logo-dark" alt="new.thought">
+    <div>Über uns · Kontakt</div>
+  </div>
+
+  <!-- WHO WE ARE -->
+  <div style="padding-top:6mm; flex:1; display:flex; flex-direction:column; justify-content:space-between;">
+
+    <div>
+      <div style="font-family:var(--mono);font-size:6pt;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:4mm;">// Wer wir sind</div>
+      <div style="font-family:var(--sans);font-weight:800;font-size:22pt;letter-spacing:-.04em;line-height:.95;color:#fff;margin-bottom:5mm;">
+        <img src="logo-dark.png" style="height:38mm; mix-blend-mode:screen;" alt="new.thought">
+      </div>
+      <div style="font-size:8pt;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;max-width:118mm;">
+        new.thought ist eine Beratung für KI-Strategie und Transformation. Wir begleiten Unternehmen dabei, künstliche Intelligenz nicht nur einzuführen, sondern <strong style="color:rgba(255,255,255,.85);font-weight:400;">wirksam in den Unternehmensalltag zu integrieren</strong>: strukturiert, menschzentriert und mit messbarem Ergebnis.<br><br>
+        Unsere Überzeugung: KI-Transformation gelingt nur, wenn Technologie und Mensch gleichwertig adressiert werden. Dafür haben wir mit KAIRON, KAIDOP und KAILEAD drei praxiserprobte Methoden entwickelt, die genau diese beiden Dimensionen abbilden.
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:.3pt solid rgba(255,255,255,.12);margin-top:6mm;">
+        <div style="padding:4mm 4mm 4mm 0;border-right:.3pt solid rgba(255,255,255,.08);">
+          <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.5mm;">Standort</div>
+          <div style="font-size:7.5pt;font-weight:500;color:#fff;">Münster</div>
+          <div style="font-size:6.5pt;font-weight:300;color:rgba(255,255,255,.4);">Deutschland</div>
+        </div>
+        <div style="padding:4mm;border-right:.3pt solid rgba(255,255,255,.08);">
+          <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.5mm;">Fokus</div>
+          <div style="font-size:7.5pt;font-weight:500;color:#fff;">KI-Strategie</div>
+          <div style="font-size:6.5pt;font-weight:300;color:rgba(255,255,255,.4);">& Transformation</div>
+        </div>
+        <div style="padding:4mm 0 4mm 4mm;">
+          <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:1.5mm;">Gründer</div>
+          <div style="font-size:7.5pt;font-weight:500;color:#fff;">Nils Blache</div>
+          <div style="font-size:6.5pt;font-weight:300;color:rgba(255,255,255,.4);">Strategie & Methodik</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA + CONTACT -->
+    <div style="border-top:.3pt solid rgba(255,255,255,.12);padding-top:5mm;display:grid;grid-template-columns:1fr 1fr;gap:6mm;align-items:end;">
+      <div>
+        <div style="font-family:var(--mono);font-size:6pt;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:3mm;">// Nächster Schritt</div>
+        <div style="font-family:var(--sans);font-weight:700;font-size:13pt;letter-spacing:-.03em;line-height:1.05;color:#fff;margin-bottom:3mm;">
+          30-min<span style="color:var(--accent)">.</span> <em style="font-weight:200;font-style:italic;color:rgba(255,255,255,.5);">KI Reality</em> Check<span style="color:var(--accent)">.</span>
+        </div>
+        <div style="font-size:7pt;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65;">
+          Wir prüfen gemeinsam, ob ein Sprint mit new.thought für Ihr Unternehmen der richtige Einstieg ist.<br><br>
+          <span style="color:rgba(255,255,255,.25);font-family:var(--mono);font-size:6pt;letter-spacing:.1em;">Aktuell: 3 Plätze verfügbar.</span>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:var(--mono);font-size:5.5pt;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:2.5mm;">// Kontakt</div>
+        <div style="font-size:8pt;font-weight:300;color:rgba(255,255,255,.55);line-height:2;">
+          <a href="mailto:nils@new-thought.com" style="color:var(--accent);text-decoration:none;">nils@new-thought.com</a><br>
+          <span style="font-family:var(--mono);font-size:7pt;letter-spacing:.08em;color:rgba(255,255,255,.3);">www.new-thought.com</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

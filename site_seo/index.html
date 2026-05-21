@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Adoption &amp; Governance für den Mittelstand | new.thought</title>
+<meta name="description" content="KI strukturiert einführen: KAIRON bringt Governance, klare Rollen und Steuerung in Ihre KI-Projekte. Für Unternehmen im Mittelstand, die KI nicht nur nutzen — sondern steuern wollen.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.new-thought.com/">
+<meta property="og:title" content="KI-Adoption &amp; Governance für den Mittelstand | new.thought">
+<meta property="og:description" content="KI strukturiert einführen: KAIRON bringt Governance, klare Rollen und Steuerung in Ihre KI-Projekte — in 90 Tagen einsatzbereit.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="KI-Adoption &amp; Governance für den Mittelstand | new.thought">
+<meta name="twitter:description" content="KI strukturiert einführen: KAIRON bringt Governance, klare Rollen und Steuerung in Ihre KI-Projekte — in 90 Tagen einsatzbereit.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* ── Landing-specific ── */
+  .landing-hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 100px 0 80px; border-bottom: 1px solid var(--ink);
+  }
+  .landing-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-soft); margin-bottom: 32px;
+  }
+  .landing-tag .live { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 1.8s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(1.3);} }
+
+  .landing-headline {
+    font-family: var(--sans); font-weight: 600;
+    font-size: clamp(26px, 7.5vw, 120px);
+    line-height: 0.94; letter-spacing: -0.05em;
+    color: var(--ink); margin-bottom: 24px;
+    overflow-wrap: break-word;
+  }
+  .landing-headline em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
+  .landing-headline .accent { color: var(--accent); }
+  .landing-strike { position: relative; display: inline-block; }
+  .landing-strike::after {
+    content: ""; position: absolute; left: -3%; right: -3%; top: 56%; height: 7px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    animation: strike 1.2s 0.6s cubic-bezier(.4,1,.4,1) forwards;
+  }
+  @keyframes strike { to { transform: scaleX(1); } }
+
+  .landing-sub {
+    font-size: clamp(16px, 1.4vw, 20px); color: var(--ink-soft); line-height: 1.5;
+    max-width: 58ch; margin-bottom: 64px; font-weight: 400;
+  }
+  .landing-sub strong { color: var(--ink); font-weight: 600; }
+
+  /* ── Splitter ── */
+  .landing-splitter { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--ink); }
+
+  .split-card {
+    display: flex; flex-direction: column; gap: 20px; padding: 52px 48px;
+    text-decoration: none; color: inherit;
+    border-right: 1px solid var(--ink);
+    transition: background .2s;
+    position: relative; overflow: hidden;
+  }
+  .split-card:last-child { border-right: none; }
+  .split-card:hover { background: var(--bg-soft); }
+  .split-card::after {
+    content: "→";
+    position: absolute; bottom: 52px; right: 48px;
+    font-size: 28px; color: var(--rule); transition: color .2s, transform .2s;
+  }
+  .split-card:hover::after { color: var(--accent); transform: translateX(4px); }
+
+  .split-card-eyebrow {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 500;
+  }
+  .split-card--programme .split-card-eyebrow { color: var(--accent); }
+  .split-card--academy .split-card-eyebrow { color: #5e8ebc; }
+
+  .split-card-num {
+    font-family: var(--mono); font-size: 72px; font-weight: 700; line-height: 1;
+    letter-spacing: -0.04em; color: var(--rule); transition: color .2s;
+  }
+  .split-card:hover .split-card-num { color: var(--rule-soft); }
+
+  .split-card-title {
+    font-size: clamp(22px, 2.2vw, 32px); font-weight: 600; letter-spacing: -0.025em;
+    line-height: 1.15; color: var(--ink); max-width: 22ch;
+  }
+
+  .split-card-desc {
+    font-size: 15px; color: var(--ink-soft); line-height: 1.6; max-width: 40ch; flex: 1;
+  }
+
+  .split-card-tags {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
+  }
+  .split-card-tag {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+    padding: 5px 10px; border: 1px solid var(--rule); color: var(--ink-mute);
+  }
+
+  .split-card-cta {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600; margin-top: 8px;
+  }
+  .split-card--programme .split-card-cta { color: var(--accent); }
+  .split-card--academy .split-card-cta { color: #5e8ebc; }
+
+  /* ── Footer bar ── */
+  .landing-foot {
+    padding: 32px 0; border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--ink-mute); flex-wrap: wrap; gap: 16px;
+  }
+  .landing-foot a { color: inherit; text-decoration: none; }
+  .landing-foot a:hover { color: var(--accent); }
+
+  /* ── Nav landing ── */
+  nav.top .wrap.row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
+  .nav-landing { display: flex; gap: 32px; align-items: center; justify-content: center; }
+  .nav-landing > a {
+    font-family: var(--sans); font-size: 15px; letter-spacing: -0.02em; text-transform: none;
+    color: var(--ink); font-weight: 700; transition: color .15s;
+  }
+  .nav-landing > a:hover { color: var(--ink-soft); }
+  .nav-cta-wrap { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
+  @media(max-width: 760px) { nav.top .wrap.row { display: flex; } .nav-landing { display: none; } }
+
+  /* Dropdown (reused from programme.html style) */
+  .nav-landing .nav-dropdown { position: relative; }
+  .nav-landing .nav-dropdown-trigger {
+    font-family: var(--sans); font-size: 15px; font-weight: 700;
+    letter-spacing: -0.02em; color: var(--ink); cursor: pointer;
+    background: none; border: none; padding: 0; display: flex; align-items: center; gap: 5px; line-height: 1;
+    transition: color .15s;
+  }
+  .nav-landing .nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.4; margin-top: 1px; transition: transform .2s; }
+  .nav-landing .nav-dropdown.open .nav-dropdown-trigger::after { transform: rotate(180deg); }
+  .nav-landing .nav-dropdown-menu {
+    position: absolute; top: calc(100% + 10px); left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #fff; border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    min-width: 200px; padding: 6px 0;
+    opacity: 0; pointer-events: none;
+    transition: opacity .18s, transform .18s; z-index: 200;
+  }
+  .nav-landing .nav-dropdown.open .nav-dropdown-menu {
+    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
+  }
+  .nav-landing .nav-dropdown-menu a {
+    display: block; padding: 9px 20px; font-size: 13px; font-weight: 500;
+    color: var(--ink-soft); text-decoration: none; white-space: nowrap;
+    transition: color .12s, background .12s;
+  }
+  .nav-landing .nav-dropdown-menu a:hover { color: var(--ink); background: var(--bg-soft); }
+
+  @media(max-width: 760px) {
+    .landing-hero { padding: 80px 0 60px; min-height: auto; }
+    .landing-splitter { grid-template-columns: 1fr; }
+    .split-card { padding: 36px 28px; border-right: none; border-bottom: 1px solid var(--ink); }
+    .split-card:last-child { border-bottom: none; }
+    .split-card::after { bottom: 36px; right: 28px; }
+    .split-card-num { font-size: 48px; }
+  }
+  @media(max-width: 480px) {
+    .split-card { padding: 28px 20px; }
+    .split-card::after { bottom: 28px; right: 20px; }
+  }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.new-thought.com/#organization",
+      "name": "new.thought",
+      "url": "https://www.new-thought.com",
+      "logo": "https://www.new-thought.com/logo-dark.png",
+      "description": "new.thought unterstützt Unternehmen im Mittelstand bei der strukturierten KI-Einführung: KI-Adoption, KI-Governance und KI-Zertifizierungen für Manager und Führungskräfte.",
+      "foundingDate": "2024",
+      "founder": {
+        "@type": "Person",
+        "name": "Nils Blache",
+        "jobTitle": "Gründer & KI-Adoption Experte",
+        "url": "https://www.new-thought.com"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "nils@new-thought.com",
+        "telephone": "+49-1516-450933",
+        "contactType": "customer service",
+        "availableLanguage": "German"
+      },
+      "areaServed": ["DE", "AT", "CH"],
+      "knowsAbout": [
+        "KI-Adoption", "KI-Governance", "KI-Einführung Mittelstand",
+        "KI-Projektmanagement", "KI Change Management", "KI-Zertifizierung"
+      ],
+      "sameAs": []
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.new-thought.com/#website",
+      "url": "https://www.new-thought.com",
+      "name": "new.thought — KI-Adoption & Governance für den Mittelstand",
+      "publisher": { "@id": "https://www.new-thought.com/#organization" },
+      "inLanguage": "de-DE"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.new-thought.com/#webpage",
+      "url": "https://www.new-thought.com",
+      "name": "KI-Adoption & Governance für den Mittelstand | new.thought",
+      "description": "KI strukturiert einführen: KAIRON bringt Governance, klare Rollen und Steuerung in Ihre KI-Projekte. Für Mittelstandsunternehmen.",
+      "isPartOf": { "@id": "https://www.new-thought.com/#website" },
+      "about": { "@id": "https://www.new-thought.com/#organization" },
+      "inLanguage": "de-DE"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="wrap row">
+    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
+    <div class="nav-landing">
+      <div class="nav-dropdown" id="dd-programme">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-programme')">Programme</button>
+        <div class="nav-dropdown-menu">
+          <a href="programme.html#kairon">KAIRON</a>
+          <a href="programme.html#ki-adoption">KAIDOP</a>
+          <a href="programme.html#kailead">KAILEAD</a>
+          <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:4px 0;">
+          <a href="kairon-executive.html">Fractional AI Officer</a>
+        </div>
+      </div>
+      <a href="academy.html">Academy</a>
+      <a href="ressourcen.html">Ressourcen</a>
+    </div>
+    <div class="nav-cta-wrap">
+      <a class="nav-cta" href="programme.html#cta">Erstgespräch buchen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <a href="programme.html" class="mob-link" style="font-weight:600;">⬡ Programme — KI einführen</a>
+  <a href="academy.html" class="mob-link" style="font-weight:600;">◎ Academy — Methode lernen</a>
+  <a href="ressourcen.html" class="mob-link" style="font-weight:600;">◈ Ressourcen — KI-Wissen</a>
+  <a href="programme.html#cta" class="mob-cta">Erstgespräch buchen →</a>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="landing-hero" id="top">
+  <div class="wrap">
+
+
+    <div class="landing-tag">
+      <span class="live"></span>
+      Die meisten Unternehmen haben KI-Tools. Keines hat ein System.
+    </div>
+
+    <h1 class="landing-headline" aria-label="KI-Adoption und Governance für den Mittelstand — Der Umgang mit KI ist eine Organisations-Frage, keine Technologie-Frage.">
+      Der Umgang mit KI ist keine<br>
+      <span class="landing-strike">Technologie&#8209;Frage<span class="accent">.</span></span><br>
+      <em>Er ist eine Organisations&#8209;Frage<span class="accent">.</span></em>
+    </h1>
+
+    <p class="landing-sub">
+      Wählen Sie Ihren Einstiegspunkt.
+    </p>
+
+    <div class="landing-splitter">
+
+      <a href="programme.html" class="split-card split-card--programme">
+        <span class="split-card-eyebrow">Für Unternehmen</span>
+        <div class="split-card-num">01</div>
+        <h2 class="split-card-title">Wir wollen KI im Unternehmen einführen.</h2>
+        <p class="split-card-desc">Diagnose First. KAIRON strukturiert die KI-Einführung, KAIDOP löst Widerstände bei Mitarbeitenden, KAILEAD befähigt Führungskräfte.</p>
+        <div class="split-card-tags">
+          <span class="split-card-tag">KAIDOP</span>
+          <span class="split-card-tag">KAIRON</span>
+          <span class="split-card-tag">KAILEAD</span>
+        </div>
+        <span class="split-card-cta">Programm finden</span>
+      </a>
+
+      <a href="academy.html" class="split-card split-card--academy">
+        <span class="split-card-eyebrow">Für Manager und KI Interessierte</span>
+        <div class="split-card-num">02</div>
+        <h2 class="split-card-title">Wir wollen die Methode lernen und intern anwenden.</h2>
+        <p class="split-card-desc">Zwei Zertifizierungen: KAIRON KI-Orchestrator für interne Manager und KAIDOP Manager für Führungskräfte. Wissen, das im Unternehmen bleibt.</p>
+        <div class="split-card-tags">
+          <span class="split-card-tag">KAIRON KI-Orchestrator</span>
+          <span class="split-card-tag">KAIDOP Manager</span>
+          <span class="split-card-tag">In-Company</span>
+        </div>
+        <span class="split-card-cta">Ausbildung ansehen</span>
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ====== FOOT ====== -->
+<footer>
+  <div class="wrap row">
+    <div>© new.thought</div>
+    <div style="display:flex; gap:24px; flex-wrap:wrap;">
+      <a href="programme.html">Programme</a>
+      <a href="programme.html#kairon">KAIRON</a>
+      <a href="programme.html#ki-adoption">KAIDOP</a>
+      <a href="programme.html#kailead">KAILEAD</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
+      <a href="academy.html">Academy</a>
+      <a href="programme.html#cta">KI Readiness</a>
+    </div>
+    <div style="display:flex; gap:20px;">
+      <button onclick="openModal('modal-impressum')" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); background:none; border:none; cursor:pointer; padding:0; transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Impressum</button>
+      <button onclick="openModal('modal-datenschutz')" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); background:none; border:none; cursor:pointer; padding:0; transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Datenschutz</button>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== IMPRESSUM MODAL ====== -->
+<div class="modal-overlay" id="modal-impressum" onclick="closeModalOnBg(event, 'modal-impressum')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491516450933">+49 1516 450933</a><br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven</p>
+    <h3>Haftungsausschluss</h3>
+    <p>Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte.</p>
+  </div>
+</div>
+
+<!-- ====== DATENSCHUTZ MODAL ====== -->
+<div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOnBg(event, 'modal-datenschutz')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Datenschutzerklärung</h2>
+    <h3>Verantwortlicher</h3>
+    <p>Nils Blache, c/o Postflex #8293, Emsdettener Str. 10, 48268 Greven.<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Diese Website erhebt keine personenbezogenen Daten durch Tracking, Cookies oder Analyse-Tools.</p>
+    <h3>Hosting</h3>
+    <p>Diese Website wird statisch gehostet. Beim Aufruf werden technisch bedingt IP-Adresse und Zugriffszeit kurzfristig im Server-Log gespeichert.</p>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Kontakt: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+  </div>
+</div>
+
+<script>
+  // Hamburger
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navMobile.classList.toggle('open');
+  });
+  navMobile.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navMobile.classList.remove('open');
+    });
+  });
+
+  // Modals
+  function openModal(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+  function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = ''; }
+  function closeModalOnBg(e, id) { if (e.target === e.currentTarget) closeModal(id); }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay').forEach(m => { m.style.display='none'; }); document.body.style.overflow=''; } });
+
+  // Nav dropdown
+  function toggleDropdown(id) {
+    document.querySelectorAll('.nav-dropdown').forEach(d => { if (d.id !== id) d.classList.remove('open'); });
+    document.getElementById(id).classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+  });
+  window.toggleDropdown = toggleDropdown;
+</script>
+
+</body>
+</html>

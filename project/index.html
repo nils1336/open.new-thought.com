@@ -1,0 +1,1376 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>new.thought — KAIRON OS · AI Operating System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #ffffff;
+    --bg-soft:   #f7f7f5;
+    --bg-deep:   #0e0e0c;
+    --ink:       #0e0e0c;
+    --ink-soft:  #3d3d38;
+    --ink-mute:  #7a7a74;
+    --rule:      #e4e4df;
+    --rule-soft: #efefe9;
+    --accent:    #e85c2a;   /* warm editorial orange, matches sales deck tone */
+    --accent-ink:#c44716;
+    --accent-soft:#fff1ea;
+    --good:      #2f7a4f;
+    --warn:      #b8331a;
+    --sans: 'Inter', -apple-system, system-ui, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
+  ::selection{background:var(--ink); color:var(--bg);}
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  button{font:inherit; cursor:pointer; background:none; border:none; color:inherit;}
+  input{font:inherit;}
+
+  .wrap{max-width:1280px; margin:0 auto; padding:0 40px;}
+  @media(max-width:720px){.wrap{padding:0 20px;}}
+
+  /* ============ DECK-STYLE LABELS ============ */
+  .chap{
+    font-family:var(--mono); font-weight:500; font-size:11px;
+    letter-spacing:0.28em; text-transform:uppercase; color:var(--ink-mute);
+    display:inline-flex; align-items:baseline; gap:18px;
+  }
+  .chap .num{ color:var(--ink); letter-spacing:0.35em; font-weight:500;}
+  .slash{ color:var(--accent); font-family:var(--mono); font-weight:500; letter-spacing:0.1em; font-size:11px;}
+  .kicker{
+    font-family:var(--mono); font-size:10px; font-weight:500;
+    letter-spacing:0.3em; text-transform:uppercase; color:var(--ink-mute);
+    display:inline-block;
+  }
+  .kicker::before{ content:"/ / "; color:var(--accent); margin-right:4px;}
+
+  .brace-head{
+    font-family:var(--sans); font-weight:700; font-size:18px;
+    color:var(--ink); letter-spacing:-0.02em;
+  }
+  .brace-head .b{ color:var(--accent); font-family:var(--mono); font-weight:500;}
+
+  /* ============ TYPOGRAPHY ============ */
+  h1.display{
+    font-family:var(--sans); font-weight:600;
+    font-size:clamp(44px, 6.8vw, 108px);
+    line-height:0.96; letter-spacing:-0.045em;
+    text-wrap:balance; color:var(--ink);
+  }
+  h1.display .period{color:var(--accent);}
+  h1.display em{ font-style:italic; font-weight:400;}
+
+  h2.section-title{
+    font-family:var(--sans); font-weight:600;
+    font-size:clamp(36px, 4.6vw, 68px); line-height:1.02;
+    letter-spacing:-0.035em; text-wrap:balance;
+  }
+  h2.section-title em{ font-style:italic; font-weight:400;}
+  h2.section-title .accent{ color:var(--accent);}
+  h2.section-title .period{color:var(--accent);}
+
+  h3.sub{
+    font-family:var(--sans); font-weight:500;
+    font-size:clamp(24px, 2.2vw, 32px); line-height:1.15;
+    letter-spacing:-0.025em;
+  }
+
+  p.lead{ font-size:19px; line-height:1.5; color:var(--ink-soft); max-width:62ch; text-wrap:pretty; font-weight:400;}
+  p{ text-wrap:pretty; }
+  strong{font-weight:600;}
+
+  /* ============ TOP BAR (deck "folio" style) ============ */
+  .folio-top{
+    border-bottom:1px solid var(--ink);
+    padding:10px 0; font-family:var(--mono); font-size:10px;
+    letter-spacing:0.25em; text-transform:uppercase; color:var(--ink);
+  }
+  .folio-top .row{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .folio-top .left{display:flex; gap:24px;}
+  .folio-top .right{color:var(--ink-mute);}
+
+  nav.top{
+    position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.94);
+    backdrop-filter:saturate(140%) blur(10px);
+    -webkit-backdrop-filter:saturate(140%) blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav.top .row{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  .brand{ font-family:var(--sans); font-weight:700; font-size:18px; letter-spacing:-0.02em; color:var(--ink);}
+  .brand .b{ color:var(--accent); font-family:var(--mono); font-weight:500;}
+  .nav-links{display:flex; gap:28px;}
+  .nav-links a{font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-soft); transition:color .15s;}
+  .nav-links a:hover{color:var(--accent);}
+  .nav-cta{
+    font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase;
+    background:var(--ink); color:var(--bg); padding:12px 18px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:background .15s;
+  }
+  .nav-cta:hover{background:var(--accent);}
+  .nav-cta::after{content:"→"; font-size:13px;}
+  @media(max-width:760px){ .nav-links{display:none;} }
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease-out, transform .7s ease-out;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  .stag > *{opacity:0; transform:translateY(18px); transition:opacity .6s ease-out, transform .6s ease-out;}
+  .stag.in > *{opacity:1; transform:translateY(0);}
+  .stag.in > *:nth-child(1){transition-delay:.05s;}
+  .stag.in > *:nth-child(2){transition-delay:.12s;}
+  .stag.in > *:nth-child(3){transition-delay:.19s;}
+  .stag.in > *:nth-child(4){transition-delay:.26s;}
+  .stag.in > *:nth-child(5){transition-delay:.33s;}
+  .stag.in > *:nth-child(6){transition-delay:.40s;}
+
+  /* ============ SLIDE FOOTER ============ */
+  .slide-foot{
+    margin-top:80px; padding:14px 0; border-top:1px solid var(--ink);
+    display:flex; justify-content:space-between; align-items:center;
+    font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-mute);
+  }
+  .slide-foot .l{color:var(--ink);}
+  .slide-foot .r::before{content:"/ /"; color:var(--accent); margin-right:8px;}
+
+  /* ============ HERO (slide 01 style) ============ */
+  .hero{ padding:60px 0 100px; border-bottom:1px solid var(--ink);}
+  .hero-top-bar{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding-bottom:28px; margin-bottom:56px; border-bottom:1px solid var(--rule);
+    font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute);
+  }
+  .hero-tag-sys{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-soft);
+    margin-bottom:28px;
+  }
+  .hero-tag-sys .live{ width:8px; height:8px; background:var(--accent); border-radius:50%; animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{opacity:1; transform:scale(1);} 50%{opacity:0.4; transform:scale(1.3);}}
+
+  .hero-headline{
+    font-family:var(--sans); font-weight:600;
+    font-size:clamp(48px, 8.2vw, 128px);
+    line-height:0.93; letter-spacing:-0.05em;
+    color:var(--ink);
+  }
+  .hero-headline .l2{ display:block;}
+  .hero-headline em{ font-style:italic; font-weight:400; color:var(--ink-soft);}
+  .hero-headline .period{color:var(--accent);}
+  .hero-headline .strike{position:relative; display:inline-block;}
+  .hero-headline .strike::after{
+    content:""; position:absolute; left:-3%; right:-3%; top:56%; height:7px;
+    background:var(--accent); transform:scaleX(0); transform-origin:left;
+    animation:strike 1.2s 0.6s cubic-bezier(.4,1,.4,1) forwards;
+  }
+  @keyframes strike{to{transform:scaleX(1);}}
+
+  .hero-sub-bar{
+    display:grid; grid-template-columns:60% 40%; gap:40px;
+    margin-top:52px; padding-top:36px; border-top:1px solid var(--rule);
+  }
+  .hero-sub-bar .txt{font-size:18px; line-height:1.5; color:var(--ink-soft); max-width:56ch;}
+  .hero-sub-bar .txt strong{color:var(--ink); font-weight:600;}
+  .hero-cta-row{display:flex; flex-direction:column; gap:14px; align-items:flex-start;}
+  .btn-primary{
+    background:var(--ink); color:var(--bg);
+    font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase;
+    padding:18px 26px; display:inline-flex; align-items:center; gap:14px;
+    transition:background .15s, transform .15s;
+  }
+  .btn-primary:hover{background:var(--accent); transform:translateY(-2px);}
+  .btn-primary::after{content:"→"; font-family:var(--sans); font-size:16px; letter-spacing:0;}
+  .btn-ghost{
+    font-family:var(--mono); font-size:12px; font-weight:500; letter-spacing:0.2em; text-transform:uppercase;
+    color:var(--ink); padding:18px 0; display:inline-flex; gap:10px; align-items:center;
+    border-bottom:1px solid var(--ink); transition:color .15s, border-color .15s;
+  }
+  .btn-ghost:hover{color:var(--accent); border-color:var(--accent);}
+  .btn-ghost::after{content:"→"; font-family:var(--sans); font-size:14px; letter-spacing:0;}
+  @media(max-width:820px){.hero-sub-bar{grid-template-columns:1fr; gap:28px;}}
+
+  /* ============ SECTIONS ============ */
+  section.slide{ padding:120px 0; border-bottom:1px solid var(--ink); position:relative;}
+  section.slide.dark{ background:var(--bg-deep); color:#f3f2ee; border-bottom-color:transparent;}
+  section.slide.dark .chap{color:rgba(255,255,255,0.55);}
+  section.slide.dark .chap .num{color:#f3f2ee;}
+  section.slide.dark .kicker{color:rgba(255,255,255,0.55);}
+  section.slide.dark h2.section-title{color:#f3f2ee;}
+  section.slide.dark h2.section-title em{color:rgba(255,255,255,0.55);}
+  section.slide.dark p.lead{color:rgba(255,255,255,0.68);}
+  section.slide.dark p.lead strong{color:#fff;}
+  section.slide.dark .slide-foot{color:rgba(255,255,255,0.4); border-color:rgba(255,255,255,0.15);}
+  section.slide.dark .slide-foot .l{color:#f3f2ee;}
+  @media(max-width:900px){section.slide{padding:80px 0;}}
+
+  .slide-header{
+    display:grid; grid-template-columns:1fr; gap:24px; margin-bottom:72px;
+    padding-bottom:32px; border-bottom:1px solid var(--rule);
+  }
+  section.slide.dark .slide-header{border-bottom-color:rgba(255,255,255,0.12);}
+  .slide-header .top{display:flex; justify-content:space-between; align-items:baseline; gap:24px; flex-wrap:wrap;}
+  .slide-header h2{max-width:22ch;}
+  .slide-header p.lead{margin-top:8px;}
+
+  /* ============ HERO META BAR ============ */
+  .hero-meta{
+    display:grid; grid-template-columns:repeat(4,1fr);
+    gap:0; margin-top:72px;
+    border-top:1px solid var(--ink);
+  }
+  .hero-meta .cell{
+    padding:28px 24px 24px 0; border-right:1px solid var(--rule);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .hero-meta .cell:last-child{border-right:none;}
+  .hero-meta .cell:not(:first-child){padding-left:24px;}
+  .hero-meta .cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-mute);}
+  .hero-meta .cell .v{font-size:48px; font-weight:600; letter-spacing:-0.035em; line-height:1; color:var(--ink); font-feature-settings:"tnum";}
+  .hero-meta .cell .v .u{font-size:18px; color:var(--ink-mute); font-weight:500; margin-left:4px;}
+  .hero-meta .cell .d{font-size:13px; color:var(--ink-soft); line-height:1.5;}
+  @media(max-width:760px){.hero-meta{grid-template-columns:1fr 1fr;} .hero-meta .cell:nth-child(2n){border-right:none;}}
+
+  /* ============ MYTHS ROW (slide 02 style) ============ */
+  .myths{
+    display:grid; grid-template-columns:repeat(3,1fr) 1.3fr; gap:0;
+    border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+  }
+  .myth{
+    padding:32px 28px; border-right:1px solid var(--rule);
+    display:flex; flex-direction:column; gap:14px;
+    position:relative;
+  }
+  .myth:last-child{border-right:none;}
+  .myth .tag{font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-mute);}
+  .myth.bad .tag::before{content:"— "; color:var(--warn);}
+  .myth .word{font-family:var(--sans); font-weight:600; font-size:38px; letter-spacing:-0.03em; line-height:1;}
+  .myth.bad .word{text-decoration:line-through; text-decoration-color:var(--warn); text-decoration-thickness:3px;}
+  .myth .d{font-size:14px; color:var(--ink-soft); line-height:1.5;}
+  .myth.truth{background:var(--bg-deep); color:#f3f2ee;}
+  .myth.truth .tag{color:var(--accent);}
+  .myth.truth .word{color:#f3f2ee; font-weight:700;}
+  .myth.truth .d{color:rgba(255,255,255,0.7);}
+  .myth.truth .d strong{color:#fff;}
+  @media(max-width:900px){.myths{grid-template-columns:1fr 1fr;} .myth{border-right:none; border-bottom:1px solid var(--rule);}}
+
+  /* ============ PRINCIPLES GRID ============ */
+  .principles{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+  }
+  .principle{
+    padding:32px 28px 32px 0; border-right:1px solid var(--rule);
+    display:flex; flex-direction:column; gap:16px; min-height:260px;
+    transition:background .25s;
+  }
+  .principle:last-child{border-right:none;}
+  .principle:not(:first-child){padding-left:28px;}
+  .principle:hover{background:var(--bg-soft);}
+  .principle .n{font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); font-weight:500;}
+  .principle h5{font-family:var(--sans); font-size:34px; font-weight:600; letter-spacing:-0.025em; line-height:1;}
+  .principle p{font-size:14px; color:var(--ink-soft); line-height:1.55;}
+  .principle .rule{
+    margin-top:auto; padding:10px 12px; background:var(--ink); color:#fff;
+    font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; font-weight:500;
+    align-self:flex-start;
+  }
+  @media(max-width:900px){.principles{grid-template-columns:1fr 1fr;} .principle:nth-child(2){border-right:none;} .principle:nth-child(1), .principle:nth-child(2){border-bottom:1px solid var(--rule);}}
+  @media(max-width:540px){.principles{grid-template-columns:1fr;} .principle{border-right:none !important; border-bottom:1px solid var(--rule); padding:24px 0 !important;}}
+
+  /* ============ SYMPTOMS (pipeline-table style) ============ */
+  .symp-table{
+    border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+  }
+  .symp-row{
+    display:grid; grid-template-columns:60px 1fr 1.2fr 140px;
+    gap:24px; padding:28px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:baseline; cursor:default;
+    transition:background .2s, padding-left .2s;
+  }
+  .symp-row:last-child{border-bottom:none;}
+  .symp-row:hover{background:var(--bg-soft); padding-left:16px; padding-right:16px;}
+  .symp-row .idx{font-family:var(--mono); font-size:11px; letter-spacing:0.2em; color:var(--ink-mute); font-weight:500;}
+  .symp-row .quote{font-family:var(--sans); font-style:italic; font-weight:400; font-size:24px; line-height:1.25; letter-spacing:-0.015em;}
+  .symp-row .verdict{font-size:14px; color:var(--ink-soft); line-height:1.55;}
+  .symp-row .verdict::before{content:"→ "; color:var(--warn); font-weight:600;}
+  .symp-row .tag{font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink); font-weight:500; text-align:right;}
+  @media(max-width:900px){.symp-row{grid-template-columns:1fr; gap:8px;}}
+
+  /* ============ REFRAME BAND ============ */
+  .reframe-band{
+    margin-top:72px; padding:56px 48px;
+    border:1px solid var(--ink); background:var(--bg);
+    display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center;
+    position:relative;
+  }
+  .reframe-band::before{
+    content:""; position:absolute; inset:8px; border:1px solid var(--rule); pointer-events:none;
+  }
+  .reframe-band .big{font-family:var(--sans); font-weight:500; font-size:clamp(28px, 3.5vw, 46px); line-height:1.1; letter-spacing:-0.025em;}
+  .reframe-band .big em{font-style:italic; color:var(--accent); font-weight:500;}
+  .reframe-band .ex{font-size:15px; line-height:1.65; color:var(--ink-soft); position:relative;}
+  .reframe-band .ex strong{display:block; font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; margin-bottom:12px; color:var(--accent); font-weight:500;}
+  @media(max-width:820px){.reframe-band{grid-template-columns:1fr; padding:36px 28px;}}
+
+  /* ============ OS SCHAUBILD (3-Ebenen · central diagram) ============ */
+  .schaubild{
+    margin-top:16px; padding:56px 48px 40px;
+    border:1px solid var(--ink); background:var(--bg);
+  }
+  .schaubild-inner{
+    position:relative; max-width:960px; margin:0 auto;
+    aspect-ratio: 960 / 620;
+  }
+  .schaubild-svg{position:absolute; inset:0; width:100%; height:100%; pointer-events:none;}
+  .schaubild-svg .ring{fill:none; stroke:var(--rule); stroke-width:1; stroke-dasharray:3 5;}
+  .schaubild-svg .flow{fill:none; stroke:var(--accent); stroke-width:1.6; stroke-dasharray:6 6; opacity:0.8;}
+  .schaubild-svg .flow.animated{animation:dashflow 3s linear infinite;}
+  @keyframes dashflow{to{stroke-dashoffset:-48;}}
+
+  .node{
+    position:absolute; background:var(--bg); border:1.5px solid var(--ink);
+    padding:14px 18px; display:flex; flex-direction:column; gap:4px; align-items:flex-start;
+    cursor:default; transition:transform .25s, box-shadow .25s, background .25s;
+    min-width:140px;
+  }
+  .node:hover{transform:translate(-50%,-50%) scale(1.05); box-shadow:0 16px 36px -16px rgba(0,0,0,0.3); z-index:4;}
+  .node .t{font-family:var(--mono); font-size:9px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-mute); font-weight:500;}
+  .node .n{font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:-0.01em; color:var(--ink);}
+
+  .node.center{background:var(--ink); color:#f3f2ee; padding:24px 28px; min-width:220px; align-items:center;}
+  .node.center .t{color:rgba(255,255,255,0.55);}
+  .node.center .n{color:#f3f2ee; font-size:22px; font-weight:700; letter-spacing:-0.02em;}
+  .node.center .n .b{color:var(--accent); font-family:var(--mono); font-weight:500;}
+
+  .node.dir{border-color:var(--ink);}
+  .node.dir .t{color:var(--ink);}
+  .node.sprint{border-color:var(--ink);}
+  .node.compound{border-color:var(--accent); background:var(--accent-soft);}
+  .node.compound .t{color:var(--accent-ink);}
+
+  .layer-strip{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:0;
+    margin-bottom:28px; border-top:1px solid var(--ink); border-bottom:1px solid var(--rule);
+  }
+  .layer-strip .lt{
+    padding:14px 16px; border-right:1px solid var(--rule);
+    font-family:var(--mono); font-size:10px; font-weight:500;
+    letter-spacing:0.22em; text-transform:uppercase; color:var(--ink);
+    display:flex; align-items:center; gap:12px;
+  }
+  .layer-strip .lt:last-child{border-right:none;}
+  .layer-strip .lt .dot{width:10px; height:10px; background:var(--ink); border-radius:50%;}
+  .layer-strip .lt.c .dot{background:var(--accent);}
+  @media(max-width:720px){ .layer-strip{grid-template-columns:1fr;} .layer-strip .lt{border-right:none; border-bottom:1px solid var(--rule);} .layer-strip .lt:last-child{border-bottom:none;} }
+
+  .schaubild-legend{
+    display:flex; flex-wrap:wrap; gap:32px; justify-content:space-between;
+    margin-top:36px; padding-top:24px; border-top:1px solid var(--rule);
+    font-family:var(--mono); font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);
+  }
+  .schaubild-legend .l{display:flex; align-items:center; gap:10px;}
+  .schaubild-legend .sw{width:18px; height:18px; border:1.5px solid var(--ink);}
+  .schaubild-legend .sw.c{background:var(--accent-soft); border-color:var(--accent);}
+  .schaubild-legend .sw.i{background:var(--ink);}
+
+  @media(max-width:900px){
+    .schaubild{padding:32px 20px;}
+    .schaubild-inner{aspect-ratio:auto; min-height:680px;}
+  }
+
+  /* ============ CEREMONIES TABLE ============ */
+  .ceremony-table{
+    margin-top:32px; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+    width:100%; border-collapse:collapse;
+  }
+  .ceremony-table thead th{
+    padding:18px 12px; text-align:left; border-bottom:1px solid var(--ink);
+    font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink); font-weight:500;
+  }
+  .ceremony-table thead th:first-child{width:60px;}
+  .ceremony-table tbody tr{border-bottom:1px solid var(--rule); transition:background .2s;}
+  .ceremony-table tbody tr:last-child{border-bottom:none;}
+  .ceremony-table tbody tr:hover{background:var(--bg-soft);}
+  .ceremony-table tbody td{padding:18px 12px; font-size:15px; vertical-align:top;}
+  .ceremony-table tbody td.n{font-family:var(--mono); color:var(--ink-mute); font-size:12px;}
+  .ceremony-table tbody td.name{font-weight:600; letter-spacing:-0.01em;}
+  .ceremony-table tbody td.rhy, .ceremony-table tbody td.dur{font-family:var(--mono); font-size:12px; color:var(--ink-soft); letter-spacing:0.05em;}
+  .ceremony-table tbody td.lvl{font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); font-weight:500;}
+  .ceremony-table tbody td.dec{color:var(--ink-soft);}
+  @media(max-width:820px){
+    .ceremony-table thead{display:none;}
+    .ceremony-table tbody tr{display:grid; grid-template-columns:50px 1fr; gap:4px 16px; padding:20px 0;}
+    .ceremony-table tbody td{padding:0; border:none !important;}
+    .ceremony-table tbody td.rhy,.ceremony-table tbody td.dur,.ceremony-table tbody td.lvl,.ceremony-table tbody td.dec{grid-column:2; font-size:13px;}
+  }
+
+  /* ============ SERVICES ============ */
+  .services{border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);}
+  .service{
+    display:grid; grid-template-columns:60px 1fr 1.4fr 180px;
+    gap:32px; padding:32px 0;
+    border-bottom:1px solid var(--rule);
+    align-items:start; cursor:pointer;
+    transition:padding .2s, background .2s;
+  }
+  .service:last-child{border-bottom:none;}
+  .service:hover{padding-left:16px; padding-right:16px; background:var(--bg-soft);}
+  .service .stage{font-family:var(--mono); font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); font-weight:500; padding-top:6px;}
+  .service .name{font-family:var(--sans); font-size:28px; font-weight:600; letter-spacing:-0.025em; line-height:1.1;}
+  .service .name .sub{display:block; font-family:var(--mono); font-size:10px; color:var(--ink-mute); margin-top:8px; letter-spacing:0.2em; text-transform:uppercase; font-weight:500;}
+  .service .pitch{font-size:15px; color:var(--ink-soft); line-height:1.6; max-width:54ch;}
+  .service .pitch strong{color:var(--ink); font-weight:600;}
+  .service .meta-col{display:flex; flex-direction:column; gap:6px; font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase;}
+  .service .meta-col .r{display:flex; justify-content:space-between; gap:12px;}
+  .service .meta-col .r span:first-child{color:var(--ink-mute);}
+  .service .meta-col .r span:last-child{color:var(--ink); text-align:right; font-weight:500;}
+  @media(max-width:900px){.service{grid-template-columns:60px 1fr; gap:16px; padding:24px 0;} .service .pitch, .service .meta-col{grid-column:2;} .service .meta-col{flex-direction:row; flex-wrap:wrap; gap:18px;} .service .meta-col .r{flex-direction:column; gap:2px;}}
+
+  /* ============ CALCULATOR ============ */
+  .calc-box{
+    border:1px solid var(--ink); background:var(--bg-deep); color:#f3f2ee;
+    padding:56px; display:grid; grid-template-columns:1fr 1fr; gap:56px;
+    position:relative; overflow:hidden;
+  }
+  .calc-box::before{
+    content:""; position:absolute; top:-30%; right:-20%; width:700px; height:700px;
+    background:radial-gradient(circle, rgba(232,92,42,0.25), transparent 60%);
+    pointer-events:none; animation:floatGlow 10s ease-in-out infinite;
+  }
+  @keyframes floatGlow{0%,100%{transform:translate(0,0);} 50%{transform:translate(-30px,30px);}}
+  .calc-controls{position:relative; z-index:1; display:flex; flex-direction:column; gap:30px;}
+  .calc-head{font-family:var(--mono); font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:var(--accent); font-weight:500; margin-bottom:0;}
+  .calc-title{font-family:var(--sans); font-weight:500; font-size:22px; letter-spacing:-0.02em; color:#f3f2ee; margin-top:8px;}
+  .calc-input{display:flex; flex-direction:column; gap:10px;}
+  .calc-input .lr{display:flex; justify-content:space-between; align-items:baseline;}
+  .calc-input .lbl{font-size:14px; color:rgba(255,255,255,0.85); font-weight:500;}
+  .calc-input .val{font-family:var(--mono); font-size:16px; font-weight:600; color:var(--accent);}
+  .calc-input input[type=range]{
+    -webkit-appearance:none; appearance:none; width:100%; height:5px;
+    background:rgba(255,255,255,0.1); outline:none;
+  }
+  .calc-input input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none; width:20px; height:20px; border-radius:50%;
+    background:#fff; cursor:pointer; border:3px solid var(--accent);
+    transition:transform .15s, box-shadow .15s;
+  }
+  .calc-input input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15); box-shadow:0 0 0 8px rgba(232,92,42,0.2);}
+  .calc-input input[type=range]::-moz-range-thumb{width:20px; height:20px; border-radius:50%; background:#fff; border:3px solid var(--accent);}
+  .calc-input .scale{display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; color:rgba(255,255,255,0.4); letter-spacing:0.08em;}
+
+  .calc-results{position:relative; z-index:1; display:flex; flex-direction:column; gap:22px;}
+  .calc-savings{
+    font-family:var(--sans); font-weight:600; font-size:clamp(56px, 6vw, 92px);
+    letter-spacing:-0.045em; line-height:0.9; color:#fff; font-feature-settings:"tnum";
+  }
+  .calc-savings .currency{font-size:0.4em; color:rgba(255,255,255,0.5); margin-right:8px; vertical-align:top; line-height:1;}
+  .calc-savings .per{display:block; font-family:var(--mono); font-size:11px; font-weight:500; color:rgba(255,255,255,0.55); margin-top:14px; letter-spacing:0.18em; text-transform:uppercase;}
+  .calc-breakdown{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:rgba(255,255,255,0.08);}
+  .calc-cell{padding:18px 20px; background:var(--bg-deep); display:flex; flex-direction:column; gap:4px;}
+  .calc-cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.5);}
+  .calc-cell .v{font-family:var(--sans); font-weight:600; font-size:22px; color:#fff; font-feature-settings:"tnum";}
+  .calc-bar{padding:18px 20px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1);}
+  .calc-bar .lr{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px;}
+  .calc-bar .lr .a{font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.5);}
+  .calc-bar .lr .b{font-family:var(--mono); color:var(--accent); font-size:13px; font-weight:600;}
+  .calc-bar .tr{height:8px; background:rgba(255,255,255,0.08); position:relative; overflow:hidden;}
+  .calc-bar .fl{height:100%; background:var(--accent); transition:width .6s cubic-bezier(.4,1.4,.5,1); position:relative;}
+  .calc-bar .fl::after{content:""; position:absolute; inset:0; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent); animation:shimmer 2s linear infinite;}
+  @keyframes shimmer{from{transform:translateX(-100%);} to{transform:translateX(100%);}}
+  .calc-disc{font-family:var(--mono); font-size:10px; color:rgba(255,255,255,0.4); line-height:1.65; max-width:50ch; letter-spacing:0.02em;}
+  @media(max-width:900px){.calc-box{grid-template-columns:1fr; padding:32px;}}
+
+  /* ============ PROOF NUMBERS ============ */
+  .proof-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+  }
+  .proof-cell{
+    padding:28px 20px 28px 0; border-right:1px solid var(--rule);
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .proof-cell:last-child{border-right:none;}
+  .proof-cell:not(:first-child){padding-left:20px;}
+  .proof-cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); font-weight:500;}
+  .proof-cell .v{font-family:var(--sans); font-weight:600; font-size:56px; letter-spacing:-0.04em; line-height:1; color:var(--ink); font-feature-settings:"tnum";}
+  .proof-cell .v.accent{color:var(--accent);}
+  .proof-cell .v .u{font-size:18px; color:var(--ink-mute); font-weight:500; margin-left:4px;}
+  .proof-cell .d{font-size:13px; color:var(--ink-soft); line-height:1.5;}
+  @media(max-width:900px){.proof-grid{grid-template-columns:1fr 1fr;} .proof-cell:nth-child(2){border-right:none;} .proof-cell:nth-child(1),.proof-cell:nth-child(2){border-bottom:1px solid var(--rule);}}
+
+  /* ============ FAQ ============ */
+  .faq{display:flex; flex-direction:column; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);}
+  .faq details{border-bottom:1px solid var(--rule); padding:28px 0; cursor:pointer; transition:background .2s, padding-left .2s;}
+  .faq details:last-child{border-bottom:none;}
+  .faq details:hover{background:var(--bg-soft); padding-left:16px; padding-right:16px;}
+  .faq details[open] summary .plus{transform:rotate(45deg); color:var(--accent);}
+  .faq summary{list-style:none; display:flex; justify-content:space-between; align-items:flex-start; gap:32px; cursor:pointer;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary h4{font-family:var(--sans); font-size:22px; font-weight:500; letter-spacing:-0.02em; line-height:1.25; color:var(--ink); flex:1; text-wrap:balance;}
+  .faq summary .plus{font-family:var(--mono); color:var(--ink); font-size:24px; transition:transform .25s, color .25s; line-height:1; padding-top:2px; font-weight:300;}
+  .faq .answer{padding-top:18px; font-size:15px; color:var(--ink-soft); line-height:1.65; max-width:72ch; animation:fadeUp .4s ease-out;}
+  .faq .answer strong{color:var(--ink); font-weight:600;}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(-6px);} to{opacity:1; transform:translateY(0);}}
+
+  /* ============ FINAL CTA ============ */
+  .cta{padding:160px 0 120px; background:var(--bg-deep); color:#f3f2ee; border-bottom:1px solid transparent; position:relative; overflow:hidden;}
+  .cta::before{
+    content:"{be ready}"; position:absolute; top:60px; right:40px;
+    font-family:var(--mono); font-size:13px; letter-spacing:0.22em; color:var(--accent); font-weight:500;
+  }
+  .cta h2{font-family:var(--sans); font-size:clamp(48px, 7vw, 112px); font-weight:600; letter-spacing:-0.045em; line-height:0.95; text-wrap:balance; color:#fff;}
+  .cta h2 em{font-style:italic; color:rgba(255,255,255,0.5); font-weight:400;}
+  .cta h2 .period{color:var(--accent);}
+  .cta p.lead{color:rgba(255,255,255,0.7); max-width:62ch; margin-top:36px; font-size:19px;}
+  .cta p.lead strong{color:#fff; font-weight:600;}
+  .cta-meta{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:56px; border-top:1px solid rgba(255,255,255,0.15); border-bottom:1px solid rgba(255,255,255,0.15);}
+  .cta-meta .it{padding:24px 24px 24px 0; border-right:1px solid rgba(255,255,255,0.1);}
+  .cta-meta .it:last-child{border-right:none;}
+  .cta-meta .it:not(:first-child){padding-left:24px;}
+  .cta-meta .it .k{font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:500;}
+  .cta-meta .it .v{font-family:var(--sans); font-size:18px; margin-top:8px; color:#fff; font-weight:500;}
+  .cta .btn-primary{background:var(--accent); color:#fff; margin-top:40px;}
+  .cta .btn-primary:hover{background:#fff; color:var(--bg-deep);}
+  .cta .btn-ghost{color:#fff; border-color:rgba(255,255,255,0.4); margin-top:40px;}
+  .cta .btn-ghost:hover{color:var(--accent); border-color:var(--accent);}
+  .cta .btn-row{display:flex; flex-wrap:wrap; gap:24px; align-items:center;}
+  @media(max-width:760px){.cta-meta{grid-template-columns:1fr;} .cta-meta .it{border-right:none; border-bottom:1px solid rgba(255,255,255,0.1);} .cta-meta .it:not(:first-child){padding-left:0;}}
+
+  /* ============ FOOTER ============ */
+  footer{padding:40px 0 24px; color:var(--ink-mute); font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; border-top:1px solid var(--ink); background:var(--bg);}
+  footer .row{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;}
+  footer a:hover{color:var(--accent);}
+
+</style>
+</head>
+<body>
+
+<!-- ====== FOLIO TOP BAR ====== -->
+<div class="folio-top">
+  <div class="wrap row">
+    <div class="left">
+      <span>/&nbsp;/&nbsp;&nbsp;Interne Lesart</span>
+      <span>Handbuch&nbsp;v5.0</span>
+      <span>Sales&nbsp;Pitch</span>
+    </div>
+    <div class="right">Für Geschäftsführung · Vertraulich</div>
+  </div>
+</div>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="wrap row">
+    <a class="brand" href="#top"><span class="b">{</span>new.thought<span class="b">}</span></a>
+    <div class="nav-links">
+      <a href="#diagnose">01 Diagnose</a>
+      <a href="#prinzipien">02 Prinzipien</a>
+      <a href="#os">03 Das OS</a>
+      <a href="#services">04 Engagement</a>
+      <a href="#rechner">05 Rechner</a>
+    </div>
+    <a class="nav-cta" href="#cta">Reality Check</a>
+  </div>
+</nav>
+
+<!-- ====== HERO / SLIDE 01 ====== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-top-bar">
+      <span>0 1&nbsp;&nbsp;&nbsp;/&nbsp;/&nbsp;&nbsp;&nbsp;Die These</span>
+      <span>KAIRON OS · AI Operating System</span>
+    </div>
+
+    <div class="reveal in">
+      <div class="hero-tag-sys">
+        <span class="live"></span>
+        KAIRON × Ihr Unternehmen · System läuft
+      </div>
+    </div>
+
+    <h1 class="hero-headline reveal in">
+      KI-Adoption ist keine<br>
+      <span class="strike">Technologie-Frage<span class="period">.</span></span><br>
+      <span class="l2">Sie ist eine <em>Organisations-Frage<span class="period">.</span></em></span>
+    </h1>
+
+    <div class="hero-sub-bar reveal in" style="transition-delay:.3s;">
+      <div class="txt">
+        <strong>KAIRON OS ist das einzige System,</strong> das KI-Governance, operative Umsetzung
+        und kontinuierliches Lernen in einem Betriebssystem vereint.
+        Vollständig aus dem KAIRON-Methodik-Kern heraus entwickelt —
+        und installiert in 90 Tagen statt in 18 Monaten.
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="#cta">Reality Check anfragen</a>
+        <a class="btn-ghost" href="#rechner">Sparpotenzial berechnen</a>
+      </div>
+    </div>
+
+    <div class="hero-meta">
+      <div class="cell">
+        <span class="k">/ / Ceremonies</span>
+        <span class="v">8</span>
+        <span class="d">Im Kalender — nicht in PowerPoint.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Sprint</span>
+        <span class="v">14<span class="u">Tage</span></span>
+        <span class="d">Pflicht zur Live-Demo am Ende.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Stopp</span>
+        <span class="v">90<span class="u">Tage</span></span>
+        <span class="d">Ohne Impact-Evidenz → abgeschaltet.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Compound</span>
+        <span class="v">10<span class="u">× Y3</span></span>
+        <span class="d">Gleiche Ressourcen, 10× Wirkung.</span>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 1 · Betriebssystem-Prinzip</span>
+      <span class="r">01 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SLIDE 02 · MYTHS / DIAGNOSE ====== -->
+<section class="slide" id="diagnose">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 2</span><span class="slash">/ /</span>&nbsp;Der Engpass im Mittelstand</span>
+        <span class="kicker">Kapitel 1 · Betriebssystem-Prinzip</span>
+      </div>
+      <h2 class="section-title">Der Engpass im KI-Einsatz ist <em>nicht</em> —<span class="period">.</span></h2>
+    </div>
+
+    <div class="myths reveal">
+      <div class="myth bad">
+        <span class="tag">Mythos 01</span>
+        <span class="word">Technologie</span>
+        <p class="d">Tools sind vorhanden und funktionieren.</p>
+      </div>
+      <div class="myth bad">
+        <span class="tag">Mythos 02</span>
+        <span class="word">Kompetenz</span>
+        <p class="d">Teams lernen die Tools in Wochen.</p>
+      </div>
+      <div class="myth bad">
+        <span class="tag">Mythos 03</span>
+        <span class="word">Budget</span>
+        <p class="d">Pro Use Case oft &lt; 20 k € Aufwand.</p>
+      </div>
+      <div class="myth truth">
+        <span class="tag">Der wahre Engpass</span>
+        <span class="word">Orchestrierung.</span>
+        <p class="d"><strong>Fehlende organisationale Steuerung</strong> der KI-Arbeit. Wer KI organisatorisch orchestriert, realisiert mit denselben Tools und Mitarbeitern ein Mehrfaches des Wirkungsgrades.</p>
+      </div>
+    </div>
+
+    <!-- Symptoms -->
+    <div style="margin-top:96px;">
+      <div class="slide-header reveal" style="margin-bottom:48px;">
+        <div class="top">
+          <span class="chap"><span class="num">0 2 b</span><span class="slash">/ /</span>&nbsp;Symptome</span>
+        </div>
+        <h3 class="sub" style="max-width:30ch;">Vier Sätze, die Sie diese Woche schon gehört haben.</h3>
+      </div>
+
+      <div class="symp-table reveal stag">
+        <div class="symp-row">
+          <span class="idx">01</span>
+          <p class="quote">„Das läuft im Vertrieb."</p>
+          <p class="verdict">Wer konkret diese Woche den nächsten Schritt macht? Unklar. Use Case versandet in 3–6 Monaten, ohne dass jemand sagen kann, wann.</p>
+          <span class="tag">Ownership</span>
+        </div>
+        <div class="symp-row">
+          <span class="idx">02</span>
+          <p class="quote">„Wir haben da so 8–12 Initiativen am Laufen."</p>
+          <p class="verdict">GF nennt drei. IT fünf. Fachbereich vier. Keine dieser Zahlen ist vollständig. Mehr Ressourcen gebunden als sichtbar.</p>
+          <span class="tag">Pipeline</span>
+        </div>
+        <div class="symp-row">
+          <span class="idx">03</span>
+          <p class="quote">„Läuft gut. Mitarbeiter mögen es."</p>
+          <p class="verdict">Versuchen Sie den ROI zu beziffern. Das Gespräch versickert in Unschärfen. In diesem Zustand verbringen Unternehmen Jahre.</p>
+          <span class="tag">Impact</span>
+        </div>
+        <div class="symp-row">
+          <span class="idx">04</span>
+          <p class="quote">„24 Use Cases gemacht — aber jeder fängt bei Null an."</p>
+          <p class="verdict">Sie sind produktiver geworden, aber nicht klüger. Der nächste Owner löst dieselben Probleme von vorn.</p>
+          <span class="tag">Compound</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 1 · Der Engpass</span>
+      <span class="r">02 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SLIDE 03 · FRAMEWORK vs OS ====== -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 3</span><span class="slash">/ /</span>&nbsp;Warum „Operating System", nicht „Framework"</span>
+      </div>
+      <h2 class="section-title">Frameworks leben in PowerPoint.<br><em>Betriebssysteme laufen im Unternehmen.</em></h2>
+    </div>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid rgba(255,255,255,0.2); border-bottom:1px solid rgba(255,255,255,0.2);">
+      <div style="padding:40px 40px 40px 0; border-right:1px solid rgba(255,255,255,0.12); display:flex; flex-direction:column; gap:18px;">
+        <span style="font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.5); font-weight:500;">— Framework</span>
+        <h3 class="sub" style="color:#f3f2ee;">Konzept-Landkarte</h3>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:14px; color:rgba(255,255,255,0.7); font-size:15px; line-height:1.55;">
+          <li>· Beschreibt, was gedacht werden sollte — nicht, was laufen muss.</li>
+          <li>· Kann mit fehlenden Teilen weiterbestehen. Als Folie.</li>
+          <li>· Wird in Onboardings gezeigt, nicht im Alltag gelebt.</li>
+        </ul>
+      </div>
+      <div style="padding:40px 0 40px 40px; display:flex; flex-direction:column; gap:18px;">
+        <span style="font-family:var(--mono); font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent); font-weight:500;">— KAIRON OS</span>
+        <h3 class="sub" style="color:#fff;">Verzahntes System</h3>
+        <ul style="list-style:none; display:flex; flex-direction:column; gap:14px; color:rgba(255,255,255,0.85); font-size:15px; line-height:1.55;">
+          <li>· Steht zwischen KI-Technologie und Unternehmensalltag. Orchestriert, wer was wann entscheidet.</li>
+          <li>· Fällt eine Komponente aus, erkennt man es sofort.</li>
+          <li>· <strong style="color:#fff;">5 Rollen · 4 Prinzipien · 3 Ebenen · 8 Ceremonies · 1 Playbook.</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 1 · Betriebssystem-Prinzip</span>
+      <span class="r">03 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SLIDE 04 · PRINZIPIEN ====== -->
+<section class="slide" id="prinzipien">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 4</span><span class="slash">/ /</span>&nbsp;Das Fundament</span>
+        <span class="kicker">Kapitel 2 · Die vier Prinzipien</span>
+      </div>
+      <h2 class="section-title">Die vier Prinzipien.<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">Operative Regeln — keine Werte. Die ersten drei steuern den laufenden Betrieb. Das vierte bestimmt, ob das System über Zeit besser wird.</p>
+    </div>
+
+    <div class="principles reveal stag">
+      <div class="principle">
+        <span class="n">— Prinzip 01</span>
+        <h5>Ownership</h5>
+        <p>Jeder Use Case hat einen namentlich benannten AI Owner — mit dokumentiertem Zeitbudget und klaren Entscheidungsrechten.</p>
+        <span class="rule">Kein Owner → kein Use Case.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 02</span>
+        <h5>Pipeline</h5>
+        <p>Alle Use Cases leben in einer zentralen, priorisierten Liste. Die einzige Quelle der Wahrheit. Keine PowerPoint-Folien.</p>
+        <span class="rule">Nicht in der Pipeline → nicht real.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 03</span>
+        <h5>Impact</h5>
+        <p>Euro, Stunden, Fehlerrate — nicht Adjektive. Jeder Use Case liefert messbaren Business Impact bevor er aufgenommen wird.</p>
+        <span class="rule">Ohne Evidenz in 90 Tagen → Stopp.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 04</span>
+        <h5>Compound</h5>
+        <p>Jede Initiative baut einen Asset auf, der die nächste Initiative schneller und wirkungsvoller macht.</p>
+        <span class="rule">Jeder Sprint macht das System klüger.</span>
+      </div>
+    </div>
+
+    <div class="reframe-band reveal" style="margin-top:72px;">
+      <div>
+        <p class="big">KI-Wert entsteht durch <em>Steuerung</em>, nicht durch Nutzung. KI-Wert wächst nicht linear — <em>er schichtet sich auf.</em></p>
+      </div>
+      <div class="ex">
+        <strong>/ / Die drei Grundannahmen</strong>
+        <p>Mitarbeiter, die Tools nutzen, erzeugen individuelle Produktivität. Unternehmen, die Tools <em>steuern</em>, erzeugen Geschäftswert.</p>
+        <br>
+        <p>Steuerung ist ritualisiert — oder sie existiert nicht. Fester Rhythmus, feste Teilnehmer, feste Entscheidungsregeln. Nur so überlebt Steuerung Führungswechsel und Budgetdruck.</p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 2 · Die vier Prinzipien</span>
+      <span class="r">04 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SLIDE 05 · DAS OS (SCHAUBILD) ====== -->
+<section class="slide" id="os" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 5</span><span class="slash">/ /</span>&nbsp;Das Herzstück</span>
+        <span class="kicker">Kapitel 3 · Drei-Ebenen-Modell</span>
+      </div>
+      <h2 class="section-title">Drei Ebenen. <em>Ein System.</em></h2>
+      <p class="lead" style="margin-top:12px;">Jede Ebene hat ihren eigenen Rhythmus, ihre eigenen Ceremonies und ihre eigenen Artefakte. Sie verstärken sich gegenseitig.</p>
+    </div>
+
+    <!-- Schaubild -->
+    <div class="schaubild reveal">
+      <!-- Layer strip above the diagram -->
+      <div class="layer-strip">
+        <div class="lt"><span class="dot"></span>Ebene 01 · Direction · Quartal + Monat</div>
+        <div class="lt"><span class="dot"></span>Ebene 02 · Sprint · 14-tägig</div>
+        <div class="lt c"><span class="dot"></span>Ebene 03 · Compound · kontinuierlich</div>
+      </div>
+      <div class="schaubild-inner" id="schaubild">
+        <svg class="schaubild-svg" viewBox="0 0 960 620" preserveAspectRatio="xMidYMid meet">
+          <!-- Outer + inner rings -->
+          <ellipse cx="480" cy="310" rx="420" ry="260" class="ring"/>
+          <ellipse cx="480" cy="310" rx="260" ry="160" class="ring"/>
+
+          <!-- Flows: center → Direction -->
+          <line x1="480" y1="310" x2="200" y2="90" class="flow animated"/>
+          <line x1="480" y1="310" x2="760" y2="90" class="flow animated" style="animation-delay:.4s"/>
+
+          <!-- Flows: center → Sprint nodes -->
+          <line x1="480" y1="310" x2="80" y2="310" class="flow animated" style="animation-delay:.8s"/>
+          <line x1="480" y1="310" x2="220" y2="560" class="flow animated" style="animation-delay:1.2s"/>
+          <line x1="480" y1="310" x2="480" y2="570" class="flow animated" style="animation-delay:1.6s"/>
+          <line x1="480" y1="310" x2="740" y2="560" class="flow animated" style="animation-delay:2s"/>
+          <line x1="480" y1="310" x2="880" y2="310" class="flow animated" style="animation-delay:2.4s"/>
+
+          <!-- Compound wrap indicator -->
+          <path d="M 870 340 Q 940 430 840 500" stroke="#e85c2a" stroke-width="1.6" stroke-dasharray="4 4" fill="none" opacity="0.7"/>
+        </svg>
+
+        <!-- Center -->
+        <div class="node center" style="left:50%; top:50%; transform:translate(-50%,-50%);">
+          <span class="t">Operating System</span>
+          <span class="n"><span class="b">{</span>KAIRON OS<span class="b">}</span></span>
+        </div>
+
+        <!-- Direction -->
+        <div class="node dir" style="left:20.8%; top:14.5%; transform:translate(-50%,-50%);">
+          <span class="t">C1 · Quartal · 2h</span>
+          <span class="n">AI Horizon Session</span>
+        </div>
+        <div class="node dir" style="left:79.2%; top:14.5%; transform:translate(-50%,-50%);">
+          <span class="t">C2 · Monatlich · 90'</span>
+          <span class="n">AI Board</span>
+        </div>
+
+        <!-- Sprint -->
+        <div class="node sprint" style="left:8.3%; top:50%; transform:translate(-50%,-50%);">
+          <span class="t">C3 · 14T · 30'</span>
+          <span class="n">Pipeline Refinement</span>
+        </div>
+        <div class="node sprint" style="left:22.9%; top:90.3%; transform:translate(-50%,-50%);">
+          <span class="t">C4 · 14T · 60'</span>
+          <span class="n">Sprint Setup</span>
+        </div>
+        <div class="node sprint" style="left:50%; top:91.9%; transform:translate(-50%,-50%);">
+          <span class="t">C6 · 14T · 45'</span>
+          <span class="n">Impact Demo</span>
+        </div>
+        <div class="node sprint" style="left:77.1%; top:90.3%; transform:translate(-50%,-50%);">
+          <span class="t">C7 · 14T · 30'</span>
+          <span class="n">Sprint Debrief</span>
+        </div>
+
+        <!-- Compound -->
+        <div class="node compound" style="left:91.7%; top:50%; transform:translate(-50%,-50%);">
+          <span class="t">C8 · Compound · 30'</span>
+          <span class="n">Playbook Session</span>
+        </div>
+      </div>
+
+      <div class="schaubild-legend">
+        <div class="l"><span class="sw i"></span>Zentrum — KAIRON OS orchestriert alle Ebenen</div>
+        <div class="l"><span class="sw"></span>Direction + Sprint — feste Ceremonies im Kalender</div>
+        <div class="l"><span class="sw c"></span>Compound — das organisationale Gedächtnis</div>
+      </div>
+    </div>
+
+    <!-- Ceremonies Table -->
+    <div style="margin-top:96px;">
+      <div class="slide-header reveal" style="margin-bottom:24px; padding-bottom:24px;">
+        <div class="top">
+          <span class="chap"><span class="num">0 5 b</span><span class="slash">/ /</span>&nbsp;Die acht Ceremonies im Überblick</span>
+        </div>
+        <h3 class="sub" style="max-width:32ch;">Fester Rhythmus. Feste Entscheidungen.</h3>
+      </div>
+      <table class="ceremony-table reveal">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ceremony</th>
+            <th>Ebene</th>
+            <th>Rhythmus</th>
+            <th>Dauer</th>
+            <th>Kernentscheidung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">01</td><td class="name">AI Horizon Session</td><td class="lvl">Direction</td><td class="rhy">Quartal</td><td class="dur">2 h</td><td class="dec">AI Goals setzen, Pipeline ausrichten</td></tr>
+          <tr><td class="n">02</td><td class="name">AI Board</td><td class="lvl">Direction</td><td class="rhy">Monatlich</td><td class="dur">90 Min.</td><td class="dec">Priorisierung, Stopps, Ressourcen</td></tr>
+          <tr><td class="n">03</td><td class="name">Pipeline Refinement</td><td class="lvl">Sprint</td><td class="rhy">14-tägig</td><td class="dur">30 Min.</td><td class="dec">Use Cases schärfen</td></tr>
+          <tr><td class="n">04</td><td class="name">Sprint Setup</td><td class="lvl">Sprint</td><td class="rhy">14-tägig</td><td class="dur">60 Min.</td><td class="dec">Sprint Thesis formulieren</td></tr>
+          <tr><td class="n">05</td><td class="name">Daily Signal</td><td class="lvl">Sprint</td><td class="rhy">Täglich</td><td class="dur">15 Min.</td><td class="dec">Blocker sofort sichtbar machen</td></tr>
+          <tr><td class="n">06</td><td class="name">Impact Demo</td><td class="lvl">Sprint</td><td class="rhy">14-tägig</td><td class="dur">45 Min.</td><td class="dec">Weiter · Pivotieren · Stoppen</td></tr>
+          <tr><td class="n">07</td><td class="name">Sprint Debrief</td><td class="lvl">Sprint</td><td class="rhy">14-tägig</td><td class="dur">30 Min.</td><td class="dec">Was ändern? Was extrahieren?</td></tr>
+          <tr><td class="n">08</td><td class="name">Playbook Session</td><td class="lvl">Compound</td><td class="rhy">Nach Debrief</td><td class="dur">30 Min.</td><td class="dec">Wissen sichern, Eintrag einpflegen</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compound Year arc -->
+    <div style="margin-top:96px;">
+      <div class="slide-header reveal" style="margin-bottom:32px; padding-bottom:24px;">
+        <div class="top">
+          <span class="chap"><span class="num">0 5 c</span><span class="slash">/ /</span>&nbsp;Year 1 ist langsam. Year 3 ist exponentiell.</span>
+        </div>
+      </div>
+      <div class="proof-grid reveal stag">
+        <div class="proof-cell">
+          <span class="k">— Jahr 01 · Baseline</span>
+          <span class="v">28<span class="u">Tage</span></span>
+          <p class="d">Median Time-to-Value bei Start.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Jahr 02</span>
+          <span class="v">18<span class="u">Tage</span></span>
+          <p class="d">Playbook verkürzt Thesis-Findung.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Jahr 03</span>
+          <span class="v accent">10<span class="u">Tage</span></span>
+          <p class="d">Gleiche Ressourcen, 3× Geschwindigkeit.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Compound-Faktor</span>
+          <span class="v accent">10×</span>
+          <p class="d">Wirkungsgrad gegenüber Year 1.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 3 · Drei-Ebenen-Modell</span>
+      <span class="r">05 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SLIDE 06 · SERVICES ====== -->
+<section class="slide" id="services">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 6</span><span class="slash">/ /</span>&nbsp;Die Produktfamilie · Go-to-Market</span>
+        <span class="kicker">Kapitel 12 · Produktfamilie</span>
+      </div>
+      <h2 class="section-title">Sechs gestufte Produkte. <em>Ein Einstiegspfad.</em></h2>
+      <p class="lead" style="margin-top:12px;">Sie steigen dort ein, wo Ihr Reifegrad steht. Jede Stufe hat ein klares Ergebnis, ein definiertes Ende und einen Weg in die nächste.</p>
+    </div>
+
+    <div class="services reveal stag">
+
+      <div class="service">
+        <div class="stage">0a</div>
+        <div class="name">AI Reality Check<span class="sub">Diagnose · 2 Wochen</span></div>
+        <div class="pitch"><strong>Reifegrad 1–2. Der „Oh shit"-Moment.</strong> Ist-Zustand entlang der vier Prinzipien. Schriftlicher Befund: was läuft, was blutet, was Sie morgen abschalten sollten. Der Moment, in dem Geschäftsführer erstmals verstehen, wo sie wirklich stehen.</div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>2 Wochen</span></div>
+          <div class="r"><span>Reifegrad</span><span>Level 1–2</span></div>
+          <div class="r"><span>Output</span><span>Schriftlicher Befund</span></div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="stage">0b</div>
+        <div class="name">KAIRON OS Retrofit<span class="sub">Gap-Analyse · 3 Wochen</span></div>
+        <div class="pitch"><strong>Reifegrad 3+. OS-Gap-Analyse in 3 Wochen.</strong> Alle vier Ebenen Ihres bestehenden KI-Setups werden gegen die KAIRON-Standards geprüft. Punktgenaue Roadmap, die nur die fehlenden Komponenten nachinstalliert — nicht das ganze Haus neu baut.</div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>3 Wochen</span></div>
+          <div class="r"><span>Reifegrad</span><span>Level 3+</span></div>
+          <div class="r"><span>Output</span><span>Gap-Roadmap</span></div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="stage">1a</div>
+        <div class="name">OS Installation<span class="sub">Vollinstallation · 90 Tage</span></div>
+        <div class="pitch"><strong>Das Flaggschiff. Vollständige Installation in 90 Tagen.</strong> Pipeline, alle 8 Ceremonies im Kalender, AI Playbook-Aufbau, KCAS-Bootcamp für Ihren Steward. Nach 90 Tagen führt sich Ihr System weitgehend selbst — die erste Impact Demo läuft schon nach 14 Tagen.</div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>90 Tage</span></div>
+          <div class="r"><span>Format</span><span>4 Phasen</span></div>
+          <div class="r"><span>Inkl.</span><span>KCAS-Bootcamp</span></div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="stage">1b</div>
+        <div class="name">OS Retrofit-Installation<span class="sub">Gezielter Nachbau · 60 Tage</span></div>
+        <div class="pitch"><strong>Wenn die Retrofit-Analyse Lücken aufgedeckt hat — und Sie nur diese Lücken schließen wollen.</strong> Kein Neuanfang, kein Overhead. Wir installieren ausschließlich die identifizierten Komponenten. Schneller und schlanker, mit dem gleichen Steuerungseffekt.</div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>60 Tage</span></div>
+          <div class="r"><span>Voraussetzung</span><span>Retrofit-Analyse</span></div>
+          <div class="r"><span>Scope</span><span>Punktgenau</span></div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="stage">02</div>
+        <div class="name">Operating Partner<span class="sub">Retainer · monatlich</span></div>
+        <div class="pitch"><strong>Wenn das System nicht nur laufen — sondern besser werden soll.</strong> Moderation aller Ceremonies, Playbook-Entwicklung, Compound-Sicherung. Monatlich kündbar, weil wir uns ohnehin nur so lange verkaufen wollen, wie wir nötig sind.</div>
+        <div class="meta-col">
+          <div class="r"><span>Format</span><span>Retainer</span></div>
+          <div class="r"><span>Aufwand</span><span>Monatlich</span></div>
+          <div class="r"><span>Ziel</span><span>Compound sichern</span></div>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="stage">Q</div>
+        <div class="name">KCAS Standalone<span class="sub">Steward-Bootcamp · 2 Tage</span></div>
+        <div class="pitch"><strong>Zertifizierung für interne AI Stewards.</strong> Im 2-Tage-Bootcamp wird Ihr Mitarbeiter zum KAIRON Certified AI Steward — ausgebildet auf alle drei Ebenen, alle 8 Ceremonies, das Playbook und die Governance. Jederzeit standalone buchbar.</div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>2 Tage</span></div>
+          <div class="r"><span>Format</span><span>Bootcamp</span></div>
+          <div class="r"><span>Output</span><span>KCAS-Zertifikat</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="margin-top:32px; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; color:var(--ink-mute); max-width:70ch;">
+      / / Investition wird im Erstgespräch transparent kalkuliert — passend zur Unternehmensgröße (50–150, 150–300, 300–500 MA). Kein Listenpreis, weil keine Standardlösung.
+    </p>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 12 · Produktfamilie</span>
+      <span class="r">06 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CALCULATOR ====== -->
+<section class="slide" id="rechner" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 7</span><span class="slash">/ /</span>&nbsp;Sparpotenzial · Rechner</span>
+        <span class="kicker">Kapitel 10 · Das System im Unternehmensalltag</span>
+      </div>
+      <h2 class="section-title">Was kostet es, das KAIRON OS <em>nicht</em> zu installieren?<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">Verschieben Sie die Regler nach Ihrem Unternehmen. Der Rechner zeigt, was unkoordinierte KI-Initiativen pro Jahr kosten — und wieviel das KAIRON OS konservativ wieder einspielt.</p>
+    </div>
+
+    <div class="calc-box reveal" id="calc">
+      <div class="calc-controls">
+        <div>
+          <div class="calc-head">— Ihre Parameter</div>
+          <div class="calc-title">Ihr Unternehmen, Ihr Verlust.</div>
+        </div>
+
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Mitarbeiter, die KI nutzen (oder sollten)</span><span class="val" id="vEmp">120</span></div>
+          <input type="range" id="employees" min="20" max="500" step="10" value="120">
+          <div class="scale"><span>20</span><span>500</span></div>
+        </div>
+
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Ø Vollkosten pro MA / Jahr</span><span class="val" id="vCost">€ 75.000</span></div>
+          <input type="range" id="cost" min="40000" max="150000" step="5000" value="75000">
+          <div class="scale"><span>€ 40k</span><span>€ 150k</span></div>
+        </div>
+
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Aktuelle KI-Initiativen</span><span class="val" id="vInit">8</span></div>
+          <input type="range" id="initiatives" min="2" max="25" step="1" value="8">
+          <div class="scale"><span>2</span><span>25</span></div>
+        </div>
+
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Ø Stunden / Woche in unkoordiniertem KI-Einsatz</span><span class="val" id="vHrs">3 h</span></div>
+          <input type="range" id="hours" min="0.5" max="8" step="0.5" value="3">
+          <div class="scale"><span>0,5 h</span><span>8 h</span></div>
+        </div>
+      </div>
+
+      <div class="calc-results">
+        <span class="calc-head">— Konservative Schätzung · Pro Jahr</span>
+        <div class="calc-savings">
+          <span class="currency">€</span><span id="savings">0</span>
+          <span class="per">/ / Sparpotenzial p.a. nach OS-Installation</span>
+        </div>
+
+        <div class="calc-breakdown">
+          <div class="calc-cell">
+            <span class="k">Versickerte Zeit</span>
+            <span class="v">€ <span id="lostTime">0</span></span>
+          </div>
+          <div class="calc-cell">
+            <span class="k">Versandete Piloten</span>
+            <span class="v">€ <span id="lostPilots">0</span></span>
+          </div>
+          <div class="calc-cell">
+            <span class="k">Doppelarbeit (Compound-Verlust)</span>
+            <span class="v">€ <span id="lostCompound">0</span></span>
+          </div>
+          <div class="calc-cell">
+            <span class="k">Gesamtverlust p.a.</span>
+            <span class="v">€ <span id="lostTotal">0</span></span>
+          </div>
+        </div>
+
+        <div class="calc-bar">
+          <div class="lr">
+            <span class="a">Gewinnbarer Anteil mit KAIRON OS</span>
+            <span class="b" id="recoveryPct">60 %</span>
+          </div>
+          <div class="tr"><div class="fl" id="recoveryFill" style="width:60%"></div></div>
+        </div>
+
+        <p class="calc-disc">
+          / / Annahmen: 30 % unkoordinierter KI-Zeit ist Verschwendung (Tool-Hopping, redundante Prompts, Schatten-IT). 65 % Initiativen ohne Owner versanden. Compound-Verlust 12 % der KI-Personalkosten ohne Playbook. Recovery konservativ 60 % nach 12 Mo. — real meist höher.
+        </p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 10 · System im Alltag</span>
+      <span class="r">07 / 06</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROOF / MOMENTUM ====== -->
+<section class="slide">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 8</span><span class="slash">/ /</span>&nbsp;KAIRON Momentum · Systemkennzahlen</span>
+      </div>
+      <h2 class="section-title">Das System <em>misst sich selbst.</em></h2>
+      <p class="lead" style="margin-top:12px;">Nicht „die Mitarbeiter sind zufriedener". Sondern Zahlen, die in der GF-Sitzung zitierbar sind — das Reporting, das Ihre KI-Initiative bisher nicht hatte.</p>
+    </div>
+
+    <div class="proof-grid reveal stag">
+      <div class="proof-cell">
+        <span class="k">— Sprint-Momentum</span>
+        <span class="v">2–3<span class="u">/ Mo.</span></span>
+        <p class="d">Use Cases, die Completion Gate erfüllen.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Time-to-Value</span>
+        <span class="v accent">&lt;28<span class="u">Tage</span></span>
+        <p class="d">Pipeline → erster produktiver Test.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Compound TtV</span>
+        <span class="v accent">−30<span class="u">%</span></span>
+        <p class="d">Mediane TtV Q1 vs. Q3 · in 6 Monaten.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Impact Score</span>
+        <span class="v">0.6<span class="u">–0.8</span></span>
+        <p class="d">Durchschnitt aller Quartalsziele.</p>
+      </div>
+    </div>
+
+    <div class="proof-grid reveal stag" style="margin-top:16px;">
+      <div class="proof-cell">
+        <span class="k">— Stopp-Quote</span>
+        <span class="v">20<span class="u">–40 %</span></span>
+        <p class="d">Gestoppte / gestartete Use Cases.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Playbook-Wachstum</span>
+        <span class="v">&gt;8<span class="u">/ Quartal</span></span>
+        <p class="d">Neue Einträge im AI Playbook.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Playbook-Nutzung</span>
+        <span class="v">&gt;80<span class="u">%</span></span>
+        <p class="d">Owner nutzen Playbook vor Sprint Setup.</p>
+      </div>
+      <div class="proof-cell">
+        <span class="k">— Practitioner-Rate</span>
+        <span class="v accent">&gt;20<span class="u">%</span></span>
+        <p class="d">Mitarbeiter auf Level 2+ nach 12 Mo.</p>
+      </div>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 10 · System im Alltag</span>
+      <span class="r">08 / —</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="slide" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <div class="top">
+        <span class="chap"><span class="num">0 9</span><span class="slash">/ /</span>&nbsp;Einwände</span>
+      </div>
+      <h2 class="section-title">Was Sie gerade denken — <em>und warum es das System nicht aufhält.</em></h2>
+    </div>
+
+    <div class="faq reveal stag">
+      <details>
+        <summary><h4>„Wir haben doch schon eine KI-Strategie und ein Whitepaper."</h4><span class="plus">+</span></summary>
+        <p class="answer">Mit großer Wahrscheinlichkeit ja. Und mit ebenso großer Wahrscheinlichkeit hat dieses Whitepaper Ihre Quartalsentscheidungen in den letzten sechs Monaten exakt null Mal beeinflusst. <strong>Strategie ohne Ritual ist Dekoration.</strong> Das KAIRON OS macht Strategie zu acht Terminen im Kalender — die nicht abgesagt werden.</p>
+      </details>
+      <details>
+        <summary><h4>„Wir wollen erst die richtigen Tools auswählen."</h4><span class="plus">+</span></summary>
+        <p class="answer">Sie haben die richtigen Tools schon. <strong>Microsoft 365 Copilot, ChatGPT Enterprise, Claude — die Werkzeuglandschaft ist nicht das Problem.</strong> Unternehmen, die ihre Tools organisatorisch steuern, realisieren mit derselben Software ein Mehrfaches des Wirkungsgrades. Wir bauen die Steuerung. Die Tools können Sie morgen wechseln, ohne dass das System bricht.</p>
+      </details>
+      <details>
+        <summary><h4>„90 Tage sind zu schnell für unsere Organisation."</h4><span class="plus">+</span></summary>
+        <p class="answer">Wir hören das oft — fast immer von Unternehmen, die seit 18 Monaten an ihrer KI-Roadmap arbeiten und kein produktives Ergebnis vorweisen können. <strong>Die Frage ist nicht, ob 90 Tage zu schnell sind. Die Frage ist, ob Sie sich weitere 18 Monate ohne System leisten können</strong> — während Wettbewerber gerade lernen, exponentiell zu lernen.</p>
+      </details>
+      <details>
+        <summary><h4>„Wir haben dafür keine Kapazität im Team."</h4><span class="plus">+</span></summary>
+        <p class="answer">Korrekt. Genau deshalb installieren wir Rollen mit dokumentierten Zeitbudgets — der AI Steward braucht 4–6 h/Woche, der AI Sponsor 2–4 h/Monat. <strong>Das ist weniger als die Kapazität, die Ihr Unternehmen heute in unkoordinierte Tool-Diskussionen und versandete Piloten verbrennt</strong> — nur unsichtbar.</p>
+      </details>
+      <details>
+        <summary><h4>„Was, wenn das System nach Ihrer Installation wieder einschläft?"</h4><span class="plus">+</span></summary>
+        <p class="answer">Das ist der häufigste Tod von Beratungsprojekten — und genau deshalb ist Compound das vierte Prinzip. Wir trainieren in den 90 Tagen Ihre eigenen KCAS-zertifizierten Stewards, die das System nach unserem Abzug tragen. Wer danach noch externe Moderation will, bucht den Operating Partner — monatlich kündbar. <strong>Wir verkaufen uns nur so lange, wie wir nötig sind.</strong></p>
+      </details>
+      <details>
+        <summary><h4>„Wir warten, bis der EU AI Act final ist."</h4><span class="plus">+</span></summary>
+        <p class="answer">Der EU AI Act ist final. Und er trifft Sie unabhängig davon, ob Sie ein KI-System haben — oder ob Mitarbeiter still und leise ChatGPT mit Kundendaten füttern. <strong>Schatten-IT ist die größte Compliance-Gefahr im Mittelstand.</strong> Der AI Guardian klassifiziert Risiken, bevor ein Use Case in die Pipeline kommt — nicht danach.</p>
+      </details>
+    </div>
+
+    <div class="slide-foot">
+      <span class="l">Kapitel 9 · Einwände</span>
+      <span class="r">09 / —</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FINAL CTA ====== -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div style="max-width:980px;">
+      <span class="kicker" style="color:var(--accent);">— Nächster Schritt · Installieren, nicht konzipieren</span>
+      <h2 style="margin-top:28px;">
+        90 Minuten.<br>
+        Wir zeigen Ihnen den <em>teuersten Engpass</em><br>
+        in Ihrer KI-Initiative<span class="period">.</span>
+      </h2>
+
+      <p class="lead">
+        Der AI Reality Check ist kein Verkaufsgespräch. Es ist eine strukturierte Diagnose entlang der vier Prinzipien — Ownership, Pipeline, Impact, Compound. <strong>Sie bekommen am Ende eine schriftliche Einschätzung, mit oder ohne Folgeauftrag.</strong>
+      </p>
+
+      <div class="btn-row">
+        <a class="btn-primary" href="mailto:nils@new-thought.com?subject=Reality Check">Reality Check anfragen</a>
+        <a class="btn-ghost" href="mailto:nils@new-thought.com?subject=Erstgespräch">Direktes Erstgespräch</a>
+      </div>
+
+      <div class="cta-meta">
+        <div class="it">
+          <p class="k">/ / Format</p>
+          <p class="v">90 Min Videocall + Befund</p>
+        </div>
+        <div class="it">
+          <p class="k">/ / Verbindlichkeit</p>
+          <p class="v">Keine. Auch ohne Folgeauftrag.</p>
+        </div>
+        <div class="it">
+          <p class="k">/ / Zielgruppe</p>
+          <p class="v">GF · COO · Head of Digital · 50–500 MA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© new.thought · KAIRON OS™ · Handbuch v5.0 · Vertraulich</div>
+    <div style="display:flex; gap:24px;">
+      <a href="#diagnose">01 Diagnose</a>
+      <a href="#prinzipien">02 Prinzipien</a>
+      <a href="#os">03 OS</a>
+      <a href="#services">04 Engagement</a>
+      <a href="#rechner">05 Rechner</a>
+      <a href="#cta">Kontakt</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);}});
+  },{threshold:0.1, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal, .stag').forEach(el=>io.observe(el));
+
+  const $ = (id)=>document.getElementById(id);
+  const fmt = (n)=>Math.round(n).toLocaleString('de-DE');
+  const state = new WeakMap();
+  function animateNum(el, target){
+    const from = state.get(el) ?? 0;
+    const start = performance.now();
+    const dur = 600;
+    const ease = t=>1-Math.pow(1-t,3);
+    function step(now){
+      const t = Math.min(1, (now-start)/dur);
+      const v = from + (target-from)*ease(t);
+      el.textContent = fmt(v);
+      if(t<1) requestAnimationFrame(step);
+      else { state.set(el, target); el.textContent = fmt(target);}
+    }
+    requestAnimationFrame(step);
+  }
+  function calc(){
+    const employees = +$('employees').value;
+    const cost = +$('cost').value;
+    const initiatives = +$('initiatives').value;
+    const hours = +$('hours').value;
+    $('vEmp').textContent = employees;
+    $('vCost').textContent = '€ ' + cost.toLocaleString('de-DE');
+    $('vInit').textContent = initiatives;
+    $('vHrs').textContent = hours.toString().replace('.',',') + ' h';
+    const hourly = cost/1800;
+    const lostTime = employees*hours*46*hourly*0.30;
+    const lostPilots = initiatives*0.65*(80*hourly+2000);
+    const aiPC = employees*hours*46*hourly;
+    const lostCompound = aiPC*0.12;
+    const lostTotal = lostTime+lostPilots+lostCompound;
+    const savings = lostTotal*0.60;
+    animateNum($('savings'), savings);
+    animateNum($('lostTime'), lostTime);
+    animateNum($('lostPilots'), lostPilots);
+    animateNum($('lostCompound'), lostCompound);
+    animateNum($('lostTotal'), lostTotal);
+    $('recoveryPct').textContent = '60 %';
+    $('recoveryFill').style.width = '60%';
+  }
+  ['employees','cost','initiatives','hours'].forEach(id=>$(id).addEventListener('input', calc));
+  calc();
+</script>
+
+</body>
+</html>
