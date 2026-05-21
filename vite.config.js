@@ -14,7 +14,13 @@ export default defineConfig({
         main: resolve(__dirname, 'site/index.html'),
         programme: resolve(__dirname, 'site/programme.html'),
         academy: resolve(__dirname, 'site/academy.html'),
-        assessment: resolve(__dirname, 'site/lead-assessment.html')
+        assessment: resolve(__dirname, 'site/lead-assessment.html'),
+        kaironExecutive: resolve(__dirname, 'site/kairon-executive.html'),
+        brochure: resolve(__dirname, 'site/brochure.html'),
+        ressourcen: resolve(__dirname, 'site/ressourcen.html'),
+        ressourcenWarum: resolve(__dirname, 'site/ressourcen/warum-ki-projekte-scheitern.html'),
+        ressourcenWas: resolve(__dirname, 'site/ressourcen/was-ist-ki-governance.html'),
+        ressourcenStrategie: resolve(__dirname, 'site/ressourcen/ki-strategie-vs-ki-governance.html')
       }
     }
   }
