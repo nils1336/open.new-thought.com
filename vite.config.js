@@ -25,7 +25,8 @@ export default defineConfig({
         ressourcenLeitfaden: resolve(__dirname, 'site/ressourcen/ki-adoption-mittelstand-leitfaden.html'),
         ressourcenOrganisation: resolve(__dirname, 'site/ressourcen/ki-organisation-rollen-struktur.html'),
         ressourcenOrchestrator: resolve(__dirname, 'site/ressourcen/was-ist-ein-ki-orchestrator.html'),
-        ressourcenRoi: resolve(__dirname, 'site/ressourcen/ki-roi-berechnen.html')
+        ressourcenRoi: resolve(__dirname, 'site/ressourcen/ki-roi-berechnen.html'),
+        kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html')
       }
     }
   }

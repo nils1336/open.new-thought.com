@@ -232,7 +232,13 @@
     <!-- Right: academy + cta + hamburger -->
     <div class="nav-right">
       <a href="academy.html" class="nav-pill">Academy →</a>
-      <a href="ressourcen.html" class="nav-pill">Ressourcen</a>
+      <div class="nav-dropdown" id="dd-ressourcen">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-ressourcen')" style="font-family:var(--sans); font-size:15px; font-weight:700; letter-spacing:-0.02em; color:var(--ink); cursor:pointer; padding:0; background:none; border:none; display:flex; align-items:center; gap:4px;">Ressourcen</button>
+        <div class="nav-dropdown-menu">
+          <a href="ressourcen.html">Blog</a>
+          <a href="ki-readiness-check.html">KI-Readiness-Check</a>
+        </div>
+      </div>
       <a class="nav-cta" href="#cta">Erstgespräch buchen →</a>
       <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
@@ -255,7 +261,8 @@
     <a href="#kailead" class="mob-link">KAILEAD</a>
   </div>
   <a href="academy.html" class="mob-link" style="color:var(--accent); font-weight:600;">→ Academy ansehen</a>
-  <a href="ressourcen.html" class="mob-link">◈ Ressourcen</a>
+  <a href="ressourcen.html" class="mob-link">◈ Blog</a>
+  <a href="ki-readiness-check.html" class="mob-link">◈ KI-Readiness-Check</a>
   <a href="#cta" class="mob-cta">Erstgespräch buchen →</a>
 </div>
 

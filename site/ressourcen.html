@@ -166,6 +166,35 @@
   }
   .hub-cta-text h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 8px; }
   .hub-cta-text p { color: var(--ink-soft); font-size: 16px; }
+    /* Ressourcen-Dropdown */
+    .res-nav-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .res-nav-dropdown-trigger {
+      font-size: 15px; font-weight: 600; color: var(--accent);
+      background: none; border: none; cursor: pointer; padding: 0;
+      display: inline-flex; align-items: center; gap: 4px; font-family: inherit;
+    }
+    .res-nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.6; transition: transform .2s; }
+    .res-nav-dropdown.open .res-nav-dropdown-trigger::after { transform: rotate(180deg); }
+    .res-nav-dropdown-menu {
+      position: absolute; top: calc(100% + 10px); left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      background: #fff; border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+      min-width: 200px; padding: 6px 0; border-radius: 8px;
+      opacity: 0; pointer-events: none;
+      transition: opacity .18s, transform .18s; z-index: 300;
+    }
+    .res-nav-dropdown.open .res-nav-dropdown-menu {
+      opacity: 1; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+    .res-nav-dropdown-menu a {
+      display: block; padding: 9px 20px;
+      font-size: 13px; font-weight: 500; color: #555;
+      text-decoration: none; white-space: nowrap;
+    }
+    .res-nav-dropdown-menu a:hover { color: #0e0e0c; background: #f5f4f0; }
+    .res-nav-dropdown-menu a.active { color: #0e0e0c; font-weight: 600; }
 </style>
 </head>
 <body>
@@ -177,7 +206,13 @@
     <div style="display:flex; gap:28px; align-items:center;">
       <a href="programme.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Programme</a>
       <a href="academy.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Academy</a>
-      <a href="ressourcen.html" style="font-size:15px; font-weight:600; color:var(--accent);">Ressourcen</a>
+      <div class="res-nav-dropdown" id="dd-ressourcen">
+        <button class="res-nav-dropdown-trigger" onclick="toggleResDropdown()">Ressourcen</button>
+        <div class="res-nav-dropdown-menu">
+          <a href="ressourcen.html" class="active">Blog</a>
+          <a href="ki-readiness-check.html">KI-Readiness-Check</a>
+        </div>
+      </div>
     </div>
     <div style="display:flex; justify-content:flex-end;">
       <a class="nav-cta" href="programme.html#cta">Erstgespräch buchen →</a>
@@ -363,6 +398,16 @@ function filterCards(cat, btn) {
     }
   });
 }
+</script>
+<script>
+  function toggleResDropdown() {
+    document.getElementById('dd-ressourcen').classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#dd-ressourcen')) {
+      document.getElementById('dd-ressourcen')?.classList.remove('open');
+    }
+  });
 </script>
 
 </body>
