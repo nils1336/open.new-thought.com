@@ -951,22 +951,25 @@
   async function sendResultEmail(emailAddr) {
     const profile = getProfile();
     const scores  = DIMS.map(d => ({ label: d.title, score: normScore(d.id) }));
+    const payload = {
+      email:       emailAddr,
+      scores:      scores,
+      overall:     overallScore(),
+      profileType: profile.label,
+      profileDesc: profile.desc,
+      strongest:   profile.strongest,
+      weakest:     profile.weakest
+    };
     try {
-      await fetch('send-result.php', {
+      const res  = await fetch('send-result.php', {
         method:  'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email:       emailAddr,
-          scores:      scores,
-          overall:     overallScore(),
-          profileType: profile.label,
-          profileDesc: profile.desc,
-          strongest:   profile.strongest,
-          weakest:     profile.weakest
-        })
+        body:    JSON.stringify(payload)
       });
+      const json = await res.json();
+      console.log('[KI-Check] E-Mail-Benachrichtigung:', json.success ? '✅ gesendet' : '❌ fehlgeschlagen', json);
     } catch(e) {
-      // Silent fail — user experience unaffected
+      console.warn('[KI-Check] send-result.php nicht erreichbar (lokal oder PHP-Fehler):', e.message);
     }
   }
 
