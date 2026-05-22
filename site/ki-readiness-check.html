@@ -994,11 +994,13 @@
     }
 
     // Update counter + button
-    const cnt = document.getElementById('qstatus');
-    const btn = document.getElementById('btnNext');
+    const cnt  = document.getElementById('qstatus');
+    const cnt2 = document.getElementById('qstatus2');
+    const btn  = document.getElementById('btnNext');
     const ac = answeredCount(dimId);
-    if (cnt) cnt.textContent = `${ac} von 4 beantwortet`;
-    if (btn) btn.disabled = !allAnswered(dimId);
+    if (cnt)  cnt.textContent  = `${ac} von 4 beantwortet`;
+    if (cnt2) cnt2.textContent = `${ac} / 4`;
+    if (btn)  btn.disabled = !allAnswered(dimId);
 
     // Progress
     updateProgress();
@@ -1251,7 +1253,7 @@
                   <div>
                     <div class="dc-rec-lbl">Empfehlung new.thought</div>
                     <div class="dc-rec">${lv.rec}</div>
-                    <a class="dc-cta" href="${lv.ctaHref || 'programme.html#cta'}">${lv.cta}</a>
+                    <a class="dc-cta" href="${lv.ctaHref || 'programme.html#cta'}" target="_blank" rel="noopener">${lv.cta}</a>
                   </div>
                 </div>`;
             }).join('')}
@@ -1261,7 +1263,7 @@
             <div class="rcta-eyebrow">Nächster Schritt</div>
             <h3 class="rcta-h3">30 Minuten Erstgespräch</h3>
             <p class="rcta-sub">Wir besprechen Ihre Ergebnisse, zeigen die drei größten Hebel und skizzieren, wie ein erster konkreter Schritt aussehen kann.</p>
-            <a href="programme.html#cta" class="rcta-btn">Kostenfreies Erstgespräch buchen →</a>
+            <a href="programme.html#cta" class="rcta-btn" target="_blank" rel="noopener">Kostenfreies Erstgespräch buchen →</a>
           </div>
 
         </div>
