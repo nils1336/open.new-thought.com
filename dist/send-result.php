@@ -1,9 +1,13 @@
 <?php
 /**
  * send-result.php
- * Sends email notification to Nils when someone views their KI-Readiness results.
- * Deploy this file to the web root alongside the HTML files.
+ * Sends email notification to Nils when someone submits their KI-Readiness results.
  */
+
+// Capture PHP errors to log instead of output
+@ini_set('log_errors', 1);
+@ini_set('error_log', __DIR__ . '/ki-errors.log');
+@error_reporting(E_ALL);
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
@@ -21,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$raw   = file_get_contents('php://input');
-$data  = json_decode($raw, true);
+$raw  = file_get_contents('php://input');
+$data = json_decode($raw, true);
 
 if (!$data) {
     http_response_code(400);
@@ -44,7 +48,7 @@ if (!filter_var($visitorEmail, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// ── Scores table ──────────────────────────────────────────────
+// ── Scores table ─────────────────────────────────────────────
 $scoresHtml = '';
 foreach ($scores as $s) {
     $label = htmlspecialchars($s['label'] ?? '', ENT_QUOTES, 'UTF-8');
@@ -63,7 +67,7 @@ foreach ($scores as $s) {
       </tr>";
 }
 
-// ── Stärken / Handlungsfelder ─────────────────────────────────
+// ── Stärken / Handlungsfelder ────────────────────────────────
 $strongHtml = '';
 foreach ($strongest as $d) {
     $n = htmlspecialchars($d['title'] ?? '', ENT_QUOTES, 'UTF-8');
@@ -81,14 +85,14 @@ foreach ($weakest as $d) {
       <span style='font-weight:700;color:#ff3eb5;font-family:monospace;'>{$s}</span></div>";
 }
 
-// ── Reply link ────────────────────────────────────────────────
-$subjectEnc = rawurlencode('Ihr KI-Readiness-Ergebnis – Gespräch anbieten');
-$bodyEnc    = rawurlencode("Hallo,\n\nIhr KI-Readiness-Score: {$overall}/10 ({$profileType}).\n\nIch würde gerne kurz über Ihre Ergebnisse sprechen – wann haben Sie 30 Minuten Zeit?\n\nBeste Grüße\nNils");
+// ── Reply link ───────────────────────────────────────────────
+$subjectEnc = rawurlencode('Ihr KI-Readiness-Ergebnis - Gespraech anbieten');
+$bodyEnc    = rawurlencode("Hallo,\n\nIhr KI-Readiness-Score: {$overall}/10 ({$profileType}).\n\nIch wuerde gerne kurz ueber Ihre Ergebnisse sprechen - wann haben Sie 30 Minuten Zeit?\n\nBeste Gruesse\nNils");
 $replyLink  = "mailto:{$visitorEmail}?subject={$subjectEnc}&body={$bodyEnc}";
 
 $date = date('d.m.Y, H:i');
 
-// ── HTML email body ───────────────────────────────────────────
+// ── HTML email body ──────────────────────────────────────────
 $html = <<<HTML
 <!DOCTYPE html>
 <html lang="de">
@@ -97,7 +101,7 @@ $html = <<<HTML
 <div style="max-width:580px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.09);">
 
   <div style="background:#0e0e0c;padding:28px 36px;">
-    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;font-family:monospace;">KI-Readiness-Check · new.thought · {$date}</div>
+    <div style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;font-family:monospace;">KI-Readiness-Check &middot; new.thought &middot; {$date}</div>
     <div style="font-size:22px;font-weight:800;color:#fff;line-height:1.3;">Neues Ergebnis eingegangen</div>
   </div>
 
@@ -106,7 +110,7 @@ $html = <<<HTML
     <table style="width:100%;border-collapse:collapse;background:#f9f8f4;border-radius:10px;overflow:hidden;margin-bottom:28px;">
       <tr>
         <td style="padding:18px 20px;">
-          <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#aaa;margin-bottom:5px;font-family:monospace;">E-Mail des Unternehmens</div>
+          <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#aaa;margin-bottom:5px;font-family:monospace;">E-Mail</div>
           <div style="font-size:16px;font-weight:700;color:#0e0e0c;">{$visitorEmail}</div>
         </td>
         <td style="padding:18px 20px;text-align:right;border-left:1px solid #ece9e1;">
@@ -125,7 +129,7 @@ $html = <<<HTML
     <table style="width:100%;border-collapse:collapse;margin-bottom:26px;">
       <tr>
         <td style="width:50%;padding-right:12px;vertical-align:top;">
-          <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#aaa;margin-bottom:8px;font-family:monospace;">Stärken</div>
+          <div style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#aaa;margin-bottom:8px;font-family:monospace;">Staerken</div>
           {$strongHtml}
         </td>
         <td style="width:50%;padding-left:12px;vertical-align:top;">
@@ -141,7 +145,7 @@ $html = <<<HTML
     </div>
 
     <div style="margin-bottom:36px;">
-      <a href="{$replyLink}" style="display:inline-block;background:#ff3eb5;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;margin-right:12px;">Direkt antworten →</a>
+      <a href="{$replyLink}" style="display:inline-block;background:#ff3eb5;color:#fff;padding:14px 26px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:700;margin-right:12px;">Direkt antworten</a>
     </div>
 
   </div>
@@ -155,21 +159,30 @@ $html = <<<HTML
 </html>
 HTML;
 
-// ── Send email ────────────────────────────────────────────────
-$notifyTo   = 'nils@new-thought.com';
-$mailSubject = "KI-Check: {$visitorEmail} · {$overall}/10 · {$profileType}";
-$headers     = implode("\r\n", [
+// ── Send email ───────────────────────────────────────────────
+$notifyTo = 'nils@new-thought.com';
+
+// Subject: UTF-8 encoded (required for umlauts/special chars in SMTP)
+$mailSubject = '=?UTF-8?B?' . base64_encode('KI-Check: ' . $visitorEmail . ' | ' . $overall . '/10 | ' . $profileType) . '?=';
+
+// From MUST be a real existing mailbox on Hostinger — noreply@ does not exist
+$headers = implode("\r\n", [
     'MIME-Version: 1.0',
-    'Content-type: text/html; charset=UTF-8',
-    'From: KI-Readiness Check <noreply@new-thought.com>',
+    'Content-Type: text/html; charset=UTF-8',
+    'From: new.thought KI-Check <nils@new-thought.com>',
     'Reply-To: ' . $visitorEmail,
     'X-Mailer: PHP/' . phpversion()
 ]);
 
 $sent = mail($notifyTo, $mailSubject, $html, $headers);
 
-// ── Backup log (survives email failures) ─────────────────────
-$logLine = date('Y-m-d H:i:s') . "\t{$visitorEmail}\t{$overall}/10\t{$profileType}\n";
+// ── Detailed log ─────────────────────────────────────────────
+$status  = $sent ? 'SENT' : 'FAILED';
+$logLine = date('Y-m-d H:i:s') . "\t{$status}\t{$visitorEmail}\t{$overall}/10\t{$profileType}\n";
 @file_put_contents(__DIR__ . '/ki-leads.log', $logLine, FILE_APPEND | LOCK_EX);
 
-echo json_encode(['success' => $sent]);
+echo json_encode([
+    'success'            => $sent,
+    'mail_available'     => function_exists('mail'),
+    'logged'             => true
+]);
