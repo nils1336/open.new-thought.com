@@ -470,35 +470,21 @@
     .final-cta .exec-cta-row { flex-direction: column; }
     .btn-primary-inv, .btn-ghost-inv { width: 100%; justify-content: center; }
   }
-    /* Ressourcen-Dropdown */
-    .nav-links .nav-dropdown { position: relative; }
-    .nav-links .nav-dropdown-trigger {
-      font-family: inherit; font-size: 15px; font-weight: 500;
-      color: var(--ink); background: none; border: none;
-      cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 4px;
-      letter-spacing: -0.01em;
-    }
-    .nav-links .nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.4; transition: transform .2s; }
-    .nav-links .nav-dropdown.open .nav-dropdown-trigger::after { transform: rotate(180deg); }
-    .nav-links .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 10px); left: 50%;
-      transform: translateX(-50%) translateY(-6px);
-      background: #fff; border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-      min-width: 200px; padding: 6px 0; border-radius: 8px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .18s, transform .18s; z-index: 300;
-    }
-    .nav-links .nav-dropdown.open .nav-dropdown-menu {
-      opacity: 1; pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
-    }
-    .nav-links .nav-dropdown-menu a {
-      display: block; padding: 9px 20px;
-      font-size: 13px; font-weight: 500; color: #555;
-      text-decoration: none; white-space: nowrap;
-    }
-    .nav-links .nav-dropdown-menu a:hover { color: #0e0e0c; background: #f5f4f0; }
+  /* Nav layout */
+  nav.top .wrap.row { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; }
+  .nav-left  { display:flex; align-items:center; gap:20px; }
+  .nav-center{ display:flex; align-items:center; gap:8px; justify-content:center; }
+  .nav-right { display:flex; align-items:center; gap:12px; justify-content:flex-end; }
+  @media(max-width:760px){ nav.top .wrap.row{display:flex;} .nav-center,.nav-right{display:none;} }
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-trigger { display:flex;align-items:center;gap:5px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-0.02em;color:var(--ink);cursor:pointer;padding:0;background:none;border:none;line-height:1;transition:color .15s; }
+  .nav-dropdown-trigger::after { content:'▾';font-size:10px;opacity:0.4;transition:transform .2s;margin-top:1px; }
+  .nav-dropdown.open .nav-dropdown-trigger::after { transform:rotate(180deg); }
+  .nav-dropdown-menu { position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.10);min-width:180px;padding:6px 0;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:200; }
+  .nav-dropdown.open .nav-dropdown-menu { opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0); }
+  .nav-dropdown-menu a { display:block;padding:9px 20px;font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;white-space:nowrap;transition:color .12s,background .12s; }
+  .nav-dropdown-menu a:hover { color:var(--ink);background:var(--bg-soft); }
+  .nav-dropdown-menu a.active { color:var(--ink);font-weight:700; }
 </style>
 
 <script type="application/ld+json">
@@ -570,38 +556,59 @@
 <!-- ====== NAV ====== -->
 <nav class="top">
   <div class="wrap row">
-    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-back">← Start</a>
-      <span class="nav-divider"></span>
-      <a href="#schmerz">Das Problem</a>
-      <a href="#mandat">Das Mandat</a>
-      <a href="#investition">Investition</a>
-      <a href="programme.html" class="nav-pill">Programme ↑</a>
-      <div class="nav-dropdown" id="dd-ressourcen">
-        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-ressourcen')">Ressourcen</button>
+    <div class="nav-left">
+      <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
+      <a href="programme.html" class="nav-back">← Programme</a>
+    </div>
+    <div class="nav-center">
+      <div class="nav-dropdown" id="dd-inhalt">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-inhalt')">Inhalt</button>
         <div class="nav-dropdown-menu">
-          <a href="ressourcen.html">Blog</a>
-          <a href="ki-readiness-check.html">KI-Readiness-Check</a>
+          <a href="#schmerz">Das Problem</a>
+          <a href="#mandat">Das Mandat</a>
+          <a href="#investition">Investition</a>
+        </div>
+      </div>
+      <span style="width:1px;height:20px;background:var(--ink-mute);opacity:0.15;display:inline-block;"></span>
+      <div class="nav-dropdown" id="dd-produkte">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-produkte')">Produkte</button>
+        <div class="nav-dropdown-menu">
+          <a href="kairon.html">KAIRON</a>
+          <a href="kaidop.html">KAIDOP</a>
+          <a href="kailead.html">KAILEAD</a>
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:4px 0;">
+          <a href="kairon-executive.html" class="active">Fractional AI Officer</a>
         </div>
       </div>
     </div>
-    <a href="https://cal.meetergo.com/nilsb/discovery" class="btn-primary nav-cta" target="_blank" rel="noopener">Erstgespräch</a>
-    <button class="nav-hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="nav-mobile">
-    <a href="index.html">← Start</a>
-    <a href="#schmerz">Das Problem</a>
-    <a href="#mandat">Das Mandat</a>
-    <a href="#investition">Investition</a>
-    <a href="programme.html">Programme</a>
-    <a href="ressourcen.html">Blog</a>
-    <a href="ki-readiness-check.html">KI-Readiness-Check</a>
-    <a href="https://cal.meetergo.com/nilsb/discovery" class="btn-primary" target="_blank" rel="noopener">Erstgespräch anfragen</a>
+    <div class="nav-right">
+      <a href="ki-readiness-check.html" class="nav-pill">KI-Check →</a>
+      <a class="nav-cta" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Erstgespräch buchen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Auf dieser Seite</span>
+    <a href="#schmerz" class="mob-link">Das Problem</a>
+    <a href="#mandat" class="mob-link">Das Mandat</a>
+    <a href="#investition" class="mob-link">Investition</a>
+  </div>
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Produkte</span>
+    <a href="kairon.html" class="mob-link">KAIRON</a>
+    <a href="kaidop.html" class="mob-link">KAIDOP</a>
+    <a href="kailead.html" class="mob-link">KAILEAD</a>
+    <a href="kairon-executive.html" class="mob-link" style="color:var(--accent);font-weight:700;">Fractional AI Officer</a>
+  </div>
+  <a href="ki-readiness-check.html" class="mob-link">◈ KI-Readiness-Check</a>
+  <a href="ressourcen.html" class="mob-link">◈ Blog</a>
+  <a href="https://cal.meetergo.com/nilsb/discovery" class="mob-cta" target="_blank" rel="noopener">Erstgespräch buchen →</a>
+</div>
 
 <!-- ====== HERO ====== -->
 <section class="exec-hero">
@@ -612,7 +619,7 @@
       Nicht wir<span class="accent">.</span>
     </h1>
     <p class="exec-sub reveal">
-      Wenn Ihr Vertrieb zu lange für Angebote braucht, Ihre Lizenzen ungenutzt laufen und jeder Pilotversuch nach drei Monaten versandet – dann fehlt kein Tool und kein Workshop. Es fehlt <strong>jemand, der die AI-Führungsrolle übernimmt, sie aufbaut und sie dann intern übergibt.</strong> Mit messbarem Ergebnis.
+      Wenn Ihr Vertrieb zu lange für Angebote braucht, Ihre Lizenzen ungenutzt laufen und jeder Pilotversuch nach drei Monaten versandet: dann fehlt kein Tool und kein Workshop. Es fehlt <strong>jemand, der die AI-Führungsrolle übernimmt, sie aufbaut und sie dann intern übergibt.</strong> Mit messbarem Ergebnis.
     </p>
     <div class="exec-cta-row reveal">
       <a href="https://cal.meetergo.com/nilsb/discovery" class="btn-primary" target="_blank" rel="noopener">30-Min-Erstgespräch anfragen</a>
@@ -657,7 +664,7 @@
       <div class="pain-card reveal">
         <span class="pain-num">01</span>
         <p class="pain-quote">"Ich weiß ehrlich gesagt nicht, was meine Mitarbeiter heimlich mit ChatGPT machen."</p>
-        <p class="pain-body">Marketing nutzt US-Tools, HR füttert KIs mit Bewerberdaten, die Entwicklung lässt Code extern prüfen. Ohne klare Governance verstoßen Sie täglich gegen Datenschutz und den EU AI Act. Als Geschäftsführer stehen Sie mit einem Bein im Haftungsrisiko – ohne es zu merken.</p>
+        <p class="pain-body">Marketing nutzt US-Tools, HR füttert KIs mit Bewerberdaten, die Entwicklung lässt Code extern prüfen. Ohne klare Governance verstoßen Sie täglich gegen Datenschutz und den EU AI Act. Als Geschäftsführer stehen Sie mit einem Bein im Haftungsrisiko, ohne es zu merken.</p>
       </div>
       <div class="pain-card reveal">
         <span class="pain-num">02</span>
@@ -672,12 +679,12 @@
       <div class="pain-card reveal">
         <span class="pain-num">04</span>
         <p class="pain-quote">"Ich brauche dringend einen KI-Verantwortlichen, aber der Markt ist komplett leergefegt."</p>
-        <p class="pain-body">Einen fähigen Chief AI Officer in Vollzeit zu finden dauert 9 bis 12 Monate und kostet inklusive Headhunter ein Vermögen. Solange können Sie nicht warten. Sie brauchen die Kompetenz ab morgen – ohne das Risiko einer Festanstellung.</p>
+        <p class="pain-body">Einen fähigen Chief AI Officer in Vollzeit zu finden dauert 9 bis 12 Monate und kostet inklusive Headhunter ein Vermögen. Solange können Sie nicht warten. Sie brauchen die Kompetenz ab morgen, ohne das Risiko einer Festanstellung.</p>
       </div>
     </div>
 
     <div class="pain-close reveal">
-      Wenn Sie sich in einem dieser vier Sätze wiederfinden, ist das Problem nicht Ihre Technologie. Es ist auch nicht Ihr Team. <strong>Es ist das Fehlen einer Rolle: jemand, der AI in Ihrem Unternehmen führt, orchestriert und in messbaren Geschäftshebeln denkt – nicht in Tools.</strong><br><br>
+      Wenn Sie sich in einem dieser vier Sätze wiederfinden, ist das Problem nicht Ihre Technologie. Es ist auch nicht Ihr Team. <strong>Es ist das Fehlen einer Rolle: jemand, der AI in Ihrem Unternehmen führt, orchestriert und in messbaren Geschäftshebeln denkt, nicht in Tools.</strong><br><br>
       Diese Rolle ist meist intern nicht besetzt. Ein Vollzeit-CAIO kostet €180–250k im Jahr und ist für Ihre Größe nicht darstellbar. Strategieberater liefern einen Bericht und verschwinden. Ihre IT ist mit Stabilität ausgelastet.<br><br>
       KAIRON Executive füllt genau diese Lücke. Auf Zeit. Mit Übergabe.
     </div>
@@ -690,7 +697,7 @@
     <div class="reveal">
       <p class="section-eyebrow"><span class="section-num">02</span> Was messbar anders wird</p>
       <h2 class="section-title">Drei produktive Anwendungen. Eine interne Führungskraft. Eine Rechnung, die aufgeht.</h2>
-      <p style="margin-top:20px; font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:68ch;">Das Mandat hat ein einziges geschäftliches Ziel: drei AI-Anwendungen produktiv in Ihrem Unternehmen, die einen quantifizierten Geschäftsbeitrag leisten – und ein Mitarbeiter, der das System eigenständig weiterführt.</p>
+      <p style="margin-top:20px; font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:68ch;">Das Mandat hat ein einziges geschäftliches Ziel: drei AI-Anwendungen produktiv in Ihrem Unternehmen, die einen quantifizierten Geschäftsbeitrag leisten, und ein Mitarbeiter, der das System eigenständig weiterführt.</p>
     </div>
 
     <ul class="outcome-list">
@@ -718,12 +725,12 @@
 
     <div class="pull-quote reveal">
       <p class="pull-quote-text">
-        Wir starten das Mandat nur, wenn die drei identifizierten Anwendungsfälle gemeinsam im ersten Jahr nach Mandatsende mindestens das Dreifache der Investition zurückspielen. Wenn diese Rechnung in der Diagnosephase nicht plausibel wird, gebe ich Ihnen das Geld zurück.
+        Andere Unternehmen haben durch diesen Prozess ihre gesamte KI-Struktur neu ausgerichtet, interne Verantwortung klar verteilt und zum ersten Mal KI-Initiativen gestoppt, die Ressourcen gebunden haben, ohne zu liefern. Das Ergebnis: weniger Projekte, mehr Wirkung.
       </p>
-      <p class="pull-quote-meta">Nils · Mandats-Garantie · Schriftlich fixiert</p>
+      <p class="pull-quote-meta">Nils · Was Kunden berichten · Aus der Praxis</p>
     </div>
 
-    <p style="margin-top:40px; font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:68ch;" class="reveal">Das ist kein Marketing-Versprechen, sondern ein Filter. Es sortiert Unternehmen aus, in denen AI ohnehin keinen Sinn macht – und schützt Sie davor, in ein Mandat zu investieren, das sich nicht trägt.</p>
+    <p style="margin-top:40px; font-size:17px; line-height:1.75; color:var(--ink-soft); max-width:68ch;" class="reveal">Das ist kein Marketing-Versprechen, sondern ein Filter. Es sortiert Unternehmen aus, in denen AI ohnehin keinen Sinn macht, und schützt Sie davor, in ein Mandat zu investieren, das sich nicht trägt.</p>
   </div>
 </section>
 
@@ -748,19 +755,19 @@
       <tbody>
         <tr>
           <td class="num">01</td>
-          <td><strong>Vertrieb</strong> – Schnellere Angebote</td>
+          <td><strong>Vertrieb:</strong> Schnellere Angebote</td>
           <td>3 Vertriebler, 8 Std/Woche gespart</td>
           <td class="amount">€ 78.000</td>
         </tr>
         <tr>
           <td class="num">02</td>
-          <td><strong>Kalkulation</strong> – AI-gestützte Vorkalkulation</td>
+          <td><strong>Kalkulation:</strong> AI-gestützte Vorkalkulation</td>
           <td>2 Kalkulatoren, 6 Std/Woche gespart</td>
           <td class="amount">€ 52.000</td>
         </tr>
         <tr>
           <td class="num">03</td>
-          <td><strong>Service</strong> – Routine-Tickets automatisiert</td>
+          <td><strong>Service:</strong> Routine-Tickets automatisiert</td>
           <td>30% von 4.000 Tickets/Jahr</td>
           <td class="amount">€ 92.000</td>
         </tr>
@@ -787,7 +794,7 @@
       </tbody>
     </table>
 
-    <p style="margin-top:40px; font-size:16px; line-height:1.75; color:var(--ink-soft); max-width:68ch;" class="reveal">Das ist ein bewusst konservatives Rechenbeispiel. In der Diagnosephase prüfen wir gemeinsam, welche Anwendungsfälle in Ihrem Unternehmen tatsächlich tragen – und mit welchen Annahmen. Die Rechnung muss vor dem Mandatsbeginn aufgehen, nicht hinterher.</p>
+    <p style="margin-top:40px; font-size:16px; line-height:1.75; color:var(--ink-soft); max-width:68ch;" class="reveal">Das ist ein bewusst konservatives Rechenbeispiel. In der Diagnosephase prüfen wir gemeinsam, welche Anwendungsfälle in Ihrem Unternehmen tatsächlich tragen, und mit welchen Annahmen. Die Rechnung muss vor dem Mandatsbeginn aufgehen, nicht hinterher.</p>
     <p style="margin-top:16px; font-size:15px; line-height:1.7; color:var(--ink-mute); max-width:64ch;" class="reveal">Wir liefern Ihnen am Ende der Diagnosephase ein einseitiges Business-Case-Dokument, das Sie an Beirat, Bank oder Investor weiterreichen können.</p>
   </div>
 </section>
@@ -828,7 +835,7 @@
           <span class="phase-days">Tag 46–120</span>
         </div>
         <div class="phase-right">
-          <p class="phase-body">Ich moderiere die Einführung der ersten zwei Anwendungsfälle in 14-Tage-Zyklen. Jeder Zyklus endet mit einem dokumentierten Wirkungsnachweis – konkret messbar: gesparte Stunden, reduzierte Durchlaufzeit, beantwortete Tickets. Mit jedem Zyklus übergebe ich mehr Verantwortung an Ihren internen Nachfolger.</p>
+          <p class="phase-body">Ich moderiere die Einführung der ersten zwei Anwendungsfälle in 14-Tage-Zyklen. Jeder Zyklus endet mit einem dokumentierten Wirkungsnachweis, konkret messbar: gesparte Stunden, reduzierte Durchlaufzeit, beantwortete Tickets. Mit jedem Zyklus übergebe ich mehr Verantwortung an Ihren internen Nachfolger.</p>
           <ul class="phase-deliverables">
             <li>Zwei produktiv laufende AI-Anwendungen mit dokumentiertem Wirkungsbeleg</li>
             <li>Einen aufgebauten internen Wissens-Speicher (Prompt-Bibliothek, Workflow-Muster, dokumentierte Fehlversuche)</li>
@@ -906,7 +913,7 @@
       <div class="pricing-card">
         <h3 class="pricing-name">Diagnose-Phase</h3>
         <p class="pricing-meta">45 Tage · Einstieg ohne Vollverpflichtung</p>
-        <p class="pricing-body">Vollständige Phase 1 inklusive Business-Case-Dokument. Wenn der Case nicht trägt, endet das Mandat hier – und Sie haben eine fundierte Analyse statt einer offenen Frage.</p>
+        <p class="pricing-body">Vollständige Phase 1 inklusive Business-Case-Dokument. Wenn der Case nicht trägt, endet das Mandat hier, und Sie haben eine fundierte Analyse statt einer offenen Frage.</p>
         <p class="pricing-note">Festpreis. Wird bei Fortführung zum Standard-Mandat angerechnet.</p>
         <a href="https://cal.meetergo.com/nilsb/discovery" class="btn-ghost" target="_blank" rel="noopener">Diagnose-Phase anfragen</a>
       </div>
@@ -993,8 +1000,8 @@
     <div class="reveal">
       <p class="section-eyebrow"><span class="section-num">08</span> Das System</p>
       <h2 class="section-title" style="color:#f3f2ee;">KAI Executive<span style="color:var(--accent);">.</span></h2>
-      <p class="method-body">Als Fractional AI Officer bringe ich nicht nur Methoden mit – ich übernehme die Führungsrolle, die intern fehlt, und setze sie durch. KAIRON, KAIDOP und KAILEAD sind keine Frameworks, die in einer Präsentation enden. Sie sind Arbeitssysteme, die in Ihrem Unternehmen laufen: mit messbaren Outputs pro Phase, klaren Entscheidungen und ohne Berater-Deutsch.</p>
-      <p class="method-body" style="margin-top:16px;">Was nach sechs Monaten bleibt: drei AI-Anwendungen, die echten Geschäftswert erzeugen. Eine interne Führungskraft, die das System eigenständig weiterentwickelt. Und ein Unternehmen, das AI nicht mehr erklärt bekommt – sondern selbst steuert.</p>
+      <p class="method-body">Als Fractional AI Officer bringe ich nicht nur Methoden mit, ich übernehme die Führungsrolle, die intern fehlt, und setze sie durch. KAIRON, KAIDOP und KAILEAD sind keine Frameworks, die in einer Präsentation enden. Sie sind Arbeitssysteme, die in Ihrem Unternehmen laufen: mit messbaren Outputs pro Phase, klaren Entscheidungen und ohne Berater-Deutsch.</p>
+      <p class="method-body" style="margin-top:16px;">Was nach sechs Monaten bleibt: drei AI-Anwendungen, die echten Geschäftswert erzeugen. Eine interne Führungskraft, die das System eigenständig weiterentwickelt. Und ein Unternehmen, das AI nicht mehr erklärt bekommt, sondern selbst steuert.</p>
     </div>
 
     <div class="method-columns reveal">
@@ -1005,14 +1012,14 @@
             <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); font-weight:600; padding-top:3px;">KAIRON</span>
             <div>
               <p style="font-size:14px; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:6px;">AI-Adoption als Arbeitssystem</p>
-              <p style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; font-style:italic;">Ein Steuerungssystem, das AI nachhaltig institutionalisiert und strukturiert im Unternehmen verankert – nicht als Projekt, sondern als dauerhafter Betriebsmodus.</p>
+              <p style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; font-style:italic;">Ein Steuerungssystem, das AI nachhaltig institutionalisiert und strukturiert im Unternehmen verankert, nicht als Projekt, sondern als dauerhafter Betriebsmodus.</p>
             </div>
           </div>
           <div style="display:grid; grid-template-columns:64px 1fr; gap:16px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
             <span style="font-family:var(--mono); font-size:9px; letter-spacing:0.25em; text-transform:uppercase; color:var(--accent); font-weight:600; padding-top:3px;">KAIDOP</span>
             <div>
               <p style="font-size:14px; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:6px;">Von Pilot zu Produktion</p>
-              <p style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; font-style:italic;">Das Deployment-Framework, das AI-Anwendungen aus der Testphase holt und in echte Arbeitsabläufe integriert – mit Akzeptanz, nicht gegen sie.</p>
+              <p style="font-size:13px; color:rgba(255,255,255,0.4); line-height:1.6; font-style:italic;">Das Deployment-Framework, das AI-Anwendungen aus der Testphase holt und in echte Arbeitsabläufe integriert, mit Akzeptanz, nicht gegen sie.</p>
             </div>
           </div>
           <div style="display:grid; grid-template-columns:64px 1fr; gap:16px; padding:20px 0; border-bottom:1px solid rgba(255,255,255,0.08);">
@@ -1049,7 +1056,7 @@
       <div class="about-left">
         <h2 class="about-name">Nils Blache</h2>
         <p class="about-body">Fractional AI Officer bei new.thought. IT-Consultant bei GuideCom AG mit Fokus auf digitale HR-Lösungen. Dozent für Betriebswirtschaftslehre an der FH Südwestfalen und für internationale Geschäftsentwicklung an der TH Ingolstadt.</p>
-        <p class="about-body">Arbeitet an der Schnittstelle von Technologie, Organisation und Führung – mit dem Ziel, AI-Kompetenz intern zu verankern statt extern zu verwalten.</p>
+        <p class="about-body">Arbeitet an der Schnittstelle von Technologie, Organisation und Führung, mit dem Ziel, AI-Kompetenz intern zu verankern statt extern zu verwalten.</p>
         <ul class="about-facts">
           <li>IT Consultant for digital HR solutions · GuideCom AG</li>
           <li>Innovation Facilitator · new.thought</li>
@@ -1078,7 +1085,7 @@
           <h4>Was passiert, wenn der Business-Case in der Diagnosephase nicht trägt?</h4>
           <span class="plus">+</span>
         </summary>
-        <div class="answer">Das Mandat endet am Tag 45. Sie haben einen dokumentierten Business-Case in der Hand – auch wenn er gegen das Projekt spricht. Das ist immer noch günstiger als ein 6-Monats-Mandat, das ins Leere läuft.</div>
+        <div class="answer">Das Mandat endet am Tag 45. Sie haben einen dokumentierten Business-Case in der Hand, auch wenn er gegen das Projekt spricht. Das ist immer noch günstiger als ein 6-Monats-Mandat, das ins Leere läuft.</div>
       </details>
       <details>
         <summary>
@@ -1106,14 +1113,14 @@
           <h4>Können Sie den Erfolg garantieren?</h4>
           <span class="plus">+</span>
         </summary>
-        <div class="answer">Nein. Niemand kann das. Was ich garantiere: einen plausibel gerechneten Business-Case am Tag 45 mit Rückzugsoption – und einen Festpreis ohne Nachforderungen.</div>
+        <div class="answer">Nein. Niemand kann das. Was ich garantiere: einen plausibel gerechneten Business-Case am Tag 45 mit Rückzugsoption und einen Festpreis ohne Nachforderungen.</div>
       </details>
       <details>
         <summary>
           <h4>Kann das Mandat verlängert werden?</h4>
           <span class="plus">+</span>
         </summary>
-        <div class="answer">Das Mandat endet mit der Übergabe. Danach gibt es den Compound-Retainer als quartalsweises Sparring-Format – bewusst schlank gehalten, damit Sie nicht abhängig werden.</div>
+        <div class="answer">Das Mandat endet mit der Übergabe. Danach gibt es den Compound-Retainer als quartalsweises Sparring-Format, bewusst schlank gehalten, damit Sie nicht abhängig werden.</div>
       </details>
     </div>
   </div>
@@ -1125,7 +1132,7 @@
     <div class="final-cta-left reveal">
       <p class="section-eyebrow" style="color:rgba(255,255,255,0.5);"><span class="section-num">11</span> Nächster Schritt</p>
       <h2>30 Minuten klären mehr als 30 Seiten lesen.</h2>
-      <p>Wenn Sie sich in einem der vier Schmerz-Szenarien wiederfinden, ist der nächste Schritt ein kurzes Erstgespräch. Drei Diagnosefragen, eine ehrliche Einschätzung, ob das Mandat in Ihrer Situation einen Business-Case erzeugen kann – oder nicht.</p>
+      <p>Wenn Sie sich in einem der vier Schmerz-Szenarien wiederfinden, ist der nächste Schritt ein kurzes Erstgespräch. Drei Diagnosefragen, eine ehrliche Einschätzung, ob das Mandat in Ihrer Situation einen Business-Case erzeugen kann, oder nicht.</p>
       <p>Wenn nicht, sage ich Ihnen das direkt und nenne eine bessere Option für Ihre Lage.</p>
       <div class="exec-cta-row">
         <a href="https://cal.meetergo.com/nilsb/discovery" class="btn-primary-inv" target="_blank" rel="noopener">30-Min-Erstgespräch vereinbaren</a>
@@ -1135,7 +1142,7 @@
     <div class="final-cta-box reveal">
       <p class="final-cta-box-head">Was Sie im Erstgespräch erwartet</p>
       <p>Drei Diagnosefragen zu Ihren konkreten Schmerzpunkten und Zielen.</p>
-      <p>Eine ehrliche erste Einschätzung: Trägt das Mandat in Ihrer Situation – oder nicht?</p>
+      <p>Eine ehrliche erste Einschätzung: Trägt das Mandat in Ihrer Situation, oder nicht?</p>
       <p>Wenn ja: ein konkreter Vorschlag, wie Phase 1 aussehen könnte.</p>
       <p>Wenn nein: eine direkte Empfehlung, welches Format besser passt.</p>
     </div>
@@ -1152,14 +1159,18 @@
       <a href="academy.html">Akademie</a>
       <a href="mailto:nils@new-thought.com">Kontakt</a>
     </nav>
-    <span class="footer-copy">© 2025 new.thought · Nils Bernhardt</span>
+    <div style="display:flex;gap:20px;align-items:center;">
+      <span class="footer-copy">© 2026 new.thought</span>
+      <button onclick="openModal('modal-impressum')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Impressum</button>
+      <button onclick="openModal('modal-datenschutz')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Datenschutz</button>
+    </div>
   </div>
 </footer>
 
 <script>
   // Hamburger
-  const btn = document.querySelector('.nav-hamburger');
-  const mob = document.querySelector('.nav-mobile');
+  const btn = document.getElementById('hamburger');
+  const mob = document.getElementById('nav-mobile');
   btn.addEventListener('click', () => {
     mob.classList.toggle('open');
     btn.setAttribute('aria-label', mob.classList.contains('open') ? 'Menü schließen' : 'Menü öffnen');
@@ -1182,6 +1193,42 @@
       document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
     }
   });
+  function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow=''; }
+  function closeModalOnBg(e, id) { if (e.target === e.currentTarget) closeModal(id); }
 </script>
+
+<!-- IMPRESSUM -->
+<div class="modal-overlay" id="modal-impressum" onclick="closeModalOnBg(event,'modal-impressum')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491516450933">+49 1516 450933</a><br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ -->
+<div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOnBg(event,'modal-datenschutz')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Datenschutzerklärung</h2>
+    <h3>Verantwortlicher</h3>
+    <p>Nils Blache, c/o Postflex #8293, Emsdettener Str. 10, 48268 Greven.<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Diese Website erhebt keine personenbezogenen Daten durch Tracking, Cookies oder Analyse-Tools. Es werden keine Cookies gesetzt.</p>
+    <h3>Hosting</h3>
+    <p>Diese Website wird statisch gehostet. Beim Aufruf werden technisch bedingt IP-Adresse und Zugriffszeit kurzfristig im Server-Log gespeichert und anschließend automatisch gelöscht.</p>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung. Wenden Sie sich an: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+  </div>
+</div>
+
 </body>
 </html>
