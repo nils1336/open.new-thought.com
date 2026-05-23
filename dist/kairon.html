@@ -73,6 +73,9 @@
         <div class="nav-dropdown-menu">
           <a href="#diagnose">Symptome</a>
           <a href="#prinzipien">Prinzipien</a>
+          <a href="#venn">Dimensionen</a>
+          <a href="#os">System</a>
+          <a href="#modular">Formate</a>
           <a href="#produkt">Stufen</a>
           <a href="#rechner">Rechner</a>
           <a href="#faq">FAQ</a>
@@ -287,6 +290,329 @@
         <p>Steuerung ist ritualisiert, oder sie existiert nicht. Fester Rhythmus, feste Teilnehmer, feste Entscheidungsregeln. Nur so überlebt Steuerung Führungswechsel und Budgetdruck.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ====== VENN: DREI DIMENSIONEN ====== -->
+<section class="slide" id="venn" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Drei Dimensionen. <em>Ein Fundament.</em></h2>
+      <p class="lead" style="margin-top:12px;">KAIRON wirkt, weil es Mensch, Kommunikation und System gleichzeitig adressiert. Klicken Sie auf eine Dimension.</p>
+    </div>
+
+    <div class="venn-wrap reveal">
+      <div class="venn-diagram-area">
+        <svg class="venn-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle class="vc" id="vc-mensch"  cx="210" cy="190" r="160" pointer-events="all" onclick="vennActivate('mensch')"/>
+          <circle class="vc" id="vc-komm"    cx="330" cy="190" r="160" pointer-events="all" onclick="vennActivate('komm')"/>
+          <circle class="vc" id="vc-system"  cx="270" cy="300" r="160" pointer-events="all" onclick="vennActivate('system')"/>
+          <text class="vl" x="100" y="72" text-anchor="middle">Mensch</text>
+          <text class="vl" x="444" y="72" text-anchor="middle">Kommunikation</text>
+          <text class="vl" x="270" y="448" text-anchor="middle">System</text>
+          <circle class="vh" cx="210" cy="190" r="160" data-panel="mensch"/>
+          <circle class="vh" cx="330" cy="190" r="160" data-panel="komm"/>
+          <circle class="vh" cx="270" cy="300" r="160" data-panel="system"/>
+        </svg>
+        <div class="venn-system-hint" id="venn-system-hint">
+          <span>↓ Zum System-Schaubild</span>
+        </div>
+      </div>
+
+      <div class="venn-panels">
+        <div class="venn-panel" id="vpanel-mensch" style="display:none">
+          <div class="vp-header">
+            <span class="kicker">Dimension 01</span>
+            <h3 class="sub" style="margin-top:8px;">Der Mensch steht <em>im Mittelpunkt.</em></h3>
+          </div>
+          <div class="vp-body">
+            <div class="vp-fears">
+              <div class="vpf-item">
+                <div>
+                  <strong>„Ersetzt mich KI?"</strong>
+                  <p>Nein. KI übernimmt Routinen, kein Urteilsvermögen, keine Erfahrung, keine Beziehungen. Wer das System versteht, wird wertvoller, nicht überflüssig.</p>
+                </div>
+              </div>
+              <div class="vpf-item">
+                <div>
+                  <strong>„Ich kenne mich damit nicht aus."</strong>
+                  <p>KAIRON ist so gebaut, dass kein technisches Vorwissen nötig ist. Jeder Mitarbeiter bekommt klare Regeln, wann und wie KI eingesetzt wird.</p>
+                </div>
+              </div>
+              <div class="vpf-item">
+                <div>
+                  <strong>„Das wird sich sowieso nicht ändern."</strong>
+                  <p>Veränderung braucht Vertrauen, keine Pflicht. Deshalb beginnt jede Einführung mit den Menschen: ihren Bedenken, ihren Stärken, ihrem Tempo.</p>
+                </div>
+              </div>
+            </div>
+            <div class="vp-text" style="border-top:1px solid var(--rule);padding-top:16px;">
+              <p><strong>Das Ziel ist kein reibungsloser Rollout.</strong> Das Ziel ist ein Team, das KI als eigenes Werkzeug begreift, nicht als Werkzeug der Unternehmensleitung.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="venn-panel" id="vpanel-komm" style="display:none">
+          <div class="vp-header">
+            <span class="kicker">Dimension 02</span>
+            <h3 class="sub" style="margin-top:8px;">KI braucht <em>Sprache.</em></h3>
+          </div>
+          <div class="vp-body">
+            <div class="vp-fears">
+              <div class="vpf-item">
+                <div>
+                  <strong>Jede Ceremony ist ein Gespräch.</strong>
+                  <p>KAIRON baut keine Prozesse, sondern Kommunikationsrituale. Horizon Session, Sprint Debrief, AI Board: jedes Format erzeugt gemeinsame Sprache zwischen Führung, Teams und Projekten.</p>
+                </div>
+              </div>
+              <div class="vpf-item">
+                <div>
+                  <strong>Transparenz ist Pflicht, nicht Kür.</strong>
+                  <p>Welche KI-Projekte laufen gerade? Was hat funktioniert, was nicht? Das Playbook macht Erkenntnisse sichtbar: für alle, nicht nur für die, die dabei waren.</p>
+                </div>
+              </div>
+              <div class="vpf-item">
+                <div>
+                  <strong>Gemeinsame Sprache schlägt individuelle Kompetenz.</strong>
+                  <p>Unternehmen scheitern nicht an fehlenden KI-Skills. Sie scheitern daran, dass niemand miteinander redet. KAIRON OS gibt dem Unternehmen eine gemeinsame KI-Grammatik.</p>
+                </div>
+              </div>
+            </div>
+            <div class="vp-text" style="border-top:1px solid var(--rule);padding-top:16px;">
+              <p><strong>Steuerung, die nicht kommuniziert wird, existiert nicht.</strong> Jede Entscheidung, jede Priorisierung, jedes Ergebnis wird sichtbar gemacht: nach oben, nach unten, nach innen.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="venn-panel" id="vpanel-system" style="display:none">
+          <div class="vp-header">
+            <span class="kicker">Dimension 03</span>
+            <h3 class="sub" style="margin-top:8px;">Das System <em>skaliert.</em></h3>
+          </div>
+          <div class="vp-body vp-body--system">
+            <p class="lead" style="font-size:17px;">Drei Ebenen: Direction, Sprint, Compound. Sie geben dem System seinen Rhythmus, verstärken sich gegenseitig und machen jede KI-Initiative messbarer.</p>
+            <a class="vp-cta" href="#os">Zum System-Schaubild →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== OS-SCHAUBILD ====== -->
+<section class="slide" id="os" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Drei Ebenen. <em>Ein System.</em></h2>
+      <p class="lead" style="margin-top:12px;">Jede Ebene hat ihren eigenen Rhythmus, ihre eigenen Ceremonies und ihre eigenen Artefakte. Sie verstärken sich gegenseitig.</p>
+    </div>
+
+    <div class="schaubild reveal">
+      <div class="layer-strip">
+        <div class="lt d"><span class="dot"></span>Ebene 01 · Direction · Strategisch</div>
+        <div class="lt s"><span class="dot"></span>Ebene 02 · Sprint · Operativ</div>
+        <div class="lt c"><span class="dot"></span>Ebene 03 · Compound · Kontinuierlich</div>
+      </div>
+      <div class="schaubild-inner" id="schaubild">
+        <svg class="schaubild-svg" viewBox="0 0 960 620" preserveAspectRatio="xMidYMid meet">
+          <ellipse cx="480" cy="310" rx="420" ry="260" class="ring"/>
+          <ellipse cx="480" cy="310" rx="260" ry="160" class="ring"/>
+          <line x1="480" y1="310" x2="200" y2="90"  class="flow animated"/>
+          <line x1="480" y1="310" x2="760" y2="90"  class="flow animated" style="animation-delay:.4s"/>
+          <line x1="480" y1="310" x2="125" y2="310" class="flow animated" style="animation-delay:.8s"/>
+          <line x1="480" y1="310" x2="220" y2="560" class="flow animated" style="animation-delay:1.2s"/>
+          <line x1="480" y1="310" x2="480" y2="570" class="flow animated" style="animation-delay:1.6s"/>
+          <line x1="480" y1="310" x2="740" y2="560" class="flow animated" style="animation-delay:2s"/>
+          <line x1="480" y1="310" x2="880" y2="310" class="flow animated" style="animation-delay:2.4s"/>
+        </svg>
+        <div class="node center" style="left:50%;top:50%;transform:translate(-50%,-50%);">
+          <span class="t">Steuerungssystem</span>
+          <span class="n"><span class="b">{</span>KAIRON<span class="b">}</span></span>
+        </div>
+        <div class="node dir" style="left:20.8%;top:14.5%;transform:translate(-50%,-50%);">
+          <span class="n">AI Horizon Session</span>
+        </div>
+        <div class="node dir" style="left:79.2%;top:14.5%;transform:translate(-50%,-50%);">
+          <span class="n">AI Board</span>
+        </div>
+        <div class="node sprint" style="left:13%;top:50%;transform:translate(-50%,-50%);">
+          <span class="n">Pipeline Refinement</span>
+        </div>
+        <div class="node sprint" style="left:22.9%;top:90.3%;transform:translate(-50%,-50%);">
+          <span class="n">Sprint Setup</span>
+        </div>
+        <div class="node sprint" style="left:50%;top:91.9%;transform:translate(-50%,-50%);">
+          <span class="n">Impact Demo</span>
+        </div>
+        <div class="node sprint" style="left:77.1%;top:90.3%;transform:translate(-50%,-50%);">
+          <span class="n">Sprint Debrief</span>
+        </div>
+        <div class="node compound" style="left:91.7%;top:50%;transform:translate(-50%,-50%);">
+          <span class="t">Nach Sprint</span>
+          <span class="n">Playbook Session</span>
+        </div>
+      </div>
+
+      <div class="schaubild-legend">
+        <div class="l"><span class="sw i"></span>Zentrum: KAIRON OS</div>
+        <div class="l"><span class="sw d"></span>Direction: Strategische Steuerung</div>
+        <div class="l"><span class="sw s"></span>Sprint: Operative Ausführung</div>
+        <div class="l"><span class="sw c"></span>Compound: Organisationales Lernen</div>
+      </div>
+      <p style="margin-top:20px;font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-mute);border-top:1px solid var(--rule-soft);padding-top:16px;">/ / Ihr Zeitaufwand: AI Owner 4–6 Std./Woche · AI Sponsor 2–4 Std./Monat · Reguläre Arbeit läuft unverändert weiter</p>
+    </div>
+
+    <div style="margin-top:96px;">
+      <div class="slide-header reveal" style="margin-bottom:24px;padding-bottom:24px;">
+        <h3 class="sub" style="max-width:32ch;">Fester Rhythmus. Feste Entscheidungen.</h3>
+        <p class="lead" style="margin-top:8px;font-size:15px;">Ceremonies sind feste Meetings mit definierten Teilnehmern, klaren Entscheidungsregeln und einem Artefakt als Output. Kein Statusupdate, sondern eine Entscheidungsinstanz.</p>
+      </div>
+      <table class="ceremony-table reveal">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ceremony</th>
+            <th>Ebene</th>
+            <th>Kernentscheidung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="n">01</td><td class="name">AI Horizon Session</td><td class="lvl">Direction</td><td class="dec">AI-Ziele setzen, Pipeline ausrichten</td></tr>
+          <tr><td class="n">02</td><td class="name">AI Board</td><td class="lvl">Direction</td><td class="dec">Priorisierung, Stopps, Ressourcen</td></tr>
+          <tr><td class="n">03</td><td class="name">Pipeline Refinement</td><td class="lvl">Sprint</td><td class="dec">Use Cases bewerten, Pipeline pflegen</td></tr>
+          <tr><td class="n">04</td><td class="name">Sprint Setup</td><td class="lvl">Sprint</td><td class="dec">Sprint Thesis formulieren, Owner bestätigen</td></tr>
+          <tr><td class="n">05</td><td class="name">Impact Demo</td><td class="lvl">Sprint</td><td class="dec">Weiter · Pivotieren · Stoppen</td></tr>
+          <tr><td class="n">06</td><td class="name">Playbook Session</td><td class="lvl">Compound</td><td class="dec">Wissen sichern, Eintrag einpflegen</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:96px;">
+      <div class="proof-grid reveal stag">
+        <div class="proof-cell">
+          <span class="k">— Jahr 01 · Baseline</span>
+          <span class="v">28<span class="u">Tage</span></span>
+          <p class="d">Median Time-to-Value bei Start.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Jahr 02</span>
+          <span class="v">18<span class="u">Tage</span></span>
+          <p class="d">Playbook verkürzt Thesis-Findung.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Jahr 03</span>
+          <span class="v accent">10<span class="u">Tage</span></span>
+          <p class="d">Gleiche Ressourcen, 3× Geschwindigkeit.</p>
+        </div>
+        <div class="proof-cell">
+          <span class="k">— Compound-Faktor</span>
+          <span class="v accent">10×</span>
+          <p class="d">Wirkungsgrad gegenüber Jahr 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== MODULAR ====== -->
+<section class="slide" id="modular" style="background:var(--bg);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Modular. <em>Ihr Tempo.</em></h2>
+      <p class="lead" style="margin-top:12px;">KAIRON ist kein Fixprogramm. Es passt sich an Ihren Kontext an: vom ersten einwöchigen Experiment bis zur vollständigen organisationalen Integration.</p>
+    </div>
+
+    <div class="mod-ruler reveal">
+      <div class="mod-milestones">
+        <div class="mod-milestone" style="left:0%">
+          <span class="mod-ms-val">1</span>
+          <span class="mod-ms-unit">Woche</span>
+        </div>
+        <div class="mod-milestone" style="left:8.33%">
+          <span class="mod-ms-val">1</span>
+          <span class="mod-ms-unit">Monat</span>
+        </div>
+        <div class="mod-milestone" style="left:33.33%">
+          <span class="mod-ms-val">3</span>
+          <span class="mod-ms-unit">Monate</span>
+        </div>
+        <div class="mod-milestone" style="left:100%">
+          <span class="mod-ms-val">12</span>
+          <span class="mod-ms-unit">Monate</span>
+        </div>
+      </div>
+      <div class="mod-ruler-track">
+        <div class="mod-bar mod-bar--sprint"   style="left:0;      width:8.33%"></div>
+        <div class="mod-bar mod-bar--quartal"  style="left:8.33%;  width:25%"></div>
+        <div class="mod-bar mod-bar--compound" style="left:33.33%; width:66.67%"></div>
+      </div>
+    </div>
+
+    <div class="mod-cards reveal stag">
+      <div class="mod-card">
+        <div class="mod-card-head mod-card-head--sprint">
+          <span class="mod-label">Sprintformat</span>
+          <span class="mod-duration">1 Woche</span>
+        </div>
+        <div class="mod-card-body">
+          <p class="mod-desc">Ein klar definiertes Thema, ein Team, eine Woche. Das Sprintformat liefert ein messbares Ergebnis: kein Konzept, kein Pilotbericht, sondern eine laufende Pipeline.</p>
+          <div class="mod-modules">
+            <span class="mod-tag">Sprint Setup</span>
+            <span class="mod-tag">Täglicher Sync</span>
+            <span class="mod-tag">Impact Demo</span>
+            <span class="mod-tag">Sprint Debrief</span>
+          </div>
+          <div class="mod-output">
+            <span class="mod-out-label">Output</span>
+            <span>Erste funktionierende Pipeline · Klares Go/No-go</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-card-head mod-card-head--quartal">
+          <span class="mod-label">Quartalformat</span>
+          <span class="mod-duration">90 Tage</span>
+        </div>
+        <div class="mod-card-body">
+          <p class="mod-desc">Der vollständige Systemaufbau. Alle drei Ebenen werden eingeführt, Ceremonies in den Kalender integriert, der interne Orchestrator ausgebildet. Nach 90 Tagen trägt sich das System selbst.</p>
+          <div class="mod-modules">
+            <span class="mod-tag">AI Horizon Session</span>
+            <span class="mod-tag">Sprintrhythmus</span>
+            <span class="mod-tag">Playbook Session</span>
+            <span class="mod-tag">AI Board</span>
+            <span class="mod-tag">KAIRON KI-Orchestrator Ausbildung</span>
+          </div>
+          <div class="mod-output">
+            <span class="mod-out-label">Output</span>
+            <span>Laufendes System · Ausgebildeter Orchestrator · AI Playbook</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mod-card">
+        <div class="mod-card-head mod-card-head--compound">
+          <span class="mod-label">Compoundformat</span>
+          <span class="mod-duration">6–12 Monate</span>
+        </div>
+        <div class="mod-card-body">
+          <p class="mod-desc">Tiefe organisationale Integration. Das System lernt mit jedem Sprint, jeder Horizon Session, jedem Playbookeintrag. Die Organisation entwickelt echte KI-Kompetenz: nicht als Projekt, sondern als Fähigkeit.</p>
+          <div class="mod-modules">
+            <span class="mod-tag">Quarterly Reviews</span>
+            <span class="mod-tag">Kontinuierliches Playbook</span>
+            <span class="mod-tag">Portfoliosteuerung</span>
+            <span class="mod-tag">Compoundmessung</span>
+            <span class="mod-tag">Optionaler Retainer</span>
+          </div>
+          <div class="mod-output">
+            <span class="mod-out-label">Output</span>
+            <span>Selbstlernende Organisation · Exponentieller Wirkungsaufbau</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="mod-note reveal">Alle Formate bauen aufeinander auf. Wer mit dem Sprintformat beginnt, kann nahtlos ins Quartalformat übergehen: ohne Reibungsverlust, ohne Neustart.</p>
   </div>
 </section>
 
