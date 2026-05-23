@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAIRON — KI-Steuerungssystem für den Mittelstand | new.thought</title>
+<meta name="description" content="KAIRON ist das Betriebssystem für KI im Mittelstand: feste Rollen, klare Entscheidungsregeln und ein Governance-System, das in 90 Tagen läuft – und danach sich selbst trägt.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/kairon.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.new-thought.com/kairon.html">
+<meta property="og:title" content="KAIRON — KI-Steuerungssystem für den Mittelstand | new.thought">
+<meta property="og:description" content="Feste Rollen, klare Entscheidungsregeln, ein gemeinsames Bewertungssystem für alle KI-Projekte. In 90 Tagen eingeführt, danach selbsttragend.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  nav.top .wrap.row { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; }
+  .nav-left  { display:flex; align-items:center; gap:20px; }
+  .nav-center{ display:flex; align-items:center; gap:8px; justify-content:center; }
+  .nav-right { display:flex; align-items:center; gap:12px; justify-content:flex-end; }
+  @media(max-width:760px){ nav.top .wrap.row{display:flex;} .nav-center,.nav-right{display:none;} }
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-trigger { display:flex;align-items:center;gap:5px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-0.02em;color:var(--ink);cursor:pointer;padding:0;background:none;border:none;line-height:1;transition:color .15s; }
+  .nav-dropdown-trigger::after { content:'▾';font-size:10px;opacity:0.4;transition:transform .2s;margin-top:1px; }
+  .nav-dropdown.open .nav-dropdown-trigger::after { transform:rotate(180deg); }
+  .nav-dropdown-menu { position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.10);min-width:180px;padding:6px 0;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:200; }
+  .nav-dropdown.open .nav-dropdown-menu { opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0); }
+  .nav-dropdown-menu a { display:block;padding:9px 20px;font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;white-space:nowrap;transition:color .12s,background .12s; }
+  .nav-dropdown-menu a:hover { color:var(--ink);background:var(--bg-soft); }
+  .nav-dropdown-menu a.active { color:var(--ink);font-weight:700; }
+
+  /* Cross-sell cards */
+  .xsell-grid { display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px; }
+  .xsell-card { border:1px solid var(--rule);border-radius:12px;padding:28px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:box-shadow .2s,border-color .2s; }
+  .xsell-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.08);border-color:var(--accent); }
+  .xsell-label { font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute); }
+  .xsell-name { font-size:22px;font-weight:800;color:var(--ink); }
+  .xsell-desc { font-size:14px;color:var(--ink-soft);line-height:1.55; }
+  .xsell-link { font-size:13px;font-weight:700;color:var(--accent);margin-top:4px; }
+  @media(max-width:600px){ .xsell-grid{grid-template-columns:1fr;} }
+
+  /* Format table */
+  .format-table { width:100%;border-collapse:collapse;margin-top:32px; }
+  .format-table th { font-family:var(--mono);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-mute);font-weight:500;padding:0 0 12px;border-bottom:2px solid var(--rule);text-align:left; }
+  .format-table td { padding:18px 0;border-bottom:1px solid var(--rule);font-size:14px;color:var(--ink-soft);vertical-align:top; }
+  .format-table td:first-child { font-weight:700;color:var(--ink);width:28%; }
+  .format-table td+td { padding-right:24px; }
+
+  /* Compare grid */
+  .compare-grid { display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,0.2);border-bottom:1px solid rgba(255,255,255,0.2); }
+  .compare-grid-left { padding:40px 40px 40px 0;border-right:1px solid rgba(255,255,255,0.12);display:flex;flex-direction:column;gap:18px; }
+  .compare-grid-right { padding:40px 0 40px 40px;display:flex;flex-direction:column;gap:18px; }
+  @media(max-width:720px){ .compare-grid{grid-template-columns:1fr;} .compare-grid-left{padding:32px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.12);} .compare-grid-right{padding:32px 0;} }
+</style>
+  <script type="module" crossorigin src="/assets/main-CWfWBTSn.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/styles-ChJjtTrs.css">
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="wrap row">
+    <div class="nav-left">
+      <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
+      <a href="programme.html" class="nav-back">← Programme</a>
+    </div>
+    <div class="nav-center">
+      <div class="nav-dropdown" id="dd-inhalt">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-inhalt')">Inhalt</button>
+        <div class="nav-dropdown-menu">
+          <a href="#diagnose">Symptome</a>
+          <a href="#prinzipien">Prinzipien</a>
+          <a href="#produkt">Stufen</a>
+          <a href="#rechner">Rechner</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+      <span style="width:1px;height:20px;background:var(--ink-mute);opacity:0.15;display:inline-block;"></span>
+      <div class="nav-dropdown" id="dd-produkte">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-produkte')">Produkte</button>
+        <div class="nav-dropdown-menu">
+          <a href="kairon.html" class="active">KAIRON</a>
+          <a href="kaidop.html">KAIDOP</a>
+          <a href="kailead.html">KAILEAD</a>
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:4px 0;">
+          <a href="kairon-executive.html">Fractional AI Officer</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="academy.html" class="nav-pill">Academy →</a>
+      <a href="ki-readiness-check.html" class="nav-pill">KI-Check →</a>
+      <a class="nav-cta" href="#cta">Status Quo Check anfragen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Auf dieser Seite</span>
+    <a href="#diagnose" class="mob-link">Symptome</a>
+    <a href="#prinzipien" class="mob-link">Prinzipien</a>
+    <a href="#produkt" class="mob-link">Stufen</a>
+    <a href="#rechner" class="mob-link">Rechner</a>
+  </div>
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Produkte</span>
+    <a href="kairon.html" class="mob-link" style="color:var(--accent);font-weight:700;">KAIRON</a>
+    <a href="kaidop.html" class="mob-link">KAIDOP</a>
+    <a href="kailead.html" class="mob-link">KAILEAD</a>
+  </div>
+  <a href="ki-readiness-check.html" class="mob-link">◈ KI-Readiness-Check</a>
+  <a href="ressourcen.html" class="mob-link">◈ Blog</a>
+  <a href="#cta" class="mob-cta">Status Quo Check anfragen →</a>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal in">
+      <div class="hero-tag-sys">
+        <span class="live"></span>
+        03 · Steuerungssystem · KAIRON
+      </div>
+    </div>
+
+    <h1 class="hero-headline reveal in">
+      KI ohne Steuerung kostet Sie<br>
+      <span class="strike">mehr als KI<span class="period">.</span></span><br>
+      <span class="l2"><em>ohne Mitarbeiter<span class="period">.</span></em></span>
+    </h1>
+
+    <div class="hero-sub-bar reveal in" style="transition-delay:.3s;">
+      <div class="txt">
+        <strong>KAIRON ist das Betriebssystem für KI im Mittelstand:</strong> feste Rollen, klare Entscheidungsregeln, ein gemeinsames Bewertungssystem für alle KI-Projekte im Unternehmen. In 90 Tagen eingeführt. Danach führt sich das System weitgehend selbst. Keine Software. Kein Tool-Abo. Organisationsstruktur, die dauerhaft läuft.
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="#cta">Status Quo Check anfragen</a>
+        <a class="btn-ghost" href="#rechner">Sparpotenzial berechnen</a>
+      </div>
+      <p style="margin-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-mute);">/ / Keine Software · Kein Tool-Abo · Organisationsstruktur, die dauerhaft läuft</p>
+    </div>
+
+    <div class="hero-meta">
+      <div class="cell">
+        <span class="k">/ / Einsparpotenzial</span>
+        <span class="v">−35<span class="u">%</span></span>
+        <span class="d">Budget in wirkungslosen KI-Projekten.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Skalierte Piloten</span>
+        <span class="v">3<span class="u">×</span></span>
+        <span class="d">Mehr Initiativen mit messbarem Ergebnis.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Time-to-Value</span>
+        <span class="v">&lt;28<span class="u">Tage</span></span>
+        <span class="d">Erster messbarer Business Impact nach Start.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Einsparpotenzial p.a.</span>
+        <span class="v">€ 95<span class="u">k</span></span>
+        <span class="d">Durchschnitt bei 100 Mitarbeitenden.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SYMPTOME ====== -->
+<section class="slide" id="diagnose">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Vier Symptome, die zeigen:<br><em>KI ohne System ist teurer als keine KI.</em></h2>
+      <p class="lead" style="margin-top:12px;">Wenn ein Unternehmen an diesen vier Stellen leidet, liegt das Problem nicht am Tool, nicht am Team und nicht am Budget, sondern an fehlender Steuerung.</p>
+    </div>
+
+    <div class="symp-table reveal stag">
+      <div class="symp-row">
+        <span class="idx">01</span>
+        <p class="quote">„Wir haben KI in jedem Bereich. Aber einen Überblick hat niemand."</p>
+        <p class="verdict">Kein gemeinsames Register, kein Entscheidungsträger, kein Stopp-Signal. Projekte laufen weiter, bis das Budget weg ist, nicht bis ein Ziel erreicht ist. Das Ergebnis: Parallelentwicklungen, die sich gegenseitig kannibalisieren.</p>
+        <span class="tag">Ownership</span>
+      </div>
+      <div class="symp-row">
+        <span class="idx">02</span>
+        <p class="quote">„Wir testen gerade mehrere Use Cases. Die meisten stecken irgendwo fest."</p>
+        <p class="verdict">Ohne festen Bewertungsrhythmus scheitern Piloten still, nicht laut. Niemand entscheidet: weitermachen, skalieren oder stoppen. Das Ergebnis: der Pilot wird zum Dauerhaushalt ohne je produktiv zu werden.</p>
+        <span class="tag">Pipeline</span>
+      </div>
+      <div class="symp-row">
+        <span class="idx">03</span>
+        <p class="quote">„Unsere Mitarbeiter sparen Zeit mit KI. Den Effekt sehen wir aber nicht im Ergebnis."</p>
+        <p class="verdict">Individuelle Effizienz ist kein Geschäftswert. Wer den Schritt von Tool-Nutzung zu Steuerung nicht macht, bleibt dauerhaft auf Ebene 1 und kann dem Board nicht erklären, was die KI-Investition bringt.</p>
+        <span class="tag">Impact</span>
+      </div>
+      <div class="symp-row">
+        <span class="idx">04</span>
+        <p class="quote">„Wir lösen dieselben Probleme alle sechs Monate neu."</p>
+        <p class="verdict">Jedes gelöste Problem hätte das nächste schneller machen können. Ohne Playbook verdampft jede Erfahrung beim nächsten Teamwechsel. Das Unternehmen startet bei jedem Projekt wieder bei null.</p>
+        <span class="tag">Compound</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FRAMEWORK vs. OS ====== -->
+<section class="slide dark">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Frameworks leben in PowerPoint.<br><em>Organisationssysteme laufen im Unternehmen.</em></h2>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-grid-left">
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.5);font-weight:500;">— Framework</span>
+        <h3 class="sub" style="color:#f3f2ee;">Konzept-Landkarte</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;color:rgba(255,255,255,0.7);font-size:15px;line-height:1.55;">
+          <li>· Beschreibt, was gedacht werden sollte, nicht was laufen muss.</li>
+          <li>· Kann mit fehlenden Teilen weiterbestehen. Als Folie.</li>
+          <li>· Wird in Onboardings gezeigt, nicht im Alltag gelebt.</li>
+          <li>· Überlebt keinen Führungswechsel ohne erneute Initiative.</li>
+        </ul>
+      </div>
+      <div class="compare-grid-right">
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);font-weight:500;">— KAIRON OS</span>
+        <h3 class="sub" style="color:#fff;">Verzahntes System</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:14px;color:rgba(255,255,255,0.85);font-size:15px;line-height:1.55;">
+          <li>· Steht zwischen KI-Technologie und Unternehmensalltag. Orchestriert, wer was wann entscheidet.</li>
+          <li>· Fällt eine Komponente aus, erkennt man es sofort, weil das System reagiert.</li>
+          <li>· <strong style="color:#fff;">5 Rollen · 4 Prinzipien · 3 Ebenen · 8 Ceremonies · 1 Playbook.</strong></li>
+          <li>· Überlebt Führungswechsel, weil Regeln institutionell verankert sind, nicht personenabhängig.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRINZIPIEN ====== -->
+<section class="slide" id="prinzipien">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Die vier Prinzipien<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">Operative Regeln, keine Werte. Die ersten drei steuern den laufenden Betrieb. Das vierte bestimmt, ob das System über Zeit besser wird.</p>
+    </div>
+
+    <div class="principles reveal stag">
+      <div class="principle">
+        <span class="n">— Prinzip 01</span>
+        <h5>Ownership</h5>
+        <p>Jeder Use Case hat einen namentlich benannten AI Owner: mit dokumentiertem Zeitbudget und klaren Entscheidungsrechten. Keine Person = keine Initiative.</p>
+        <span class="rule">Kein Owner → kein Use Case.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 02</span>
+        <h5>Pipeline</h5>
+        <p>Alle Use Cases leben in einer zentralen, priorisierten Liste: die einzige Quelle der Wahrheit. Keine PowerPoint-Folien. Nicht in der Pipeline = existiert nicht.</p>
+        <span class="rule">Nicht in der Pipeline → nicht real.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 03</span>
+        <h5>Impact</h5>
+        <p>Euro, Stunden, Fehlerrate. Keine Adjektive. Jeder Use Case hat einen messbaren Business Impact, bevor er aufgenommen wird. Nach 90 Tagen ohne Evidenz: Stopp.</p>
+        <span class="rule">Ohne Evidenz in 90 Tagen → Stopp.</span>
+      </div>
+      <div class="principle">
+        <span class="n">— Prinzip 04</span>
+        <h5>Compound</h5>
+        <p>Jede Initiative baut einen Asset auf, der die nächste Initiative schneller und wirkungsvoller macht. Das Playbook wird nach jedem Projekt klüger.</p>
+        <span class="rule">Jeder Sprint macht das System klüger.</span>
+      </div>
+    </div>
+
+    <div class="reframe-band reveal" style="margin-top:72px;">
+      <div>
+        <p class="big">KI-Wert entsteht durch <em>Steuerung</em>, nicht durch Nutzung. KI-Wert wächst nicht linear, <em>er schichtet sich auf.</em></p>
+      </div>
+      <div class="ex">
+        <strong>/ / Die Grundannahme</strong>
+        <p>Mitarbeiter, die Tools nutzen, erzeugen individuelle Produktivität. Unternehmen, die Tools <em>steuern</em>, erzeugen Geschäftswert.</p>
+        <br>
+        <p>Steuerung ist ritualisiert, oder sie existiert nicht. Fester Rhythmus, feste Teilnehmer, feste Entscheidungsregeln. Nur so überlebt Steuerung Führungswechsel und Budgetdruck.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRODUKT: 3 STUFEN ====== -->
+<section class="slide" id="produkt" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Was KAIRON konkret ist<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">Drei Einstiegspunkte, je nach aktuellem Stand. Wer noch keinen Überblick hat, beginnt mit dem Status Quo Check. Wer bereit ist, startet direkt mit der Implementierung.</p>
+    </div>
+
+    <div class="services reveal stag">
+      <div class="service">
+        <div class="stage">01</div>
+        <div class="name">Status Quo Check<span class="sub">Diagnose · 2–3 Wochen</span></div>
+        <div class="pitch">
+          <strong>Der ehrliche Befund, bevor etwas gebaut wird.</strong> Wir analysieren Ihren aktuellen KI-Einsatz entlang der vier Prinzipien: Ownership, Pipeline, Impact, Compound. Sie erhalten schriftlich, was funktioniert, was blutet und was als nächstes zu tun ist, mit oder ohne Folgeauftrag.
+        </div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>2–3 Wochen</span></div>
+          <div class="r"><span>Format</span><span>Workshops + Analyse</span></div>
+          <div class="r"><span>Output</span><span>Schriftlicher Befund</span></div>
+        </div>
+      </div>
+      <div class="service">
+        <div class="stage">02</div>
+        <div class="name">KAIRON Implementierung<span class="sub">Installation · 60–90 Tage</span></div>
+        <div class="pitch">
+          <strong>Das System wird gebaut, eingeführt und übergeben.</strong> Pipeline-Aufbau, alle 8 Ceremonies im Kalender, AI Playbook erstellt, interner Orchestrator ausgebildet. Nach 90 Tagen führt sich das System weitgehend selbst. Optionaler Retainer danach, monatlich kündbar.
+        </div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>60–90 Tage</span></div>
+          <div class="r"><span>Format</span><span>4 Phasen</span></div>
+          <div class="r"><span>Optional</span><span>Retainer danach</span></div>
+        </div>
+      </div>
+      <div class="service">
+        <div class="stage">03</div>
+        <div class="name">KI-Orchestrator Zertifizierung<span class="sub">Schulung &amp; Zertifikat · 2 Tage</span></div>
+        <div class="pitch">
+          <strong>Ihr Team wird unabhängig.</strong> Im 2-Tage-Bootcamp wird ein Mitarbeitender zum KAIRON Certified AI Orchestrator: ausgebildet auf alle Ebenen, alle Ceremonies, das Playbook und die Governance. Standalone buchbar, auch ohne vorherige Implementierung.
+        </div>
+        <div class="meta-col">
+          <div class="r"><span>Dauer</span><span>2 Tage</span></div>
+          <div class="r"><span>Format</span><span>Bootcamp (auch remote)</span></div>
+          <div class="r"><span>Output</span><span>KAIRON KI-Orchestrator Zertifikat</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== RECHNER ====== -->
+<section class="slide" id="rechner">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Was kostet es, KAIRON <em>nicht</em> anzuwenden?</h2>
+      <p class="lead" style="margin-top:12px;">Verschieben Sie die Regler nach Ihrem Unternehmen. Der Rechner zeigt, was unkoordinierte KI-Initiativen pro Jahr kosten und wie viel KAIRON konservativ wieder einspielt.</p>
+    </div>
+
+    <div class="calc-box reveal" id="calc">
+      <div class="calc-controls">
+        <div>
+          <div class="calc-head">— Ihre Parameter</div>
+          <div class="calc-title">Ihr Unternehmen, Ihr Verlust.</div>
+        </div>
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Mitarbeiter, die KI nutzen (oder sollten)</span><span class="val" id="vEmp">120</span></div>
+          <input type="range" id="employees" min="20" max="3000" step="5" value="120">
+          <div class="scale"><span>20</span><span>3.000</span></div>
+        </div>
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Ø Vollkosten pro MA / Jahr</span><span class="val" id="vCost">€ 75.000</span></div>
+          <input type="range" id="cost" min="40000" max="150000" step="5000" value="75000">
+          <div class="scale"><span>€ 40k</span><span>€ 150k</span></div>
+        </div>
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Aktuelle KI-Initiativen</span><span class="val" id="vInit">8</span></div>
+          <input type="range" id="initiatives" min="2" max="25" step="1" value="8">
+          <div class="scale"><span>2</span><span>25</span></div>
+        </div>
+        <div class="calc-input">
+          <div class="lr"><span class="lbl">Ø Stunden / Woche in unkoordiniertem KI-Einsatz</span><span class="val" id="vHrs">3 h</span></div>
+          <input type="range" id="hours" min="0.5" max="8" step="0.5" value="3">
+          <div class="scale"><span>0,5 h</span><span>8 h</span></div>
+        </div>
+      </div>
+      <div class="calc-results">
+        <span class="calc-head">— Konservative Schätzung · Pro Jahr</span>
+        <div class="calc-savings">
+          <span class="currency">€</span><span id="savings">0</span>
+          <span class="per">/ / Sparpotenzial p.a. nach Installation</span>
+        </div>
+        <div class="calc-breakdown">
+          <div class="calc-cell"><span class="k">Versickerte Zeit</span><span class="v">€ <span id="lostTime">0</span></span></div>
+          <div class="calc-cell"><span class="k">Versandete Piloten</span><span class="v">€ <span id="lostPilots">0</span></span></div>
+          <div class="calc-cell"><span class="k">Doppelarbeit (Compound-Verlust)</span><span class="v">€ <span id="lostCompound">0</span></span></div>
+          <div class="calc-cell"><span class="k">Gesamtverlust p.a.</span><span class="v">€ <span id="lostTotal">0</span></span></div>
+        </div>
+        <div class="calc-bar">
+          <div class="lr"><span class="a">Gewinnbarer Anteil mit KAIRON</span><span class="b" id="recoveryPct">60 %</span></div>
+          <div class="tr"><div class="fl" id="recoveryFill" style="width:60%"></div></div>
+        </div>
+        <p class="calc-disc">/ / Annahmen: 30 % unkoordinierter KI-Zeit ist Verschwendung. 65 % Initiativen ohne Owner versanden. Compound-Verlust 12 % der KI-Personalkosten ohne Playbook. Recovery konservativ 60 % nach 12 Mo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="slide" id="faq" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Die Einwände kennen wir. <em>Die Kosten dahinter auch.</em></h2>
+    </div>
+
+    <div class="faq reveal stag">
+      <details>
+        <summary><h4>„Wir haben doch schon eine KI-Strategie und ein Whitepaper."</h4><span class="plus">+</span></summary>
+        <p class="answer">Mit großer Wahrscheinlichkeit ja. Und mit ebenso großer Wahrscheinlichkeit hat dieses Whitepaper Ihre Quartalsentscheidungen in den letzten sechs Monaten exakt null Mal beeinflusst. <strong>Strategie ohne Ritual ist Dekoration.</strong> KAIRON macht Strategie zu acht Terminen im Kalender, die nicht abgesagt werden.</p>
+      </details>
+      <details>
+        <summary><h4>„90 Tage sind zu lang — wir brauchen schnellere Ergebnisse."</h4><span class="plus">+</span></summary>
+        <p class="answer">Deswegen beginnt KAIRON mit dem Status Quo Check in 2–3 Wochen. Sie erhalten sofort schriftlichen Befund und priorisierte Maßnahmen, unabhängig davon, ob und wann die Vollimplementierung folgt. Viele Kunden erzielen bereits im Check die ersten messbaren Verbesserungen.</p>
+      </details>
+      <details>
+        <summary><h4>„Wir haben keine Kapazität, ein neues System einzuführen."</h4><span class="plus">+</span></summary>
+        <p class="answer">Das ist der häufigste Einwand. Er beschreibt genau das Problem, das KAIRON löst. Fehlende Kapazität entsteht meistens durch unkoordinierte Initiativen, die Ressourcen binden, ohne Ergebnisse zu liefern. KAIRON schafft Kapazität, indem es Klarheit über Prioritäten schafft und Projekte ohne Wirkung systematisch stoppt.</p>
+      </details>
+      <details>
+        <summary><h4>„Können wir KAIRON nicht einfach intern aufbauen?"</h4><span class="plus">+</span></summary>
+        <p class="answer">Ja, deswegen bilden wir im Rahmen der Implementierung Ihren internen KAIRON KI-Orchestrator aus. Das Ziel ist ausdrücklich Unabhängigkeit, nicht dauerhafte externe Abhängigkeit. KAIRON ist so gebaut, dass es nach 90 Tagen ohne uns läuft.</p>
+      </details>
+      <details>
+        <summary><h4>„Was ist, wenn unsere Mitarbeiter nicht mitmachen?"</h4><span class="plus">+</span></summary>
+        <p class="answer">Widerstand gegen KI ist normal und gut erforschbar. Dafür gibt es KAIDOP, das parallele Adoption-Format, das Widerstände sichtbar macht und in Use Cases überführt. Wenn die Adoption-Seite kritisch ist, empfehlen wir KAIDOP als ergänzende Maßnahme. Beide Formate greifen ineinander.</p>
+      </details>
+      <details>
+        <summary><h4>„Gilt KAIRON auch, wenn wir den EU AI Act noch nicht verstehen?"</h4><span class="plus">+</span></summary>
+        <p class="answer">KAIRON enthält Governance-Dokumentation, Risikoklassifizierung und Verantwortlichkeitsstrukturen. Das sind die zentralen Anforderungen des EU AI Act für Deployer (Unternehmen, die KI einsetzen). Sie bauen Compliance nicht als separates Projekt, sondern als Teil des laufenden Systems auf.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CROSS-SELL ====== -->
+<section class="slide">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">KAIRON gibt das System.<br><em>Was bringt die Menschen mit?</em></h2>
+      <p class="lead" style="margin-top:12px;">Ein Governance-System ist nur so stark wie die Menschen, die darin arbeiten. Zwei ergänzende Formate sorgen für Adoption und Führungskompetenz.</p>
+    </div>
+
+    <div class="xsell-grid reveal">
+      <a href="kaidop.html" class="xsell-card">
+        <span class="xsell-label">Mitarbeiter-Adoption</span>
+        <div class="xsell-name">KAIDOP</div>
+        <p class="xsell-desc">KI scheitert nicht am Tool. Sie scheitert an den Menschen dahinter. KAIDOP macht Widerstände sichtbar und überführt sie in umsetzbare Use Cases. 1 Tag Workshop + Follow-Up.</p>
+        <span class="xsell-link">Mehr zu KAIDOP →</span>
+      </a>
+      <a href="kailead.html" class="xsell-card">
+        <span class="xsell-label">Führungskräfte-Training</span>
+        <div class="xsell-name" style="color:#e8a020;">KAILEAD</div>
+        <p class="xsell-desc">Führungskräfte müssen KI führen können, nicht nur darüber reden. KAILEAD baut in 1–2 Tagen das KI-Urteilsvermögen auf und gibt Managern das Handwerkszeug für die Adoption.</p>
+        <span class="xsell-link" style="color:#e8a020;">Mehr zu KAILEAD →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div style="max-width:980px;">
+      <span class="kicker" style="color:var(--accent);">Nächster Schritt · Status Quo Check</span>
+      <h2 style="margin-top:28px;">
+        2–3 Wochen.<br>
+        Der ehrliche Befund — <em>bevor etwas gebaut wird.</em>
+      </h2>
+      <p class="lead">Wir analysieren Ihren aktuellen KI-Einsatz entlang der vier Prinzipien: Ownership, Pipeline, Impact, Compound. Sie erhalten schriftlich, was funktioniert, was blutet und was als nächstes zu tun ist. Mit oder ohne Folgeauftrag.</p>
+      <div class="btn-row" style="margin-top:36px;">
+        <a class="btn-primary" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Status Quo Check anfragen</a>
+        <a class="btn-ghost" href="ki-readiness-check.html">Zuerst Reifegrad kennen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© new.thought · KAIRON</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="programme.html">← Programme</a>
+      <a href="kaidop.html">KAIDOP</a>
+      <a href="kailead.html">KAILEAD</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
+      <a href="academy.html">Academy</a>
+      <a href="ki-readiness-check.html">KI-Check</a>
+    </div>
+    <div style="display:flex;gap:20px;">
+      <button onclick="openModal('modal-impressum')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Impressum</button>
+      <button onclick="openModal('modal-datenschutz')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Datenschutz</button>
+    </div>
+  </div>
+</footer>
+
+<!-- IMPRESSUM -->
+<div class="modal-overlay" id="modal-impressum" onclick="closeModalOnBg(event,'modal-impressum')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491516450933">+49 1516 450933</a><br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ -->
+<div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOnBg(event,'modal-datenschutz')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Datenschutzerklärung</h2>
+    <h3>Verantwortlicher</h3>
+    <p>Nils Blache, c/o Postflex #8293, Emsdettener Str. 10, 48268 Greven.<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Diese Website erhebt keine personenbezogenen Daten durch Tracking, Cookies oder Analyse-Tools. Es werden keine Cookies gesetzt.</p>
+    <h3>Hosting</h3>
+    <p>Diese Website wird statisch gehostet. Beim Aufruf werden technisch bedingt IP-Adresse und Zugriffszeit kurzfristig im Server-Log gespeichert und anschließend automatisch gelöscht.</p>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung. Wenden Sie sich an: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben">↑</button>
+
+<script>
+  function toggleDropdown(id) {
+    const all = document.querySelectorAll('.nav-dropdown');
+    all.forEach(d => { if (d.id !== id) d.classList.remove('open'); });
+    document.getElementById(id).classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+  window.toggleDropdown = toggleDropdown;
+
+  // Calculator
+  const $ = id => document.getElementById(id);
+  const fmt = n => Math.round(n).toLocaleString('de-DE');
+  const state = new WeakMap();
+  function animateNum(el, target) {
+    if (!el) return;
+    const from = state.get(el) ?? 0;
+    const start = performance.now();
+    const dur = 600;
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    function step(now) {
+      const t = Math.min(1, (now - start) / dur);
+      el.textContent = fmt(from + (target - from) * ease(t));
+      if (t < 1) requestAnimationFrame(step);
+      else { state.set(el, target); el.textContent = fmt(target); }
+    }
+    requestAnimationFrame(step);
+  }
+  function calc() {
+    if (!$('employees')) return;
+    const employees = +$('employees').value;
+    const cost = +$('cost').value;
+    const initiatives = +$('initiatives').value;
+    const hours = +$('hours').value;
+    $('vEmp').textContent = employees;
+    $('vCost').textContent = '€ ' + cost.toLocaleString('de-DE');
+    $('vInit').textContent = initiatives;
+    $('vHrs').textContent = hours.toString().replace('.', ',') + ' h';
+    const hourly = cost / 1800;
+    const lostTime = employees * hours * 46 * hourly * 0.30;
+    const lostPilots = initiatives * 0.65 * (80 * hourly + 2000);
+    const lostCompound = employees * hours * 46 * hourly * 0.12;
+    const lostTotal = lostTime + lostPilots + lostCompound;
+    const savings = lostTotal * 0.60;
+    animateNum($('savings'), savings);
+    animateNum($('lostTime'), lostTime);
+    animateNum($('lostPilots'), lostPilots);
+    animateNum($('lostCompound'), lostCompound);
+    animateNum($('lostTotal'), lostTotal);
+  }
+  ['employees','cost','initiatives','hours'].forEach(id => {
+    const el = $(id); if (el) el.addEventListener('input', calc);
+  });
+  calc();
+</script>
+</body>
+</html>

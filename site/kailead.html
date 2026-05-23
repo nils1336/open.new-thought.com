@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KAILEAD — KI-Führungskräfte-Training mit 5S-Framework | new.thought</title>
+<meta name="description" content="KAILEAD baut in 1–2 Tagen das KI-Urteilsvermögen auf, das Führungskräfte brauchen. Basierend auf dem 5S-Framework: Sicherheit, Signal, Skill, Struktur, Sozial.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/kailead.html">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.new-thought.com/kailead.html">
+<meta property="og:title" content="KAILEAD — KI-Führungskräfte-Training | new.thought">
+<meta property="og:description" content="Wissen reicht nicht. Führungskräfte müssen KI führen können. KAILEAD gibt Managern das 5S-Framework für KI-Führungskompetenz.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  --kl: #e8a020;
+
+  nav.top .wrap.row { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; }
+  .nav-left  { display:flex; align-items:center; gap:20px; }
+  .nav-center{ display:flex; align-items:center; gap:8px; justify-content:center; }
+  .nav-right { display:flex; align-items:center; gap:12px; justify-content:flex-end; }
+  @media(max-width:760px){ nav.top .wrap.row{display:flex;} .nav-center,.nav-right{display:none;} }
+  .nav-dropdown { position:relative; }
+  .nav-dropdown-trigger { display:flex;align-items:center;gap:5px;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:-0.02em;color:var(--ink);cursor:pointer;padding:0;background:none;border:none;line-height:1;transition:color .15s; }
+  .nav-dropdown-trigger::after { content:'▾';font-size:10px;opacity:0.4;transition:transform .2s;margin-top:1px; }
+  .nav-dropdown.open .nav-dropdown-trigger::after { transform:rotate(180deg); }
+  .nav-dropdown-menu { position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:#fff;border:1px solid rgba(0,0,0,0.08);box-shadow:0 8px 24px rgba(0,0,0,0.10);min-width:180px;padding:6px 0;opacity:0;pointer-events:none;transition:opacity .18s,transform .18s;z-index:200; }
+  .nav-dropdown.open .nav-dropdown-menu { opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0); }
+  .nav-dropdown-menu a { display:block;padding:9px 20px;font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;white-space:nowrap;transition:color .12s,background .12s; }
+  .nav-dropdown-menu a:hover { color:var(--ink);background:var(--bg-soft); }
+  .nav-dropdown-menu a.active { color:#e8a020;font-weight:700; }
+
+  /* Pain quotes */
+  .pain-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px; }
+  .pain-card { background:var(--bg-soft); border-radius:12px; padding:28px 28px 24px; position:relative; }
+  .pain-card::before { content:'"'; position:absolute; top:16px; left:22px; font-size:64px; font-weight:900; color:#e8a020; opacity:0.15; line-height:1; }
+  .pain-card p { font-size:15px; line-height:1.65; color:var(--ink-soft); font-style:italic; margin-top:12px; }
+  @media(max-width:640px){ .pain-grid { grid-template-columns:1fr; } }
+
+  /* 5S Framework */
+  .fives-intro { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#e8a020; margin-bottom:48px; padding:16px 20px; border:1px solid rgba(232,160,32,0.3); border-radius:8px; display:inline-block; }
+  .fives-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:0; }
+  .fives-card { border-radius:14px; padding:32px; background:var(--bg-soft); position:relative; overflow:hidden; }
+  .fives-card::before { content:attr(data-s); position:absolute; top:-10px; right:16px; font-size:80px; font-weight:900; color:#e8a020; opacity:0.07; font-family:var(--sans); line-height:1; }
+  .fives-s { display:inline-block; width:36px; height:36px; border-radius:50%; background:#e8a020; color:#fff; font-size:14px; font-weight:800; text-align:center; line-height:36px; margin-bottom:14px; }
+  .fives-name { font-size:20px; font-weight:800; color:var(--ink); margin-bottom:6px; }
+  .fives-what { font-size:14px; font-weight:600; color:#e8a020; margin-bottom:10px; font-family:var(--mono); font-size:12px; letter-spacing:0.08em; }
+  .fives-desc { font-size:14px; color:var(--ink-soft); line-height:1.6; margin-bottom:14px; }
+  .fives-missing { font-size:12px; padding:8px 12px; background:#fff8ec; border:1px solid rgba(232,160,32,0.3); border-radius:6px; color:#92400e; }
+  .fives-missing strong { color:#e8a020; }
+  @media(max-width:640px){ .fives-grid { grid-template-columns:1fr; } }
+  .fives-card-full { grid-column:1/-1; }
+
+  /* Format table */
+  .format-table { width:100%; border-collapse:collapse; margin-top:32px; }
+  .format-table th { font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-mute); font-weight:500; padding:0 0 12px; border-bottom:2px solid var(--rule); text-align:left; }
+  .format-table td { padding:18px 0; border-bottom:1px solid var(--rule); font-size:14px; color:var(--ink-soft); vertical-align:top; padding-right:24px; }
+  .format-table td:first-child { font-weight:700; color:var(--ink); width:28%; }
+
+  /* Abgrenzung */
+  .abgrenz-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--rule); border-radius:12px; overflow:hidden; margin-top:40px; }
+  .abgrenz-col { padding:32px; }
+  .abgrenz-col:first-child { border-right:1px solid var(--rule); background:var(--bg-soft); }
+  .abgrenz-label { font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:16px; display:block; }
+  .abgrenz-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
+  .abgrenz-col ul li { font-size:14px; line-height:1.5; padding-left:20px; position:relative; }
+  .abgrenz-col ul li::before { content:'·'; position:absolute; left:0; color:var(--ink-mute); }
+  .abgrenz-col:last-child ul li::before { content:'✓'; font-weight:700; color:#e8a020; }
+  @media(max-width:640px){ .abgrenz-grid { grid-template-columns:1fr; } .abgrenz-col:first-child { border-right:none; border-bottom:1px solid var(--rule); } }
+
+  /* Cross-sell */
+  .xsell-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:48px; }
+  .xsell-card { border:1px solid var(--rule); border-radius:12px; padding:28px; display:flex; flex-direction:column; gap:10px; text-decoration:none; transition:box-shadow .2s,border-color .2s; }
+  .xsell-card:hover { box-shadow:0 4px 20px rgba(0,0,0,0.08); border-color:#e8a020; }
+  .xsell-label { font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); }
+  .xsell-name { font-size:22px; font-weight:800; color:var(--ink); }
+  .xsell-desc { font-size:14px; color:var(--ink-soft); line-height:1.55; }
+  .xsell-link { font-size:13px; font-weight:700; color:var(--accent); margin-top:4px; }
+  @media(max-width:600px){ .xsell-grid{grid-template-columns:1fr;} }
+
+  /* Format-Tabelle: letzte Spalte auf Mobile ausblenden */
+  @media(max-width:640px){
+    .format-table th:last-child,
+    .format-table td:last-child { display:none; }
+    .format-table { width:100%; }
+  }
+
+  /* product-tier on light bg — override the dark defaults from styles.css */
+  #programm .product-tier { border-color:var(--rule); background:var(--bg); }
+  #programm .product-tier:hover { border-color:#e8a020; }
+  #programm .product-tier-name { color:var(--ink); }
+  #programm .product-tier-sub { color:var(--ink-mute); }
+  #programm .product-tier-text { color:var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<!-- ====== NAV ====== -->
+<nav class="top">
+  <div class="wrap row">
+    <div class="nav-left">
+      <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
+      <a href="programme.html" class="nav-back">← Programme</a>
+    </div>
+    <div class="nav-center">
+      <div class="nav-dropdown" id="dd-inhalt">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-inhalt')">Inhalt</button>
+        <div class="nav-dropdown-menu">
+          <a href="#schmerz">Symptome</a>
+          <a href="#framework">5S-Framework</a>
+          <a href="#programm">Programm</a>
+          <a href="#formate">Formate</a>
+        </div>
+      </div>
+      <span style="width:1px;height:20px;background:var(--ink-mute);opacity:0.15;display:inline-block;"></span>
+      <div class="nav-dropdown" id="dd-produkte">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-produkte')">Produkte</button>
+        <div class="nav-dropdown-menu">
+          <a href="kairon.html">KAIRON</a>
+          <a href="kaidop.html">KAIDOP</a>
+          <a href="kailead.html" class="active">KAILEAD</a>
+          <hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:4px 0;">
+          <a href="kairon-executive.html">Fractional AI Officer</a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right">
+      <a href="academy.html" class="nav-pill">Academy →</a>
+      <a href="ki-readiness-check.html" class="nav-pill">KI-Check →</a>
+      <a class="nav-cta" href="#cta" style="background:#e8a020;border-color:#e8a020;">KAILEAD anfragen</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav-mobile" id="nav-mobile">
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Auf dieser Seite</span>
+    <a href="#schmerz" class="mob-link">Symptome</a>
+    <a href="#framework" class="mob-link">5S-Framework</a>
+    <a href="#programm" class="mob-link">Programm</a>
+    <a href="#formate" class="mob-link">Formate</a>
+  </div>
+  <div class="mob-nav-section">
+    <span class="mob-nav-section-label">Produkte</span>
+    <a href="kairon.html" class="mob-link">KAIRON</a>
+    <a href="kaidop.html" class="mob-link">KAIDOP</a>
+    <a href="kailead.html" class="mob-link" style="color:#e8a020;font-weight:700;">KAILEAD</a>
+  </div>
+  <a href="ki-readiness-check.html" class="mob-link">◈ KI-Readiness-Check</a>
+  <a href="#cta" class="mob-cta" style="background:#e8a020;">KAILEAD anfragen →</a>
+</div>
+
+<!-- ====== HERO ====== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal in">
+      <div class="hero-tag-sys">
+        <span class="live" style="background:#e8a020;box-shadow:0 0 0 4px rgba(232,160,32,0.2);"></span>
+        02 · Führungskräfte-Training · KAILEAD
+      </div>
+    </div>
+
+    <h1 class="hero-headline reveal in">
+      Wissen reicht nicht.<br>
+      <span class="strike">Führungskräfte<span class="period">.</span></span><br>
+      <span class="l2">müssen KI <em>führen können<span class="period">.</span></em></span>
+    </h1>
+
+    <div class="hero-sub-bar reveal in" style="transition-delay:.3s;">
+      <div class="txt">
+        <strong>KAILEAD baut in 1–2 Tagen das KI-Urteilsvermögen auf, das Führungskräfte brauchen</strong> und gibt ihnen das Handwerkszeug, um ihre Teams durch die KI-Adoption zu führen. Basierend auf dem 5S-Framework: Sicherheit, Signal, Skill, Struktur, Sozial. Drei Follow-Up-Termine sorgen dafür, dass nichts im Alltag versickert.
+      </div>
+      <div class="hero-cta-row">
+        <a class="btn-primary" href="#cta" style="background:#e8a020;border-color:#e8a020;">KAILEAD anfragen</a>
+        <a class="btn-ghost" href="#framework">5S-Framework ansehen</a>
+      </div>
+      <p style="margin-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-mute);">/ / 1–2 Tage + 3 Follow-Up-Termine · In-Person oder Remote · 1–12 Führungskräfte</p>
+    </div>
+
+    <div class="hero-meta">
+      <div class="cell">
+        <span class="k">/ / Führungslücke</span>
+        <span class="v">73<span class="u">%</span></span>
+        <span class="d">Führungskräfte geben an, KI nicht aktiv führen zu können. Sie delegieren nur.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Adoptionshebel</span>
+        <span class="v">4<span class="u">×</span></span>
+        <span class="d">Höhere Adoption-Rate wenn Führungskräfte aktiv als KI-Vorbilder sichtbar sind.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Dauer</span>
+        <span class="v">1–2<span class="u">Tage</span></span>
+        <span class="d">Grundprogramm 1 Tag, mit 5S-Deep-Dive optional auf 2 Tage erweiterbar.</span>
+      </div>
+      <div class="cell">
+        <span class="k">/ / Follow-Ups</span>
+        <span class="v">3<span class="u">×</span></span>
+        <span class="d">Individuelle Sparring-Termine in den 4 Wochen nach dem Training.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SCHMERZ ====== -->
+<section class="slide" id="schmerz" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Kennen Sie das?</h2>
+      <p class="lead" style="margin-top:12px;">Diese Muster entstehen nicht durch fehlenden Willen, sondern durch fehlende Führungskompetenz im Umgang mit KI. Das ist lernbar.</p>
+    </div>
+
+    <div class="pain-grid reveal stag">
+      <div class="pain-card">
+        <p>Wir haben alle einen KI-Workshop besucht. Drei Monate später führt niemand anders als vorher.</p>
+      </div>
+      <div class="pain-card">
+        <p>Meine Manager wissen, was ChatGPT ist. Aber sie können ihren Teams nicht erklären, warum und wie KI bei uns eingesetzt wird.</p>
+      </div>
+      <div class="pain-card">
+        <p>Wir schulen Mitarbeiter. Aber die Führungskräfte gehen als erstes weg und greifen als letztes zum Tool.</p>
+      </div>
+      <div class="pain-card">
+        <p>Es gibt keine KI-Vorbilder im Unternehmen. Alle warten darauf, dass jemand anfängt.</p>
+      </div>
+    </div>
+
+    <div class="reframe-band reveal" style="margin-top:72px;">
+      <div>
+        <p class="big">KI-Adoption folgt der Führung, <em>nicht der Technologie.</em> Wenn Führungskräfte KI nicht führen können, führt niemand.</p>
+      </div>
+      <div class="ex">
+        <strong>/ / Das eigentliche Problem</strong>
+        <p>Führungskräfte-Schulungen zu KI enden meist bei Technologie-Briefings. Was fehlt: die Methode, um Widerstände im eigenen Team zu erkennen, Potenziale strukturiert zu erschließen und KI als Führungsaufgabe zu begreifen, nicht als Delegationsaufgabe an IT.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 5S FRAMEWORK ====== -->
+<section class="slide" id="framework">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Das 5S-Framework<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">KAILEAD basiert auf dem 5S-Framework, dem strukturierten Kompetenzmodell für KI-Führung. Fünf Dimensionen, die Führungskräfte brauchen, um KI wirksam einzuführen statt nur zu begleiten.</p>
+    </div>
+
+    <div style="margin:40px 0 32px; text-align:center;">
+      <span class="fives-intro">5S — Sicherheit · Signal · Skill · Struktur · Sozial</span>
+    </div>
+
+    <div class="fives-grid reveal stag">
+      <div class="fives-card" data-s="S1">
+        <span class="fives-s">S1</span>
+        <div class="fives-name">Sicherheit</div>
+        <div class="fives-what">Was darf KI — und was nicht?</div>
+        <p class="fives-desc">Führungskräfte wissen, welche Daten mit welchen KI-Tools geteilt werden dürfen, welche Outputs geprüft werden müssen und wo die rechtliche Verantwortung liegt. Sie können Compliance-Fragen im eigenen Bereich beantworten, ohne jedes Mal die Rechtsabteilung zu fragen.</p>
+        <div class="fives-missing"><strong>Ohne S1:</strong> Compliance-Verstöße aus Unwissenheit. Haftungsrisiken, die intern nicht erkannt werden.</div>
+      </div>
+      <div class="fives-card" data-s="S2">
+        <span class="fives-s">S2</span>
+        <div class="fives-name">Signal</div>
+        <div class="fives-what">Wo erzeugt KI in meinem Bereich Wert?</div>
+        <p class="fives-desc">Führungskräfte erkennen, welche Aufgaben in ihrem Verantwortungsbereich KI-Potenzial haben. Sie lesen KI-Ergebnisse kritisch, unterscheiden zwischen Hype und realem Nutzen und können Chancen benennen, ohne von der IT-Abteilung abhängig zu sein.</p>
+        <div class="fives-missing"><strong>Ohne S2:</strong> Blind Spots. Falsche Prioritäten. KI-Investitionen, die am Bedarf vorbeigehen.</div>
+      </div>
+      <div class="fives-card" data-s="S3">
+        <span class="fives-s">S3</span>
+        <div class="fives-name">Skill</div>
+        <div class="fives-what">Kann ich KI vorleben — nicht nur anweisen?</div>
+        <p class="fives-desc">Führungskräfte können relevante KI-Tools sinnvoll bedienen und ihren Teams gegenüber vorleben, wie es funktioniert. Nicht als Experten, aber als glaubwürdige Anwender, die Skepsis entkräften durch Beispiel statt durch Dekret.</p>
+        <div class="fives-missing"><strong>Ohne S3:</strong> Glaubwürdigkeit verloren. Adoption stirbt durch fehlendes Vorbild.</div>
+      </div>
+      <div class="fives-card" data-s="S4">
+        <span class="fives-s">S4</span>
+        <div class="fives-name">Struktur</div>
+        <div class="fives-what">Wie bettet KI in unsere Prozesse ein?</div>
+        <p class="fives-desc">Führungskräfte können KI-Anwendungen in bestehende Prozesse einbetten, Verantwortlichkeiten definieren und einen Use-Case-Überblick für ihren Bereich führen. Sie skalieren Piloten statt sie für immer als Experiment zu behandeln.</p>
+        <div class="fives-missing"><strong>Ohne S4:</strong> KI-Inseln ohne Skalierung. Chaos nach dem Pilot. Jedes Team erfindet alles neu.</div>
+      </div>
+      <div class="fives-card fives-card-full" data-s="S5">
+        <span class="fives-s">S5</span>
+        <div class="fives-name">Sozial</div>
+        <div class="fives-what">Wie führe ich mein Team durch die KI-Adoption?</div>
+        <p class="fives-desc">Führungskräfte verstehen die fünf Widerstandstypen (Angst, Gleichgültigkeit, Macht, Trauma, Lähmung), können Widerstände in ihrem Team benennen und gezielt adressieren. Sie schaffen psychologische Sicherheit für das Ausprobieren, ohne Absicherungs-Kultur oder Schuldzuweisungen.</p>
+        <div class="fives-missing"><strong>Ohne S5:</strong> Stille Sabotage. Tool-Verweigerung. Widerstände, die nie ausgesprochen und damit nie gelöst werden.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROGRAMM ====== -->
+<section class="slide" id="programm" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Das Programm — <em>Schritt für Schritt.</em></h2>
+      <p class="lead" style="margin-top:12px;">Kein reines Technologie-Briefing. Kein Motivation-Seminar. Ein strukturierter Prozess, der mit KI-Realität beginnt und mit Führungskompetenz endet.</p>
+    </div>
+
+    <div style="max-width:680px; margin:0 auto;">
+      <div class="kaidop-steps-label reveal">Ablauf</div>
+
+      <div class="product-tier reveal" style="border-left:3px solid #e8a020;">
+        <span class="product-tier-num" style="color:#e8a020;">01</span>
+        <div>
+          <div class="product-tier-name">Technologie-Realität<span class="product-tier-sub">Tag 1 · Vormittag</span></div>
+          <p class="product-tier-text">Was kann KI wirklich, und was nicht? Welche Tools sind für Ihren Kontext relevant? Welche Risiken und Regelungen gelten? Führungskräfte erhalten ein ehrliches, praxistaugliches Bild der Technologie, ohne Hype, ohne Angst-Rhetorik. Die Basis für Sicherheit (S1) und Signal (S2).</p>
+        </div>
+      </div>
+
+      <div class="kaidop-step-arrow">↓</div>
+
+      <div class="product-tier reveal" style="border-left:3px solid #e8a020;">
+        <span class="product-tier-num" style="color:#e8a020;">02</span>
+        <div>
+          <div class="product-tier-name">Die menschliche Seite der KI<span class="product-tier-sub">Tag 1 · Nachmittag</span></div>
+          <p class="product-tier-text">Warum lehnen Mitarbeitende KI ab? Die fünf Widerstandstypen werden auf eigene Führungssituationen angewendet. Jede Führungskraft entwickelt ein konkretes Reaktionsrepertoire für Angst, Gleichgültigkeit, Machtwiderstände, Trauma und Lähmung im eigenen Team. Direkte Anwendung des 5S-Bausteins Sozial (S5).</p>
+        </div>
+      </div>
+
+      <div class="kaidop-step-arrow">↓</div>
+
+      <div class="product-tier reveal" style="border-left:3px solid rgba(232,160,32,0.4);">
+        <span class="product-tier-num" style="color:#e8a020;">02b</span>
+        <div>
+          <div class="product-tier-name">5S-Deep-Dive + Praxistransfer<span class="product-tier-sub">Optional · Tag 2</span></div>
+          <p class="product-tier-text">Für größere Führungsrunden oder tiefere Bearbeitung: Tag 2 erweitert das 5S-Framework auf konkrete Situationen. Führungskräfte arbeiten an echten Beispielen aus ihrem Alltag, entwickeln Use-Case-Portfolios für ihre Bereiche und üben die Übersetzung von KI-Potenzial in Führungsgespräche.</p>
+        </div>
+      </div>
+
+      <div class="kaidop-step-arrow">↓</div>
+
+      <div class="product-tier reveal" style="border-left:3px solid #e8a020;">
+        <span class="product-tier-num" style="color:#e8a020;">03</span>
+        <div>
+          <div class="product-tier-name">3 × Follow-Up-Sparring<span class="product-tier-sub">Über 4 Wochen · je 60 Minuten</span></div>
+          <p class="product-tier-text">Drei individuelle Termine in den Wochen nach dem Training. Konkrete Situationen aus dem Führungsalltag werden besprochen: Wie lief das erste KI-Gespräch mit dem Team? Welche Widerstände sind aufgetaucht? Was braucht die nächste Phase? Fortschritte werden ausgewertet, bis die Führungskompetenz wirklich sitzt, nicht nur im Training, sondern im Alltag.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FORMATE ====== -->
+<section class="slide" id="formate">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Formate &amp; Buchung<span class="period">.</span></h2>
+      <p class="lead" style="margin-top:12px;">KAILEAD ist für einzelne Führungskräfte, Führungsteams und ganze Führungsebenen buchbar. Jedes Format basiert auf demselben 5S-Methodenkern.</p>
+    </div>
+
+    <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+    <table class="format-table reveal">
+      <thead>
+        <tr>
+          <th style="min-width:160px;">Format</th>
+          <th style="min-width:130px;">Teilnehmende</th>
+          <th style="min-width:160px;">Umfang</th>
+          <th style="min-width:200px;">Für wen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Führungskraft-Training</td>
+          <td>1–6 Führungskräfte</td>
+          <td>1 Tag + 3 Follow-Up-Sparrings</td>
+          <td>Einzelne Führungskräfte oder kleine Führungsrunde. Idealer Einstieg für erste KAILEAD-Erfahrung.</td>
+        </tr>
+        <tr>
+          <td>Extended-Programm</td>
+          <td>Bis 12 Führungskräfte</td>
+          <td>2 Tage + 3 Follow-Up-Sparrings</td>
+          <td>Für größere Führungsrunden mit vertieftem 5S-Deep-Dive und Praxistransfer an Tag 2.</td>
+        </tr>
+        <tr>
+          <td>In-Company</td>
+          <td>Gesamte Führungsebene</td>
+          <td>Nach Maß</td>
+          <td>Unternehmensweite Qualifizierung der Führungsebene, koordiniert mit KAIDOP (Teams) und KAIRON (System).</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABGRENZUNG ====== -->
+<section class="slide" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">Was KAILEAD ist — <em>und was nicht.</em></h2>
+    </div>
+
+    <div class="abgrenz-grid reveal">
+      <div class="abgrenz-col">
+        <span class="abgrenz-label">Kein KAILEAD</span>
+        <ul>
+          <li>KI-Tool-Seminar mit Prompt-Engineering-Übungen. Das ist Skill-Training für Anwender, nicht Führungskräfte.</li>
+          <li>Allgemeines Change-Management-Kurs ohne KI-Spezifik.</li>
+          <li>Motivations-Vortrag über die Zukunft der künstlichen Intelligenz.</li>
+          <li>Einmalige Maßnahme ohne Begleitung danach.</li>
+          <li>IT-Briefing zur Infrastruktur und Tool-Landschaft.</li>
+        </ul>
+      </div>
+      <div class="abgrenz-col">
+        <span class="abgrenz-label" style="color:#e8a020;">Das ist KAILEAD</span>
+        <ul>
+          <li>Führungskompetenz für KI: Sicherheit, Signal, Skill, Struktur, Sozial: strukturiert und transferierbar.</li>
+          <li>Methodische Arbeit an echten Führungssituationen aus dem eigenen Unternehmen.</li>
+          <li>Werkzeug zur Widerstandserkennung im eigenen Team, konkret anwendbar ab Tag 1 nach dem Training.</li>
+          <li>3 individuelle Follow-Up-Sparrings, die Umsetzung sichern.</li>
+          <li>Schnittstelle zu KAIDOP (Teams) und KAIRON (Governance). Alle drei ergänzen sich systemisch.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CROSS-SELL ====== -->
+<section class="slide">
+  <div class="wrap">
+    <div class="slide-header reveal">
+      <h2 class="section-title">KAILEAD befähigt die Führung.<br><em>Was bewegt Teams und System?</em></h2>
+      <p class="lead" style="margin-top:12px;">Führungskompetenz allein erzeugt keine Adoption. Die drei Formate sind aufeinander abgestimmt, für Unternehmen, die KI systematisch einführen wollen.</p>
+    </div>
+
+    <div class="xsell-grid reveal">
+      <a href="kaidop.html" class="xsell-card" style="border-color:var(--rule);">
+        <span class="xsell-label">Mitarbeiter-Adoption</span>
+        <div class="xsell-name">KAIDOP</div>
+        <p class="xsell-desc">Während KAILEAD Führungskräfte befähigt, adressiert KAIDOP die Widerstände in den Teams direkt. 1-Tag Workshop, der Widerstände sichtbar macht und Use Cases entwickelt, damit das, was Führungskräfte führen, auch tatsächlich umgesetzt wird.</p>
+        <span class="xsell-link">Mehr zu KAIDOP →</span>
+      </a>
+      <a href="kairon.html" class="xsell-card" style="border-color:var(--rule);">
+        <span class="xsell-label">KI-Steuerungssystem</span>
+        <div class="xsell-name">KAIRON</div>
+        <p class="xsell-desc">Das Governance-System, das verhindert, dass Führungskompetenz ins Leere läuft. KAIRON gibt KI-Initiativen Ownership, Pipeline, messbaren Impact und ein Playbook, das mit jedem Projekt klüger wird. In 90 Tagen eingeführt.</p>
+        <span class="xsell-link">Mehr zu KAIRON →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta" id="cta">
+  <div class="wrap">
+    <div style="max-width:980px;">
+      <span class="kicker" style="color:#e8a020;">Nächster Schritt · KAILEAD Training</span>
+      <h2 style="margin-top:28px;">
+        1–2 Tage.<br>
+        KI-<wbr>Führungs&shy;kompetenz — <em>die wirklich sitzt.</em>
+      </h2>
+      <p class="lead">Kein allgemeines Leadership-Seminar. Ein strukturiertes Programm, das Ihre Führungskräfte auf Basis des 5S-Frameworks befähigt, mit drei Follow-Up-Terminen, die sicherstellen, dass Kompetenz im Alltag bleibt und nicht nach zwei Wochen versickert.</p>
+      <div class="btn-row" style="margin-top:36px;">
+        <a class="btn-primary" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener" style="background:#e8a020;border-color:#e8a020;">KAILEAD anfragen</a>
+        <a class="btn-ghost" href="ki-readiness-check.html">Zuerst Reifegrad kennen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© new.thought · KAILEAD</div>
+    <div style="display:flex;gap:24px;flex-wrap:wrap;">
+      <a href="programme.html">← Programme</a>
+      <a href="kairon.html">KAIRON</a>
+      <a href="kaidop.html">KAIDOP</a>
+      <a href="kairon-executive.html">Fractional AI Officer</a>
+      <a href="academy.html">Academy</a>
+      <a href="ki-readiness-check.html">KI-Check</a>
+    </div>
+    <div style="display:flex;gap:20px;">
+      <button onclick="openModal('modal-impressum')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='#e8a020'" onmouseout="this.style.color='var(--ink-mute)'">Impressum</button>
+      <button onclick="openModal('modal-datenschutz')" style="font:inherit;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-mute);background:none;border:none;cursor:pointer;padding:0;transition:color .15s;" onmouseover="this.style.color='#e8a020'" onmouseout="this.style.color='var(--ink-mute)'">Datenschutz</button>
+    </div>
+  </div>
+</footer>
+
+<!-- IMPRESSUM -->
+<div class="modal-overlay" id="modal-impressum" onclick="closeModalOnBg(event,'modal-impressum')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Impressum</h2>
+    <h3>Angaben gemäß § 5 TMG</h3>
+    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: <a href="tel:+491516450933">+49 1516 450933</a><br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ -->
+<div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOnBg(event,'modal-datenschutz')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
+    <span class="m-label">/ / Rechtliches</span>
+    <h2>Datenschutzerklärung</h2>
+    <h3>Verantwortlicher</h3>
+    <p>Nils Blache, c/o Postflex #8293, Emsdettener Str. 10, 48268 Greven.<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
+    <p>Diese Website erhebt keine personenbezogenen Daten durch Tracking, Cookies oder Analyse-Tools. Es werden keine Cookies gesetzt.</p>
+    <h3>Hosting</h3>
+    <p>Diese Website wird statisch gehostet. Beim Aufruf werden IP-Adresse und Zugriffszeit kurzfristig im Server-Log gespeichert und automatisch gelöscht.</p>
+    <h3>Ihre Rechte (DSGVO)</h3>
+    <p>Wenden Sie sich an: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+  </div>
+</div>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben">↑</button>
+
+<script>
+  function toggleDropdown(id) {
+    const all = document.querySelectorAll('.nav-dropdown');
+    all.forEach(d => { if (d.id !== id) d.classList.remove('open'); });
+    document.getElementById(id).classList.toggle('open');
+  }
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+    }
+  });
+  window.toggleDropdown = toggleDropdown;
+</script>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

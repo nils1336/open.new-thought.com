@@ -26,7 +26,10 @@ export default defineConfig({
         ressourcenOrganisation: resolve(__dirname, 'site/ressourcen/ki-organisation-rollen-struktur.html'),
         ressourcenOrchestrator: resolve(__dirname, 'site/ressourcen/was-ist-ein-ki-orchestrator.html'),
         ressourcenRoi: resolve(__dirname, 'site/ressourcen/ki-roi-berechnen.html'),
-        kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html')
+        kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html'),
+        kairon: resolve(__dirname, 'site/kairon.html'),
+        kaidop: resolve(__dirname, 'site/kaidop.html'),
+        kailead: resolve(__dirname, 'site/kailead.html')
       }
     }
   }

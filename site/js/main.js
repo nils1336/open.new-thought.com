@@ -92,8 +92,10 @@
     $('recoveryPct').textContent = '60 %';
     $('recoveryFill').style.width = '60%';
   }
-  ['employees','cost','initiatives','hours'].forEach(id=>$(id).addEventListener('input', calc));
-  calc();
+  if ($('employees')) {
+    ['employees','cost','initiatives','hours'].forEach(id=>$(id).addEventListener('input', calc));
+    calc();
+  }
 
   // Scroll-to-top button
   const scrollTopBtn = document.getElementById('scrollTop');
