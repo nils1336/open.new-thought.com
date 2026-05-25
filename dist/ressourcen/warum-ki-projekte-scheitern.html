@@ -21,8 +21,8 @@
   "@type": "Article",
   "headline": "Warum KI-Projekte im Mittelstand scheitern und was wirklich hilft",
   "description": "65 % aller KI-Initiativen ohne benannten Owner versanden. Die fünf echten Ursachen und wie ein Steuerungssystem sie löst.",
-  "datePublished": "2026-05-21",
-  "dateModified": "2026-05-21",
+  "datePublished": "2026-03-12",
+  "dateModified": "2026-03-12",
   "author": {
     "@type": "Person",
     "name": "Nils Blache",
@@ -90,12 +90,17 @@
   .art-date { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); margin-left: auto; }
 
   .art-body { max-width: 720px; margin: 0 auto; padding: 64px 0 80px; }
-  .art-toc { background: var(--bg-soft); border-left: 3px solid var(--accent); padding: 28px 32px; margin-bottom: 52px; }
+  .art-toc { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 24px 0; margin-bottom: 52px; background: none; }
   .art-toc-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 16px; }
   .art-toc ol { padding-left: 20px; }
   .art-toc li { margin-bottom: 8px; font-size: 15px; }
-  .art-toc a { color: var(--ink-soft); transition: color .15s; }
-  .art-toc a:hover { color: var(--accent); }
+  .art-toc a { color: var(--ink-soft); opacity: 0.7; transition: color .15s, opacity .15s; }
+  .art-toc a:hover { color: var(--accent); opacity: 1; }
+  @media (min-width: 980px) {
+    .art-body { max-width: 1080px; display: grid; grid-template-columns: 196px 1fr; column-gap: 60px; align-items: start; }
+    .art-body > * { grid-column: 2; }
+    .art-toc { grid-column: 1 !important; grid-row: 1 / 99; position: sticky; top: 80px; align-self: start; border-top: 1px solid var(--rule); border-bottom: none; padding: 20px 0 0; margin-bottom: 0; background: none; }
+  }
 
   .art-body h2 { font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.025em; margin: 52px 0 16px; color: var(--ink); line-height: 1.2; }
   .art-body h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; margin: 36px 0 12px; color: var(--ink); }

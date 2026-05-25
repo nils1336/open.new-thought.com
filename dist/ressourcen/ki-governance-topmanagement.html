@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KI Governance Unternehmen: Steuerung im Top-Management | new.thought</title>
+  <meta name="description" content="KI Governance ist keine IT-Frage – sie ist eine Führungsfrage. Wer im Unternehmen über KI entscheidet, bestimmt, ob KI optimiert oder transformiert. Ein Leitfaden für Entscheider." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.new-thought.com/ressourcen/ki-governance-topmanagement.html" />
+  <meta property="og:title" content="KI Governance Unternehmen: Steuerung im Top-Management" />
+  <meta property="og:description" content="KI Governance Unternehmen: Wer über KI entscheidet, bestimmt den Transformationserfolg. Governance-Rollen, 5 Ebenen, FAQ." />
+  <meta property="og:url" content="https://www.new-thought.com/ressourcen/ki-governance-topmanagement.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="new.thought" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "Organization", "@id": "https://www.new-thought.com/#organization", "name": "new.thought", "url": "https://www.new-thought.com" },
+      {
+        "@type": "Article",
+        "@id": "https://www.new-thought.com/ressourcen/ki-governance-topmanagement.html#article",
+        "headline": "KI-Steuerung im Top-Management: Wer muss wirklich entscheiden?",
+        "description": "KI Governance ist keine IT-Frage – sie ist eine Führungsfrage. Governance-Rollen, 5 Ebenen und ein konkreter Einstieg.",
+        "author": { "@type": "Person", "name": "Nils Blache", "url": "https://www.new-thought.com/kairon-executive.html" },
+        "publisher": { "@id": "https://www.new-thought.com/#organization" },
+        "datePublished": "2026-05-13",
+        "dateModified": "2026-05-13",
+        "keywords": ["KI Governance Unternehmen", "KI Steuerung Management", "AI Governance Framework", "CAIO", "KI Entscheidungsverantwortung"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Was ist der Unterschied zwischen KI-Governance und KI-Compliance?", "acceptedAnswer": { "@type": "Answer", "text": "Compliance ist das Minimum – was gesetzlich gefordert ist. Governance geht weiter: Sie definiert, wie KI intern gesteuert und verantwortet wird – über gesetzliche Anforderungen hinaus." } },
+          { "@type": "Question", "name": "Braucht jedes Unternehmen einen CAIO?", "acceptedAnswer": { "@type": "Answer", "text": "Nicht unbedingt eine eigene Stelle. Aber jemand muss die Governance-Verantwortung namentlich tragen – ob als CAIO, als KI-Beauftragter oder als CDO mit erweitertem Mandat. Ohne klare Verantwortung gibt es keine wirksame Governance." } },
+          { "@type": "Question", "name": "Wie beginnt man mit KI Governance?", "acceptedAnswer": { "@type": "Answer", "text": "Mit einem ehrlichen Inventar: Welche KI-Systeme und -Tools werden heute schon eingesetzt? Viele Unternehmen sind überrascht, wie weit KI bereits verbreitet ist – oft ohne jede Governance." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --accent: #ff3eb5; --ink: #0e0e0c; --bg-deep: #0e0e0c; --bg-soft: #f5f4f0; --rule: #e2e1db; --mono: "JetBrains Mono", monospace; --sans: "Inter", sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: #fff; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--mono); font-weight: 700; font-size: 1.1rem; text-decoration: none; color: var(--ink); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; text-decoration: none; color: var(--ink); opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-cta { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 4px; padding: 6px 16px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--accent); color: #fff; }
+    .breadcrumb { max-width: 800px; margin: 0 auto; padding: 20px 24px 0; font-size: 0.8rem; color: #888; }
+    .breadcrumb a { color: #888; text-decoration: none; }
+    .breadcrumb span { margin: 0 6px; }
+    .article-container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: #f0eef9; color: #6b4fcf; border-radius: 3px; padding: 3px 8px; }
+    .meta-info { font-size: 0.8rem; color: #888; }
+    h1.article-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .article-lead { font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 40px; border-left: 3px solid var(--accent); padding-left: 20px; }
+    .toc { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 24px 0; margin-bottom: 48px; background: none; }
+    .toc-title { font-family: var(--mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 16px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { font-size: 0.875rem; color: var(--ink); text-decoration: none; opacity: 0.7; transition: opacity 0.15s, color 0.15s; }
+    .toc a:hover { color: var(--accent); opacity: 1; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; margin: 48px 0 16px; letter-spacing: -0.02em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; margin: 32px 0 12px; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body strong { font-weight: 700; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0; }
+    .stat-card { background: var(--bg-deep); color: #fff; border-radius: 8px; padding: 24px; text-align: center; }
+    .stat-num { font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 6px; }
+    .stat-label { font-size: 0.8rem; opacity: 0.7; line-height: 1.4; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 0.9rem; }
+    .data-table th { background: var(--bg-deep); color: #fff; padding: 12px 16px; text-align: left; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--bg-soft); }
+    .ebene-card { border-left: 3px solid var(--accent); padding: 16px 20px; margin-bottom: 16px; background: var(--bg-soft); }
+    .ebene-label { font-family: var(--mono); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+    .ebene-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+    .ebene-card ul { margin: 0; padding-left: 20px; }
+    .ebene-card li { font-size: 0.875rem; color: #555; margin-bottom: 4px; }
+    .callout { background: #fff8f0; border-left: 4px solid #ff8c42; border-radius: 4px; padding: 20px 24px; margin: 32px 0; }
+    .callout-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ff8c42; margin-bottom: 6px; }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    .callout-tip { background: #f0faf5; border-left: 4px solid #2dd4a0; }
+    .callout-tip .callout-label { color: #2dd4a0; }
+    .faq-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--rule); }
+    .faq-section h2 { font-size: 1.4rem; margin-bottom: 24px; }
+    details { border: 1px solid var(--rule); border-radius: 6px; margin-bottom: 12px; }
+    summary { padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); }
+    details[open] summary::after { content: "−"; }
+    details p { padding: 0 20px 16px; font-size: 0.9rem; color: #555; line-height: 1.65; margin: 0; }
+    .related { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--rule); }
+    .related h2 { font-size: 1.2rem; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .related-card { border: 1px solid var(--rule); border-radius: 8px; padding: 20px; text-decoration: none; color: var(--ink); transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-card-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .related-card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.4; }
+    .cta-box { background: var(--bg-deep); color: #fff; border-radius: 12px; padding: 40px; margin-top: 60px; text-align: center; }
+    .cta-box h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { opacity: 0.75; margin-bottom: 28px; font-size: 0.95rem; }
+    .btn-accent { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-accent:hover { opacity: 0.85; }
+    footer { background: var(--bg-deep); color: #fff; padding: 40px 24px; text-align: center; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; font-size: 0.8rem; }
+    footer a:hover { color: #fff; }
+    .footer-copy { font-size: 0.75rem; opacity: 0.4; margin-top: 12px; }
+    @media (max-width: 640px) { .stat-row { grid-template-columns: 1fr; } .related-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+
+  @media (min-width: 980px) {
+    .article-container {
+      max-width: 1080px;
+      display: grid;
+      grid-template-columns: 196px 1fr;
+      column-gap: 60px;
+      align-items: start;
+    }
+    .article-container > * { grid-column: 2; }
+    nav.toc {
+      grid-column: 1 !important;
+      grid-row: 1 / 99;
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      border-top: 1px solid var(--rule);
+      border-right: none;
+      border-bottom: none;
+      padding: 20px 0 0;
+      margin-bottom: 0;
+      background: none;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">new<span>.</span>thought</a>
+    <ul class="nav-links">
+      <li><a href="../programme.html">Programme</a></li>
+      <li><a href="../academy.html">Academy</a></li>
+      <li><a href="../kairon-executive.html">Executive</a></li>
+      <li><a href="../ressourcen.html" class="active">Ressourcen</a></li>
+    </ul>
+    <a href="https://cal.meetergo.com/nilsb/discovery" class="nav-cta" target="_blank" rel="noopener">Erstgespräch buchen</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a><span>›</span>
+  <a href="../ressourcen.html">Ressourcen</a><span>›</span>
+  KI-Governance im Top-Management
+</div>
+
+<article class="article-container">
+  <div class="article-meta">
+    <span class="tag">KI-Governance</span>
+    <span class="meta-info">von Nils Blache &nbsp;·&nbsp; 7 Min. Lesezeit &nbsp;·&nbsp; Mai 2026</span>
+  </div>
+
+  <h1 class="article-title" id="top">KI-Steuerung im Top-Management: Wer muss wirklich entscheiden?</h1>
+
+  <p class="article-lead">
+    "Wer entscheidet bei uns über KI?" – Diese Frage stellen wir in Workshops regelmäßig. Die Antworten sind erschreckend ähnlich: Zögern. Blicke zu den IT-Kollegen. Diese Stille ist das eigentliche KI-Problem vieler Unternehmen.
+  </p>
+
+  <nav class="toc" aria-label="Inhaltsverzeichnis">
+    <div class="toc-title">Inhalt</div>
+    <ol>
+      <li><a href="#definition">Was KI Governance Unternehmen wirklich bedeutet</a></li>
+      <li><a href="#dringlichkeit">Warum Governance 2026 zur Dringlichkeit wird</a></li>
+      <li><a href="#ebenen">Die fünf Ebenen der KI-Governance</a></li>
+      <li><a href="#rollen">Governance-Rollen: Wer macht was?</a></li>
+      <li><a href="#katalysator">Governance als Katalysator</a></li>
+      <li><a href="#faq">Häufige Fragen</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <h2 id="definition">Was KI Governance Unternehmen wirklich bedeutet</h2>
+
+    <p>
+      KI-Governance ist das System aus Regeln, Rollen, Prozessen und Werten, das sicherstellt, dass KI im Unternehmen verantwortungsvoll, konsistent und im Einklang mit strategischen Zielen eingesetzt wird.
+    </p>
+
+    <p>Sie beantwortet Fragen wie:</p>
+    <ul>
+      <li>Welche KI-Tools dürfen eingesetzt werden – und welche nicht?</li>
+      <li>Welche Daten dürfen KI-Systemen zugänglich gemacht werden?</li>
+      <li>Wer ist verantwortlich, wenn ein KI-Output falsch ist oder Schaden anrichtet?</li>
+      <li>Wie gehen wir mit KI-generierten Entscheidungen in sensiblen Bereichen um?</li>
+      <li>Wie kommunizieren wir intern und extern über unseren KI-Einsatz?</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Kernaussage</div>
+      <p>Das sind keine IT-Fragen. Das sind Fragen der Unternehmensführung.</p>
+    </div>
+
+    <h2 id="dringlichkeit">Warum Governance 2026 zur Dringlichkeit wird</h2>
+
+    <h3>1. Der EU AI Act ist in Kraft</h3>
+    <p>Unternehmen, die KI in hochriskanten Anwendungsbereichen einsetzen, müssen Governance-Strukturen nachweisen können. Das betrifft mehr Unternehmen als gedacht.</p>
+
+    <h3>2. Agentic AI verändert das Risikoprofil grundlegend</h3>
+    <p>Autonome KI-Agenten erfordern ein völlig anderes Governance-Niveau als passive KI-Tools. Deloitte: Nur <strong>21&nbsp;%</strong> der Unternehmen, die Agentic AI einsetzen wollen, haben ein reifes Governance-Modell dafür.</p>
+
+    <h3>3. Vertrauen wird zum Wettbewerbsfaktor</h3>
+    <p>Unternehmen mit klarer KI-Governance gewinnen schneller das Vertrauen von Kunden, Mitarbeitern und Partnern. Governance ist kein Bremsklotz – sie ist Beschleuniger für verantwortungsvolles Wachstum.</p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-num">21 %</span>
+        <span class="stat-label">Haben reifes Governance-Modell für Agentic AI</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">2 %</span>
+        <span class="stat-label">Dt. Unternehmen mit KI-Verantwortung auf CEO-Ebene</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">5×</span>
+        <span class="stat-label">Höherer KI-Wertbeitrag wenn Top-Management Governance aktiv gestaltet</span>
+      </div>
+    </div>
+
+    <h2 id="ebenen">Die fünf Ebenen der KI-Governance</h2>
+
+    <div class="ebene-card">
+      <div class="ebene-label">Ebene 1</div>
+      <h3>Strategische Governance (Vorstand/C-Level)</h3>
+      <ul>
+        <li>KI-Vision und strategische Leitlinien definieren</li>
+        <li>Risikoappetit für KI festlegen</li>
+        <li>KI-Investitionsentscheidungen treffen</li>
+        <li>Externe Stakeholder-Kommunikation verantworten</li>
+      </ul>
+    </div>
+
+    <div class="ebene-card">
+      <div class="ebene-label">Ebene 2</div>
+      <h3>Operative Governance (Führungsebene)</h3>
+      <ul>
+        <li>KI-Policies entwickeln und durchsetzen</li>
+        <li>Use Cases priorisieren und freigeben</li>
+        <li>Cross-funktionale KI-Koordination sicherstellen</li>
+        <li>Compliance mit EU AI Act und anderen Regularien</li>
+      </ul>
+    </div>
+
+    <div class="ebene-card">
+      <div class="ebene-label">Ebene 3</div>
+      <h3>Prozess-Governance (Fachbereich + IT)</h3>
+      <ul>
+        <li>Einheitliche Prozesse für KI-Einführung und -Betrieb</li>
+        <li>Qualitätssicherung für KI-Outputs</li>
+        <li>Vorfallmanagement bei KI-Fehlern</li>
+        <li>Dokumentation und Audit-Trails</li>
+      </ul>
+    </div>
+
+    <div class="ebene-card">
+      <div class="ebene-label">Ebene 4</div>
+      <h3>Daten-Governance (Data Office + IT)</h3>
+      <ul>
+        <li>Datenzugang für KI-Systeme regeln</li>
+        <li>Datenschutz und Sicherheitsanforderungen</li>
+        <li>Qualitätsstandards für Trainingsdaten</li>
+      </ul>
+    </div>
+
+    <div class="ebene-card">
+      <div class="ebene-label">Ebene 5</div>
+      <h3>Ethik-Governance (übergreifend)</h3>
+      <ul>
+        <li>Ethische Leitlinien für KI-Einsatz</li>
+        <li>Bias-Monitoring und Fairness-Überprüfung</li>
+        <li>Transparenzpflichten gegenüber Betroffenen</li>
+      </ul>
+    </div>
+
+    <h2 id="rollen">Governance-Rollen: Wer macht was?</h2>
+
+    <table class="data-table">
+      <thead><tr><th>Rolle</th><th>Verantwortung</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CEO/Vorstand</strong></td><td>Strategische Leitlinien, Risikoappetit, externe Kommunikation</td></tr>
+        <tr><td><strong>Chief AI Officer (CAIO)</strong></td><td>Koordination aller KI-Aktivitäten, Governance-Framework, Reporting an Vorstand</td></tr>
+        <tr><td><strong>CIO/CTO</strong></td><td>Technische Infrastruktur, Sicherheit, Datenschutz</td></tr>
+        <tr><td><strong>Legal/Compliance</strong></td><td>EU AI Act, Haftungsfragen, Vertragsgestaltung</td></tr>
+        <tr><td><strong>HR</strong></td><td>Workforce-Auswirkungen, Change Management, Upskilling</td></tr>
+        <tr><td><strong>Fachbereich</strong></td><td>Use-Case-Identifikation, operative Umsetzung, Feedback</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout callout-tip">
+      <div class="callout-label">Schlüsselerkenntnis</div>
+      <p>KI-Governance braucht einen CAIO oder eine äquivalente Rolle – eine Person, die die Gesamtkoordination hat und direkt an den Vorstand berichtet. In den meisten deutschen Unternehmen gibt es diese Rolle noch nicht.</p>
+    </div>
+
+    <h2 id="katalysator">Governance als Katalysator – nicht als Bremse</h2>
+
+    <p>Ein weit verbreitetes Missverständnis: Governance verlangsamt KI-Projekte.</p>
+
+    <p>Die Realität ist umgekehrt. Deloitte-Daten zeigen: Unternehmen mit reifen Governance-Strukturen deployen KI-Agenten <strong>schneller</strong> – weil Entscheidungsprozesse klar sind, Freigaben strukturiert laufen und Risiken frühzeitig erkannt werden.</p>
+
+    <p>Governance schafft Vertrauen. Und Vertrauen ist die Grundlage für Geschwindigkeit.</p>
+
+  </div>
+
+  <section class="faq-section" id="faq">
+    <h2>Häufige Fragen zu KI-Governance</h2>
+
+    <details>
+      <summary>Was ist der Unterschied zwischen KI-Governance und KI-Compliance?</summary>
+      <p>Compliance ist das Minimum – was gesetzlich gefordert ist. Governance geht weiter: Sie definiert, wie KI intern gesteuert und verantwortet wird – über gesetzliche Anforderungen hinaus. Compliance ohne Governance schützt vor Strafen. Governance schützt vor Schäden.</p>
+    </details>
+
+    <details>
+      <summary>Braucht jedes Unternehmen einen CAIO?</summary>
+      <p>Nicht unbedingt eine eigene Stelle. Aber jemand muss die Governance-Verantwortung namentlich tragen – ob als CAIO, als KI-Beauftragter oder als CDO mit erweitertem Mandat. Ohne klare Verantwortung gibt es keine wirksame Governance. Für viele mittelständische Unternehmen ist ein Fractional CAIO die effizienteste Lösung.</p>
+    </details>
+
+    <details>
+      <summary>Wie beginnt man mit KI Governance?</summary>
+      <p>Mit einem ehrlichen Inventar: Welche KI-Systeme und -Tools werden heute schon eingesetzt? Viele Unternehmen sind überrascht, wie weit KI bereits verbreitet ist – oft ohne jede Governance. Dieser Status-quo ist der Startpunkt für jede Governance-Initiative.</p>
+    </details>
+
+    <details>
+      <summary>Ist KI-Governance ein einmaliges Projekt?</summary>
+      <p>Nein. Das ist das häufigste Fehler-Muster: Governance als einmaliges Projekt zu verstehen. KI-Governance ist ein lebendiges System, das kontinuierlich gepflegt werden muss. Denn KI entwickelt sich weiter, neue Risiken tauchen auf, neue regulatorische Anforderungen kommen.</p>
+    </details>
+  </section>
+
+  <section class="related">
+    <h2>Weiterführende Artikel</h2>
+    <div class="related-grid">
+      <a href="ki-chefsache-fuehrungskraefte.html" class="related-card">
+        <div class="related-card-tag">KI-Leadership</div>
+        <h3>Warum KI Chefsache sein muss – und in Deutschland noch nicht ist</h3>
+      </a>
+      <a href="agentic-ai-governance.html" class="related-card">
+        <div class="related-card-tag">Agentic AI</div>
+        <h3>Agentic AI ohne Governance: Das nächste große Unternehmensrisiko</h3>
+      </a>
+    </div>
+  </section>
+
+  <div class="cta-box">
+    <h2>KI-Governance strukturell verankern</h2>
+    <p>new.thought begleitet Führungsteams beim Aufbau eines wirksamen KI-Governance-Frameworks – von der Rollendefinition bis zum laufenden Betrieb.</p>
+    <a href="../kairon-executive.html" class="btn-accent">Mehr zum Fractional AI Officer</a>
+  </div>
+
+</article>
+
+<footer>
+  <div>
+    <a href="../index.html">Home</a>
+    <a href="../programme.html">Programme</a>
+    <a href="../academy.html">Academy</a>
+    <a href="../ressourcen.html">Ressourcen</a>
+  </div>
+  <div style="margin-top:12px; display:flex; gap:20px; justify-content:center;">
+    <a href="../index.html" style="font:inherit; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Impressum</a>
+    <a href="../index.html" style="font:inherit; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Datenschutz</a>
+  </div>
+  <div class="footer-copy">© 2026 new.thought · Quellen: Deloitte "State of AI in the Enterprise 2026", EU AI Act</div>
+</footer>
+
+</body>
+</html>

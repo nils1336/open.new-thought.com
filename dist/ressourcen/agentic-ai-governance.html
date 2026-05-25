@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic AI Governance: Das nächste große Unternehmensrisiko | new.thought</title>
+  <meta name="description" content="85 % der Unternehmen planen Agentic AI – nur 21 % haben ein reifes Governance-Modell. Was Agentic AI Governance bedeutet, warum das Risiko unterschätzt wird und wie Sie sich jetzt vorbereiten." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.new-thought.com/ressourcen/agentic-ai-governance.html" />
+  <meta property="og:title" content="Agentic AI Governance: Das nächste große Unternehmensrisiko" />
+  <meta property="og:description" content="85 % planen Agentic AI – nur 21 % haben ein reifes Governance-Modell. Das ist ein Countdown." />
+  <meta property="og:url" content="https://www.new-thought.com/ressourcen/agentic-ai-governance.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="new.thought" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agentic AI Governance: Das nächste große Unternehmensrisiko" />
+  <meta name="twitter:description" content="85 % planen Agentic AI – nur 21 % haben ein reifes Governance-Modell. So schließen Sie die Lücke." />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.new-thought.com/#organization",
+        "name": "new.thought",
+        "url": "https://www.new-thought.com",
+        "sameAs": ["https://www.linkedin.com/company/new-thought-ki"]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://www.new-thought.com/ressourcen/agentic-ai-governance.html#article",
+        "headline": "Agentic AI ohne Governance: Das nächste große Unternehmensrisiko",
+        "description": "85 % der Unternehmen planen den Einsatz von KI-Agenten. Nur 21 % haben ein reifes Governance-Modell dafür.",
+        "author": {
+          "@type": "Person",
+          "name": "Nils Blache",
+          "jobTitle": "KI-Adoption Experte",
+          "url": "https://www.new-thought.com/kairon-executive.html"
+        },
+        "publisher": { "@id": "https://www.new-thought.com/#organization" },
+        "datePublished": "2026-05-15",
+        "dateModified": "2026-05-15",
+        "mainEntityOfPage": "https://www.new-thought.com/ressourcen/agentic-ai-governance.html",
+        "keywords": ["Agentic AI Governance", "KI Agenten Unternehmen", "Agentic AI Risiko", "AI Agents Enterprise", "KI Automatisierung"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Was unterscheidet Agentic AI von klassischen KI-Tools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Klassische KI-Tools reagieren auf Eingaben. KI-Agenten handeln autonom: Sie planen, entscheiden und führen Aktionen aus – ohne dass ein Mensch jeden Schritt freigibt. Zwischen Ziel und Ergebnis liegt kein Mensch mehr."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Brauche ich für jeden KI-Agenten eine eigene Governance?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nicht unbedingt. Aber Sie brauchen ein Governance-Framework, das für verschiedene Agent-Typen skaliert werden kann. Ein einmal aufgebautes Framework kann für viele Agenten-Deployments genutzt werden."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Welche Rolle spielt der EU AI Act für Agentic AI?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Agentic AI kann in verschiedene Risikokategorien des EU AI Acts fallen – je nach Anwendungsbereich. Besonders Agenten, die in Personalentscheidungen, kritischer Infrastruktur oder Strafverfolgung eingesetzt werden, unterliegen strengen Anforderungen. Rechtliche Beratung ist vor dem Deployment empfehlenswert."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --accent: #ff3eb5;
+      --ink: #0e0e0c;
+      --bg-deep: #0e0e0c;
+      --bg-soft: #f5f4f0;
+      --rule: #e2e1db;
+      --mono: "JetBrains Mono", monospace;
+      --sans: "Inter", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: #fff; line-height: 1.7; }
+    nav { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--mono); font-weight: 700; font-size: 1.1rem; text-decoration: none; color: var(--ink); }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.875rem; font-weight: 500; text-decoration: none; color: var(--ink); opacity: 0.7; transition: opacity 0.2s; }
+    .nav-links a:hover, .nav-links a.active { opacity: 1; }
+    .nav-cta { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; color: var(--accent); border: 1.5px solid var(--accent); border-radius: 4px; padding: 6px 16px; transition: background 0.2s, color 0.2s; }
+    .nav-cta:hover { background: var(--accent); color: #fff; }
+    .breadcrumb { max-width: 800px; margin: 0 auto; padding: 20px 24px 0; font-size: 0.8rem; color: #888; }
+    .breadcrumb a { color: #888; text-decoration: none; }
+    .breadcrumb a:hover { color: var(--ink); }
+    .breadcrumb span { margin: 0 6px; }
+    .article-container { max-width: 800px; margin: 0 auto; padding: 40px 24px 80px; }
+    .article-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: #f0eef9; color: #6b4fcf; border-radius: 3px; padding: 3px 8px; }
+    .tag--green { background: #edfaf3; color: #1a7a4a; }
+    .meta-info { font-size: 0.8rem; color: #888; }
+    h1.article-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 24px; }
+    .article-lead { font-size: 1.15rem; color: #444; line-height: 1.75; margin-bottom: 40px; border-left: 3px solid var(--accent); padding-left: 20px; }
+    .toc { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 24px 0; margin-bottom: 48px; background: none; }
+    .toc-title { font-family: var(--mono); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #888; margin-bottom: 16px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 6px; }
+    .toc a { font-size: 0.875rem; color: var(--ink); text-decoration: none; opacity: 0.7; transition: opacity 0.15s, color 0.15s; }
+    .toc a:hover { color: var(--accent); opacity: 1; }
+    .article-body h2 { font-size: 1.5rem; font-weight: 800; margin: 48px 0 16px; letter-spacing: -0.02em; }
+    .article-body h3 { font-size: 1.1rem; font-weight: 700; margin: 32px 0 12px; }
+    .article-body p { margin-bottom: 20px; }
+    .article-body ul, .article-body ol { padding-left: 24px; margin-bottom: 20px; }
+    .article-body li { margin-bottom: 8px; }
+    .article-body strong { font-weight: 700; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 40px 0; }
+    .stat-card { background: var(--bg-deep); color: #fff; border-radius: 8px; padding: 24px; text-align: center; }
+    .stat-num { font-family: var(--mono); font-size: 2rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: 6px; }
+    .stat-label { font-size: 0.8rem; opacity: 0.7; line-height: 1.4; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 0.9rem; }
+    .data-table th { background: var(--bg-deep); color: #fff; padding: 12px 16px; text-align: left; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; }
+    .data-table td { padding: 12px 16px; border-bottom: 1px solid var(--rule); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--bg-soft); }
+    .checklist { list-style: none; padding-left: 0; margin-bottom: 20px; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; border-bottom: 1px solid var(--rule); font-size: 0.95rem; }
+    .checklist li::before { content: "☐"; position: absolute; left: 0; color: var(--accent); font-size: 1.1rem; }
+    .scenario-box { border: 1px solid var(--rule); border-radius: 8px; padding: 20px 24px; margin-bottom: 16px; }
+    .scenario-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #e05; margin-bottom: 8px; }
+    .scenario-box h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .scenario-box p { margin: 0; font-size: 0.9rem; color: #555; }
+    .callout { background: #fff8f0; border-left: 4px solid #ff8c42; border-radius: 4px; padding: 20px 24px; margin: 32px 0; }
+    .callout-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #ff8c42; margin-bottom: 6px; }
+    .callout p { margin: 0; font-size: 0.95rem; }
+    .callout-tip { background: #f0faf5; border-left: 4px solid #2dd4a0; }
+    .callout-tip .callout-label { color: #2dd4a0; }
+    .dim-card { display: flex; gap: 16px; margin-bottom: 20px; padding: 20px; border: 1px solid var(--rule); border-radius: 8px; }
+    .dim-num { flex-shrink: 0; width: 36px; height: 36px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-weight: 700; font-size: 0.85rem; }
+    .dim-content h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+    .dim-content p { margin: 0; font-size: 0.875rem; color: #555; }
+    .faq-section { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--rule); }
+    .faq-section h2 { font-size: 1.4rem; margin-bottom: 24px; }
+    details { border: 1px solid var(--rule); border-radius: 6px; margin-bottom: 12px; }
+    summary { padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: 0.95rem; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+    summary::after { content: "+"; font-size: 1.2rem; color: var(--accent); }
+    details[open] summary::after { content: "−"; }
+    details p { padding: 0 20px 16px; font-size: 0.9rem; color: #555; line-height: 1.65; margin: 0; }
+    .related { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--rule); }
+    .related h2 { font-size: 1.2rem; margin-bottom: 24px; }
+    .related-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .related-card { border: 1px solid var(--rule); border-radius: 8px; padding: 20px; text-decoration: none; color: var(--ink); transition: border-color 0.2s; }
+    .related-card:hover { border-color: var(--accent); }
+    .related-card-tag { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .related-card h3 { font-size: 0.95rem; font-weight: 700; line-height: 1.4; }
+    .cta-box { background: var(--bg-deep); color: #fff; border-radius: 12px; padding: 40px; margin-top: 60px; text-align: center; }
+    .cta-box h2 { font-size: 1.4rem; font-weight: 800; margin-bottom: 12px; }
+    .cta-box p { opacity: 0.75; margin-bottom: 28px; font-size: 0.95rem; }
+    .btn-accent { display: inline-block; background: var(--accent); color: #fff; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 14px 32px; border-radius: 4px; text-decoration: none; transition: opacity 0.2s; }
+    .btn-accent:hover { opacity: 0.85; }
+    footer { background: var(--bg-deep); color: #fff; padding: 40px 24px; text-align: center; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; margin: 0 12px; font-size: 0.8rem; }
+    footer a:hover { color: #fff; }
+    .footer-copy { font-size: 0.75rem; opacity: 0.4; margin-top: 12px; }
+    @media (max-width: 640px) {
+      .stat-row { grid-template-columns: 1fr; }
+      .related-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+  @media (min-width: 980px) {
+    .article-container {
+      max-width: 1080px;
+      display: grid;
+      grid-template-columns: 196px 1fr;
+      column-gap: 60px;
+      align-items: start;
+    }
+    .article-container > * { grid-column: 2; }
+    nav.toc {
+      grid-column: 1 !important;
+      grid-row: 1 / 99;
+      position: sticky;
+      top: 80px;
+      align-self: start;
+      border-top: 1px solid var(--rule);
+      border-right: none;
+      border-bottom: none;
+      padding: 20px 0 0;
+      margin-bottom: 0;
+      background: none;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">new<span>.</span>thought</a>
+    <ul class="nav-links">
+      <li><a href="../programme.html">Programme</a></li>
+      <li><a href="../academy.html">Academy</a></li>
+      <li><a href="../kairon-executive.html">Executive</a></li>
+      <li><a href="../ressourcen.html" class="active">Ressourcen</a></li>
+    </ul>
+    <a href="https://cal.meetergo.com/nilsb/discovery" class="nav-cta" target="_blank" rel="noopener">Erstgespräch buchen</a>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <a href="../index.html">Home</a>
+  <span>›</span>
+  <a href="../ressourcen.html">Ressourcen</a>
+  <span>›</span>
+  Agentic AI Governance
+</div>
+
+<article class="article-container">
+  <div class="article-meta">
+    <span class="tag">Agentic AI</span>
+    <span class="tag tag--green">Quick Win</span>
+    <span class="meta-info">von Nils Blache &nbsp;·&nbsp; 8 Min. Lesezeit &nbsp;·&nbsp; Mai 2026</span>
+  </div>
+
+  <h1 class="article-title" id="top">Agentic AI ohne Governance: Das nächste große Unternehmensrisiko</h1>
+
+  <p class="article-lead">
+    85&nbsp;% der Unternehmen planen den Einsatz von KI-Agenten. Nur 21&nbsp;% haben ein reifes Governance-Modell dafür. Das ist keine theoretische Lücke – es ist ein Countdown. Und er läuft gerade.
+  </p>
+
+  <nav class="toc" aria-label="Inhaltsverzeichnis">
+    <div class="toc-title">Inhalt</div>
+    <ol>
+      <li><a href="#was-ist">Was ist Agentic AI – und warum ist es anders?</a></li>
+      <li><a href="#zahlen">Enthusiasmus ohne Vorbereitung: Die Zahlen</a></li>
+      <li><a href="#warum">Warum Agentic AI ein neues Governance-Niveau erfordert</a></li>
+      <li><a href="#risiken">Konkrete Risikoszenarien</a></li>
+      <li><a href="#framework">Das Agentic-AI-Governance-Framework</a></li>
+      <li><a href="#checkliste">Checkliste: Ist Ihr Unternehmen bereit?</a></li>
+      <li><a href="#faq">Häufige Fragen</a></li>
+    </ol>
+  </nav>
+
+  <div class="article-body">
+
+    <h2 id="was-ist">Was ist Agentic AI – und warum ist es anders?</h2>
+
+    <p>
+      Bisher war KI vor allem reaktiv: Sie geben eine Anfrage, die KI antwortet. Sie bewerten das Ergebnis. Sie entscheiden, was Sie damit machen.
+    </p>
+
+    <p>
+      <strong>Agentic AI funktioniert anders.</strong>
+    </p>
+
+    <p>
+      Ein KI-Agent agiert <strong>autonom</strong>: Er erhält ein Ziel, plant seine eigene Vorgehensweise, führt Schritte aus, greift auf externe Systeme zu – und liefert erst am Ende ein Ergebnis. Oder er läuft kontinuierlich im Hintergrund und handelt eigenständig.
+    </p>
+
+    <p>Beispiele aus der Praxis:</p>
+    <ul>
+      <li>Ein KI-Agent, der eigenständig Kalender verwaltet, E-Mails schreibt und Meetings vorbereitet</li>
+      <li>Ein KI-Agent, der kontinuierlich Marktdaten überwacht und automatisch Reports erstellt</li>
+      <li>Ein KI-Agent, der Bewerberunterlagen sichtet, bewertet und Einladungen verschickt</li>
+      <li>Ein KI-Agent, der Kundenreklamationen analysiert, kategorisiert und weiterleitet</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">Der entscheidende Unterschied</div>
+      <p><strong>Zwischen Ziel und Ergebnis liegt kein Mensch mehr.</strong> Das verändert das Risikoprofil fundamental.</p>
+    </div>
+
+    <h2 id="zahlen">Enthusiasmus ohne Vorbereitung: Die Zahlen</h2>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Indikator</th>
+          <th>Zahl</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Unternehmen, die Agentic AI einsetzen oder customizen wollen</td>
+          <td><strong>85 %</strong></td>
+        </tr>
+        <tr>
+          <td>Unternehmen mit reifem Governance-Modell für KI-Agenten</td>
+          <td><strong>21 %</strong></td>
+        </tr>
+        <tr>
+          <td>Unternehmen, die Agentic AI innerhalb von 2 Jahren deployen wollen</td>
+          <td><strong>~75 %</strong></td>
+        </tr>
+        <tr>
+          <td>In Deutschland: gestiegenes Interesse an Agentic AI</td>
+          <td><strong>62 %</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <span class="stat-num">85 %</span>
+        <span class="stat-label">Unternehmen planen Agentic AI einzusetzen</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">21 %</span>
+        <span class="stat-label">Haben ein reifes Governance-Modell dafür</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num">64 %</span>
+        <span class="stat-label">Governance-Lücke: Unternehmen ohne Governance, die trotzdem deployen wollen</span>
+      </div>
+    </div>
+
+    <p>
+      Die Lücke ist offensichtlich: Zwischen dem, was geplant ist, und dem, was an Governance dafür existiert, klafft ein Graben. Und dieser Graben ist nicht nur ein Effizienzproblem – er ist ein <strong>Haftungs-, Compliance- und Reputationsproblem.</strong>
+    </p>
+
+    <h2 id="warum">Warum Agentic AI ein neues Governance-Niveau erfordert</h2>
+
+    <p>
+      Klassische KI-Tools sind im Grunde glorifizierte Werkzeuge: Sie tun, was der Mensch von ihnen will. Der Mensch bleibt in der Entscheidungsschleife.
+    </p>
+
+    <p>
+      KI-Agenten sind etwas anderes. Sie <em>handeln.</em>
+    </p>
+
+    <p>
+      Das bedeutet: <strong>Handlungen können Konsequenzen haben, die nicht sofort sichtbar sind, nicht rückgängig gemacht werden können oder auf Dritte wirken.</strong>
+    </p>
+
+    <h2 id="risiken">Konkrete Risikoszenarien</h2>
+
+    <div class="scenario-box">
+      <div class="scenario-label">Szenario 1</div>
+      <h3>Datenschutzverletzung durch autonomen Datenzugriff</h3>
+      <p>Ein KI-Agent, der zur Kundenanalyse berechtigt ist, greift auf Daten zu, die er technisch erreichen kann – aber nicht sollte. Ohne Governance keine Zugriffsbeschränkungen.</p>
+    </div>
+
+    <div class="scenario-box">
+      <div class="scenario-label">Szenario 2</div>
+      <h3>Fehlerhafte Entscheidung mit realen Konsequenzen</h3>
+      <p>Ein KI-Agent in der Personalentscheidung bewertet Kandidaten nach Mustern, die Bias enthalten. Ohne Governance kein Überprüfungsmechanismus.</p>
+    </div>
+
+    <div class="scenario-box">
+      <div class="scenario-label">Szenario 3</div>
+      <h3>Autonome Kommunikation nach außen</h3>
+      <p>Ein KI-Agent schreibt und versendet eigenständig E-Mails an Kunden, Partner, Behörden. Ohne Governance kein Review, keine Freigabe.</p>
+    </div>
+
+    <div class="scenario-box">
+      <div class="scenario-label">Szenario 4</div>
+      <h3>Unkontrollierte Kostenentstehung</h3>
+      <p>KI-Agenten, die auf externe APIs oder Dienste zugreifen, können unerwartete Kosten erzeugen – ohne dass jemand es bemerkt, bis die Rechnung kommt.</p>
+    </div>
+
+    <h2 id="framework">Das Agentic-AI-Governance-Framework</h2>
+
+    <p>Wer Agentic AI verantwortungsvoll einsetzen will, braucht ein Framework, das fünf Dimensionen abdeckt:</p>
+
+    <div class="dim-card">
+      <div class="dim-num">1</div>
+      <div class="dim-content">
+        <h3>Handlungsrahmen definieren</h3>
+        <p>Welche Aktionen darf ein Agent eigenständig ausführen? Welche erfordern menschliche Genehmigung? Klare "Action Boundaries" sind die Grundlage jeder Agentic-Governance.</p>
+      </div>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-num">2</div>
+      <div class="dim-content">
+        <h3>Zugangsberechtigungen steuern</h3>
+        <p>Welche Systeme, Daten und APIs darf ein Agent nutzen? Das Prinzip des "Least Privilege" – so wenig Zugang wie möglich – muss konsequent angewendet werden.</p>
+      </div>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-num">3</div>
+      <div class="dim-content">
+        <h3>Monitoring und Transparenz</h3>
+        <p>Jede Agentenhandlung muss protokolliert und auditierbar sein. Wer hat den Agenten beauftragt? Was hat er wann getan? Welche Entscheidungen hat er getroffen?</p>
+      </div>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-num">4</div>
+      <div class="dim-content">
+        <h3>Fehler- und Vorfallmanagement</h3>
+        <p>Was passiert, wenn ein Agent einen Fehler macht? Wer wird benachrichtigt? Wer hat die Autorität, einen Agenten zu stoppen? Wie wird der Schaden begrenzt?</p>
+      </div>
+    </div>
+
+    <div class="dim-card">
+      <div class="dim-num">5</div>
+      <div class="dim-content">
+        <h3>Menschliche Oversight</h3>
+        <p>Für welche Aktionen bleibt ein Mensch in der Entscheidungsschleife – zwingend? Personalentscheidungen, externe Kommunikation und finanzielle Transaktionen sollten immer menschliche Freigabe erfordern.</p>
+      </div>
+    </div>
+
+    <div class="callout callout-tip">
+      <div class="callout-label">Deloitte-Empfehlung</div>
+      <p>Die erfolgreichsten Unternehmen beim Agentic-AI-Rollout starten mit <strong>niedrig-riskanten Use Cases</strong>, bauen Governance-Kapazitäten auf – und skalieren dann bewusst. Governance ist kein Bremsklotz. Sie ist die Grundlage für verantwortungsvolles Wachstum.</p>
+    </div>
+
+    <h2 id="checkliste">Checkliste: Ist Ihr Unternehmen bereit für Agentic AI?</h2>
+
+    <ul class="checklist">
+      <li>Haben wir definiert, welche Aktionen KI-Agenten autonom ausführen dürfen?</li>
+      <li>Haben wir klare Berechtigungskonzepte für Agentenzugriffe?</li>
+      <li>Haben wir ein Monitoring-System für Agentenhandlungen?</li>
+      <li>Haben wir einen Vorfallmanagement-Prozess für KI-Fehler?</li>
+      <li>Wissen Mitarbeiter, wie sie einen Agenten stoppen können?</li>
+      <li>Haben wir einen EU-AI-Act-Check für unser geplantes Use Case durchgeführt?</li>
+      <li>Haben wir den Datenschutzbeauftragten eingebunden?</li>
+    </ul>
+
+    <p>Wer mehr als drei dieser Fragen mit "Nein" beantwortet, sollte erst Governance aufbauen – dann Agenten deployen.</p>
+
+  </div>
+
+  <section class="faq-section" id="faq">
+    <h2>Häufige Fragen zu Agentic AI in Unternehmen</h2>
+
+    <details>
+      <summary>Was unterscheidet Agentic AI von klassischen KI-Tools?</summary>
+      <p>Klassische KI-Tools reagieren auf Eingaben. KI-Agenten handeln autonom: Sie planen, entscheiden und führen Aktionen aus – ohne dass ein Mensch jeden Schritt freigibt. Zwischen Ziel und Ergebnis liegt kein Mensch mehr. Das verändert das Risikoprofil und die Governance-Anforderungen fundamental.</p>
+    </details>
+
+    <details>
+      <summary>Brauche ich für jeden KI-Agenten eine eigene Governance?</summary>
+      <p>Nicht unbedingt. Aber Sie brauchen ein Governance-Framework, das für verschiedene Agent-Typen skaliert werden kann. Ein einmal aufgebautes Framework kann für viele Agenten-Deployments genutzt werden – die spezifischen "Action Boundaries" und Zugriffsrechte werden pro Agenten-Typ konfiguriert.</p>
+    </details>
+
+    <details>
+      <summary>Welche Rolle spielt der EU AI Act für Agentic AI?</summary>
+      <p>Agentic AI kann in verschiedene Risikokategorien des EU AI Acts fallen – je nach Anwendungsbereich. Besonders Agenten, die in Personalentscheidungen, kritischer Infrastruktur oder Strafverfolgung eingesetzt werden, unterliegen strengen Anforderungen. Rechtliche Beratung ist vor dem Deployment dringend empfehlenswert.</p>
+    </details>
+
+    <details>
+      <summary>Was ist der erste Schritt zu einer Agentic-AI-Governance?</summary>
+      <p>Beginnen Sie mit einem Inventar: Welche Agenten-Use-Cases planen Sie? Für jeden Use Case: Welche Aktionen soll der Agent ausführen dürfen? Dann definieren Sie die "Action Boundaries" und Least-Privilege-Zugriffsrechte. Das ist der Kern jeder Agentic-Governance – und lässt sich in einem Workshop-Tag erarbeiten.</p>
+    </details>
+
+    <details>
+      <summary>Wie unterscheidet sich Agentic AI Governance von klassischer KI-Governance?</summary>
+      <p>Klassische KI-Governance konzentriert sich auf Output-Qualität und Datenschutz. Agentic AI Governance muss zusätzlich Handlungsgrenzen definieren, autonome Entscheidungsprozesse auditierbar machen und menschliche Override-Mechanismen einbauen. Das ist ein substanziell höheres Komplexitätsniveau.</p>
+    </details>
+  </section>
+
+  <section class="related">
+    <h2>Weiterführende Artikel</h2>
+    <div class="related-grid">
+      <a href="ki-governance-topmanagement.html" class="related-card">
+        <div class="related-card-tag">KI-Governance</div>
+        <h3>KI-Steuerung im Top-Management: Wer muss wirklich entscheiden?</h3>
+      </a>
+      <a href="ki-pilot-skalierung.html" class="related-card">
+        <div class="related-card-tag">KI-Projektsteuerung</div>
+        <h3>Vom KI-Pilot zur Skalierung: Was den Unterschied macht</h3>
+      </a>
+    </div>
+  </section>
+
+  <div class="cta-box">
+    <h2>Agentic-AI-Governance für Ihr Unternehmen</h2>
+    <p>new.thought begleitet Unternehmen beim Aufbau von Governance-Frameworks für KI-Agenten – von der Risikobewertung bis zum laufenden Monitoring.</p>
+    <a href="../kairon-executive.html" class="btn-accent">Erstgespräch buchen</a>
+  </div>
+
+</article>
+
+<footer>
+  <div>
+    <a href="../index.html">Home</a>
+    <a href="../programme.html">Programme</a>
+    <a href="../academy.html">Academy</a>
+    <a href="../kairon-executive.html">Executive</a>
+    <a href="../ressourcen.html">Ressourcen</a>
+  </div>
+  <div style="margin-top:12px; display:flex; gap:20px; justify-content:center;">
+    <a href="../index.html" style="font:inherit; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Impressum</a>
+    <a href="../index.html" style="font:inherit; font-size:0.75rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Datenschutz</a>
+  </div>
+  <div class="footer-copy">© 2026 new.thought · KI-Adoption und Governance für den Mittelstand</div>
+</footer>
+
+</body>
+</html>
