@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>new.thought — Wir zeigen, was KI wirklich kann</title>
+<meta name="description" content="KI anfassbar gemacht: Ihr Team baut in einem Workshop-Tag einen funktionierenden Prototypen. KI-Adoption & Enablement für den Mittelstand.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="new.thought — Wir zeigen, was KI wirklich kann">
+<meta property="og:description" content="Nicht in einer Präsentation. Im Prototyp. KI-Adoption für den Mittelstand.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:        #f4f3ef;   /* warm off-white page */
+    --surface:   #ffffff;   /* white section containers */
+    --surface-2: #faf9f6;
+    --ink:       #181816;   /* near-black text */
+    --ink-2:     #6c6c66;   /* secondary gray */
+    --ink-3:     #9b9b95;   /* labels / muted */
+    --line:      #e7e6e1;   /* hairline borders */
+    --line-2:    #efeeea;
+    --green:     #2f6b43;   /* link accent */
+    --green-deep:#1c3a2b;   /* dark testimonial band */
+    --green-soft:#eef3ee;
+    --btn:       #161616;
+    --dot:       #dedcd5;   /* idle dot */
+    --dot-on:    #2b2b28;   /* active dot */
+
+    --serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans:  'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    --maxw: 1200px;
+    --pad: 24px;
+    --radius: 22px;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+  body{
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink);
+    font-size:15px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+
+  .wrap{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 var(--pad); }
+
+  /* ── typography ── */
+  .serif{ font-family:var(--serif); font-weight:440; letter-spacing:-0.01em; }
+  h1,h2,h3,h4{ font-weight:500; letter-spacing:-0.01em; }
+
+  .eyebrow{
+    font-size:11.5px; letter-spacing:0.13em; text-transform:uppercase;
+    color:var(--ink-3); font-weight:500;
+  }
+  .lead{ color:var(--ink-2); }
+
+  .arrow-link{
+    display:inline-flex; align-items:center; gap:7px;
+    color:var(--green); font-weight:500; font-size:14.5px;
+    transition:gap .2s ease;
+  }
+  .arrow-link:hover{ gap:11px; }
+  .arrow-link .ar{ transition:transform .2s ease; }
+
+  /* ── buttons ── */
+  .btn{ display:inline-flex; align-items:center; gap:8px; border-radius:9px;
+    font-size:14px; font-weight:500; cursor:pointer; padding:11px 20px;
+    transition:transform .15s ease, background .2s ease, border-color .2s ease; white-space:nowrap; }
+  .btn-dark{ background:var(--btn); color:#fff; border:1px solid var(--btn); }
+  .btn-dark:hover{ transform:translateY(-1px); background:#000; }
+  .btn-ghost{ background:transparent; color:var(--ink); border:1px solid #d8d7d1; }
+  .btn-ghost:hover{ border-color:#b9b8b1; }
+
+  /* ── nav ── */
+  .nav{ position:fixed; inset:0 0 auto 0; z-index:100; padding-top:14px;
+    transition:background .3s ease, box-shadow .3s ease, padding .3s ease; }
+  .nav.scrolled{ background:rgba(244,243,239,0.82); backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px); box-shadow:0 1px 0 var(--line); padding-top:0; }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .brand{ display:inline-flex; align-items:center; gap:9px; font-weight:600; font-size:16px; }
+  .brand .mark{ width:22px; height:22px; border-radius:6px; background:var(--btn);
+    display:inline-flex; align-items:center; justify-content:center; }
+  .brand .mark::after{ content:""; width:10px; height:10px; border-radius:50%;
+    border:2px solid #fff; }
+  .nav-pill{ display:flex; align-items:center; gap:4px; background:#ecebE6; background:#eceae4;
+    padding:5px; border-radius:11px; }
+  .nav-pill a{ font-size:14px; color:#3a3a36; font-weight:500; padding:6px 12px; border-radius:8px;
+    transition:background .2s ease; display:inline-flex; align-items:center; gap:5px; }
+  .nav-pill a:hover{ background:#fff; }
+  .nav-right{ display:flex; align-items:center; gap:8px; }
+  .nav-right .lnk{ font-size:14px; color:var(--ink); font-weight:500; padding:9px 12px; border-radius:9px; }
+  .nav-right .lnk:hover{ background:#eceae4; }
+  .hamburger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+  .hamburger span{ width:22px; height:2px; background:var(--ink); border-radius:2px; }
+
+  /* mobile overlay */
+  .m-overlay{ position:fixed; inset:0; z-index:200; background:var(--bg); padding:20px var(--pad);
+    transform:translateX(100%); transition:transform .3s ease; display:flex; flex-direction:column; }
+  .m-overlay.open{ transform:none; }
+  .m-top{ display:flex; align-items:center; justify-content:space-between; height:60px; }
+  .m-close{ background:none; border:none; font-size:30px; line-height:1; cursor:pointer; color:var(--ink); }
+  .m-links{ display:flex; flex-direction:column; margin-top:24px; }
+  .m-links a{ font-family:var(--serif); font-size:30px; font-weight:440; padding:14px 0; border-bottom:1px solid var(--line); }
+  .m-cta{ margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-bottom:24px; }
+  .m-cta .btn{ justify-content:center; padding:15px; font-size:15px; }
+
+  /* ── hero ── */
+  .hero{ padding:160px 0 86px; text-align:center; }
+  .hero h1{ font-family:var(--serif); font-weight:440; font-size:clamp(40px,6.4vw,82px);
+    line-height:1.04; letter-spacing:-0.02em; max-width:14ch; margin:0 auto 26px; }
+  .hero .sub{ font-size:clamp(17px,1.7vw,20px); color:var(--ink-2); max-width:52ch; margin:0 auto 34px; line-height:1.5; }
+  .hero .cta{ display:flex; gap:11px; justify-content:center; flex-wrap:wrap; }
+
+  /* used inside split-block mockups (light) */
+  .pm-row{ display:flex; align-items:center; justify-content:space-between; gap:14px;
+    border-radius:11px; padding:14px 16px; }
+  .pm-row .l{ font-size:14.5px; }
+  .pm-row .s{ font-size:12px; margin-top:3px; }
+
+  /* ── KAIRON operating-model explainer (interactive) ── */
+  .os{ padding:6px 0 26px; }
+  .os-head{ max-width:740px; margin:0 auto 32px; text-align:center; }
+  .os-head .eyebrow{ margin-bottom:14px; }
+  .os-head h2{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,3.3vw,42px); line-height:1.12; letter-spacing:-0.015em; }
+  .os-head p{ color:var(--ink-2); margin-top:14px; font-size:16.5px; }
+
+  .os-card{ background:var(--surface); border:1px solid var(--line); border-radius:24px; overflow:hidden;
+    display:grid; grid-template-columns:330px 1fr; min-height:452px; box-shadow:0 34px 80px -60px rgba(0,0,0,.3); }
+  .os-menu{ border-right:1px solid var(--line); padding:16px; background:var(--surface-2);
+    display:flex; flex-direction:column; gap:4px; }
+  .os-item{ text-align:left; background:none; border:none; cursor:pointer; font:inherit; color:var(--ink-2);
+    display:flex; align-items:center; gap:13px; padding:15px 15px; border-radius:13px;
+    transition:background .18s ease, color .18s ease, box-shadow .18s ease; }
+  .os-item:hover{ color:var(--ink); background:rgba(0,0,0,.035); }
+  .os-item.active{ background:var(--surface); color:var(--ink); box-shadow:0 0 0 1px var(--line), 0 12px 26px -20px rgba(0,0,0,.4); }
+  .os-item .oi{ width:32px; height:32px; border-radius:9px; flex-shrink:0; display:flex; align-items:center; justify-content:center;
+    background:#ecebE6; color:var(--ink-3); font-size:14px; transition:background .18s ease, color .18s ease; }
+  .os-item.active .oi{ background:var(--green-soft); color:var(--green); }
+  .os-item .ol{ display:flex; flex-direction:column; line-height:1.3; }
+  .os-item .ol b{ font-weight:600; font-size:15px; }
+  .os-item .ol small{ font-size:12.5px; color:var(--ink-3); }
+  .os-item.active .ol small{ color:var(--ink-2); }
+  .os-item .ochev{ margin-left:auto; color:var(--ink-3); opacity:0; transition:opacity .18s ease, transform .18s ease; }
+  .os-item.active .ochev{ opacity:1; transform:translateX(2px); color:var(--green); }
+
+  .os-panel{ padding:50px 54px; display:flex; flex-direction:column; justify-content:center; }
+  .os-panel .pn{ display:none; }
+  .os-panel .pn.show{ display:block; animation:osfade .35s ease; }
+  @keyframes osfade{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+  .os-panel .step{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--green); font-weight:600; }
+  .os-panel h3{ font-family:var(--serif); font-weight:440; font-size:clamp(24px,2.7vw,35px); line-height:1.14; margin:12px 0 14px; letter-spacing:-0.01em; }
+  .os-panel .lead2{ color:var(--ink-2); font-size:16.5px; line-height:1.62; max-width:48ch; }
+  .os-points{ margin-top:24px; display:flex; flex-direction:column; gap:13px; max-width:48ch; }
+  .os-points span{ display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--ink); }
+  .os-points span::before{ content:""; width:7px; height:7px; border-radius:50%; background:var(--green); margin-top:7px; flex-shrink:0; }
+  .os-foot{ text-align:center; color:var(--ink-3); font-size:13.5px; margin-top:20px; }
+
+  /* ── logo strip ── */
+  .logos{ padding:54px 0 30px; text-align:center; }
+  .logos .eyebrow{ margin-bottom:26px; }
+  .logo-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:18px 46px; }
+  .logo-row span{ font-weight:600; font-size:19px; color:#b7b6af; letter-spacing:-0.01em; }
+  .logo-row span.serif{ font-family:var(--serif); font-weight:500; font-size:22px; }
+
+  /* ── section container (white rounded) ── */
+  .sheet{ background:var(--surface); border-radius:28px; padding:64px 56px; }
+  section.block{ padding:46px 0; }
+
+  .sec-head{ max-width:760px; }
+  .sec-head h2{ font-family:var(--serif); font-weight:440; font-size:clamp(28px,3.6vw,44px); line-height:1.12; letter-spacing:-0.015em; }
+  .sec-head h2 .dim{ color:var(--ink-3); }
+  .sec-head p{ color:var(--ink-2); margin-top:10px; font-size:17px; }
+
+  /* 2x2 feature grid with dot-matrix */
+  .feat-grid{ display:grid; grid-template-columns:1fr 1fr; margin-top:30px; border-top:1px solid var(--line); }
+  .feat{ padding:38px 6px; display:grid; grid-template-columns:1fr 190px; gap:18px; align-items:center;
+    border-bottom:1px solid var(--line); }
+  .feat:nth-child(odd){ border-right:1px solid var(--line); padding-right:44px; }
+  .feat:nth-child(even){ padding-left:44px; }
+  .feat .ft-tag{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--green); font-weight:600; }
+  .feat h3{ font-size:21px; font-weight:600; margin:9px 0 8px; letter-spacing:-0.01em; }
+  .feat p{ color:var(--ink-2); font-size:14.5px; margin-bottom:16px; }
+  .matrix{ width:176px; height:148px; }
+  .matrix circle{ transition:fill .3s ease; }
+
+  /* split feature block */
+  .split{ display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--surface);
+    border-radius:28px; overflow:hidden; margin-top:22px; }
+  .split.rev .split-media{ order:2; }
+  .split-media{ background:var(--surface-2); padding:46px; display:flex; align-items:center; justify-content:center; min-height:420px; }
+  .split-text{ padding:54px 48px; display:flex; flex-direction:column; justify-content:center; }
+  .split-text .ft-tag{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:14px; }
+  .split-text h3{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,2.7vw,34px); line-height:1.12; }
+  .split-text > p{ color:var(--ink-2); margin:14px 0 8px; font-size:16px; }
+  .rows{ margin-top:14px; border-top:1px solid var(--line); }
+  .row{ display:flex; align-items:center; gap:14px; padding:17px 2px; border-bottom:1px solid var(--line); cursor:default; }
+  .row .ic{ width:32px; height:32px; border-radius:8px; background:var(--green-soft); color:var(--green);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .row .rt{ flex:1; font-size:15px; color:var(--ink); font-weight:500; }
+  .row .ra{ color:var(--ink-3); transition:transform .2s ease, color .2s ease; }
+  .row:hover .ra{ transform:translateX(3px); color:var(--ink); }
+
+  /* mockup card (inside split-media) */
+  .mock{ width:100%; max-width:420px; background:#fff; border:1px solid var(--line); border-radius:16px;
+    box-shadow:0 24px 60px -44px rgba(0,0,0,.35); overflow:hidden; }
+  .mock-h{ display:flex; align-items:center; justify-content:space-between; padding:14px 16px; border-bottom:1px solid var(--line-2); }
+  .mock-h .mh-l{ display:flex; align-items:center; gap:9px; font-size:13.5px; font-weight:600; }
+  .mock-h .mh-l .mi{ width:22px; height:22px; border-radius:6px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; }
+  .mock-b{ padding:16px; display:flex; flex-direction:column; gap:11px; }
+  .mock-field{ background:var(--surface-2); border:1px solid var(--line-2); border-radius:10px; padding:12px 13px; }
+  .mock-field .k{ font-size:11px; color:var(--ink-3); text-transform:uppercase; letter-spacing:.07em; }
+  .mock-field .v{ font-size:14px; color:var(--ink); margin-top:4px; font-weight:500; }
+  .chip-g{ font-size:11.5px; color:var(--green); background:var(--green-soft); padding:4px 10px; border-radius:100px;
+    display:inline-flex; align-items:center; gap:6px; }
+  .chip-g::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--green); }
+  .mock-2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .tog{ width:34px; height:20px; border-radius:100px; background:var(--green); position:relative; flex-shrink:0; }
+  .tog::after{ content:""; position:absolute; top:2px; right:2px; width:16px; height:16px; border-radius:50%; background:#fff; }
+
+  /* achieve dark band */
+  .achieve{ background:var(--green-deep); border-radius:28px; overflow:hidden; color:#fff;
+    display:grid; grid-template-columns:1.05fr .95fr; min-height:520px; }
+  .achieve-l{ padding:60px 52px; display:flex; flex-direction:column; justify-content:space-between;
+    background-image:radial-gradient(circle at 80% 10%, rgba(120,180,140,.16), transparent 55%); }
+  .achieve-l h2{ font-family:var(--serif); font-weight:440; font-size:clamp(30px,3.4vw,46px); line-height:1.1; max-width:14ch; }
+  .achieve-l p{ color:rgba(255,255,255,.6); margin-top:16px; max-width:38ch; }
+  .achieve-card{ background:#fff; color:var(--ink); margin:22px; border-radius:18px; padding:10px 22px;
+    display:flex; flex-direction:column; justify-content:center; }
+  .ac-row{ display:flex; align-items:center; gap:13px; padding:16px 4px; border-bottom:1px solid var(--line); }
+  .ac-row:last-child{ border-bottom:none; }
+  .ac-row .ic{ width:30px; height:30px; border-radius:8px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .ac-row .t{ flex:1; font-size:14.5px; font-weight:500; }
+
+  /* big testimonial */
+  .quote-band{ background:var(--green-deep); border-radius:28px; color:#fff; text-align:center; padding:84px 40px; position:relative;
+    background-image:radial-gradient(circle at 50% 120%, rgba(120,180,140,.18), transparent 60%); }
+  .quote-band .who{ color:rgba(255,255,255,.6); font-size:14px; margin-bottom:30px; }
+  .quote-band blockquote{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,3.6vw,46px);
+    line-height:1.22; letter-spacing:-0.015em; max-width:18ch; margin:0 auto 34px; }
+  .quote-band .arrow-link{ color:#bfe0c9; }
+
+  /* metrics */
+  .metrics{ display:grid; grid-template-columns:repeat(3,1fr); margin-top:22px; }
+  .metric{ background:var(--surface); padding:48px 40px; border:1px solid var(--line); }
+  .metric:first-child{ border-radius:20px 0 0 20px; }
+  .metric:last-child{ border-radius:0 20px 20px 0; border-left:none; }
+  .metric:nth-child(2){ border-left:none; }
+  .metric .n{ font-family:var(--serif); font-weight:440; font-size:clamp(44px,6vw,72px); line-height:1; color:var(--green); }
+  .metric .d{ color:var(--ink-2); margin-top:14px; font-size:15px; }
+
+  /* enterprise badges */
+  .badges{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px; }
+  .badge{ background:var(--surface); border:1px solid var(--line); border-radius:16px; height:170px;
+    display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; }
+  .badge .bt{ font-weight:600; font-size:17px; color:#54544e; }
+  .badge .bs{ display:block; font-size:12px; color:var(--ink-3); font-weight:400; margin-top:6px; }
+
+  /* blog list */
+  .blog{ margin-top:24px; }
+  .post{ display:flex; align-items:center; gap:20px; background:var(--surface); border:1px solid var(--line);
+    border-radius:16px; padding:24px 26px; margin-bottom:12px; transition:border-color .2s ease, transform .2s ease; }
+  .post:hover{ border-color:#d6d5cf; transform:translateY(-2px); }
+  .post .pc{ flex:1; }
+  .post h3{ font-size:18px; font-weight:600; }
+  .post p{ color:var(--ink-2); font-size:14.5px; margin-top:5px; }
+  .post .meta{ font-size:12.5px; color:var(--ink-3); margin-top:11px; }
+  .post .tag{ font-size:11.5px; color:#54544e; background:var(--surface-2); border:1px solid var(--line);
+    padding:6px 12px; border-radius:100px; white-space:nowrap; }
+
+  /* final cta */
+  .final{ text-align:center; padding:96px 0 70px; }
+  .final h2{ font-family:var(--serif); font-weight:440; font-size:clamp(34px,4.6vw,64px); line-height:1.06; letter-spacing:-0.02em; max-width:16ch; margin:0 auto 18px; }
+  .final p{ color:var(--ink-2); font-size:18px; margin-bottom:28px; }
+  .final .cta{ display:flex; gap:11px; justify-content:center; flex-wrap:wrap; }
+
+  /* footer */
+  footer{ border-top:1px solid var(--line); padding:64px 0 40px; }
+  .foot-grid{ display:grid; grid-template-columns:1.4fr repeat(4,1fr); gap:32px; }
+  .foot-brand .brand{ font-size:17px; }
+  .foot-brand p{ color:var(--ink-2); font-size:14px; margin-top:14px; max-width:30ch; }
+  .foot-col h4{ font-size:12px; color:var(--ink-3); font-weight:500; letter-spacing:.04em; margin-bottom:14px; }
+  .foot-col a{ display:block; font-size:14px; color:#43433e; padding:6px 0; }
+  .foot-col a:hover{ color:var(--ink); }
+  .foot-bottom{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    margin-top:54px; padding-top:24px; border-top:1px solid var(--line); }
+  .foot-bottom .legal{ display:flex; flex-wrap:wrap; gap:16px; font-size:13px; color:var(--ink-3); }
+  .foot-bottom .legal a:hover{ color:var(--ink); }
+  .foot-bottom .cr{ font-size:13px; color:var(--ink-3); }
+
+  /* reveal */
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce){ .reveal{ opacity:1; transform:none; transition:none; } html{ scroll-behavior:auto; } }
+
+  /* responsive */
+  @media (max-width:920px){
+    .nav-pill, .nav-right{ display:none; }
+    .hamburger{ display:flex; }
+    .sheet{ padding:40px 26px; }
+    .feat-grid{ grid-template-columns:1fr; }
+    .feat, .feat:nth-child(odd), .feat:nth-child(even){ border-right:none; padding:30px 0; grid-template-columns:1fr; gap:22px; }
+    .matrix{ width:160px; height:134px; }
+    .split, .split.rev .split-media{ grid-template-columns:1fr; order:0; }
+    .split-media{ order:2; min-height:0; padding:32px 26px; }
+    .split-text{ padding:38px 26px; }
+    .achieve{ grid-template-columns:1fr; }
+    .achieve-card{ margin:0 22px 22px; }
+    .metrics{ grid-template-columns:1fr; }
+    .metric, .metric:first-child, .metric:last-child{ border-radius:0; border-left:1px solid var(--line); border-top:none; }
+    .metric:first-child{ border-radius:20px 20px 0 0; border-top:1px solid var(--line); }
+    .metric:last-child{ border-radius:0 0 20px 20px; }
+    .badges{ grid-template-columns:1fr 1fr; }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+    .os-card{ grid-template-columns:1fr; }
+    .os-menu{ flex-direction:row; overflow-x:auto; border-right:none; border-bottom:1px solid var(--line); gap:8px; -webkit-overflow-scrolling:touch; }
+    .os-item{ flex-shrink:0; }
+    .os-item .ol small, .os-item .ochev{ display:none; }
+    .os-panel{ padding:34px 26px; }
+  }
+  @media (max-width:560px){
+    .post{ flex-direction:column; align-items:flex-start; }
+    .badges{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <a href="/programme.html">Programme ⌄</a>
+      <a href="/academy.html">Academy</a>
+      <a href="/ressourcen.html">Blog</a>
+    </div>
+    <div class="nav-right">
+      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+      <a class="lnk" href="#kontakt">Erstgespräch</a>
+      <a class="btn btn-dark" href="#kontakt">Workshop buchen</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="/programme.html">Programme</a>
+    <a href="/academy.html">Academy</a>
+    <a href="/ressourcen.html">Blog</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="#kontakt" class="btn btn-dark">Workshop buchen</a>
+    <a href="#kontakt" class="btn btn-ghost">Erstgespräch</a>
+  </div>
+</div>
+
+<main>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="wrap reveal">
+      <h1 class="serif">Wir zeigen, was&nbsp;KI wirklich kann</h1>
+      <p class="sub">Nicht in einer Präsentation. Im Prototyp. Ihr Team verlässt den Workshop mit etwas Laufendem — für ein echtes Problem.</p>
+      <div class="cta">
+        <a href="#kontakt" class="btn btn-dark">Workshop buchen</a>
+        <a href="#kontakt" class="btn btn-ghost">Erstgespräch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KAIRON OPERATING-MODEL EXPLAINER (interactive) ── -->
+  <section class="os">
+    <div class="wrap reveal">
+      <div class="os-head">
+        <div class="eyebrow">Das KAIRON-Betriebssystem</div>
+        <h2 class="serif">Kein Dashboard, das Sie bedienen.<br>Ein Modell, nach dem Ihr Unternehmen arbeitet.</h2>
+        <p>KAIRON ist keine Software. Es ist die Art, wie KI bei Ihnen organisiert, entschieden und gemessen wird — fünf Prinzipien. Klicken Sie sich durch.</p>
+      </div>
+
+      <div class="os-card">
+        <div class="os-menu" role="tablist" aria-label="KAIRON-Prinzipien">
+          <button class="os-item active" role="tab" aria-selected="true" data-os="pipeline">
+            <span class="oi">▦</span>
+            <span class="ol"><b>Pipeline</b><small>Was läuft, was wird gestoppt</small></span>
+            <span class="ochev">→</span>
+          </button>
+          <button class="os-item" role="tab" aria-selected="false" data-os="ownership">
+            <span class="oi">◆</span>
+            <span class="ol"><b>Ownership</b><small>Wer entscheidet &amp; verantwortet</small></span>
+            <span class="ochev">→</span>
+          </button>
+          <button class="os-item" role="tab" aria-selected="false" data-os="impact">
+            <span class="oi">◓</span>
+            <span class="ol"><b>Impact</b><small>Wirkung statt Aktivität</small></span>
+            <span class="ochev">→</span>
+          </button>
+          <button class="os-item" role="tab" aria-selected="false" data-os="compound">
+            <span class="oi">↻</span>
+            <span class="ol"><b>Compound</b><small>Lernen, das sich summiert</small></span>
+            <span class="ochev">→</span>
+          </button>
+          <button class="os-item" role="tab" aria-selected="false" data-os="governance">
+            <span class="oi">⬡</span>
+            <span class="ol"><b>Governance</b><small>Leitplanken, die Tempo geben</small></span>
+            <span class="ochev">→</span>
+          </button>
+        </div>
+
+        <div class="os-panel">
+          <div class="pn show" data-pn="pipeline" role="tabpanel">
+            <div class="step">01 · Pipeline</div>
+            <h3 class="serif">Was läuft — und was bewusst gestoppt wird.</h3>
+            <p class="lead2">Nicht jede Idee wird ein Projekt. KAIRON macht sichtbar, woran gearbeitet wird, und gibt Ihrem Team die Sprache, um bewusst zu stoppen. Freigewordenes Budget fließt dahin, wo es wirkt.</p>
+            <div class="os-points">
+              <span>Klarer Überblick über alle KI-Initiativen an einem Ort</span>
+              <span>Stopp-Entscheidungen ohne Gesichtsverlust</span>
+              <span>Budget folgt der Wirkung — nicht der Lautstärke</span>
+            </div>
+          </div>
+
+          <div class="pn" data-pn="ownership" role="tabpanel">
+            <div class="step">02 · Ownership</div>
+            <h3 class="serif">Ein Mensch verantwortet — kein Tool.</h3>
+            <p class="lead2">Diffuse Zuständigkeit ist der häufigste Grund, warum KI-Initiativen versanden. In KAIRON hat jede Initiative einen Owner mit klarem Mandat und klaren Entscheidungswegen.</p>
+            <div class="os-points">
+              <span>Jede Initiative hat einen benannten Owner</span>
+              <span>Entscheidungswege sind vorab geklärt</span>
+              <span>Verantwortung bleibt im Team, nicht beim Dienstleister</span>
+            </div>
+          </div>
+
+          <div class="pn" data-pn="impact" role="tabpanel">
+            <div class="step">03 · Impact</div>
+            <h3 class="serif">Wir messen Wirkung, nicht Werkzeug-Nutzung.</h3>
+            <p class="lead2">Lizenzen sagen nichts über Nutzen. KAIRON bewertet jede Initiative am echten Ergebnis — eingesparte Zeit, schnellere Durchläufe, spürbare Entlastung im Alltag.</p>
+            <div class="os-points">
+              <span>Time-to-Value statt Aktivitätskennzahlen</span>
+              <span>Wirkung wird regelmäßig überprüft</span>
+              <span>Was nicht wirkt, wird beendet</span>
+            </div>
+          </div>
+
+          <div class="pn" data-pn="compound" role="tabpanel">
+            <div class="step">04 · Compound</div>
+            <h3 class="serif">Jede Initiative macht die nächste leichter.</h3>
+            <p class="lead2">Wissen, Muster und Standards bleiben im Unternehmen — nicht in einzelnen Köpfen oder bei externen Beratern. So wächst die Fähigkeit, KI selbst einzuführen.</p>
+            <div class="os-points">
+              <span>Gelerntes wird wiederverwendbar gemacht</span>
+              <span>Standards statt teurer Einzellösungen</span>
+              <span>Die Organisation wird mit jeder Runde schneller</span>
+            </div>
+          </div>
+
+          <div class="pn" data-pn="governance" role="tabpanel">
+            <div class="step">05 · Governance</div>
+            <h3 class="serif">Leitplanken, die Tempo geben.</h3>
+            <p class="lead2">Klare Regeln für Datenschutz, EU AI Act und Entscheidungen — nicht als Bremse, sondern als Rahmen, in dem Teams schneller und sicherer handeln können.</p>
+            <div class="os-points">
+              <span>DSGVO &amp; EU AI Act von Anfang an mitgedacht</span>
+              <span>Klare Freigabe- und Eskalationswege</span>
+              <span>Sicherheit, die Geschwindigkeit ermöglicht</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="os-foot">Eingeführt in 90 Tagen. Danach selbsttragend — getragen von Ihrem Team, nicht von einem Tool.</p>
+    </div>
+  </section>
+
+  <!-- ── LOGO STRIP ── -->
+  <section class="logos">
+    <div class="wrap reveal">
+      <div class="eyebrow">Im Einsatz bei Teams aus dem Mittelstand</div>
+      <div class="logo-row">
+        <span>MASCHINENBAU</span>
+        <span class="serif">Fertigung</span>
+        <span>AUTOMOTIVE</span>
+        <span class="serif">Logistik</span>
+        <span>ZULIEFERER</span>
+        <span class="serif">100–500&nbsp;MA</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2x2 FEATURE GRID ── -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sheet reveal">
+        <div class="sec-head">
+          <h2 class="serif">Vom Prototyp zur Organisation.<br><span class="dim">Ein Einstieg, der funktioniert — und ein System, das danach skaliert.</span></h2>
+        </div>
+        <div class="feat-grid">
+          <div class="feat">
+            <div>
+              <div class="ft-tag">01 · KAISTART</div>
+              <h3>Prototype Workshop</h3>
+              <p>Ihr Team baut in einem Tag einen funktionierenden KI-Prototypen für ein echtes Problem. Kein Konzept. Etwas Laufendes.</p>
+              <a href="#kontakt" class="arrow-link">Zum Workshop <span class="ar">→</span></a>
+            </div>
+            <svg class="matrix" data-seed="1" viewBox="0 0 176 148" aria-hidden="true"></svg>
+          </div>
+          <div class="feat">
+            <div>
+              <div class="ft-tag">02 · KAIDOP</div>
+              <h3>Adoption Workshop</h3>
+              <p>Mitarbeiterwiderstände sichtbar machen und in umsetzbare Use-Cases überführen — leichter, wenn der Prototyp schon steht.</p>
+              <a href="/kaidop.html" class="arrow-link">Mehr zu KAIDOP <span class="ar">→</span></a>
+            </div>
+            <svg class="matrix" data-seed="2" viewBox="0 0 176 148" aria-hidden="true"></svg>
+          </div>
+          <div class="feat">
+            <div>
+              <div class="ft-tag">03 · KAILEAD</div>
+              <h3>Führungskräfte-Training</h3>
+              <p>KI führen lernen — nicht nur darüber reden. Handwerkszeug für Manager, die ihre Teams durch die Adoption bringen.</p>
+              <a href="/kailead.html" class="arrow-link">Mehr zu KAILEAD <span class="ar">→</span></a>
+            </div>
+            <svg class="matrix" data-seed="3" viewBox="0 0 176 148" aria-hidden="true"></svg>
+          </div>
+          <div class="feat">
+            <div>
+              <div class="ft-tag">04 · KAIRON</div>
+              <h3>Steuerungssystem</h3>
+              <p>Das Betriebssystem für KI im Unternehmen: Ownership, Pipeline, Impact, Compound. In 90 Tagen eingeführt, danach selbsttragend.</p>
+              <a href="/kairon.html" class="arrow-link">Mehr zu KAIRON <span class="ar">→</span></a>
+            </div>
+            <svg class="matrix" data-seed="4" viewBox="0 0 176 148" aria-hidden="true"></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPLIT INTRO HEAD ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <h2 class="serif">Jeder Schritt funktioniert für sich.<br><span class="dim">Zusammen bauen sie eine lernende Organisation.</span></h2>
+      </div>
+    </div>
+
+    <!-- SPLIT 1: KAISTART (mockup left) -->
+    <div class="wrap">
+      <div class="split rev reveal">
+        <div class="split-media">
+          <div class="mock">
+            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> KAISTART · Prototyp</div><span class="chip-g">läuft</span></div>
+            <div class="mock-b">
+              <div class="mock-field"><div class="k">Problem</div><div class="v">Angebote dauern 3 Tage</div></div>
+              <div class="mock-2">
+                <div class="mock-field"><div class="k">Datenquelle</div><div class="v">CRM · Preisliste</div></div>
+                <div class="mock-field"><div class="k">Output</div><div class="v">Angebot in 4 Min.</div></div>
+              </div>
+              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
+                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende von Tag&nbsp;1</div></div>
+                <span class="chip-g">fertig</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-text">
+          <div class="ft-tag">01 · KAISTART</div>
+          <h3 class="serif">Ein echtes Problem, ein echter Prototyp.</h3>
+          <p>Kein Pilotbericht, keine Folien. Ihr Team wählt ein echtes Problem und baut an einem Tag etwas Laufendes — begleitet, aber selbst gebaut.</p>
+          <div class="rows">
+            <div class="row"><span class="ic">◆</span><span class="rt">Echtes Problem aus Ihrem Betrieb</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">▤</span><span class="rt">Funktionierender Prototyp am ersten Tag</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">≡</span><span class="rt">Priorisierte Use-Case-Liste als Ergebnis</span><span class="ra">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPLIT 2: KAIDOP (mockup right) -->
+    <div class="wrap">
+      <div class="split reveal">
+        <div class="split-media">
+          <div class="mock">
+            <div class="mock-h"><div class="mh-l"><span class="mi">◧</span> KAIDOP · Adoption</div><span class="chip-g">priorisiert</span></div>
+            <div class="mock-b">
+              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
+                <div><div class="l" style="color:var(--ink)">Widerstand: „Das ersetzt uns"</div><div class="s" style="color:var(--ink-3)">→ Use-Case: Routine entlasten</div></div>
+                <span class="chip-g">gelöst</span>
+              </div>
+              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
+                <div><div class="l" style="color:var(--ink)">Unsicherheit: Datenschutz</div><div class="s" style="color:var(--ink-3)">→ Leitplanken definiert</div></div>
+                <span class="chip-g">geklärt</span>
+              </div>
+              <div class="mock-2">
+                <div class="mock-field"><div class="k">Initiativen</div><div class="v">12 priorisiert</div></div>
+                <div class="mock-field"><div class="k">Adoptionsplan</div><div class="v">8 Wochen</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-text">
+          <div class="ft-tag">02 · KAIDOP</div>
+          <h3 class="serif">Widerstände benennen, Use-Cases umsetzen.</h3>
+          <p>Adoption scheitert selten an der Technik. Wir machen Vorbehalte sichtbar und überführen sie in konkrete, priorisierte Initiativen.</p>
+          <div class="rows">
+            <div class="row"><span class="ic">◆</span><span class="rt">Widerstände sichtbar und besprechbar machen</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">▤</span><span class="rt">Priorisierte Initiativen statt Wunschlisten</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">≡</span><span class="rt">Konkreter Adoptionsplan für 8 Wochen</span><span class="ra">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPLIT 3: KAIRON (mockup left) -->
+    <div class="wrap">
+      <div class="split rev reveal">
+        <div class="split-media">
+          <div class="mock">
+            <div class="mock-h"><div class="mh-l"><span class="mi">⬡</span> KAIRON · Governance</div><span class="chip-g">selbsttragend</span></div>
+            <div class="mock-b">
+              <div class="mock-2">
+                <div class="mock-field"><div class="k">Ownership</div><div class="v">je Initiative</div></div>
+                <div class="mock-field"><div class="k">Pipeline</div><div class="v">14 → 8 aktiv</div></div>
+              </div>
+              <div class="mock-field" style="display:flex;align-items:center;justify-content:space-between">
+                <div><div class="k">Wöchentliche Ceremony</div><div class="v">Impact-Review</div></div>
+                <span class="tog"></span>
+              </div>
+              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
+                <div><div class="l" style="color:var(--ink)">Zertifizierter Orchestrator</div><div class="s" style="color:var(--ink-3)">intern · trägt das System</div></div>
+                <span class="chip-g">aktiv</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-text">
+          <div class="ft-tag">04 · KAIRON</div>
+          <h3 class="serif">Ein System, das nach 90 Tagen selbst trägt.</h3>
+          <p>Governance, klare Rollen und feste Ceremonies. KAIRON gibt Ihrer KI-Arbeit Struktur — wer entscheidet was, wann, mit welchem Impact.</p>
+          <div class="rows">
+            <div class="row"><span class="ic">◆</span><span class="rt">Klare Ownership je Initiative</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">▤</span><span class="rt">Pipeline mit Stopp-Entscheidungen</span><span class="ra">→</span></div>
+            <div class="row"><span class="ic">≡</span><span class="rt">Zertifizierter Orchestrator im eigenen Team</span><span class="ra">→</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ACHIEVE DARK BAND ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="achieve">
+        <div class="achieve-l">
+          <div>
+            <h2 class="serif">Was Teams mit new.thought erreichen.</h2>
+            <p>Vom ersten anfassbaren Ergebnis bis zur Organisation, die KI selbst steuert.</p>
+          </div>
+          <a href="/programme.html" class="arrow-link" style="color:#bfe0c9;margin-top:24px">Alle Programme ansehen <span class="ar">→</span></a>
+        </div>
+        <div class="achieve-card">
+          <div class="ac-row"><span class="ic">◆</span><span class="t">Prototyp am ersten Workshop-Tag</span></div>
+          <div class="ac-row"><span class="ic">◧</span><span class="t">Widerstände sichtbar gemacht</span></div>
+          <div class="ac-row"><span class="ic">≡</span><span class="t">Initiativen priorisiert</span></div>
+          <div class="ac-row"><span class="ic">◐</span><span class="t">Führung mit Handwerkszeug</span></div>
+          <div class="ac-row"><span class="ic">⬡</span><span class="t">Budget aus gestoppten Projekten freigegeben</span></div>
+          <div class="ac-row"><span class="ic">↻</span><span class="t">System, das selbst trägt</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BIG TESTIMONIAL ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="quote-band">
+        <div class="who">Maschinenbauer · 240&nbsp;MA · Baden-Württemberg</div>
+        <blockquote class="serif">„8 von 14 KI-Initiativen aktiv skaliert. 6 gestoppt — Budget freigegeben. Time-to-Value: unter 14 Tage."</blockquote>
+        <a href="/kairon.html" class="arrow-link">Zur Fallstudie <span class="ar">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── METRICS ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="metrics">
+        <div class="metric"><div class="n serif">8</div><div class="d">Initiativen aktiv skaliert</div></div>
+        <div class="metric"><div class="n serif">−6</div><div class="d">gestoppt, Budget freigegeben</div></div>
+        <div class="metric"><div class="n serif">&lt;14</div><div class="d">Tage bis zum ersten messbaren Wert</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BLOG ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Aus dem Blog.</h2></div>
+      <div class="blog">
+        <a href="/ressourcen/warum-ki-projekte-scheitern.html" class="post">
+          <div class="pc"><h3>Warum KI-Projekte im Mittelstand scheitern</h3><p>Es liegt selten am Tool — und fast immer an der Organisation.</p><div class="meta">Nils Blache · 6 Min. Lesezeit</div></div>
+          <span class="tag">Adoption</span>
+        </a>
+        <a href="/ressourcen/was-ist-ki-governance.html" class="post">
+          <div class="pc"><h3>Was ist KI-Governance — und warum jetzt?</h3><p>Wer entscheidet was, wann und mit welchem Impact. Eine Einordnung.</p><div class="meta">Nils Blache · 8 Min. Lesezeit</div></div>
+          <span class="tag">Governance</span>
+        </a>
+        <a href="/ressourcen/ki-pilot-skalierung.html" class="post">
+          <div class="pc"><h3>Vom Piloten zur Skalierung</h3><p>Warum die meisten KI-Piloten stecken bleiben — und wie es anders geht.</p><div class="meta">Nils Blache · 5 Min. Lesezeit</div></div>
+          <span class="tag">Skalierung</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ── -->
+  <section class="final" id="kontakt">
+    <div class="wrap reveal">
+      <h2 class="serif">KI anfassen, nicht nur verstehen.</h2>
+      <p class="lead">Starten Sie mit einem Workshop-Tag. Kein Pitch, kein Konzept — ein laufendes Ergebnis.</p>
+      <div class="cta">
+        <a href="mailto:nils@new-thought.com?subject=KAISTART%20buchen" class="btn btn-dark">Workshop buchen</a>
+        <a href="mailto:nils@new-thought.com?subject=Erstgespräch" class="btn btn-ghost">Erstgespräch vereinbaren</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Adoption &amp; Enablement für den Mittelstand. Anfassbar gemacht.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Programme</h4>
+        <a href="#kontakt">KAISTART</a>
+        <a href="/kaidop.html">KAIDOP</a>
+        <a href="/kailead.html">KAILEAD</a>
+        <a href="/kairon.html">KAIRON</a>
+      </div>
+      <div class="foot-col">
+        <h4>Academy</h4>
+        <a href="/academy.html">KI-Orchestrator</a>
+        <a href="/kaidop.html">KAIDOP Manager</a>
+        <a href="/kairon-executive.html">Fractional AI Officer</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+        <a href="#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="#">Über new.thought</a>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+        <a href="#">AGB</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  // Mobile menu
+  const ov = document.getElementById('mOverlay');
+  document.getElementById('hamburger').addEventListener('click', () => { ov.classList.add('open'); document.body.style.overflow='hidden'; });
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow=''; };
+  document.getElementById('mClose').addEventListener('click', close);
+  ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+  // KAIRON explainer — interactive menu
+  const osItems = document.querySelectorAll('.os-item');
+  const osPanels = document.querySelectorAll('.os-panel .pn');
+  function selectOS(key){
+    osItems.forEach(b => { const on = b.dataset.os === key; b.classList.toggle('active', on); b.setAttribute('aria-selected', on); });
+    osPanels.forEach(p => p.classList.toggle('show', p.dataset.pn === key));
+  }
+  osItems.forEach(b => {
+    b.addEventListener('click', () => selectOS(b.dataset.os));
+    b.addEventListener('mouseenter', () => selectOS(b.dataset.os));
+  });
+
+  // Dot-matrix generator — flowing diagonal band of active dots
+  document.querySelectorAll('.matrix').forEach(svg => {
+    const seed = parseInt(svg.dataset.seed || '1', 10);
+    const cols = 11, rows = 9, gap = 16, r = 3.1, pad = 4;
+    const ns = 'http://www.w3.org/2000/svg';
+    for (let y = 0; y < rows; y++){
+      for (let x = 0; x < cols; x++){
+        const cx = pad + x * gap, cy = pad + y * gap;
+        // diagonal sine band; phase shifted by seed → unique per card
+        const band = Math.sin((x / cols) * Math.PI * 1.4 + seed * 1.3) * 2.2 + (rows - 1 - y);
+        const on = Math.abs(band - x * 0.55) < 1.15;
+        const c = document.createElementNS(ns, 'circle');
+        c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r);
+        c.setAttribute('fill', on ? 'var(--dot-on)' : 'var(--dot)');
+        svg.appendChild(c);
+      }
+    }
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>

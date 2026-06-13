@@ -7,591 +7,278 @@
 <meta name="description" content="Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement im Mittelstand. Kostenlose Leitfäden, Artikel und Checklisten von new.thought.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.new-thought.com/ressourcen.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.new-thought.com/ressourcen.html">
-<meta property="og:title" content="KI-Ressourcen für Unternehmen | new.thought">
-<meta property="og:description" content="Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement im Mittelstand. Kostenlose Leitfäden von new.thought.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.new-thought.com/#organization",
-      "name": "new.thought",
-      "url": "https://www.new-thought.com"
-    },
-    {
-      "@type": "CollectionPage",
-      "@id": "https://www.new-thought.com/ressourcen.html",
-      "url": "https://www.new-thought.com/ressourcen.html",
-      "name": "KI-Ressourcen für Unternehmen | new.thought",
-      "description": "Praxiswissen zu KI-Adoption, KI-Governance und KI-Projektmanagement für den Mittelstand.",
-      "publisher": { "@id": "https://www.new-thought.com/#organization" },
-      "inLanguage": "de-DE"
-    }
-  ]
-}
-</script>
-<style>
-  .hub-hero {
-    padding: 120px 0 80px;
-    border-bottom: 1px solid var(--ink);
-  }
-  .hub-tag {
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em;
-    text-transform: uppercase; color: var(--ink-mute); margin-bottom: 28px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .hub-tag::before { content: "/ /"; color: var(--accent); }
-  .hub-headline {
-    font-size: clamp(32px, 5vw, 72px); font-weight: 600;
-    letter-spacing: -0.04em; line-height: 1.0; color: var(--ink);
-    margin-bottom: 20px;
-  }
-  .hub-headline em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
-  .hub-sub {
-    font-size: 18px; color: var(--ink-soft); max-width: 56ch;
-    line-height: 1.55; margin-bottom: 0;
-  }
-
-  /* Filter bar */
-  .hub-filter {
-    display: flex; gap: 8px; flex-wrap: wrap;
-    padding: 32px 0 40px; border-bottom: 1px solid var(--rule);
-  }
-  .filter-btn {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
-    text-transform: uppercase; padding: 8px 16px;
-    border: 1px solid var(--rule); color: var(--ink-mute);
-    background: none; cursor: pointer; transition: all .15s;
-  }
-  .filter-btn:hover, .filter-btn.active {
-    border-color: var(--ink); color: var(--ink); background: var(--ink);
-    color: var(--bg);
-  }
-
-  /* Article grid */
-  .hub-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border-left: 1px solid var(--rule);
-    border-top: 1px solid var(--rule);
-    margin-top: 48px;
-  }
-  @media(max-width: 960px) { .hub-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media(max-width: 600px) { .hub-grid { grid-template-columns: 1fr; } }
-
-  .article-card {
-    display: flex; flex-direction: column;
-    padding: 36px 32px; gap: 16px;
-    border-right: 1px solid var(--rule);
-    border-bottom: 1px solid var(--rule);
-    text-decoration: none; color: inherit;
-    transition: background .18s;
-    position: relative;
-  }
-  .article-card:hover { background: var(--bg-soft); }
-  .article-card:hover .ac-arrow { color: var(--accent); transform: translate(3px, -3px); }
-
-  .ac-meta {
-    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
-  }
-  .ac-tag {
-    font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em;
-    text-transform: uppercase; padding: 4px 9px;
-    border: 1px solid var(--rule); color: var(--ink-mute);
-  }
-  .ac-tag--guide { border-color: var(--accent); color: var(--accent); }
-  .ac-tag--pillar { border-color: #2f7a4f; color: #2f7a4f; }
-  .ac-readtime {
-    font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--ink-mute);
-  }
-
-  .ac-title {
-    font-size: clamp(17px, 1.6vw, 21px); font-weight: 600;
-    letter-spacing: -0.025em; line-height: 1.25; color: var(--ink);
-  }
-  .ac-excerpt {
-    font-size: 14px; color: var(--ink-soft); line-height: 1.6; flex: 1;
-  }
-  .ac-arrow {
-    font-size: 20px; color: var(--rule);
-    transition: color .18s, transform .18s;
-    margin-top: auto; align-self: flex-end;
-  }
-  .ac-date {
-    font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em;
-    text-transform: uppercase; color: var(--ink-mute); margin-top: 4px;
-  }
-
-  /* Featured card (spans 2 cols) */
-  .article-card--featured {
-    grid-column: span 2;
-    background: var(--bg-deep); color: #f3f2ee;
-  }
-  .article-card--featured:hover { background: #1a1a16; }
-  .article-card--featured .ac-title { color: #fff; font-size: clamp(22px, 2.2vw, 30px); }
-  .article-card--featured .ac-excerpt { color: rgba(243,242,238,.65); }
-  .article-card--featured .ac-arrow { color: rgba(255,255,255,.2); }
-  .article-card--featured:hover .ac-arrow { color: var(--accent); }
-  .article-card--featured .ac-tag { border-color: var(--accent); color: var(--accent); }
-  .article-card--featured .ac-readtime,
-  .article-card--featured .ac-date { color: rgba(243,242,238,.4); }
-  @media(max-width: 960px) { .article-card--featured { grid-column: span 1; } }
-
-  /* Coming soon cards */
-  .article-card--soon {
-    opacity: .5; pointer-events: none;
-  }
-  .article-card--soon .ac-title::after {
-    content: ": demnächst";
-    font-size: 11px; font-weight: 400; font-style: italic;
-    color: var(--ink-mute);
-  }
-
-  /* CTA section */
-  .hub-cta {
-    margin-top: 80px; padding: 64px 0;
-    border-top: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: center;
-    gap: 32px; flex-wrap: wrap;
-  }
-  .hub-cta-text h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 8px; }
-  .hub-cta-text p { color: var(--ink-soft); font-size: 16px; }
-    /* Ressourcen-Dropdown */
-    .res-nav-dropdown { position: relative; display: inline-flex; align-items: center; }
-    .res-nav-dropdown-trigger {
-      font-size: 15px; font-weight: 600; color: var(--accent);
-      background: none; border: none; cursor: pointer; padding: 0;
-      display: inline-flex; align-items: center; gap: 4px; font-family: inherit;
-    }
-    .res-nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.6; transition: transform .2s; }
-    .res-nav-dropdown.open .res-nav-dropdown-trigger::after { transform: rotate(180deg); }
-    .res-nav-dropdown-menu {
-      position: absolute; top: calc(100% + 10px); left: 50%;
-      transform: translateX(-50%) translateY(-6px);
-      background: #fff; border: 1px solid rgba(0,0,0,0.08);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-      min-width: 200px; padding: 6px 0; border-radius: 8px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .18s, transform .18s; z-index: 300;
-    }
-    .res-nav-dropdown.open .res-nav-dropdown-menu {
-      opacity: 1; pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
-    }
-    .res-nav-dropdown-menu a {
-      display: block; padding: 9px 20px;
-      font-size: 13px; font-weight: 500; color: #555;
-      text-decoration: none; white-space: nowrap;
-    }
-    .res-nav-dropdown-menu a:hover { color: #0e0e0c; background: #f5f4f0; }
-    .res-nav-dropdown-menu a.active { color: #0e0e0c; font-weight: 600; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ona.css">
 </head>
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="top">
-  <div class="wrap row">
-    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
-    <div style="display:flex; gap:28px; align-items:center;">
-      <a href="programme.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Programme</a>
-      <a href="academy.html" style="font-size:15px; font-weight:600; color:var(--ink); transition:color .15s;" onmouseover="this.style.color='var(--ink-soft)'" onmouseout="this.style.color='var(--ink)'">Academy</a>
-      <div class="res-nav-dropdown" id="dd-ressourcen">
-        <button class="res-nav-dropdown-trigger" onclick="toggleResDropdown()">Ressourcen</button>
-        <div class="res-nav-dropdown-menu">
-          <a href="ressourcen.html" class="active">Blog</a>
-          <a href="ki-readiness-check.html">KI-Readiness-Check</a>
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <div class="dd">
+        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Programme <span class="cv">⌄</span></button>
+        <div class="dd-menu" role="menu">
+          <a href="/kaistart.html" role="menuitem"><span class="di">◆</span><span class="dl"><b>KAISTART</b><small>AI Opportunity Sprint</small></span></a>
+          <a href="/kaidop.html" role="menuitem"><span class="di">◧</span><span class="dl"><b>KAIDOP</b><small>Adoption Workshop</small></span></a>
+          <a href="/kailead.html" role="menuitem"><span class="di">◐</span><span class="dl"><b>KAILEAD</b><small>Führungskräfte-Training</small></span></a>
+          <a href="/kairon.html" role="menuitem"><span class="di">⬡</span><span class="dl"><b>KAIRON</b><small>Steuerungssystem</small></span></a>
+          <a href="/kairon-executive.html" role="menuitem"><span class="di">★</span><span class="dl"><b>Fractional AI Officer</b><small>KI-Führung auf Zeit</small></span></a>
         </div>
       </div>
+      <a href="/academy.html">Academy</a>
+      <a href="/ressourcen.html">Blog</a>
     </div>
-    <div style="display:flex; justify-content:flex-end;">
-      <a class="nav-cta" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Erstgespräch buchen →</a>
+    <div class="nav-right">
+      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+      <a class="btn btn-dark" href="#kontakt">Workshop buchen</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<!-- ====== HERO ====== -->
-<section class="hub-hero">
-  <div class="wrap">
-    <div class="hub-tag">Ressourcen & Wissen</div>
-    <h1 class="hub-headline">
-      KI-Adoption im Mittelstand.<br>
-      <em>Praxiswissen, das trägt.</em>
-    </h1>
-    <p class="hub-sub">
-      Leitfäden, Definitionen und Praxisartikel zu KI-Governance, KI-Einführung und KI-Projektmanagement für Entscheider, die KI nicht nur einsetzen, sondern steuern wollen.
-    </p>
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
   </div>
-</section>
-
-<!-- ====== FILTER ====== -->
-<div class="wrap">
-  <div class="hub-filter">
-    <button class="filter-btn active" onclick="filterCards('all', this)">Alle</button>
-    <button class="filter-btn" onclick="filterCards('adoption', this)">KI-Adoption</button>
-    <button class="filter-btn" onclick="filterCards('governance', this)">KI-Governance</button>
-    <button class="filter-btn" onclick="filterCards('change', this)">Change Management</button>
-    <button class="filter-btn" onclick="filterCards('organisation', this)">KI-Organisation</button>
+  <div class="m-links">
+    <a href="/kaistart.html">KAISTART</a>
+    <a href="/kaidop.html">KAIDOP</a>
+    <a href="/kailead.html">KAILEAD</a>
+    <a href="/kairon.html">KAIRON</a>
+    <a href="/academy.html">Academy</a>
+    <a href="/ressourcen.html">Blog</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="#kontakt" class="btn btn-dark">Workshop buchen</a>
   </div>
 </div>
 
-<!-- ====== ARTICLE GRID ====== -->
-<section style="padding-bottom: 0;">
-  <div class="wrap">
-    <div class="hub-grid" id="hub-grid">
+<main>
 
-      <!-- FEATURED: Artikel 1 -->
-      <a href="ressourcen/warum-ki-projekte-scheitern.html" class="article-card article-card--featured" data-cats="adoption governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Leitfaden</span>
-          <span class="ac-tag">KI-Adoption</span>
-          <span class="ac-readtime">9 Min. Lesezeit</span>
-        </div>
-        <div class="ac-title">Warum KI-Projekte im Mittelstand scheitern und was wirklich hilft</div>
-        <p class="ac-excerpt">65 % aller KI-Initiativen ohne benannten Owner versanden still. Nicht weil die Technologie versagt, sondern weil das System fehlt. Die fünf echten Ursachen und wie man sie systematisch löst.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 2 -->
-      <a href="ressourcen/was-ist-ki-governance.html" class="article-card" data-cats="governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Definition</span>
-          <span class="ac-tag">KI-Governance</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">Was ist KI-Governance? Definition und Praxis für Unternehmen</div>
-        <p class="ac-excerpt">KI-Governance ist kein Compliance-Thema, sondern die Voraussetzung dafür, dass KI-Projekte Geschäftswert schaffen. Was es bedeutet und wie es konkret aussieht.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 3 -->
-      <a href="ressourcen/ki-strategie-vs-ki-governance.html" class="article-card" data-cats="governance adoption">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Strategie</span>
-          <span class="ac-tag">KI-Governance</span>
-          <span class="ac-readtime">6 Min.</span>
-        </div>
-        <div class="ac-title">KI-Strategie vs. KI-Governance: Was ist der Unterschied?</div>
-        <p class="ac-excerpt">Viele Unternehmen haben eine KI-Strategie, aber kein KI-Steuerungssystem. Warum der Unterschied entscheidend ist und welches von beiden zuerst kommt.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 4 -->
-      <a href="ressourcen/ki-widerstaende-mitarbeitende.html" class="article-card" data-cats="adoption change">
-        <div class="ac-meta">
-          <span class="ac-tag">Change Management</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">KI-Widerstände bei Mitarbeitenden: Die 5 Typen und wie man sie überwindet</div>
-        <p class="ac-excerpt">Angst, Gleichgültigkeit, Machtkonflikte, Trauma, Lähmung: die fünf Widerstandsmuster, die jede KI-Einführung blockieren, und konkrete Interventionen für jedes.</p>
-        <span class="ac-date">Mai 2025</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 5 -->
-      <a href="ressourcen/ki-adoption-mittelstand-leitfaden.html" class="article-card" data-cats="adoption">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--pillar">Pillar Guide</span>
-          <span class="ac-readtime">18 Min.</span>
-        </div>
-        <div class="ac-title">KI-Adoption im Mittelstand: Der vollständige Leitfaden 2025</div>
-        <p class="ac-excerpt">Von der ersten KI-Initiative bis zum laufenden Steuerungssystem: Der Schritt-für-Schritt-Leitfaden für Unternehmen, die KI strukturiert einführen wollen.</p>
-        <span class="ac-date">Mai 2025</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 6 -->
-      <a href="ressourcen/ki-organisation-rollen-struktur.html" class="article-card" data-cats="organisation governance">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Organisation</span>
-          <span class="ac-readtime">10 Min.</span>
-        </div>
-        <div class="ac-title">KI-Organisation aufbauen: Rollen, Verantwortlichkeiten und Struktur</div>
-        <p class="ac-excerpt">Wer macht was im KI-Betrieb? Die wichtigsten Rollen: AI Owner, AI Sponsor, AI Orchestrator und wie sie in bestehende Strukturen integriert werden.</p>
-        <span class="ac-date">Mai 2025</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 7 -->
-      <a href="ressourcen/was-ist-ein-ki-orchestrator.html" class="article-card" data-cats="organisation">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Definition</span>
-          <span class="ac-tag">KI-Organisation</span>
-          <span class="ac-readtime">6 Min.</span>
-        </div>
-        <div class="ac-title">Was ist ein KI-Orchestrator? Rolle, Aufgaben und Kompetenzprofil</div>
-        <p class="ac-excerpt">Ein KI-Orchestrator steuert den KI-Einsatz in einem Fachbereich: zwischen Strategie und operativer Nutzung. Definition, Aufgaben und wie Unternehmen diese Schlüsselrolle intern aufbauen.</p>
-        <span class="ac-date">Mai 2025</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 8 -->
-      <a href="ressourcen/ki-roi-berechnen.html" class="article-card" data-cats="adoption">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Adoption</span>
-          <span class="ac-tag">KI-Strategie</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">KI-ROI berechnen: Leitfaden für den Mittelstand</div>
-        <p class="ac-excerpt">Direkteinsparungen, indirekter Nutzen, TCO, wie man den Return on Investment von KI-Projekten korrekt berechnet und intern überzeugend kommuniziert. Mit Rechenbeispielen.</p>
-        <span class="ac-date">Mai 2025</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 9 – Quick Win: Agentic AI Governance -->
-      <a href="ressourcen/agentic-ai-governance.html" class="article-card" data-cats="governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Governance</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">Agentic AI ohne Governance: Das unterschätzte Risiko 2026</div>
-        <p class="ac-excerpt">Autonome KI-Agenten handeln ohne Rückfrage. Was das für Unternehmen bedeutet, welche Risiken entstehen – und welche Governance-Strukturen jetzt notwendig sind.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 10 – Quick Win: EU AI Act Schulungspflicht -->
-      <a href="ressourcen/ki-training-pflicht-eu-ai-act.html" class="article-card" data-cats="governance change">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">EU AI Act</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">KI-Schulungspflicht durch den EU AI Act: Was Unternehmen jetzt wissen müssen</div>
-        <p class="ac-excerpt">Der EU AI Act schreibt KI-Kompetenznachweis für Mitarbeitende vor. Welche Pflichten ab wann gelten, wen sie betreffen und wie Unternehmen compliant werden.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 11 – Quick Win: KI Führungskräfte Enablement -->
-      <a href="ressourcen/ki-chefsache-fuehrungskraefte.html" class="article-card" data-cats="governance adoption">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Leadership</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">Warum KI Chefsache sein muss: KI-Enablement für Führungskräfte</div>
-        <p class="ac-excerpt">Unternehmen mit KI-Verantwortung auf CEO-Ebene erzielen dreimal häufiger signifikanten ROI. Was KI-Führungskräfte-Enablement bedeutet und wie es gelingt.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 12 -->
-      <a href="ressourcen/ki-governance-topmanagement.html" class="article-card" data-cats="governance">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Governance</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">KI-Steuerung im Top-Management: Warum 33 % der Unternehmen das falsch machen</div>
-        <p class="ac-excerpt">Zwei Drittel der Unternehmen legen KI-Verantwortung beim CIO – statt beim CEO. Warum das ein strategischer Fehler ist und wie wirksame KI-Governance auf Vorstandsebene aussieht.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 13 -->
-      <a href="ressourcen/ki-literacy-mitarbeiter.html" class="article-card" data-cats="adoption change">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Literacy</span>
-          <span class="ac-tag">Change Management</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">Warum 80 % der Mitarbeitenden noch nicht KI-fit sind</div>
-        <p class="ac-excerpt">KI-Tools sind da – aber die meisten Mitarbeitenden nutzen sie kaum oder falsch. Was hinter dem KI-Literacy-Gap steckt und wie Unternehmen die Lücke schließen.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 14 -->
-      <a href="ressourcen/ki-skills-gap-2026.html" class="article-card" data-cats="adoption change">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Kompetenz</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">Der KI-Skills-Gap 2026: Was Unternehmen jetzt tun müssen</div>
-        <p class="ac-excerpt">74 % der Unternehmen sehen den Skills-Gap als größtes KI-Adoptionshindernis. Welche Kompetenzen fehlen, warum klassische Schulungen scheitern und welche Ansätze wirklich helfen.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 15 -->
-      <a href="ressourcen/ai-fluency-kernkompetenz.html" class="article-card" data-cats="adoption change">
-        <div class="ac-meta">
-          <span class="ac-tag">AI Fluency</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">AI Fluency als neue Kernkompetenz: So schult man wirklich</div>
-        <p class="ac-excerpt">53 % der Unternehmen priorisieren AI Fluency als Top-Maßnahme. Was die Kompetenz wirklich bedeutet, warum Tool-Schulungen scheitern – und welche 5 Prinzipien wirklich funktionieren.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 16 -->
-      <a href="ressourcen/ki-pilot-skalierung.html" class="article-card" data-cats="adoption">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Projektsteuerung</span>
-          <span class="ac-readtime">8 Min.</span>
-        </div>
-        <div class="ac-title">Vom KI-Pilot zur Skalierung: Was den Unterschied macht</div>
-        <p class="ac-excerpt">Nur 25 % der Unternehmen haben 40 % ihrer KI-Piloten in Produktion gebracht. Was das Pilot-Purgatory auslöst und wie das Skalierungs-Framework aussieht, das wirklich funktioniert.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 17 -->
-      <a href="ressourcen/ki-adoption-surface-level.html" class="article-card" data-cats="adoption change">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Adoption</span>
-          <span class="ac-readtime">7 Min.</span>
-        </div>
-        <div class="ac-title">Surface-Level-KI reicht nicht: Was echte KI-Adoption bedeutet</div>
-        <p class="ac-excerpt">37 % der Unternehmen nutzen KI nur oberflächlich. Warum das gefährlicher ist als keine KI – und wie echte Adoption entsteht: die 6 Treiber und die richtigen Metriken.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <!-- Artikel 18 -->
-      <a href="ressourcen/ki-paradox-deutschland.html" class="article-card" data-cats="adoption governance">
-        <div class="ac-meta">
-          <span class="ac-tag">KI-Transformation</span>
-          <span class="ac-readtime">9 Min.</span>
-        </div>
-        <div class="ac-title">Das KI-Paradox: Deutschland investiert – aber transformiert nicht</div>
-        <p class="ac-excerpt">90 % erwarten fundamentale Veränderung durch KI. Nur 5 % handeln transformativ. Was das KI-Paradox der deutschen Wirtschaft antreibt – und wie man daraus ausbricht.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <a href="ressourcen/fractional-chief-ai-officer.html" class="article-card" data-cats="organisation governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Organisation</span>
-          <span class="ac-readtime">9 Min.</span>
-        </div>
-        <div class="ac-title">Was ist ein Fractional Chief AI Officer? Rolle, Aufgaben und Nutzen</div>
-        <p class="ac-excerpt">Ein Fractional CAIO übernimmt KI-Führung auf Zeit – ohne Vollzeit-Gehalt. Was die Rolle leistet, wann sie sinnvoll ist und wie sie sich von klassischer Beratung unterscheidet.</p>
-        <span class="ac-date">April 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <a href="ressourcen/ki-roadmap-erstellen.html" class="article-card" data-cats="adoption governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Strategie</span>
-          <span class="ac-readtime">10 Min.</span>
-        </div>
-        <div class="ac-title">KI-Roadmap erstellen: Der Schritt-für-Schritt-Leitfaden für den Mittelstand</div>
-        <p class="ac-excerpt">Priorisierte Use Cases, Ressourcenplanung, Governance – mit konkretem 5-Phasen-Framework. Eine KI-Roadmap schafft Orientierung statt isolierter Pilotprojekte.</p>
-        <span class="ac-date">April 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <a href="ressourcen/ki-policy-unternehmen.html" class="article-card" data-cats="governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Governance</span>
-          <span class="ac-readtime">9 Min.</span>
-        </div>
-        <div class="ac-title">KI-Policy für Unternehmen: Was rein muss – und warum die meisten scheitern</div>
-        <p class="ac-excerpt">Was eine KI-Richtlinie enthalten muss, wie sie EU-AI-Act-konform wird und wie Mitarbeiter sie tatsächlich einhalten – kein Compliance-Papiertiger.</p>
-        <span class="ac-date">April 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <a href="ressourcen/ki-im-vertrieb-use-cases.html" class="article-card" data-cats="adoption">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">KI-Anwendungen</span>
-          <span class="ac-readtime">10 Min.</span>
-        </div>
-        <div class="ac-title">KI im Vertrieb: 8 Use Cases mit nachweisbarem ROI</div>
-        <p class="ac-excerpt">Von Lead-Scoring bis Gesprächsanalyse: Die 8 wirkungsvollsten KI-Anwendungen im B2B-Vertrieb mit Praxisbeispielen, ROI-Zahlen und Implementierungshinweisen.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
-      <a href="ressourcen/ki-risikomanagement-eu-ai-act.html" class="article-card" data-cats="governance">
-        <div class="ac-meta">
-          <span class="ac-tag ac-tag--guide">Neu</span>
-          <span class="ac-tag">Regulierung</span>
-          <span class="ac-readtime">11 Min.</span>
-        </div>
-        <div class="ac-title">KI-Risikomanagement und EU AI Act: Was Unternehmen jetzt wissen müssen</div>
-        <p class="ac-excerpt">Risikoklassen, Pflichten, Zeitplan und 4-Schritte-Plan für EU-AI-Act-konformes KI-Risikomanagement – bevor August 2026 kommt.</p>
-        <span class="ac-date">Mai 2026</span>
-        <span class="ac-arrow">↗</span>
-      </a>
-
+  <!-- ── HERO ── -->
+  <section class="page-hero center">
+    <div class="wrap reveal">
+      <div class="eyebrow">Ressourcen · Blog</div>
+      <h1 class="serif">Praxiswissen zu KI-Adoption &amp; Governance.</h1>
+      <p class="sub">Leitfäden, Artikel und Frameworks für Unternehmen, die KI nicht nur nutzen, sondern wirklich steuern wollen — kostenlos und ohne Anmeldung.</p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== CTA ====== -->
-<section style="padding: 0;">
-  <div class="wrap">
-    <div class="hub-cta">
-      <div class="hub-cta-text">
-        <h3>Bereit, KI im Unternehmen zu steuern?</h3>
-        <p>Erfahren Sie in einem 30-minütigen Erstgespräch, welches Programm zu Ihrem Kontext passt.</p>
+  <!-- ── KI-ADOPTION ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">KI-Adoption &amp; Umsetzung</h2></div>
+      <div class="blog">
+        <a href="ressourcen/warum-ki-projekte-scheitern.html" class="post">
+          <div class="pc"><h3>Warum KI-Projekte im Mittelstand scheitern</h3><p>65 % aller KI-Initiativen ohne Owner versanden. Die 5 echten Ursachen — nicht Technologie, sondern fehlende Steuerung. Mit konkreten Lösungen.</p></div>
+          <span class="tag">Adoption</span>
+        </a>
+        <a href="ressourcen/ki-adoption-mittelstand-leitfaden.html" class="post">
+          <div class="pc"><h3>KI-Adoption im Mittelstand: Der vollständige Leitfaden 2026</h3><p>Von der ersten Initiative zum laufenden Steuerungssystem — mit Diagnose-Framework, Rollenmodell, 7-Phasen-Methode und 90-Tage-Plan.</p></div>
+          <span class="tag">Leitfaden</span>
+        </a>
+        <a href="ressourcen/ki-adoption-surface-level.html" class="post">
+          <div class="pc"><h3>Surface-Level-KI reicht nicht</h3><p>37 % der Unternehmen nutzen KI nur oberflächlich, ohne Prozessveränderung. Warum das ein strategisches Risiko ist und wie echte Adoption entsteht.</p></div>
+          <span class="tag">Adoption</span>
+        </a>
+        <a href="ressourcen/ki-widerstaende-mitarbeitende.html" class="post">
+          <div class="pc"><h3>KI-Widerstände bei Mitarbeitenden: Die 5 Typen</h3><p>KI-Adoption scheitert nicht an der Technologie, sondern an Widerständen. Die 5 Muster, die jede Einführung blockieren — mit Interventionen.</p></div>
+          <span class="tag">Adoption</span>
+        </a>
+        <a href="ressourcen/ki-pilot-skalierung.html" class="post">
+          <div class="pc"><h3>Vom KI-Pilot zur Skalierung</h3><p>Nur 25 % der Unternehmen bringen 40 % ihrer Piloten in Produktion. Was die anderen 75 % zurückhält — und wie man die Pilot-Hürde überwindet.</p></div>
+          <span class="tag">Skalierung</span>
+        </a>
       </div>
-      <a href="programme.html#cta" class="btn-primary">Erstgespräch buchen</a>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== FOOTER ====== -->
-<footer>
-  <div class="wrap row">
-    <div>© new.thought</div>
-    <div style="display:flex; gap:24px; flex-wrap:wrap;">
-      <a href="programme.html">Programme</a>
-      <a href="academy.html">Academy</a>
-      <a href="ressourcen.html">Ressourcen</a>
-      <a href="kairon-executive.html">Fractional AI Officer</a>
+  <!-- ── GOVERNANCE ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">KI-Governance &amp; Compliance</h2></div>
+      <div class="blog">
+        <a href="ressourcen/was-ist-ki-governance.html" class="post">
+          <div class="pc"><h3>Was ist KI-Governance?</h3><p>Wer im Unternehmen KI-Entscheidungen trifft, wie Qualität gesichert wird und welche Regeln gelten. Praxisnahe Definition plus 5-Schritte-Framework.</p></div>
+          <span class="tag">Governance</span>
+        </a>
+        <a href="ressourcen/ki-governance-topmanagement.html" class="post">
+          <div class="pc"><h3>KI-Governance: Steuerung im Top-Management</h3><p>KI-Governance ist keine IT-Frage, sondern eine Führungsfrage. Wer entscheidet, bestimmt, ob KI optimiert oder transformiert. Ein Leitfaden für Entscheider.</p></div>
+          <span class="tag">Governance</span>
+        </a>
+        <a href="ressourcen/ki-strategie-vs-ki-governance.html" class="post">
+          <div class="pc"><h3>KI-Strategie vs. KI-Governance</h3><p>Beides wird oft verwechselt, dabei brauchen Sie beides. Der Unterschied, wie sie zusammenhängen und warum Governance ohne Strategie scheitert.</p></div>
+          <span class="tag">Governance</span>
+        </a>
+        <a href="ressourcen/ki-policy-unternehmen.html" class="post">
+          <div class="pc"><h3>KI-Policy für Unternehmen: Leitfaden &amp; Mustervorlage</h3><p>Was eine KI-Policy enthalten muss, wie sie EU-AI-Act-konform wird und wie Sie interne Richtlinien entwickeln, die Mitarbeiter tatsächlich einhalten.</p></div>
+          <span class="tag">Policy</span>
+        </a>
+        <a href="ressourcen/ki-risikomanagement-eu-ai-act.html" class="post">
+          <div class="pc"><h3>KI-Risikomanagement &amp; EU AI Act</h3><p>Risikoklassen, Pflichten, Zeitplan und praktische Umsetzungsschritte für Unternehmen, die KI einsetzen oder entwickeln.</p></div>
+          <span class="tag">EU AI Act</span>
+        </a>
+        <a href="ressourcen/ki-training-pflicht-eu-ai-act.html" class="post">
+          <div class="pc"><h3>KI-Training-Pflicht nach EU AI Act</h3><p>19 % der deutschen Unternehmen bieten kein KI-Training an — trotz Schulungspflicht. Was Artikel 4 verlangt, welche Mindeststandards gelten.</p></div>
+          <span class="tag">EU AI Act</span>
+        </a>
+        <a href="ressourcen/agentic-ai-governance.html" class="post">
+          <div class="pc"><h3>Agentic AI Governance: Das nächste Unternehmensrisiko</h3><p>85 % planen Agentic AI, nur 21 % haben ein reifes Governance-Modell. Warum das Risiko unterschätzt wird und wie Sie sich jetzt vorbereiten.</p></div>
+          <span class="tag">Governance</span>
+        </a>
+      </div>
     </div>
-    <div style="display:flex; gap:20px;">
-      <a href="index.html" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute);">Impressum</a>
-      <a href="index.html" onclick="setTimeout(()=>openModal('modal-datenschutz'),100); return false;" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute);">Datenschutz</a>
+  </section>
+
+  <!-- ── ENABLEMENT ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Kompetenz &amp; Enablement</h2></div>
+      <div class="blog">
+        <a href="ressourcen/ki-literacy-mitarbeiter.html" class="post">
+          <div class="pc"><h3>KI Literacy: Warum 80 % noch nicht KI-fit sind</h3><p>Nur 20 % der Unternehmen sagen, ihr Talent sei wirklich auf KI vorbereitet. Was KI Literacy bedeutet, warum klassische Schulungen scheitern.</p></div>
+          <span class="tag">Enablement</span>
+        </a>
+        <a href="ressourcen/ai-fluency-kernkompetenz.html" class="post">
+          <div class="pc"><h3>AI Fluency als neue Kernkompetenz</h3><p>AI Fluency ist 2026 wichtiger als Excel-Kenntnisse. Was die Kompetenz bedeutet, wie man sie aufbaut — und warum die meisten Ansätze scheitern.</p></div>
+          <span class="tag">Enablement</span>
+        </a>
+        <a href="ressourcen/ki-skills-gap-2026.html" class="post">
+          <div class="pc"><h3>KI Skills Gap 2026</h3><p>89 % sagen, ihre Mitarbeiter brauchen bessere KI-Skills. Nur 6 % haben ernsthaft begonnen. Ein konkreter 6-Monats-Fahrplan zum Schließen.</p></div>
+          <span class="tag">Enablement</span>
+        </a>
+        <a href="ressourcen/ki-chefsache-fuehrungskraefte.html" class="post">
+          <div class="pc"><h3>Warum KI Chefsache sein muss</h3><p>Nur 2 % der deutschen Unternehmen verankern KI auf CEO-Ebene — der niedrigste Wert aller Länder. Was echtes Führungskräfte-Enablement bedeutet.</p></div>
+          <span class="tag">Führung</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ORGANISATION ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Organisation &amp; Rollen</h2></div>
+      <div class="blog">
+        <a href="ressourcen/ki-organisation-rollen-struktur.html" class="post">
+          <div class="pc"><h3>KI-Organisation aufbauen: Rollen &amp; Struktur</h3><p>AI Owner, AI Sponsor, AI Orchestrator, AI User: die vier Rollen, die jedes Unternehmen braucht — und wie man sie integriert.</p></div>
+          <span class="tag">Organisation</span>
+        </a>
+        <a href="ressourcen/was-ist-ein-ki-orchestrator.html" class="post">
+          <div class="pc"><h3>Was ist ein KI-Orchestrator?</h3><p>Ein KI-Orchestrator steuert den KI-Einsatz in einem Fachbereich. Definition, Aufgaben, Kompetenzprofil und wie man die Rolle intern aufbaut.</p></div>
+          <span class="tag">Rollen</span>
+        </a>
+        <a href="ressourcen/fractional-chief-ai-officer.html" class="post">
+          <div class="pc"><h3>Was ist ein Fractional Chief AI Officer?</h3><p>KI-Führung auf Zeit, ohne Vollzeit-Gehalt. Was die Rolle leistet, wann sie sinnvoll ist und wie sie sich von klassischer Beratung unterscheidet.</p></div>
+          <span class="tag">Rollen</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STRATEGIE & MARKT ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Strategie, ROI &amp; Markt</h2></div>
+      <div class="blog">
+        <a href="ressourcen/ki-roi-berechnen.html" class="post">
+          <div class="pc"><h3>KI-ROI berechnen: Leitfaden für den Mittelstand</h3><p>Direkteinsparungen, indirekter Nutzen, TCO: ein praktisches Framework mit konkreten Rechenbeispielen für Entscheider.</p></div>
+          <span class="tag">ROI</span>
+        </a>
+        <a href="ressourcen/ki-roadmap-erstellen.html" class="post">
+          <div class="pc"><h3>KI-Roadmap erstellen: Schritt für Schritt</h3><p>Eine Roadmap, die in der Praxis funktioniert: priorisierte Use Cases, Ressourcenplanung, Governance — mit konkretem 5-Phasen-Framework.</p></div>
+          <span class="tag">Strategie</span>
+        </a>
+        <a href="ressourcen/ki-im-vertrieb-use-cases.html" class="post">
+          <div class="pc"><h3>KI im Vertrieb: Use Cases &amp; ROI 2026</h3><p>Die 8 wirkungsvollsten KI-Use-Cases im Vertrieb, von Lead-Qualifizierung bis Angebotserstellung. Mit Praxisbeispielen und ROI-Zahlen.</p></div>
+          <span class="tag">Use Cases</span>
+        </a>
+        <a href="ressourcen/ki-paradox-deutschland.html" class="post">
+          <div class="pc"><h3>Das KI-Paradox: Deutschland investiert, transformiert nicht</h3><p>90 % der deutschen Unternehmen erwarten, dass KI ihr Geschäftsmodell verändert. Nur 5 % nutzen KI dafür. Wie bricht man aus dem Paradox aus?</p></div>
+          <span class="tag">Markt</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="block" id="kontakt">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <h2 class="serif">Vom Lesen ins Tun.</h2>
+        <p>Wissen ist der Anfang. Den Unterschied macht ein laufender Prototyp. Starten Sie mit einem Workshop-Tag.</p>
+        <div class="cta">
+          <a href="mailto:nils@new-thought.com?subject=Workshop%20buchen" class="btn btn-light">Workshop buchen</a>
+          <a href="mailto:nils@new-thought.com?subject=Erstgespräch" class="btn btn-outline">Erstgespräch vereinbaren</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Adoption &amp; Enablement für den Mittelstand. Anfassbar gemacht.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Programme</h4>
+        <a href="/kaidop.html">KAIDOP</a>
+        <a href="/kailead.html">KAILEAD</a>
+        <a href="/kairon.html">KAIRON</a>
+        <a href="/kairon-executive.html">Fractional AI Officer</a>
+      </div>
+      <div class="foot-col">
+        <h4>Academy</h4>
+        <a href="/academy.html">KI-Orchestrator</a>
+        <a href="/kaidop.html">KAIDOP Manager</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+        <a href="#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="/#loesung">Programme</a>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+        
+      </div>
     </div>
   </div>
 </footer>
 
 <script>
-function filterCards(cat, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.article-card').forEach(card => {
-    if (cat === 'all') {
-      card.style.display = '';
-    } else {
-      const cats = card.dataset.cats || '';
-      card.style.display = cats.includes(cat) ? '' : 'none';
-    }
-  });
-}
-</script>
-<script>
-  function toggleResDropdown() {
-    document.getElementById('dd-ressourcen').classList.toggle('open');
-  }
-  document.addEventListener('click', e => {
-    if (!e.target.closest('#dd-ressourcen')) {
-      document.getElementById('dd-ressourcen')?.classList.remove('open');
-    }
-  });
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+  const ov = document.getElementById('mOverlay');
+  document.getElementById('hamburger').addEventListener('click', () => { ov.classList.add('open'); document.body.style.overflow='hidden'; });
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow=''; };
+  document.getElementById('mClose').addEventListener('click', close);
+  ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  const io = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
 </body>

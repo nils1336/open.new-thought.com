@@ -3,798 +3,241 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KI-Zertifizierung für Manager: KAIRON KI-Orchestrator &amp; KAIDOP | new.thought</title>
-<meta name="description" content="KI-Adoption intern steuern lernen: KAIRON KI-Orchestrator (2 Tage, 2.900 €) und KAIDOP Manager (1 Tag, 1.400 €). Zertifizierungen für Manager im Mittelstand — kein technisches Vorwissen nötig.">
+<title>KI-Kurse für Manager: KAIRON KI-Orchestrator & KAIDOP | new.thought</title>
+<meta name="description" content="KI-Adoption intern steuern lernen: KAIRON KI-Orchestrator (2 Tage, 2.900 €) und KAIDOP Manager (1 Tag, 1.400 €). Kurse für Manager im Mittelstand — kein technisches Vorwissen nötig.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.new-thought.com/academy.html">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.new-thought.com/academy.html">
-<meta property="og:title" content="KI-Zertifizierung für Manager | new.thought Academy">
-<meta property="og:description" content="KAIRON KI-Orchestrator: 2-tägige Ausbildung für Manager, die KI-Projekte intern steuern wollen. Monatliche Kohorten, kein technisches Vorwissen nötig.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KI-Zertifizierung für Manager | new.thought Academy">
-<meta name="twitter:description" content="KAIRON KI-Orchestrator und KAIDOP Manager — Zertifizierungen für KI-Adoption im Mittelstand.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css">
-<style>
-  .academy-hero { padding: 80px 0 100px; border-bottom: 1px solid var(--ink); }
-  .academy-badge {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--accent); margin-bottom: 28px;
-  }
-  .academy-badge::before { content: "▲"; font-size: 9px; }
-
-  .kcas-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin-top: 72px; }
-  .kcas-card { padding: 36px 32px; border-right: 1px solid var(--rule); display: flex; flex-direction: column; gap: 14px; }
-  .kcas-card:last-child { border-right: none; }
-  .kcas-card-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); }
-  .kcas-card-title { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
-  .kcas-card-detail { font-size: 14px; color: var(--ink-soft); line-height: 1.55; }
-  .kcas-card-value { margin-top: auto; font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-
-  .module-table { width: 100%; border-collapse: collapse; margin-top: 48px; }
-  .module-table th { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); text-align: left; padding: 12px 16px; border-bottom: 2px solid var(--ink); }
-  .module-table td { padding: 16px; border-bottom: 1px solid var(--rule); font-size: 14px; line-height: 1.5; vertical-align: top; }
-  .module-table tr:last-child td { border-bottom: none; }
-  .module-table td.mod-num { font-family: var(--mono); font-size: 11px; color: var(--ink-mute); width: 48px; }
-  .module-table td.mod-title { font-weight: 600; color: var(--ink); width: 240px; }
-  .module-table td.mod-desc { color: var(--ink-soft); }
-
-  .kohorte-box { background: var(--bg-deep); color: #f3f2ee; padding: 56px; margin-top: 72px; }
-  .kohorte-box .k-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-  .kohorte-box h3 { font-size: 28px; font-weight: 600; letter-spacing: -0.025em; margin-bottom: 12px; }
-  .kohorte-box p { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 56ch; }
-  .kohorte-meta { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.15); margin-top: 36px; padding-top: 32px; }
-  .kohorte-meta .km { display: flex; flex-direction: column; gap: 6px; padding-right: 24px; border-right: 1px solid rgba(255,255,255,0.1); }
-  .kohorte-meta .km:last-child { border-right: none; }
-  .kohorte-meta .km-k { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
-  .kohorte-meta .km-v { font-size: 22px; font-weight: 600; color: #fff; }
-  .kohorte-meta .km-d { font-size: 12px; color: rgba(255,255,255,0.5); }
-
-  .inhouse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--ink); }
-  .inhouse-cell { padding: 48px; }
-  .inhouse-cell:first-child { border-right: 1px solid var(--ink); }
-
-  /* ── FAQ ── */
-  .faq-list { margin-top: 48px; border-top: 1px solid var(--ink); }
-  .faq-item { border-bottom: 1px solid var(--rule); }
-  .faq-item summary {
-    list-style: none; cursor: pointer;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 22px 0; font-size: 17px; font-weight: 600; color: var(--ink);
-    letter-spacing: -0.01em; gap: 24px;
-  }
-  .faq-item summary::-webkit-details-marker { display: none; }
-  .faq-item summary::after {
-    content: "+"; font-size: 22px; font-weight: 300; color: var(--accent);
-    flex-shrink: 0; transition: transform 0.25s;
-  }
-  .faq-item[open] summary::after { transform: rotate(45deg); }
-  .faq-item[open] summary { color: var(--accent); }
-  .faq-answer {
-    font-size: 15px; color: var(--ink-soft); line-height: 1.7;
-    padding: 0 0 24px; max-width: 72ch;
-  }
-
-  /* ── Kohorte Form ── */
-  .kohorte-form { margin-top: 36px; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 32px; display: flex; flex-direction: column; gap: 16px; }
-  .kf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .kf-field { display: flex; flex-direction: column; gap: 8px; }
-  .kf-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
-  .kf-input {
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
-    color: #fff; font-family: var(--sans); font-size: 15px; padding: 12px 16px;
-    border-radius: 0; outline: none; width: 100%; box-sizing: border-box;
-    transition: border-color 0.2s;
-  }
-  .kf-input::placeholder { color: rgba(255,255,255,0.25); }
-  .kf-input:focus { border-color: var(--accent); }
-  .kf-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(255,255,255,0.4)' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; cursor: pointer; }
-  .kf-select option { background: #1a1a1a; color: #fff; }
-  .kf-submit {
-    align-self: flex-start; background: var(--accent); color: #fff; border: none;
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase;
-    padding: 14px 28px; cursor: pointer; transition: opacity 0.2s; font-weight: 600;
-  }
-  .kf-submit:hover { opacity: 0.85; }
-  @media(max-width: 600px) { .kf-row { grid-template-columns: 1fr; } }
-
-  @media(max-width: 900px) {
-    .kcas-cards { grid-template-columns: 1fr; }
-    .kcas-card { border-right: none; border-bottom: 1px solid var(--rule); }
-    .kcas-card:last-child { border-bottom: none; }
-    .kohorte-meta { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .kohorte-meta .km { border-right: none; padding-right: 0; }
-    .inhouse-grid { grid-template-columns: 1fr; }
-    .inhouse-cell:first-child { border-right: none; border-bottom: 1px solid var(--ink); }
-    .kohorte-box { padding: 36px 24px; }
-  }
-    /* Ressourcen-Dropdown */
-    .nav-links { align-items: center; }
-    .nav-links .nav-dropdown { position: relative; display: flex; align-items: center; }
-    .nav-links .nav-dropdown-trigger {
-      font-family: inherit; font-size: 15px; font-weight: 500;
-      color: var(--ink); background: none; border: none;
-      cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 5px;
-      letter-spacing: -0.01em; opacity: 0.75; transition: opacity 0.2s;
-      text-decoration: none;
-    }
-    .nav-links .nav-dropdown-trigger:hover { opacity: 1; }
-    .nav-links .nav-dropdown-trigger::after { content: '↓'; font-size: 11px; opacity: 0.5; transition: transform .2s; }
-    .nav-links .nav-dropdown:hover .nav-dropdown-trigger::after { transform: rotate(180deg); opacity: 0.8; }
-    .nav-links .nav-dropdown-menu {
-      position: absolute; top: calc(100% + 12px); left: 50%;
-      transform: translateX(-50%) translateY(-4px);
-      background: #fff; border: 1px solid var(--rule);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
-      min-width: 220px; padding: 8px; border-radius: 10px;
-      opacity: 0; pointer-events: none;
-      transition: opacity .15s, transform .15s; z-index: 300;
-    }
-    .nav-links .nav-dropdown:hover .nav-dropdown-menu {
-      opacity: 1; pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
-    }
-    .nav-links .nav-dropdown-menu a {
-      display: flex; flex-direction: column; padding: 10px 14px;
-      font-size: 13px; font-weight: 600; color: var(--ink);
-      text-decoration: none; white-space: nowrap; border-radius: 6px;
-      transition: background .15s;
-    }
-    .nav-links .nav-dropdown-menu a span { font-size: 11px; font-weight: 400; color: #999; margin-top: 2px; }
-    .nav-links .nav-dropdown-menu a:hover { background: var(--bg-soft); }
-</style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.new-thought.com/#organization",
-      "name": "new.thought",
-      "url": "https://www.new-thought.com",
-      "logo": "https://www.new-thought.com/logo-dark.png"
-    },
-    {
-      "@type": "Course",
-      "@id": "https://www.new-thought.com/academy.html#kairon-orchestrator",
-      "name": "KAIRON KI-Orchestrator Zertifizierung",
-      "description": "2-tägiges Bootcamp: Manager lernen, KI-Projekte zu steuern, Ceremonies zu moderieren und das KAIRON-System im Unternehmen zu verankern. Abschluss mit KAIRON AI Orchestrator Teilnahmebescheinigung.",
-      "provider": { "@id": "https://www.new-thought.com/#organization" },
-      "courseMode": ["onsite", "online"],
-      "duration": "P2D",
-      "inLanguage": "de-DE",
-      "educationalLevel": "professional",
-      "audience": {
-        "@type": "EducationalAudience",
-        "educationalRole": "Manager, Teamleiter, Projektverantwortliche"
-      },
-      "teaches": [
-        "KI-Governance", "KI-Projektsteuerung", "KI-Adoption",
-        "Ceremony-Moderation", "KI-Playbook", "KI-Organisation"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "2900",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "2900",
-          "priceCurrency": "EUR",
-          "valueAddedTaxIncluded": false
-        },
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.new-thought.com/academy.html#kohorte"
-      },
-      "hasCourseInstance": [
-        {
-          "@type": "CourseInstance",
-          "courseMode": ["onsite", "online"],
-          "duration": "P2D",
-          "instructor": {
-            "@type": "Person",
-            "name": "Nils Blache",
-            "jobTitle": "KI-Adoption Experte",
-            "url": "https://www.new-thought.com"
-          }
-        }
-      ]
-    },
-    {
-      "@type": "Course",
-      "@id": "https://www.new-thought.com/academy.html#kaidop-manager",
-      "name": "KAIDOP Manager Zertifizierung",
-      "description": "1-tägiges Training für Führungskräfte und HR-Verantwortliche: KI-Widerstände bei Mitarbeitenden erkennen, Interventionen entwickeln und den KI-Wandel langfristig begleiten.",
-      "provider": { "@id": "https://www.new-thought.com/#organization" },
-      "courseMode": ["onsite", "online"],
-      "duration": "P1D",
-      "inLanguage": "de-DE",
-      "educationalLevel": "professional",
-      "audience": {
-        "@type": "EducationalAudience",
-        "educationalRole": "Führungskräfte, HR-Verantwortliche, Change Manager"
-      },
-      "teaches": [
-        "KI Change Management", "KI-Widerstände", "KI-Adoption begleiten",
-        "Widerstandstypen KI", "KI-Interventionen"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "price": "1400",
-        "priceCurrency": "EUR",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "price": "1400",
-          "priceCurrency": "EUR",
-          "valueAddedTaxIncluded": false
-        },
-        "availability": "https://schema.org/InStock",
-        "url": "https://www.new-thought.com/academy.html#kaidop-manager"
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://www.new-thought.com/academy.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Für wen ist die Ausbildung zum KAIRON KI-Orchestrator gedacht?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Für Manager, Teamleiter und Projektverantwortliche, die KI nicht nur nutzen, sondern aktiv steuern wollen. Kein technisches Vorwissen nötig. Das System ist für Menschen gebaut, die Verantwortung tragen, nicht für Entwickler."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was lerne ich in der 2-tägigen KI-Zertifizierung?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Du lernst das KAIRON-System in der Praxis: KI-Projekte priorisieren, Meetings strukturieren, Entscheidungen herbeiführen und Wissen im Unternehmen verankern. Du moderierst echte Ceremonies an konkreten Szenarien aus dem Mittelstand und erhältst die KAIRON AI Orchestrator Teilnahmebescheinigung."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was kostet die KAIRON KI-Orchestrator Zertifizierung?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Die öffentliche Kohorte kostet 2.900 € pro Person (zzgl. MwSt.). Das In-Company-Format für 3 oder mehr Personen aus dem gleichen Unternehmen startet ab 6.900 € pauschal und kann terminlich flexibel geplant werden."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Lohnt sich eine KI-Zertifizierung für kleinere Unternehmen?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Gerade dann. In großen Konzernen gibt es KI-Teams. Im Mittelstand ist der zertifizierte interne Orchestrator oft die einzige Person mit dem Überblick. Ein zertifizierter KI-Orchestrator ersetzt Jahre an externer Beratung."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Was ist der Unterschied zwischen KAIRON KI-Orchestrator und KAIDOP Manager?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Der KAIRON KI-Orchestrator (2 Tage, 2.900 €) lernt das vollständige Steuerungssystem für KI-Projekte im Unternehmen. Der KAIDOP Manager (1 Tag, 1.400 €) fokussiert auf KI-Widerstände bei Mitarbeitenden und Change Management. Beide Zertifizierungen sind eigenständig buchbar und ergänzen sich."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Ist KI-Vorwissen für die Zertifizierung notwendig?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Nein. KAIRON ist kein technisches System, sondern ein Organisations- und Steuerungssystem. Es richtet sich an Manager und Führungskräfte — kein Programmier- oder KI-Fachwissen erforderlich."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/ona.css">
 </head>
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="top">
-  <div class="wrap row">
-    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
-    <div class="nav-links">
-      <a href="index.html" class="nav-back">← Start</a>
-      <span class="nav-divider"></span>
-      <a href="#module">KAIRON Orchestrator</a>
-      <a href="#kaidop-manager">KAIDOP Manager</a>
-      <a href="programme.html" class="nav-pill">Programme →</a>
-      <div class="nav-dropdown" id="dd-ressourcen">
-        <a href="ressourcen.html" class="nav-dropdown-trigger">Ressourcen</a>
-        <div class="nav-dropdown-menu">
-          <a href="ressourcen.html">Alle Artikel<span>Guides, Leitfäden, Frameworks</span></a>
-          <a href="ki-readiness-check.html">KI-Readiness-Check<span>Kostenlos · 5 Minuten</span></a>
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <div class="dd">
+        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Programme <span class="cv">⌄</span></button>
+        <div class="dd-menu" role="menu">
+          <a href="/kaistart.html" role="menuitem"><span class="di">◆</span><span class="dl"><b>KAISTART</b><small>AI Opportunity Sprint</small></span></a>
+          <a href="/kaidop.html" role="menuitem"><span class="di">◧</span><span class="dl"><b>KAIDOP</b><small>Adoption Workshop</small></span></a>
+          <a href="/kailead.html" role="menuitem"><span class="di">◐</span><span class="dl"><b>KAILEAD</b><small>Führungskräfte-Training</small></span></a>
+          <a href="/kairon.html" role="menuitem"><span class="di">⬡</span><span class="dl"><b>KAIRON</b><small>Steuerungssystem</small></span></a>
+          <a href="/kairon-executive.html" role="menuitem"><span class="di">★</span><span class="dl"><b>Fractional AI Officer</b><small>KI-Führung auf Zeit</small></span></a>
         </div>
       </div>
+      <a href="/academy.html">Academy</a>
+      <a href="/ressourcen.html">Blog</a>
     </div>
-    <a class="nav-cta" href="#kohorte">Platz sichern →</a>
-    <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+      <a class="btn btn-dark" href="#orchestrator">Platz sichern</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href="index.html" class="mob-link">← Startseite</a>
-  <a href="programme.html" class="mob-link">⬡ Programme ansehen</a>
-  <a href="#module" class="mob-link">KAIRON Orchestrator</a>
-  <a href="#kaidop-manager" class="mob-link">KAIDOP Manager</a>
-  <a href="ressourcen.html" class="mob-link">◈ Blog</a>
-  <a href="ki-readiness-check.html" class="mob-link">◈ KI-Readiness-Check</a>
-  <a href="#kohorte" class="mob-cta">Platz sichern →</a>
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="/kaistart.html">KAISTART</a>
+    <a href="/kaidop.html">KAIDOP</a>
+    <a href="/kailead.html">KAILEAD</a>
+    <a href="/kairon.html">KAIRON</a>
+    <a href="/academy.html">Academy</a>
+    <a href="/ressourcen.html">Blog</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="#orchestrator" class="btn btn-dark">Platz sichern</a>
+  </div>
 </div>
 
-<!-- ====== HERO ====== -->
-<section class="academy-hero" id="top">
-  <div class="wrap">
-    <div class="academy-badge">new.thought Academy</div>
+<main>
 
-    <h1 class="hero-headline reveal in" aria-label="KI-Zertifizierung für Manager: KAIRON KI-Orchestrator Ausbildung für KI-Adoption im Unternehmen">
-      Du wirst<br>
-      KAIRON KI&#8209;Orchestrator<span style="color:var(--accent);">.</span>
-    </h1>
-
-    <div class="hero-sub-bar reveal in" style="transition-delay:.3s;">
-      <div class="txt">
-        <strong>Die KAIRON KI-Orchestrator Zertifizierung</strong> macht interne Manager zum Dreh- und Angelpunkt der KI-Adoption im Unternehmen. 2 Tage Bootcamp, eine Teilnahmebescheinigung, eine Methode — die danach im Unternehmen bleibt.
-      </div>
-      <div class="hero-cta-row">
-        <a class="btn-primary" href="#kohorte">Platz sichern</a>
-        <a class="btn-ghost" href="#module">Module ansehen</a>
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <div class="eyebrow">new.thought Academy</div>
+      <h1 class="serif">KI-Steuerung, die im Unternehmen bleibt.</h1>
+      <p class="sub">Zwei Kurse, die interne Manager zum Dreh- und Angelpunkt der KI-Adoption machen. Kein technisches Vorwissen nötig — gebaut für Menschen, die Verantwortung tragen, nicht für Entwickler.</p>
+      <div class="cta">
+        <a href="#orchestrator" class="btn btn-dark">Platz sichern</a>
+        <a href="/#loesung" class="btn btn-ghost">Programme ansehen</a>
       </div>
     </div>
+  </section>
 
-    <div class="hero-meta">
-      <div class="cell">
-        <span class="k">/ / Format</span>
-        <span class="v" style="font-size:32px; letter-spacing:-0.02em;">2 Tage</span>
-        <span class="d">Bootcamp · Präsenz oder Online</span>
-      </div>
-      <div class="cell">
-        <span class="k">/ / Abschluss</span>
-        <span class="v" style="font-size:16px; letter-spacing:-0.02em;">KAIRON KI-Orchestrator</span>
-        <span class="d">KAIRON AI Orchestrator</span>
-      </div>
-      <div class="cell">
-        <span class="k">/ / Preis</span>
-        <span class="v" style="font-size:32px; letter-spacing:-0.02em;">€ 2.900</span>
-        <span class="d">Pro Person · zzgl. MwSt.</span>
-      </div>
-      <div class="cell">
-        <span class="k">/ / Nächster Start</span>
-        <span class="v" style="font-size:22px; letter-spacing:-0.02em;">Termine monatlich</span>
-        <span class="d">Di / Mi · Ende des Monats</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== WAS LERNST DU ====== -->
-<section class="slide" id="module">
-  <div class="wrap">
-    <div class="slide-header reveal">
-      <h2 class="section-title">Was lernst du? <em>Was kannst du danach?</em></h2>
-      <p class="lead" style="margin-top:12px;">Die Ausbildung zum KAIRON KI-Orchestrator deckt alle Ebenen des KAIRON-Systems ab — von strategischer Steuerung bis zu operativem Ceremony-Management.</p>
-    </div>
-
-    <div class="kcas-cards reveal stag">
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Tag 01 · Vormittag</span>
-        <div class="kcas-card-title">Das System verstehen</div>
-        <p class="kcas-card-detail">Aufbau des KAIRON-Systems, die vier Prinzipien, die drei Ebenen. Du lernst, warum KI-Governance scheitert und was ein funktionierendes System davon unterscheidet.</p>
-        <span class="kcas-card-value">Grundlagen · Framework · Prinzipien</span>
-      </div>
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Tag 01 · Nachmittag</span>
-        <div class="kcas-card-title">Ceremonies & Pipeline führen</div>
-        <p class="kcas-card-detail">Alle 6 Ceremonies in der Praxis: Vorbereitung, Moderation, Entscheidungslogik, Artefakte. Du moderierst Übungs-Ceremonies mit echten Szenarien aus dem Mittelstand.</p>
-        <span class="kcas-card-value">Ceremonies · Pipeline · Entscheidungen</span>
-      </div>
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Tag 02</span>
-        <div class="kcas-card-title">Playbook & Zertifizierung</div>
-        <p class="kcas-card-detail">Playbook-Management, Change-Kommunikation, typische Widerstände und wie du sie überwindest. Abschluss-Assessment und Übergabe der KAIRON KI-Orchestrator Teilnahmebescheinigung.</p>
-        <span class="kcas-card-value">Playbook · Assessment · Teilnahmebescheinigung</span>
-      </div>
-    </div>
-
-    <!-- Module Table -->
-    <table class="module-table reveal">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Modul</th>
-          <th>Inhalt</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td class="mod-num">01</td><td class="mod-title">KAIRON OS Grundlagen</td><td class="mod-desc">Systemaufbau, vier Prinzipien, drei Ebenen, 5 Rollen. Warum Struktur vor Tool kommt.</td></tr>
-        <tr><td class="mod-num">02</td><td class="mod-title">Pipeline Management</td><td class="mod-desc">Use-Case-Bewertung, Priorisierung, Stopp-Signal. Die Pipeline als zentrale Wahrheitsquelle.</td></tr>
-        <tr><td class="mod-num">03</td><td class="mod-title">Ceremony Moderation</td><td class="mod-desc">Alle 6 Ceremonies in der Praxis: AI Horizon Session, AI Board, Pipeline Refinement, Sprint Setup, Impact Demo, Playbook Session.</td></tr>
-        <tr><td class="mod-num">04</td><td class="mod-title">Change & Widerstände</td><td class="mod-desc">Die fünf Widerstandstypen (Angst, Gleichgültigkeit, Macht, Trauma, Lähmung) und konkrete Interventions-Werkzeuge.</td></tr>
-        <tr><td class="mod-num">05</td><td class="mod-title">Playbook Building</td><td class="mod-desc">Wie Erkenntnisse festgehalten, strukturiert und für die Organisation nutzbar gemacht werden.</td></tr>
-        <tr><td class="mod-num">06</td><td class="mod-title">Abschluss-Assessment</td><td class="mod-desc">Praxisnahe Prüfung: Ein Szenario, eine Ceremony, eine Entscheidung. Danach: KAIRON KI-Orchestrator Teilnahmebescheinigung.</td></tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- ====== NÄCHSTE KOHORTE ====== -->
-<section class="slide" id="kohorte" style="background:var(--bg-soft);">
-  <div class="wrap">
-    <div class="slide-header reveal">
-      <h2 class="section-title">Nächste Kohorte. <em>Platz sichern.</em></h2>
-      <p class="lead" style="margin-top:12px;">Die KAIRON KI-Orchestrator Zertifizierung findet in kleinen Gruppen statt — für intensive Ausbildung und echten Austausch. Wer sich meldet, sichert sich seinen Platz in der nächsten Runde.</p>
-    </div>
-
-    <div class="kohorte-box reveal">
-      <div class="k-label">/ / Nächste Kohorte</div>
-      <h3>Platz sichern. Wunschtermin wählen.</h3>
-      <p>Kleine Gruppen, intensive Ausbildung. Tragen Sie sich ein — kein Commitment nötig. Sobald genug Anmeldungen für Ihren Termin vorliegen, erhalten Sie eine Bestätigung.</p>
-      <div class="kohorte-meta">
-        <div class="km">
-          <span class="km-k">Plätze gesamt</span>
-          <span class="km-v">10</span>
-          <span class="km-d">Pro Kohorte</span>
+  <!-- OVERVIEW -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="cards two">
+        <div class="card">
+          <div class="ft-tag">2 Tage · € 2.900</div>
+          <h3>KAIRON KI-Orchestrator</h3>
+          <p>Das gesamte KAIRON-System steuern: vier Prinzipien, drei Ebenen, alle sechs Ceremonies. Nach 2 Tagen führen Sie KI-Governance im eigenen Haus.</p>
+          <a href="#orchestrator" class="arrow-link">Zum Kurs <span class="ar">→</span></a>
         </div>
-        <div class="km">
-          <span class="km-k">Preis</span>
-          <span class="km-v">€ 2.900</span>
-          <span class="km-d">Pro Person · zzgl. MwSt.</span>
-        </div>
-        <div class="km">
-          <span class="km-k">Format</span>
-          <span class="km-v">2 Tage</span>
-          <span class="km-d">Online oder vor Ort</span>
-        </div>
-        <div class="km">
-          <span class="km-k">Termine</span>
-          <span class="km-v" style="font-size:18px;">Monatlich</span>
-          <span class="km-d">Di / Mi · Ende des Monats</span>
+        <div class="card">
+          <div class="ft-tag">1 Tag · € 1.400</div>
+          <h3>KAIDOP Manager</h3>
+          <p>Widerstände gegen KI erkennen, gezielte Interventionen entwickeln und den Wandel begleiten. In einem Tag — mit Methode, die bleibt.</p>
+          <a href="#manager" class="arrow-link">Zum Kurs <span class="ar">→</span></a>
         </div>
       </div>
-
-      <form id="kohorte-form" class="kohorte-form" onsubmit="submitKohorteForm(event)">
-        <div class="kf-row">
-          <div class="kf-field">
-            <label class="kf-label" for="kf-vorname">Vorname</label>
-            <input class="kf-input" id="kf-vorname" name="vorname" type="text" required placeholder="Max">
-          </div>
-          <div class="kf-field">
-            <label class="kf-label" for="kf-nachname">Nachname</label>
-            <input class="kf-input" id="kf-nachname" name="nachname" type="text" required placeholder="Mustermann">
-          </div>
-        </div>
-        <div class="kf-field">
-          <label class="kf-label" for="kf-email">E-Mail</label>
-          <input class="kf-input" id="kf-email" name="email" type="email" required placeholder="max@mustermann.de">
-        </div>
-        <div class="kf-field">
-          <label class="kf-label" for="kf-termin">Wunschtermin</label>
-          <select class="kf-input kf-select" id="kf-termin" name="termin" required>
-            <option value="">Termin wählen …</option>
-            <option>Di 23. / Mi 24. Juni 2026</option>
-            <option>Di 28. / Mi 29. Juli 2026</option>
-            <option>Di 25. / Mi 26. August 2026</option>
-            <option>Di 29. / Mi 30. September 2026</option>
-            <option>Di 27. / Mi 28. Oktober 2026</option>
-            <option>Di 24. / Mi 25. November 2026</option>
-            <option>Di 1. / Mi 2. Dezember 2026</option>
-            <option>Di 26. / Mi 27. Januar 2027</option>
-          </select>
-        </div>
-        <button type="submit" class="kf-submit">Platz anfragen →</button>
-      </form>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== IN-COMPANY ====== -->
-<section class="slide">
-  <div class="wrap">
-    <div class="slide-header reveal">
-      <h2 class="section-title">In-Company. <em>Für Teams.</em></h2>
-      <p class="lead" style="margin-top:12px;">Wer 3 oder mehr Manager gleichzeitig ausbilden will, bucht die KAIRON KI-Orchestrator Zertifizierung als geschlossenes In-Company-Format — direkt im eigenen Unternehmen.</p>
-    </div>
-
-    <div class="inhouse-grid reveal">
-      <div class="inhouse-cell">
-        <span class="kicker">Öffentliche Kohorte</span>
-        <h3 class="sub" style="margin-top:16px; margin-bottom:12px;">Gemischte Gruppe</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-soft);">
-          <li>· 2–10 Teilnehmer aus verschiedenen Unternehmen</li>
-          <li>· Cross-Company-Perspektiven und Netzwerk</li>
-          <li>· € 2.900 pro Person · zzgl. MwSt.</li>
-          <li>· Fixe Termine, monatlich und planbar</li>
-        </ul>
-        <a class="btn-ghost" href="#kohorte" style="margin-top:28px; display:inline-flex;">Platz sichern →</a>
-      </div>
-      <div class="inhouse-cell" style="background:var(--bg-soft);">
-        <span class="kicker" style="color:var(--accent);">In-Company</span>
-        <h3 class="sub" style="margin-top:16px; margin-bottom:12px;">Ihr Team · Ihr Haus</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-soft);">
-          <li>· Ab 3 Teilnehmern aus Ihrem Unternehmen</li>
-          <li>· Inhalte auf Ihre Branche und Use Cases zugeschnitten</li>
-          <li>· Preis auf Anfrage (Pauschal ab € 6.900)</li>
-          <li>· Termin nach Absprache, flexibel</li>
-        </ul>
-        <a class="btn-primary" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener" style="margin-top:28px; display:inline-flex;">Anfrage stellen</a>
+  <!-- ORCHESTRATOR -->
+  <section class="block" id="orchestrator">
+    <div class="wrap reveal">
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Kurs 01</div><h2 class="serif">Sie werden KAIRON KI-Orchestrator.</h2><p>Der Kurs macht interne Manager zum Dreh- und Angelpunkt der KI-Adoption. 2 Tage Bootcamp, eine Teilnahmebescheinigung, eine Methode — die danach im Unternehmen bleibt.</p></div>
+      <div class="stats">
+        <div class="stat"><div class="eyebrow">Format</div><div class="n">2 Tage</div><div class="d">Bootcamp · Präsenz oder Online.</div></div>
+        <div class="stat"><div class="eyebrow">Abschluss</div><div class="n" style="font-size:22px;line-height:1.2">KAIRON KI-Orchestrator</div><div class="d">Teilnahmebescheinigung.</div></div>
+        <div class="stat"><div class="eyebrow">Preis</div><div class="n">€ 2.900</div><div class="d">Pro Person · zzgl. MwSt.</div></div>
+        <div class="stat"><div class="eyebrow">Nächster Start</div><div class="n" style="font-size:22px;line-height:1.2">Monatlich</div><div class="d">Di / Mi · Ende des Monats.</div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ====== FAQ KAIRON ====== -->
-<section class="slide">
-  <div class="wrap">
-    <div class="slide-header reveal">
-      <h2 class="section-title">Häufige Fragen. <em>Ehrliche Antworten.</em></h2>
-    </div>
-    <details class="faq-item reveal">
-      <summary>Für wen ist die Ausbildung zum KAIRON KI-Orchestrator gedacht?</summary>
-      <p class="faq-answer">Für Manager, Teamleiter und Projektverantwortliche, die KI nicht nur nutzen, sondern aktiv steuern wollen. Kein technisches Vorwissen nötig. Das System ist für Menschen gebaut, die Verantwortung tragen, nicht für Entwickler.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was lerne ich in 2 Tagen wirklich?</summary>
-      <p class="faq-answer">Du lernst, wie das KAIRON-System funktioniert: Wie du KI-Projekte priorisierst, Meetings strukturierst, Entscheidungen herbeiführst und Wissen im Unternehmen verankerst. Du moderierst echte Ceremonies, nicht in der Theorie, sondern an konkreten Szenarien aus dem Mittelstand.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was ist danach in meinem Unternehmen anders?</summary>
-      <p class="faq-answer">Du kannst sofort loslegen. Du hast ein Playbook, eine Methode und die Teilnahmebescheinigung, die deine Rolle legitimiert. Statt auf externe Berater zu warten, steuerst du selbst, nachhaltig und ohne Folgeabhängigkeit.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Warum nicht einfach YouTube-Kurse oder ein KI-Tool-Seminar?</summary>
-      <p class="faq-answer">Weil KAIRON kein Tool-Training ist, sondern ein Steuerungssystem. Es geht darum, dass KI im Unternehmen echten Geschäftswert schafft und die Organisation sich strukturell mit dem Wandel mitentwickelt. Das lernst du nicht auf YouTube, sondern im direkten Austausch, an echten Szenarien, mit einer Teilnahmebescheinigung, die intern zählt.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Lohnt sich das für kleinere Unternehmen?</summary>
-      <p class="faq-answer">Gerade dann. In großen Konzernen gibt es KI-Teams. Im Mittelstand bist du oft der Einzige, der den Überblick behalten muss. Genau dafür ist KAIRON KI-Orchestrator gebaut. Ein zertifizierter interner Orchestrator ersetzt Jahre an externer Beratung.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was kostet mich das Nichtstun?</summary>
-      <p class="faq-answer">Jeder Monat ohne Struktur bedeutet KI-Projekte ohne Bewertung, Budgets ohne Wirkungsnachweis und Mitarbeitende, die auf eigene Faust experimentieren. Der Schaden entsteht nicht durch eine falsche Entscheidung, sondern durch keine.</p>
-    </details>
-  </div>
-</section>
-
-<!-- ====== KAIDOP MANAGER ====== -->
-<section class="slide" id="kaidop-manager" style="border-top: 1px solid var(--ink);">
-  <div class="wrap">
-    <div class="slide-header reveal">
-      <div class="academy-badge">KAIDOP Manager Ausbildung</div>
-      <h2 class="section-title">Du wirst <em>zertifizierter</em><br>KAIDOP Manager<span style="color:var(--accent);">.</span></h2>
-      <p class="lead" style="margin-top:12px;">Der KAIDOP Manager erkennt Widerstände gegen KI im Unternehmen, entwickelt gezielte Interventionen und begleitet den Wandel langfristig. 1 Tag Training — eine Teilnahmebescheinigung, die intern wirkt.</p>
-    </div>
-
-    <div class="kcas-cards reveal stag" style="margin-top:48px;">
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Modul 01</span>
-        <div class="kcas-card-title">Widerstände erkennen</div>
-        <p class="kcas-card-detail">Die fünf KAIDOP-Typen: Angst, Gleichgültigkeit, Macht, Trauma, Lähmung. Du lernst, jeden Typ zu diagnostizieren, einzuordnen und im Gespräch zu benennen.</p>
-        <span class="kcas-card-value">Diagnose · Typisierung · Muster</span>
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Was Sie lernen — und danach können.</h2><p>Die Ausbildung deckt alle Ebenen des KAIRON-Systems ab: von strategischer Steuerung bis zu operativem Ceremony-Management.</p></div>
+      <div class="tcards">
+        <div class="tcard"><div class="ix">01</div><h3>Das System verstehen</h3><div class="q">Tag 1 · Vormittag</div><p>Aufbau des KAIRON-Systems, die vier Prinzipien, die drei Ebenen. Warum KI-Governance scheitert — und was ein funktionierendes System davon unterscheidet.</p></div>
+        <div class="tcard"><div class="ix">02</div><h3>Ceremonies &amp; Pipeline führen</h3><div class="q">Tag 1 · Nachmittag</div><p>Alle 6 Ceremonies in der Praxis: Vorbereitung, Moderation, Entscheidungslogik, Artefakte. Sie moderieren Übungs-Ceremonies mit echten Mittelstands-Szenarien.</p></div>
+        <div class="tcard"><div class="ix">03</div><h3>Playbook &amp; Abschluss</h3><div class="q">Tag 2</div><p>Playbook-Management, Change-Kommunikation, typische Widerstände und ihre Überwindung. Abschluss-Assessment und Übergabe der Teilnahmebescheinigung.</p></div>
       </div>
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Modul 02</span>
-        <div class="kcas-card-title">Interventionen entwickeln</div>
-        <p class="kcas-card-detail">Konkrete Werkzeuge und Gesprächsführung für jeden Widerstandstyp. Wie du als Führungskraft oder HR-Verantwortlicher wirksam eingreifst — ohne Konfrontation.</p>
-        <span class="kcas-card-value">Interventionen · Gesprächsführung · Werkzeuge</span>
-      </div>
-      <div class="kcas-card">
-        <span class="kcas-card-tag">Modul 03</span>
-        <div class="kcas-card-title">Wandel steuern</div>
-        <p class="kcas-card-detail">Wie du Veränderungsprozesse rund um KI langfristig begleitest — mit Messpunkten, Rückkopplungsschleifen und einem eigenen KAIDOP-Playbook für dein Unternehmen.</p>
-        <span class="kcas-card-value">Change · Playbook · Assessment</span>
-      </div>
+      <table class="ptable">
+        <thead><tr><th>#</th><th>Modul</th><th>Inhalt</th></tr></thead>
+        <tbody>
+          <tr><td>01</td><td class="muted">KAIRON OS Grundlagen</td><td class="muted">Systemaufbau, vier Prinzipien, drei Ebenen, 5 Rollen. Warum Struktur vor Tool kommt.</td></tr>
+          <tr><td>02</td><td class="muted">Pipeline Management</td><td class="muted">Use-Case-Bewertung, Priorisierung, Stopp-Signal. Die Pipeline als zentrale Wahrheitsquelle.</td></tr>
+          <tr><td>03</td><td class="muted">Ceremony Moderation</td><td class="muted">Alle 6 Ceremonies in der Praxis: Horizon Session, AI Board, Pipeline Refinement, Sprint Setup, Impact Demo, Playbook Session.</td></tr>
+          <tr><td>04</td><td class="muted">Change &amp; Widerstände</td><td class="muted">Die fünf Widerstandstypen und konkrete Interventions-Werkzeuge.</td></tr>
+          <tr><td>05</td><td class="muted">Playbook Building</td><td class="muted">Wie Erkenntnisse festgehalten, strukturiert und für die Organisation nutzbar gemacht werden.</td></tr>
+          <tr><td>06</td><td class="muted">Abschluss-Assessment</td><td class="muted">Ein Szenario, eine Ceremony, eine Entscheidung. Danach: Teilnahmebescheinigung.</td></tr>
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <div class="kohorte-box reveal" style="margin-top:48px;">
-      <div class="k-label">/ / Ausbildungsformat</div>
-      <h3>1 Tag. Teilnahmebescheinigung. Methode, die bleibt.</h3>
-      <p>Das KAIDOP Manager Training richtet sich an Führungskräfte, HR-Verantwortliche und Change Manager, die KI-Einführung intern begleiten. Einzeln oder als Inhouse-Format buchbar.</p>
-      <div class="kohorte-meta">
-        <div class="km">
-          <span class="km-k">Format</span>
-          <span class="km-v">1 Tag</span>
-          <span class="km-d">Online oder vor Ort</span>
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="compare">
+        <div class="col no" style="border-color:var(--line);background:var(--surface)">
+          <h4 style="color:var(--green)">Öffentliche Kohorte</h4>
+          <ul>
+            <li>2–10 Teilnehmer aus verschiedenen Unternehmen</li>
+            <li>Cross-Company-Perspektiven und Netzwerk</li>
+            <li>€ 2.900 pro Person · zzgl. MwSt.</li>
+            <li>Fixe Termine, monatlich und planbar</li>
+          </ul>
+          <a href="mailto:nils@new-thought.com?subject=KAIRON%20KI-Orchestrator%20—%20Platz%20sichern" class="btn btn-dark" style="margin-top:8px">Platz sichern</a>
         </div>
-        <div class="km">
-          <span class="km-k">Abschluss</span>
-          <span class="km-v" style="font-size:18px;">KAIDOP Manager</span>
-          <span class="km-d">Zertifizierter Abschluss</span>
-        </div>
-        <div class="km">
-          <span class="km-k">Preis</span>
-          <span class="km-v">€ 1.400</span>
-          <span class="km-d">Pro Person · zzgl. MwSt.</span>
-        </div>
-        <div class="km">
-          <span class="km-k">Termine</span>
-          <span class="km-v" style="font-size:18px;">Monatlich</span>
-          <span class="km-d">Di / Mi · Ende des Monats</span>
+        <div class="col yes">
+          <h4>In-Company · Ihr Team</h4>
+          <ul>
+            <li>Ab 3 Teilnehmern aus Ihrem Unternehmen</li>
+            <li>Inhalte auf Ihre Branche und Use Cases zugeschnitten</li>
+            <li>Preis auf Anfrage (pauschal ab € 6.900)</li>
+            <li>Termin nach Absprache, flexibel</li>
+          </ul>
+          <a href="mailto:nils@new-thought.com?subject=KAIRON%20KI-Orchestrator%20In-Company" class="btn btn-ghost" style="margin-top:8px;background:#fff">Anfrage stellen</a>
         </div>
       </div>
-
-      <form id="kaidop-form" class="kohorte-form" onsubmit="submitKaidopForm(event)">
-        <div class="kf-row">
-          <div class="kf-field">
-            <label class="kf-label" for="kd-vorname">Vorname</label>
-            <input class="kf-input" id="kd-vorname" name="vorname" type="text" required placeholder="Max">
-          </div>
-          <div class="kf-field">
-            <label class="kf-label" for="kd-nachname">Nachname</label>
-            <input class="kf-input" id="kd-nachname" name="nachname" type="text" required placeholder="Mustermann">
-          </div>
-        </div>
-        <div class="kf-field">
-          <label class="kf-label" for="kd-email">E-Mail</label>
-          <input class="kf-input" id="kd-email" name="email" type="email" required placeholder="max@mustermann.de">
-        </div>
-        <div class="kf-field">
-          <label class="kf-label" for="kd-termin">Wunschtermin</label>
-          <select class="kf-input kf-select" id="kd-termin" name="termin" required>
-            <option value="">Termin wählen …</option>
-            <option>Di 16. / Mi 17. Juni 2026</option>
-            <option>Di 21. / Mi 22. Juli 2026</option>
-            <option>Di 18. / Mi 19. August 2026</option>
-            <option>Di 22. / Mi 23. September 2026</option>
-            <option>Di 20. / Mi 21. Oktober 2026</option>
-            <option>Di 17. / Mi 18. November 2026</option>
-            <option>Di 24. / Mi 25. November 2026</option>
-            <option>Di 19. / Mi 20. Januar 2027</option>
-          </select>
-        </div>
-        <button type="submit" class="kf-submit">Platz anfragen →</button>
-      </form>
+      <p class="eyebrow" style="margin-top:20px">Nächste Termine · Di/Mi: 23./24. Juni · 28./29. Juli · 25./26. Aug · 29./30. Sep · 27./28. Okt · 24./25. Nov 2026</p>
     </div>
+  </section>
 
-    <div class="slide-header reveal" style="margin-top:72px;">
-      <h2 class="section-title">In-Company. <em>Für Teams.</em></h2>
-      <p class="lead" style="margin-top:12px;">Wer 3 oder mehr Führungskräfte gleichzeitig ausbilden will, bucht das KAIDOP Manager Training als geschlossenes In-Company-Format direkt im eigenen Unternehmen.</p>
-    </div>
-
-    <div class="inhouse-grid reveal">
-      <div class="inhouse-cell">
-        <span class="kicker">Öffentliche Kohorte</span>
-        <h3 class="sub" style="margin-top:16px; margin-bottom:12px;">Gemischte Gruppe</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-soft);">
-          <li>· 2–10 Teilnehmer aus verschiedenen Unternehmen</li>
-          <li>· Cross-Company-Perspektiven und Netzwerk</li>
-          <li>· € 1.400 pro Person · zzgl. MwSt.</li>
-          <li>· Fixe Termine, monatlich und planbar</li>
-        </ul>
-        <a class="btn-ghost" href="#kaidop-manager" style="margin-top:28px; display:inline-flex;">Platz anfragen →</a>
+  <!-- MANAGER -->
+  <section class="block" id="manager">
+    <div class="wrap reveal">
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Kurs 02</div><h2 class="serif">Sie werden KAIDOP Manager.</h2><p>Der KAIDOP Manager erkennt Widerstände gegen KI, entwickelt gezielte Interventionen und begleitet den Wandel langfristig. 1 Tag Training — eine Teilnahmebescheinigung, die intern wirkt.</p></div>
+      <div class="tcards">
+        <div class="tcard"><div class="ix">01</div><h3>Widerstände erkennen</h3><p>Die fünf KAIDOP-Typen: Angst, Gleichgültigkeit, Macht, Trauma, Lähmung. Jeden Typ diagnostizieren, einordnen und im Gespräch benennen.</p></div>
+        <div class="tcard"><div class="ix">02</div><h3>Interventionen entwickeln</h3><p>Konkrete Werkzeuge und Gesprächsführung für jeden Widerstandstyp — wirksam eingreifen, ohne Konfrontation.</p></div>
+        <div class="tcard"><div class="ix">03</div><h3>Wandel steuern</h3><p>Veränderungsprozesse rund um KI langfristig begleiten — mit Messpunkten, Rückkopplungsschleifen und einem eigenen KAIDOP-Playbook.</p></div>
       </div>
-      <div class="inhouse-cell" style="background:var(--bg-soft);">
-        <span class="kicker" style="color:var(--accent);">In-Company</span>
-        <h3 class="sub" style="margin-top:16px; margin-bottom:12px;">Ihr Team · Ihr Haus</h3>
-        <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-soft);">
-          <li>· Ab 3 Teilnehmern aus Ihrem Unternehmen</li>
-          <li>· Inhalte auf Ihre Branche und Use Cases zugeschnitten</li>
-          <li>· Preis auf Anfrage (Pauschal ab € 3.900)</li>
-          <li>· Termin nach Absprache, flexibel</li>
-        </ul>
-        <a class="btn-primary" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener" style="margin-top:28px; display:inline-flex;">Anfrage stellen</a>
+      <div class="stats" style="margin-top:24px">
+        <div class="stat"><div class="eyebrow">Format</div><div class="n">1 Tag</div><div class="d">Online oder vor Ort.</div></div>
+        <div class="stat"><div class="eyebrow">Abschluss</div><div class="n" style="font-size:22px;line-height:1.2">KAIDOP Manager</div><div class="d">Mit Teilnahmebescheinigung.</div></div>
+        <div class="stat"><div class="eyebrow">Preis</div><div class="n">€ 1.400</div><div class="d">Pro Person · zzgl. MwSt.</div></div>
+        <div class="stat"><div class="eyebrow">Termine</div><div class="n" style="font-size:22px;line-height:1.2">Monatlich</div><div class="d">Di / Mi · Ende des Monats.</div></div>
+      </div>
+      <div style="margin-top:24px"><a href="mailto:nils@new-thought.com?subject=KAIDOP%20Manager%20—%20Platz%20anfragen" class="btn btn-dark">Platz anfragen</a></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head center"><h2 class="serif">Häufige Fragen. Ehrliche Antworten.</h2></div>
+      <div class="faq">
+        <details><summary>Für wen ist die Ausbildung gedacht?</summary><div class="fa">Für Manager, Teamleiter und Projektverantwortliche, die KI nicht nur nutzen, sondern aktiv steuern wollen. Kein technisches Vorwissen nötig — das System ist für Menschen gebaut, die Verantwortung tragen, nicht für Entwickler.</div></details>
+        <details><summary>Was lerne ich in 2 Tagen wirklich?</summary><div class="fa">Wie das KAIRON-System funktioniert: KI-Projekte priorisieren, Meetings strukturieren, Entscheidungen herbeiführen und Wissen im Unternehmen verankern. Sie moderieren echte Ceremonies an konkreten Mittelstands-Szenarien — nicht in der Theorie.</div></details>
+        <details><summary>Was ist danach in meinem Unternehmen anders?</summary><div class="fa">Sie können sofort loslegen. Sie haben ein Playbook, eine Methode und die Teilnahmebescheinigung, die Ihre Rolle legitimiert. Statt auf externe Berater zu warten, steuern Sie selbst — nachhaltig und ohne Folgeabhängigkeit.</div></details>
+        <details><summary>Warum nicht einfach ein YouTube-Kurs oder Tool-Seminar?</summary><div class="fa">Weil KAIRON kein Tool-Training ist, sondern ein Steuerungssystem. Es geht darum, dass KI echten Geschäftswert schafft und die Organisation sich strukturell mitentwickelt. Das lernt man nicht auf YouTube, sondern im direkten Austausch an echten Szenarien.</div></details>
+        <details><summary>Muss ich KAIRON kennen, um KAIDOP zu verstehen?</summary><div class="fa">Nein. KAIDOP ist eigenständig. Sie brauchen kein KI-System-Wissen, nur die Bereitschaft, Widerstände nicht zu ignorieren, sondern aktiv zu lösen.</div></details>
+        <details><summary>Was kostet mich das Nichtstun?</summary><div class="fa">Jeder Monat ohne Struktur bedeutet KI-Projekte ohne Bewertung, Budgets ohne Wirkungsnachweis und Mitarbeitende, die auf eigene Faust experimentieren. Der Schaden entsteht nicht durch eine falsche Entscheidung, sondern durch keine.</div></details>
       </div>
     </div>
+  </section>
 
-    <div class="slide-header reveal" style="margin-top:72px; border-top:1px solid var(--ink); padding-top:72px;">
-      <h2 class="section-title">Häufige Fragen. <em>Ehrliche Antworten.</em></h2>
-    </div>
-    <details class="faq-item reveal">
-      <summary>Ich führe seit Jahren Teams. Was zeigt mir dieses Training noch?</summary>
-      <p class="faq-answer">KI-Widerstände sind eine eigene Kategorie. Angst vor Jobverlust, Gleichgültigkeit, Machtkämpfe um neue Prozesse: das sind keine klassischen Veränderungswiderstände. KAIDOP gibt dir das spezifische Handwerkszeug, das im KI-Kontext funktioniert.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was bringt mir das Training konkret im Alltag?</summary>
-      <p class="faq-answer">Du erkennst, welcher Widerstandstyp in deinem Team aktiv ist, weißt wie du ihn ansprichst, und hast konkrete Gesprächsansätze für jede Situation. Kein Modell aus dem Lehrbuch, sondern Methoden, die du am nächsten Tag einsetzen kannst.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Muss ich KAIRON kennen, um KAIDOP zu verstehen?</summary>
-      <p class="faq-answer">Nein. KAIDOP ist eigenständig. Du brauchst kein KI-System-Wissen, nur die Bereitschaft, Widerstände nicht zu ignorieren, sondern aktiv zu lösen.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was ist der Unterschied zu normalem Change Management?</summary>
-      <p class="faq-answer">Change Management ist generisch. KAIDOP ist spezifisch auf KI-Adoption ausgerichtet, mit den Widerstandstypen, Mustern und Interventionen, die genau in diesem Kontext auftreten. Das spart Zeit und liefert schneller sichtbare Ergebnisse im Team.</p>
-    </details>
-    <details class="faq-item reveal">
-      <summary>Was passiert, wenn ich die Widerstände nicht aktiv angehe?</summary>
-      <p class="faq-answer">KI-Tools werden eingeführt, aber nicht genutzt. Projekte starten, aber versanden. Investitionen bleiben ohne Wirkung. Der Widerstand verschwindet nicht von selbst. Er wächst, bis er die gesamte Initiative blockiert.</p>
-    </details>
-  </div>
-</section>
-
-<!-- ====== FINAL CTA ====== -->
-<section class="cta" id="cta">
-  <div class="wrap">
-    <div style="max-width:840px;">
-      <span class="kicker" style="color:var(--accent);">Fragen? · Kein Commit nötig</span>
-      <h2 style="margin-top:28px;">
-        Nicht sicher, ob die Ausbildung<br>
-        das Richtige für Sie ist<span class="period">?</span>
-      </h2>
-      <p class="lead">
-        Buchen Sie ein 30-Minuten-Gespräch. Kein Pitch, kein Druck. Wir klären gemeinsam, ob die Academy oder ein anderer Weg besser passt.
-      </p>
-      <div class="btn-row" style="margin-top:32px;">
-        <a class="btn-primary" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Kurzgespräch buchen</a>
-        <a class="btn-ghost" href="index.html">Hauptseite ansehen</a>
+  <!-- CTA -->
+  <section class="block" id="kontakt">
+    <div class="wrap reveal">
+      <div class="cta-band">
+        <div class="eyebrow" style="color:#bfe0c9;margin-bottom:14px">Fragen? Kein Commitment nötig</div>
+        <h2 class="serif">Nicht sicher, ob die Academy das Richtige ist?</h2>
+        <p>Buchen Sie ein 30-Minuten-Gespräch. Kein Pitch, kein Druck. Wir klären gemeinsam, ob die Academy oder ein anderer Weg besser passt.</p>
+        <div class="cta">
+          <a href="mailto:nils@new-thought.com?subject=Academy%20Kurzgespräch" class="btn btn-light">Kurzgespräch buchen</a>
+          <a href="/#loesung" class="btn btn-outline">Programme ansehen</a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</main>
 
 <footer>
-  <div class="wrap row">
-    <div>© new.thought · Academy</div>
-    <div style="display:flex; gap:24px; flex-wrap:wrap;">
-      <a href="index.html">Hauptseite</a>
-      <a href="index.html#ki-adoption">KAIDOP</a>
-      <a href="index.html#kairon">KAIRON</a>
-      <a href="#kohorte">Academy</a>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Adoption &amp; Enablement für den Mittelstand. Anfassbar gemacht.</p>
+      </div>
+      <div class="foot-col"><h4>Programme</h4><a href="/kaidop.html">KAIDOP</a><a href="/kailead.html">KAILEAD</a><a href="/kairon.html">KAIRON</a><a href="/kairon-executive.html">Fractional AI Officer</a></div>
+      <div class="foot-col"><h4>Academy</h4><a href="#orchestrator">KI-Orchestrator</a><a href="#manager">KAIDOP Manager</a></div>
+      <div class="foot-col"><h4>Ressourcen</h4><a href="/ressourcen.html">Blog</a><a href="/ki-readiness-check.html">KI-Readiness-Check</a><a href="#kontakt">Erstgespräch</a></div>
+      <div class="foot-col"><h4>Unternehmen</h4><a href="/#loesung">Programme</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div>
     </div>
-    <div style="display:flex; gap:20px;">
-      <a href="index.html" style="font-family:var(--mono); font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute);">Impressum</a>
+    <div class="foot-bottom">
+      <div class="legal"><span>© 2026 new.thought</span><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div>
     </div>
   </div>
 </footer>
 
 <script>
-  // Kohorte Form
-  function submitKohorteForm(e) {
-    e.preventDefault();
-    const f = e.target;
-    const vorname = f.vorname.value.trim();
-    const nachname = f.nachname.value.trim();
-    const email = f.email.value.trim();
-    const termin = f.termin.value;
-    const subject = `Buchungsanfrage KAIRON KI-Orchestrator – ${vorname} ${nachname}`;
-    const body = `Neue Buchungsanfrage für die KAIRON KI-Orchestrator Kohorte:\n\nVorname: ${vorname}\nNachname: ${nachname}\nE-Mail: ${email}\nGewählter Termin: ${termin}\n\n---\nBitte Rechnung stellen.`;
-    window.location.href = `mailto:nils@new-thought.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  // KAIDOP Manager Form
-  function submitKaidopForm(e) {
-    e.preventDefault();
-    const f = e.target;
-    const vorname = f.vorname.value.trim();
-    const nachname = f.nachname.value.trim();
-    const email = f.email.value.trim();
-    const termin = f.termin.value;
-    const subject = `Anfrage Zertifizierung KAIDOP Manager – ${vorname} ${nachname}`;
-    const body = `Neue Anfrage für die KAIDOP Manager Zertifizierung:\n\nVorname: ${vorname}\nNachname: ${nachname}\nE-Mail: ${email}\nGewählter Termin: ${termin}\n\n---\nBitte Rechnung stellen.`;
-    window.location.href = `mailto:nils@new-thought.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const navMobile = document.getElementById('nav-mobile');
-  if (hamburger && navMobile) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      navMobile.classList.toggle('open');
-    });
-    navMobile.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        navMobile.classList.remove('open');
-      });
-    });
-  }
-
-  // Reveal on scroll
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-  document.querySelectorAll('.stag').forEach(el => obs.observe(el));
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+  const ov = document.getElementById('mOverlay');
+  document.getElementById('hamburger').addEventListener('click', () => { ov.classList.add('open'); document.body.style.overflow='hidden'; });
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow=''; };
+  document.getElementById('mClose').addEventListener('click', close);
+  ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+  const io = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold:0.08, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
+
 </body>
 </html>
