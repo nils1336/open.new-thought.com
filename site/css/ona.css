@@ -573,3 +573,23 @@ footer{ border-top:1px solid var(--line); padding:64px 0 40px; }
 .price-card p{ color:rgba(255,255,255,.6); font-size:14px; margin:12px 0 20px; line-height:1.5; }
 .price-card .btn{ width:100%; justify-content:center; }
 @media (max-width:920px){ .darkband .ds-deliver{ grid-template-columns:1fr; gap:28px; } }
+
+/* ============================================================
+   ROI CALCULATOR (KAIRON)
+   ============================================================ */
+.calc{ display:grid; grid-template-columns:1fr 1fr; gap:0; background:var(--surface); border:1px solid var(--line); border-radius:24px; overflow:hidden; margin-top:30px; box-shadow:0 30px 70px -56px rgba(0,0,0,.3); }
+.calc-in{ padding:40px 38px; border-right:1px solid var(--line); }
+.calc-in .cg{ margin-bottom:26px; }
+.calc-in .cg:last-child{ margin-bottom:0; }
+.calc-in label{ display:flex; justify-content:space-between; align-items:baseline; font-size:14px; font-weight:500; margin-bottom:12px; }
+.calc-in label .v{ color:var(--green); font-weight:600; font-family:var(--serif); font-size:18px; }
+.calc-in input[type=range]{ width:100%; accent-color:var(--green); height:4px; }
+.calc-out{ padding:42px 38px; background:#17171a; color:#fff; display:flex; flex-direction:column; justify-content:center; }
+.calc-out .eyebrow{ color:rgba(255,255,255,.45); }
+.calc-out .big{ font-family:var(--serif); font-weight:440; font-size:clamp(38px,4.6vw,58px); line-height:1; margin:12px 0 4px; }
+.calc-out .big-l{ color:rgba(255,255,255,.5); font-size:13.5px; margin-bottom:26px; }
+.calc-out .crow{ display:flex; justify-content:space-between; gap:14px; padding:12px 0; border-top:1px solid rgba(255,255,255,.1); font-size:14px; color:rgba(255,255,255,.72); }
+.calc-out .crow b{ color:#fff; font-weight:600; }
+.calc-out .crow.win{ color:#7fd29a; } .calc-out .crow.win b{ color:#7fd29a; }
+.calc-note{ font-size:12px; color:var(--ink-3); margin-top:16px; line-height:1.5; max-width:70ch; }
+@media (max-width:920px){ .calc{ grid-template-columns:1fr; } .calc-in{ border-right:none; border-bottom:1px solid var(--line); } }

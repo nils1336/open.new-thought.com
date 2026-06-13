@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150" role="img" aria-label="new.thought">
+  <rect width="600" height="150" fill="#0a0a0a"/>
+  <g font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="64" letter-spacing="-2">
+    <text x="34" y="96" fill="#00e5ff">new.thought</text>
+    <text x="40" y="100" fill="#ff3ea5">new.thought</text>
+    <text x="37" y="98" fill="#ffffff">new.thought</text>
+  </g>
+</svg>
