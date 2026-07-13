@@ -44,7 +44,11 @@ export default defineConfig({
         kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html'),
         kairon: resolve(__dirname, 'site/kairon.html'),
         kaidop: resolve(__dirname, 'site/kaidop.html'),
-        kailead: resolve(__dirname, 'site/kailead.html')
+        kailead: resolve(__dirname, 'site/kailead.html'),
+        kaistart: resolve(__dirname, 'site/kaistart.html'),
+        impressum: resolve(__dirname, 'site/impressum.html'),
+        datenschutz: resolve(__dirname, 'site/datenschutz.html'),
+        aiTransformationFacilitator: resolve(__dirname, 'site/ai-transformation-facilitator.html')
       }
     }
   }
