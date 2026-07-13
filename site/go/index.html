@@ -1,0 +1,867 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Transformation Sprint Masterclass — Werde der KI-Berater, den Unternehmen suchen</title>
+<meta name="description" content="Lerne in 6 Wochen den replizierbaren 5-Tage-KI-Sprint, mit dem du KI-Transformation in Unternehmen durchführst — und 3.000–6.000 € pro Auftrag verdienst. Für Berater, Coaches & interne KI-Champions.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://go.new-thought.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="KI-Transformation Sprint Masterclass">
+<meta property="og:description" content="Der replizierbare 5-Tage-KI-Sprint, den du immer wieder verkaufst. Werde der KI-Berater, den Unternehmen gerade verzweifelt suchen.">
+<meta property="og:url" content="https://go.new-thought.com/">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   go.new-thought.com — KI-Transformation Sprint Masterclass
+   BOLD Funnel-Design (AJ&Smart-Energie): Space-Grotesk-Headlines,
+   Lime-Pop-Akzent, Highlight-Marker, kräftige Buttons & Cards.
+   ============================================================ */
+:root{
+  --bg:#f4f3ef; --surface:#ffffff; --surface-2:#f7f6f1;
+  --ink:#15150f; --ink-2:#54544c; --ink-3:#8f8f86;
+  --line:#e6e5df; --line-2:#efeee9;
+  --green:#1f7a44; --green-2:#2f6b43; --green-soft:#e8f3ea; --green-deep:#10311d;
+  --lime:#c2f24a; --lime-deep:#a9df2c; --lime-ink:#1a2b06;
+  --gold:#f0a92a;
+  --btn:#15150f; --danger:#c43d2b;
+  --display:'Space Grotesk',system-ui,sans-serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --maxw:1140px; --read:780px; --pad:22px; --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased;font-size:16px;overflow-x:hidden}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.read{max-width:var(--read);margin:0 auto;padding:0 var(--pad)}
+.serif{font-family:var(--display);font-weight:700;letter-spacing:-0.025em;line-height:1.02}
+a{color:inherit}
+img{max-width:100%}
+.center{text-align:center}
+.green{color:var(--green)}
+.strike{color:var(--ink-3);text-decoration:line-through}
+
+/* ---- Highlight marker (Schlüsselwörter) ---- */
+.hl{background:var(--lime);color:var(--lime-ink);padding:.04em .2em;border-radius:5px;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;font-weight:inherit}
+.hl-u{background:linear-gradient(transparent 58%,var(--lime) 58%);padding:0 .04em}
+
+/* ---- Buttons ---- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  font-family:var(--display);font-weight:700;font-size:17px;line-height:1.1;letter-spacing:-.01em;
+  padding:19px 36px;border-radius:13px;border:2px solid transparent;cursor:pointer;
+  text-decoration:none;transition:transform .14s,box-shadow .2s,background .2s;text-align:center}
+.btn-green{background:var(--green);color:#fff;box-shadow:0 10px 0 -2px #134d2a,0 16px 30px rgba(20,60,33,.32)}
+.btn-green:hover{transform:translateY(-3px);box-shadow:0 13px 0 -2px #134d2a,0 22px 40px rgba(20,60,33,.4);background:#1c8a4b}
+.btn-green:active{transform:translateY(2px);box-shadow:0 6px 0 -2px #134d2a,0 10px 20px rgba(20,60,33,.3)}
+.btn-lime{background:var(--lime);color:var(--lime-ink);box-shadow:0 10px 0 -2px var(--lime-deep),0 16px 30px rgba(120,160,20,.3)}
+.btn-lime:hover{transform:translateY(-3px);background:#cdf85e}
+.btn-dark{background:var(--btn);color:#fff}
+.btn-dark:hover{transform:translateY(-3px);background:#000}
+.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff}
+.btn-lg{font-size:19px;padding:22px 46px}
+.btn-block{display:flex;width:100%}
+.cta-sub{font-size:13.5px;color:var(--ink-3);margin-top:16px;line-height:1.5;font-weight:500}
+
+/* ---- Rating / credibility ---- */
+.rating{display:inline-flex;align-items:center;gap:11px;flex-wrap:wrap;justify-content:center}
+.stars{color:var(--gold);font-size:18px;letter-spacing:2px}
+.rating .rt{font-size:13.5px;color:var(--ink-2);font-weight:600}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;
+  font-size:12.5px;letter-spacing:.02em;padding:7px 14px;border-radius:100px;
+  background:var(--ink);color:#fff}
+.pill.lime{background:var(--lime);color:var(--lime-ink)}
+.pill.outline{background:transparent;border:1.5px solid var(--line);color:var(--ink-2)}
+
+/* ---- Topbar ---- */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(244,243,239,.82);
+  backdrop-filter:blur(12px);border-bottom:2px solid transparent;transition:border-color .2s,background .2s}
+.topbar.scrolled{border-color:var(--ink);background:rgba(244,243,239,.96)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.brand{display:flex;align-items:center;gap:9px;font-family:var(--display);font-weight:700;font-size:19px;
+  text-decoration:none;letter-spacing:-.02em}
+.brand .mark{width:22px;height:22px;border-radius:7px;background:var(--ink);position:relative;display:inline-block}
+.brand .mark::after{content:"";position:absolute;inset:5px;border:2.4px solid var(--lime);border-radius:50%}
+.topbar .tb-cta{font-family:var(--display);font-size:14.5px;font-weight:700;color:var(--lime-ink);
+  background:var(--lime);padding:11px 20px;border-radius:10px;text-decoration:none;
+  box-shadow:0 5px 0 -1px var(--lime-deep)}
+.topbar .tb-cta:hover{background:#cdf85e}
+
+/* ---- Section rhythm ---- */
+section{padding:72px 0}
+.tight{padding:48px 0}
+.sec-dark{background:var(--green-deep);color:#fff}
+.sec-warm{background:var(--surface-2)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:12.5px;
+  font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--lime-ink);
+  background:var(--lime);padding:9px 17px;border-radius:100px}
+h1.hero-h{font-family:var(--display);font-weight:700;font-size:clamp(40px,6.6vw,80px);
+  line-height:1.08;letter-spacing:-0.035em;margin:24px 0 0}
+h2.sec-h{font-family:var(--display);font-weight:700;font-size:clamp(31px,4.6vw,54px);
+  line-height:1.0;letter-spacing:-0.03em}
+h3{font-family:var(--display);font-size:21px;font-weight:700;letter-spacing:-.02em}
+.lead{font-size:clamp(17px,2.1vw,21px);color:var(--ink-2);line-height:1.5;font-weight:500}
+.kicker{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.sec-dark .kicker{color:var(--lime)}
+
+/* ---- HERO ---- */
+.hero{padding:48px 0 14px;text-align:center;position:relative}
+.hero::before{content:"";position:absolute;top:-40px;left:50%;transform:translateX(-50%);
+  width:720px;height:480px;max-width:120vw;background:radial-gradient(circle,rgba(194,242,74,.34),transparent 62%);
+  filter:blur(20px);z-index:-1;pointer-events:none}
+.hero .sub{font-size:clamp(17px,2.3vw,22px);color:var(--ink-2);max-width:760px;font-weight:500;
+  margin:22px auto 0;line-height:1.5}
+.hero .above-vid{font-family:var(--display);font-size:15px;color:var(--ink);margin:34px auto 14px;font-weight:600}
+.cred{margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.badge-row{display:flex;flex-wrap:wrap;justify-content:center;gap:9px}
+
+/* ---- Deliverables quick-stack (Value sofort sichtbar) ---- */
+.deliver{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;max-width:780px;
+  margin:28px auto 0}
+.deliver div{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:600;color:var(--ink)}
+.deliver .ck{width:21px;height:21px;border-radius:50%;background:var(--green);color:#fff;flex:none;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800}
+
+/* ---- Video ---- */
+.video-wrap{max-width:880px;margin:0 auto}
+.video{position:relative;aspect-ratio:16/9;border-radius:var(--r);overflow:hidden;
+  background:linear-gradient(150deg,#16241b,#0a120d);border:3px solid var(--ink);
+  box-shadow:14px 14px 0 var(--lime),0 36px 70px rgba(15,25,18,.3);cursor:pointer}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .vposter{position:absolute;inset:0;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:18px;color:#fff;text-align:center;padding:24px}
+.video .play{width:86px;height:86px;border-radius:50%;background:var(--lime);
+  display:flex;align-items:center;justify-content:center;transition:transform .2s;
+  box-shadow:0 0 0 10px rgba(194,242,74,.22)}
+.video:hover .play{transform:scale(1.08)}
+.video .play svg{margin-left:5px}
+.video .vlabel{font-family:var(--display);font-size:14px;color:rgba(255,255,255,.72);
+  letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.video .vtitle{font-family:var(--display);font-size:24px;font-weight:700;max-width:540px;line-height:1.12}
+.video .vdur{position:absolute;right:14px;bottom:14px;background:var(--ink);color:#fff;
+  font-family:var(--display);font-weight:600;font-size:12.5px;padding:6px 12px;border-radius:8px}
+.under-vid{font-size:14.5px;color:var(--ink-2);max-width:600px;margin:20px auto 0;line-height:1.55;font-weight:500}
+.hero-cta{margin-top:30px;display:flex;flex-direction:column;align-items:center}
+
+/* ---- Trust bar ---- */
+.trust{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);background:var(--ink)}
+.trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;padding-top:20px;padding-bottom:20px}
+.trust .ti{display:flex;align-items:center;gap:9px;font-family:var(--display);font-size:14px;
+  color:#fff;font-weight:600}
+.trust .ti svg{color:var(--lime);flex:none}
+
+/* ---- Marquee ticker ---- */
+.marquee{background:var(--lime);border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);
+  overflow:hidden;padding:15px 0}
+.marquee.dark{background:var(--green-deep)}
+.marquee-track{display:flex;width:max-content;white-space:nowrap;align-items:center;
+  animation:marq 30s linear infinite}
+.marquee.rev .marquee-track{animation-direction:reverse}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--display);font-weight:700;font-size:18px;color:var(--lime-ink);
+  text-transform:uppercase;letter-spacing:.01em;display:inline-flex;align-items:center}
+.marquee.dark .marquee-track span{color:#fff}
+.marquee-track span::after{content:"✦";margin:0 24px;font-size:13px;opacity:.55}
+.marquee.dark .marquee-track span::after{color:var(--lime);opacity:.85}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+
+/* ---- Section heads ---- */
+.sec-head{max-width:720px;margin:0 auto 44px;text-align:center}
+.sec-head .lead{margin-top:18px}
+
+/* ---- Für wen / Nicht für wen ---- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);padding:32px 30px;
+  box-shadow:7px 7px 0 var(--ink)}
+.panel.yes{box-shadow:7px 7px 0 var(--green)}
+.panel.no{background:var(--surface-2);box-shadow:7px 7px 0 var(--danger)}
+.panel h3{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+.panel ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.panel li{position:relative;padding-left:34px;font-size:15.5px;color:#34342f;line-height:1.5;font-weight:500}
+.panel.yes li::before{content:"✓";position:absolute;left:0;top:-2px;color:#fff;background:var(--green);
+  width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800}
+.panel.no li::before{content:"✕";position:absolute;left:0;top:-2px;color:#fff;background:var(--danger);
+  width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800}
+.tag{display:inline-flex;font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.04em;
+  padding:6px 13px;border-radius:100px;text-transform:uppercase}
+.tag-yes{background:var(--green);color:#fff}
+.tag-no{background:var(--danger);color:#fff}
+
+/* ---- Problem ---- */
+.prose-block{max-width:var(--read);margin:0 auto}
+.prose-block p{font-size:18.5px;line-height:1.7;color:#34342f;margin-bottom:22px;font-weight:500}
+.prose-block p strong{color:var(--ink);font-weight:700}
+.prose-block .big{font-family:var(--display);font-weight:700;font-size:clamp(24px,3.3vw,36px);
+  line-height:1.12;letter-spacing:-.02em;color:var(--ink);margin:8px 0 26px}
+
+/* ---- Callout / mechanism ---- */
+.callout{background:var(--green-deep);color:#fff;border-radius:26px;padding:54px 46px;
+  max-width:900px;margin:0 auto;position:relative;overflow:hidden;border:3px solid var(--ink);
+  box-shadow:12px 12px 0 var(--lime)}
+.callout::after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;
+  background:radial-gradient(circle,rgba(194,242,74,.28),transparent 65%)}
+.callout .kicker{color:var(--lime)}
+.callout h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.8vw,44px);
+  line-height:1.05;letter-spacing:-.03em;margin-bottom:20px;position:relative}
+.callout p{color:rgba(255,255,255,.84);font-size:17.5px;line-height:1.6;margin-bottom:16px;position:relative;font-weight:500}
+.callout p:last-child{margin-bottom:0}
+.callout strong{color:#fff;font-weight:700}
+
+/* ---- 5 Phasen ---- */
+.phases{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.phase{background:var(--surface);border:2px solid var(--ink);border-radius:16px;padding:22px 18px;
+  display:flex;flex-direction:column;transition:transform .15s,box-shadow .2s}
+.phase:hover{transform:translateY(-5px);box-shadow:6px 8px 0 var(--green)}
+.phase .pd{font-family:var(--display);font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:var(--ink-3);text-transform:uppercase}
+.phase .pn{font-family:var(--display);font-size:25px;font-weight:700;color:var(--green);
+  margin:6px 0 12px;letter-spacing:-.02em}
+.phase p{font-size:13.5px;color:#3a3a36;line-height:1.5;font-weight:500}
+.phase .pi{width:44px;height:44px;border-radius:12px;background:var(--lime);color:var(--lime-ink);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;
+  font-size:18px;margin-bottom:14px}
+
+/* ---- 6 Wochen timeline ---- */
+.weeks{display:flex;flex-direction:column;gap:0;max-width:840px;margin:0 auto;
+  border-left:3px solid var(--ink);padding-left:0}
+.week{position:relative;padding:20px 0 20px 34px;border-bottom:1px solid var(--line)}
+.week:last-child{border-bottom:none}
+.week::before{content:"";position:absolute;left:-9px;top:24px;width:15px;height:15px;border-radius:50%;
+  background:var(--lime);border:3px solid var(--ink)}
+.week .wk{font-family:var(--display);font-size:12px;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--green)}
+.week h4{font-size:18px;font-weight:700;margin:4px 0 6px}
+.week p{font-size:14.5px;color:var(--ink-2);line-height:1.55;font-weight:500}
+.tracks{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.track{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:18px 18px}
+.track .tt{font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--green);
+  letter-spacing:.03em;margin-bottom:7px;text-transform:uppercase}
+.track p{font-size:14px;color:#3a3a36;line-height:1.5;font-weight:500}
+
+/* ---- Live call format ---- */
+.callfmt{max-width:840px;margin:40px auto 0;background:var(--ink);color:#fff;
+  border-radius:var(--r);padding:34px 34px}
+.callfmt h3{margin-bottom:6px;color:#fff;font-size:24px}
+.callfmt .sub{font-family:var(--display);font-size:14px;color:var(--lime);margin-bottom:22px;font-weight:600}
+.callfmt .seg{display:flex;align-items:center;gap:16px;padding:15px 0;border-top:1px solid rgba(255,255,255,.12)}
+.callfmt .seg:first-of-type{border-top:none}
+.callfmt .seg .t{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:700;
+  font-size:14px;color:var(--lime);width:96px;flex:none}
+.callfmt .seg .d{font-size:15px;color:rgba(255,255,255,.85);font-weight:500}
+.callfmt .seg .d b{font-weight:700;color:#fff}
+
+/* ---- Transformation ---- */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto}
+.ba .col{border-radius:var(--r);padding:30px 28px;border:2px solid var(--ink)}
+.ba .before{background:var(--surface-2)}
+.ba .after{background:var(--green-deep);color:#fff;box-shadow:8px 8px 0 var(--lime)}
+.ba .lbl{font-family:var(--display);font-size:12.5px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;margin-bottom:18px}
+.ba .before .lbl{color:var(--ink-3)}
+.ba .after .lbl{color:var(--lime)}
+.ba ul{list-style:none;display:flex;flex-direction:column;gap:13px}
+.ba li{position:relative;padding-left:28px;font-size:15.5px;line-height:1.5;font-weight:500}
+.ba .before li{color:#54544c}
+.ba .after li{color:rgba(255,255,255,.92)}
+.ba .before li::before{content:"✕";position:absolute;left:2px;color:var(--ink-3);font-weight:800;font-size:13px}
+.ba .after li::before{content:"→";position:absolute;left:0;color:var(--lime);font-weight:800}
+
+/* ---- Offer / Stack ---- */
+.offer{background:var(--surface);border:3px solid var(--ink);border-radius:26px;
+  max-width:840px;margin:0 auto;overflow:hidden;box-shadow:14px 14px 0 var(--green)}
+.offer-head{background:var(--green-deep);color:#fff;padding:34px 36px;text-align:center;position:relative;overflow:hidden}
+.offer-head::after{content:"";position:absolute;left:-60px;bottom:-90px;width:260px;height:260px;
+  background:radial-gradient(circle,rgba(194,242,74,.3),transparent 65%)}
+.offer-head .eyebrow{position:relative}
+.offer-head h3{font-family:var(--display);font-weight:700;font-size:30px;margin-top:16px;position:relative}
+.stack{padding:16px 36px 6px}
+.si{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
+  padding:18px 0;border-bottom:1px solid var(--line)}
+.si .info .n{font-family:var(--display);font-weight:700;font-size:16.5px}
+.si .info .d{font-size:14px;color:var(--ink-2);margin-top:4px;line-height:1.5;font-weight:500}
+.si .val{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink-3);
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+.totals{padding:26px 36px 8px}
+.totals .row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0}
+.totals .row .l{font-size:15px;color:var(--ink-2);font-weight:600}
+.totals .row .v{font-family:var(--display);font-variant-numeric:tabular-nums;font-weight:700}
+.totals .gesamt .v{font-size:18px;color:var(--ink-3);text-decoration:line-through}
+.totals .save .l{color:var(--green)}
+.totals .save .v{color:var(--green);font-size:18px}
+.totals .preis{border-top:3px solid var(--ink);margin-top:8px;padding-top:20px}
+.totals .preis .l{font-size:19px;font-weight:700;color:var(--ink);font-family:var(--display)}
+.totals .preis .v{font-family:var(--display);font-size:46px;font-weight:700;color:var(--green);line-height:1}
+.totals .rate{font-size:14px;color:var(--ink-3);text-align:right;margin-top:4px;font-weight:600}
+.offer-cta{padding:10px 36px 36px}
+.objbuster{background:var(--surface-2);border-top:2px solid var(--ink);padding:26px 36px 30px;
+  display:flex;flex-direction:column;gap:12px}
+.objbuster div{font-size:14.5px;line-height:1.5;color:#3a3a36;font-weight:500}
+.objbuster b{font-family:var(--display);color:var(--ink);font-weight:700}
+
+/* ---- Vergleich ---- */
+.cmp{max-width:840px;margin:0 auto;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;
+  background:var(--surface);box-shadow:8px 8px 0 var(--ink)}
+.cmp .cr{display:grid;grid-template-columns:1.4fr 2fr .9fr;gap:0}
+.cmp .cr>div{padding:18px 20px;border-bottom:1px solid var(--line)}
+.cmp .cr:last-child>div{border-bottom:none}
+.cmp .ch{background:var(--ink);font-family:var(--display);font-size:12px;font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.cmp .name{font-family:var(--display);font-weight:700;font-size:15px}
+.cmp .desc{font-size:14px;color:var(--ink-2);line-height:1.45;font-weight:500}
+.cmp .price{font-family:var(--display);font-weight:700;font-size:17px;text-align:right;font-variant-numeric:tabular-nums}
+.cmp .us{background:var(--lime)}
+.cmp .us .name,.cmp .us .price,.cmp .us .desc{color:var(--lime-ink)}
+
+/* ---- ROI ---- */
+.roi{background:var(--green-deep);color:#fff;border-radius:26px;max-width:840px;margin:0 auto;
+  padding:54px 44px;text-align:center;position:relative;overflow:hidden;
+  border:3px solid var(--ink);box-shadow:12px 12px 0 var(--lime)}
+.roi h2{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.8vw,44px);margin-bottom:18px;letter-spacing:-.03em}
+.roi p{color:rgba(255,255,255,.84);font-size:17.5px;line-height:1.6;max-width:640px;margin:0 auto 14px;font-weight:500}
+.roi .num{font-family:var(--display);color:var(--lime);font-size:clamp(48px,8vw,84px);font-weight:700;
+  margin:12px 0;letter-spacing:-.04em;line-height:1}
+.roi strong{color:#fff;font-weight:700}
+
+/* ---- Posture ---- */
+.posture{max-width:var(--read);margin:0 auto;background:var(--surface);border:2px solid var(--ink);
+  border-radius:var(--r);padding:44px 38px;box-shadow:8px 8px 0 var(--ink)}
+.posture h2{font-size:clamp(26px,3.2vw,38px);margin-bottom:20px}
+.posture p{font-size:16.5px;line-height:1.7;color:#34342f;margin-bottom:16px;font-weight:500}
+.posture p:last-child{margin-bottom:0}
+.posture strong{font-weight:700;color:var(--ink)}
+
+/* ---- About ---- */
+.about{display:grid;grid-template-columns:210px 1fr;gap:36px;max-width:900px;margin:0 auto;align-items:start}
+.about .photo{aspect-ratio:1;border-radius:18px;background:var(--green-deep);
+  display:flex;align-items:center;justify-content:center;color:var(--lime);font-family:var(--display);
+  font-weight:600;font-size:13px;border:2px solid var(--ink);box-shadow:6px 6px 0 var(--lime)}
+.about h3{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.about .nm{font-family:var(--display);font-size:32px;font-weight:700;margin-bottom:14px;letter-spacing:-.02em}
+.about p{font-size:16px;line-height:1.65;color:#34342f;margin-bottom:14px;font-weight:500}
+
+/* ---- Testimonials ---- */
+.tg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:900px;margin:0 auto}
+.tcard{background:var(--surface);border:2px solid var(--ink);border-radius:var(--r);padding:28px 26px;
+  box-shadow:6px 6px 0 var(--green)}
+.tcard .quote{font-family:var(--display);font-size:18px;font-weight:600;line-height:1.32;
+  color:var(--ink);margin-bottom:20px;letter-spacing:-.01em}
+.tcard .who{display:flex;align-items:center;gap:12px}
+.tcard .av{width:44px;height:44px;border-radius:50%;background:var(--lime);color:var(--lime-ink);
+  display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;
+  font-size:16px;flex:none}
+.tcard .nm{font-family:var(--display);font-weight:700;font-size:14px}
+.tcard .role{font-size:13px;color:var(--ink-3);font-weight:500}
+.ph-note{max-width:900px;margin:20px auto 0;font-size:12.5px;color:var(--ink-3);text-align:center;font-style:italic}
+
+/* ---- FAQ ---- */
+.faq{max-width:var(--read);margin:0 auto}
+.faq details{border:2px solid var(--ink);border-radius:14px;background:var(--surface);
+  margin-bottom:12px;overflow:hidden}
+.faq details[open]{box-shadow:5px 5px 0 var(--green)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 22px;font-family:var(--display);font-size:17px;
+  font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:16px;color:var(--ink);letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;font-weight:400;color:var(--green);transition:transform .2s;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 22px 24px;font-size:15.5px;line-height:1.65;color:#3a3a36;font-weight:500}
+
+/* ---- Final CTA ---- */
+.final{background:var(--green-deep);color:#fff;text-align:center;position:relative;overflow:hidden}
+.final::before{content:"";position:absolute;top:-10%;left:50%;transform:translateX(-50%);
+  width:760px;height:600px;max-width:130vw;background:radial-gradient(circle,rgba(194,242,74,.22),transparent 60%)}
+.final>.wrap{position:relative}
+.final h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,5vw,60px);line-height:.98;
+  letter-spacing:-.035em;color:#fff;max-width:820px;margin:0 auto}
+.final p{color:rgba(255,255,255,.82);font-size:18px;line-height:1.55;max-width:640px;margin:24px auto 0;font-weight:500}
+.final .scar{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-size:13px;
+  font-weight:700;letter-spacing:.03em;background:var(--lime);color:var(--lime-ink);
+  padding:9px 18px;border-radius:100px;margin-bottom:8px}
+.final .cta-sub{color:rgba(255,255,255,.65)}
+
+/* ---- Footer ---- */
+footer{background:var(--ink);color:#fff;padding:40px 0;text-align:center}
+footer .brand{justify-content:center;margin-bottom:14px;color:#fff}
+footer .brand .mark{background:var(--lime)}
+footer .brand .mark::after{border-color:var(--ink)}
+footer .fl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:13.5px;font-weight:500}
+footer a{color:rgba(255,255,255,.7);text-decoration:none}
+footer a:hover{color:var(--lime)}
+footer .cp{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.5)}
+
+/* ---- Sticky mobile CTA ---- */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);
+  padding:11px 16px;transform:translateY(120%);transition:transform .3s;display:none}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .btn{width:100%;padding:16px}
+
+/* ---- Responsive ---- */
+@media(max-width:860px){
+  .phases{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr;gap:24px}
+  .about .photo{max-width:170px}
+  .video{box-shadow:9px 9px 0 var(--lime),0 24px 50px rgba(15,25,18,.3)}
+}
+@media(max-width:680px){
+  section{padding:54px 0}
+  .two,.ba,.tracks,.tg{grid-template-columns:1fr}
+  .cmp .cr{grid-template-columns:1fr 1fr}
+  .cmp .desc{display:none}
+  .topbar .tb-cta{display:none}
+  .sticky-cta{display:block}
+  .stack,.totals,.offer-cta,.objbuster{padding-left:24px;padding-right:24px}
+  .callout,.roi,.posture,.panel,.callfmt{padding-left:26px;padding-right:26px}
+  .offer,.callout,.roi{box-shadow:7px 7px 0 var(--green)}
+  .callout,.roi{box-shadow:7px 7px 0 var(--lime)}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TOPBAR ══ -->
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <a class="tb-cta" href="#angebot">Jetzt bewerben →</a>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Für Berater, Coaches &amp; interne KI-Champions</span>
+    <h1 class="hero-h">Werde der KI-Berater, den<br>Unternehmen gerade<br><span class="hl">verzweifelt suchen.</span></h1>
+    <p class="sub">Mit einem replizierbaren 5-Tage-Sprint-Prozess, den du immer wieder durchführst und verkaufst — von Workflow-Analyse bis Adoptionsplan. Keine Tool-Theorie. Eine Methode, die du <span class="hl-u">in 6 Wochen</span> lernst und mit der du dich als KI-Berater positionierst.</p>
+
+    <div class="deliver">
+      <div><span class="ck">✓</span> Replizierbarer 5-Tage-Sprint-Prozess</div>
+      <div><span class="ck">✓</span> 6× 1:1-Coaching mit Nils</div>
+      <div><span class="ck">✓</span> 15 Done-For-You Templates</div>
+      <div><span class="ck">✓</span> Dein erster Auftrag in 30 Tagen</div>
+    </div>
+
+    <p class="above-vid">▶ Schau dir an, wie der KI-Transformation Sprint in der Praxis abläuft — und wie du ihn lernst:</p>
+
+    <!-- VIDEO: iframe-Embed (YouTube/Vimeo/Perspective) hier einsetzen.
+         Ersetze den .vposter-Block durch <iframe src="..."></iframe> -->
+    <div class="video-wrap">
+      <div class="video" id="vsl" role="button" tabindex="0" aria-label="Video abspielen">
+        <div class="vposter">
+          <div class="play" aria-hidden="true">
+            <svg width="26" height="28" viewBox="0 0 26 28" fill="none"><path d="M25 12.27a2 2 0 0 1 0 3.46L3 28.5A2 2 0 0 1 0 26.77V1.23A2 2 0 0 1 3 -.5L25 12.27Z" fill="#16301f"/></svg>
+          </div>
+          <div class="vtitle">Der KI-Transformation Sprint — wie du in 5&nbsp;Tagen KI in ein Unternehmen einführst</div>
+          <div class="vlabel">Kostenloses Training · mit Nils Blache</div>
+        </div>
+        <div class="vdur">ca. 22 Min</div>
+      </div>
+    </div>
+    <p class="under-vid">Nimm dir die Zeit. Danach weißt du genau, ob das dein nächster Einkommensstrom wird — und wie du startest.</p>
+
+    <div class="hero-cta">
+      <a class="btn btn-green btn-lg" href="#angebot">Jetzt auf 1:1-Platz bewerben →</a>
+      <p class="cta-sub">Sofortiger Zugang nach Annahme · max. 4 neue 1:1-Klienten/Monat · oder 3× 699 €</p>
+      <div class="cred">
+        <div class="rating"><span class="stars">★★★★★</span><span class="rt">Echte 1:1-Begleitung statt Massen-Kurs</span></div>
+        <div class="badge-row">
+          <span class="pill lime">✦ EU AI Act 2026-relevant</span>
+          <span class="pill outline">Ohne technisches Vorwissen</span>
+          <span class="pill outline">Methode, kein Zertifikat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ══ -->
+<div class="trust">
+  <div class="wrap">
+    <div class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Replizierbare Methode statt Tool-Theorie</div>
+    <div class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 6 Wochen 1:1-Begleitung mit Nils</div>
+    <div class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> Ohne technisches KI-Vorwissen</div>
+    <div class="ti"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg> 1 Auftrag refinanziert die Investition</div>
+  </div>
+</div>
+
+<!-- ══ MARQUEE ══ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>5-Tage-Sprint-Methode</span><span>Ohne technisches Vorwissen</span><span>1:1 mit Nils</span><span>3.000–6.000 € pro Auftrag</span><span>EU AI Act 2026</span><span>Replizierbar &amp; verkäuflich</span><span>Methode statt Tool-Theorie</span>
+    <span>5-Tage-Sprint-Methode</span><span>Ohne technisches Vorwissen</span><span>1:1 mit Nils</span><span>3.000–6.000 € pro Auftrag</span><span>EU AI Act 2026</span><span>Replizierbar &amp; verkäuflich</span><span>Methode statt Tool-Theorie</span>
+  </div>
+</div>
+
+<!-- ══ FÜR WEN ══ -->
+<section class="sec-warm">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Ist das für dich?</h2>
+      <p class="lead">Diese Masterclass ist bewusst nicht für jeden. Sie ist für Menschen, die einen Prozess wollen — keinen weiteren KI-Vortrag.</p>
+    </div>
+    <div class="two">
+      <div class="panel yes">
+        <h3><span class="tag tag-yes">Das passt</span></h3>
+        <ul>
+          <li>Du bist Berater, Coach oder Trainer und willst einen neuen, skalierbaren Einkommensstrom, der nicht nur an deiner Zeit hängt</li>
+          <li>Du willst KI-Transformation anbieten, hast aber keinen Prozess, den du vor einem Geschäftsführer sicher durchführst</li>
+          <li>Du bist interner KI-Verantwortlicher (Digitalisierung, IT, HR) und brauchst eine Methode statt vager Tool-Empfehlungen</li>
+          <li>Du bist bereit, 6 Wochen aktiv mitzuarbeiten, einen Übungs-Sprint durchzuziehen und dann zu verkaufen</li>
+          <li>Du willst dich als der Mensch positionieren, der KI in Unternehmen wirklich zum Laufen bringt</li>
+        </ul>
+      </div>
+      <div class="panel no">
+        <h3><span class="tag tag-no">Das passt nicht</span></h3>
+        <ul>
+          <li>Du willst nur „endlich verstehen, was ChatGPT kann" — das ist kein Tool-Kurs</li>
+          <li>Du suchst ein IHK-Zertifikat oder einen offiziellen Weiterbildungsnachweis — wir lehren eine Methode, kein Papier</li>
+          <li>Du erwartest, dass Kunden von allein kommen, ohne dass du den ersten Auftrag aktiv aufbaust</li>
+          <li>Du willst keine 4–6 Stunden pro Woche über 6 Wochen investieren</li>
+          <li>Du suchst eine Erfolgsgarantie — die geben wir bewusst nicht</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROBLEM ══ -->
+<section class="tight">
+  <div class="prose-block">
+    <p class="kicker">Das eigentliche Problem</p>
+    <p class="big">Jeder redet über KI. In den meisten Unternehmen passiert trotzdem nichts Strukturiertes.</p>
+    <p>Ein paar Leute nutzen ChatGPT heimlich. Niemand ist verantwortlich. Kein Prozess, kein Ergebnis, kein Plan. Und das Bittere: Du <strong>weißt</strong>, dass hier gerade ein riesiger Beratungsmarkt entsteht. Unternehmen würden zahlen — wenn jemand käme und sagte „So machen wir das, Schritt für Schritt."</p>
+    <p>Aber genau das hast du nicht. Du hast Wissen über KI. Du hast vielleicht Tools getestet. Aber keinen <strong>Prozess</strong>, den du einem Entscheider gegenüber selbstbewusst durchführst und in Rechnung stellst. Ohne Prozess kein Angebot. Ohne Angebot kein Einkommensstrom.</p>
+    <p>Während du zögerst, läuft die Uhr: Seit Februar 2025 verpflichtet der EU AI Act (Art. 4) Unternehmen, ihre Mitarbeiter im Umgang mit KI zu schulen — ab August 2026 drohen Bußgelder. Tausende Firmen wissen, dass sie handeln müssen, und haben keine Ahnung wie. Das ist nicht nur Druck für sie. <strong>Das ist deine Eintrittskarte.</strong></p>
+  </div>
+</section>
+
+<!-- ══ MECHANISMUS ══ -->
+<section>
+  <div class="wrap">
+    <div class="callout">
+      <p class="kicker">Die Lösung</p>
+      <h2>Unternehmen brauchen keinen weiteren KI-Vortrag. Sie brauchen jemanden mit <span class="hl">einem Prozess.</span></h2>
+      <p>Denk an den Design Sprint. AJ&amp;Smart hat nie ein einzelnes Designprojekt verkauft — sie haben die <strong>Methode</strong> gelehrt. Einen klar strukturierten Ablauf, den Berater weltweit immer wieder bei verschiedensten Kunden durchführen. Derselbe Ablauf, jedes Mal, planbares Ergebnis.</p>
+      <p>Das ist das Schöne an einer Methode: Du lernst sie einmal und verkaufst sie hundertmal. Der <strong>KI-Transformation Sprint</strong> ist genau das — für das wichtigste Thema unserer Zeit. Fünf Phasen, ein klarer Ablauf, ein greifbares Ergebnis. Du musst kein KI-Entwickler sein. Du musst den Prozess beherrschen — und der ist lernbar, replizierbar und verkäuflich.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 5 PHASEN ══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Der 5-Tage-Sprint</h2>
+      <p class="lead">Fünf Halbtage à 3,5 Stunden. Immer dieselbe Reihenfolge, immer ein greifbares Ergebnis.</p>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <div class="pi">1</div>
+        <div class="pd">Tag 1</div><div class="pn">MAP</div>
+        <p>Du deckst auf, wie das Team <em>wirklich</em> arbeitet — nicht laut Organigramm. Hier entsteht das Vertrauen, das jeden Folgeauftrag leichter macht.</p>
+      </div>
+      <div class="phase">
+        <div class="pi">2</div>
+        <div class="pd">Tag 2</div><div class="pn">SPOT</div>
+        <p>Du findest die KI-Chancen mit echtem Impact und priorisierst nach Aufwand und Wirkung — das Team sieht sofort, wo das Geld liegt.</p>
+      </div>
+      <div class="phase">
+        <div class="pi">3</div>
+        <div class="pd">Tag 3</div><div class="pn">EXPLORE</div>
+        <p>Ihr testet KI-Tools mit den <em>echten</em> Inhalten des Unternehmens. Der Moment, in dem aus Skepsis Begeisterung wird.</p>
+      </div>
+      <div class="phase">
+        <div class="pi">4</div>
+        <div class="pd">Tag 4</div><div class="pn">BUILD</div>
+        <p>Aus dem Test wird ein dokumentierter, teamtauglicher KI-Workflow, den auch andere nutzen können. Das Ergebnis, für das Kunden zahlen.</p>
+      </div>
+      <div class="phase">
+        <div class="pi">5</div>
+        <div class="pd">Tag 5</div><div class="pn">COMMIT</div>
+        <p>Du bindest das Team ein, lieferst einen 30-Tage-Adoptionsplan und legst den Grundstein für den nächsten Sprint.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WIE DAS TRAINING ABLÄUFT ══ -->
+<section class="sec-warm">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Wie das Training abläuft</h2>
+      <p class="lead">6 Wochen live und begleitet. Du baust den kompletten Sprint an einem echten Beispiel auf — nicht in der Theorie.</p>
+    </div>
+    <div class="weeks">
+      <div class="week"><div class="wk">Woche 0 · Kickoff</div><h4>Dein 1:1-Start mit Nils</h4><p>Im ersten Call legen wir gemeinsam dein Ziel, dein Sprint-Thema und deinen persönlichen 6-Wochen-Fahrplan fest. Von Anfang an auf deine Situation zugeschnitten.</p></div>
+      <div class="week"><div class="wk">Woche 1 · MAP</div><h4>Deine ersten 3 Workflow-Maps</h4><p>Du lernst Mapping nicht nur — du machst es, mit direktem Feedback.</p></div>
+      <div class="week"><div class="wk">Woche 2 · SPOT</div><h4>KI Opportunity Canvas &amp; Impact-Effort-Matrix</h4><p>Am Ende der Woche stehen deine Top 3 Use Cases — sauber bewertet, nicht aus dem Bauch.</p></div>
+      <div class="week"><div class="wk">Woche 3 · EXPLORE</div><h4>2 Tools systematisch testen &amp; bewerten</h4><p>Du lernst, Tools zu beurteilen, statt jedem Hype hinterherzulaufen.</p></div>
+      <div class="week"><div class="wk">Woche 4 · BUILD</div><h4>Ein vollständig dokumentierter Workflow</h4><p>Teamtauglich — etwas, das du einem Kunden tatsächlich übergeben könntest.</p></div>
+      <div class="week">
+        <div class="wk">Woche 5 · COMMIT</div><h4>Hier teilt sich der Weg — du wählst deinen Track</h4>
+        <div class="tracks">
+          <div class="track"><div class="tt">Track A · Extern</div><p>Deinen ersten Auftrag finden: LinkedIn-Outreach, Pitch-Deck, Preisgestaltung, erstes Angebot verschicken.</p></div>
+          <div class="track"><div class="tt">Track B · Intern</div><p>Führung überzeugen: Stakeholder-Präsentation, Betriebsrat einbinden, 30-Tage-Adoptionsplan.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callfmt">
+      <h3>Deine wöchentlichen 1:1-Calls</h3>
+      <p class="sub">90 Minuten pro Woche · nur du und Nils · individuell terminiert · ganz auf dich fokussiert.</p>
+      <div class="seg"><div class="t">0–15 Min</div><div class="d"><b>Review</b> — wo stehst du, was lief diese Woche in deinem Sprint.</div></div>
+      <div class="seg"><div class="t">15–60 Min</div><div class="d"><b>Arbeit an deiner Situation</b> — dein Sprint, dein Kunde, live durchgearbeitet.</div></div>
+      <div class="seg"><div class="t">60–80 Min</div><div class="d"><b>Deine Hürden</b> — konkrete Lösungen für genau deine Blockaden.</div></div>
+      <div class="seg"><div class="t">80–90 Min</div><div class="d"><b>Wochenziel</b> — klare nächste Schritte bis zum nächsten Call.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRANSFORMATION ══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Wo du in 6 Wochen stehst</h2>
+    </div>
+    <div class="ba">
+      <div class="col before">
+        <div class="lbl">Vorher — heute</div>
+        <ul>
+          <li>„KI ist wichtig" — aber kein Prozess, den du verkaufen kannst</li>
+          <li>Du sammelst Tool-Wissen, das niemand bezahlt</li>
+          <li>Du schaust zu, wie andere sich als KI-Experten positionieren</li>
+          <li>Vor einem Entscheider fehlt dir Struktur und Selbstvertrauen</li>
+          <li>Dein Einkommen hängt an deinen ausgereizten Angeboten</li>
+        </ul>
+      </div>
+      <div class="col after">
+        <div class="lbl">Nachher — in 6 Wochen</div>
+        <ul>
+          <li>Ein bewährter 5-Tage-Sprint, den du sofort anbieten kannst</li>
+          <li>Du weißt in jeder Phase genau, was du tust — ohne technisches Vorwissen</li>
+          <li>Du führst den Prozess in jeder Branche durch</li>
+          <li>Du sitzt selbstbewusst vor Entscheidern — mit einer Methode statt Bauchgefühl</li>
+          <li>Ein neuer Einkommensstrom: 3.000–6.000 € pro Sprint, wieder und wieder</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ANGEBOT / OFFER STACK ══ -->
+<section id="angebot">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Was du bekommst</h2>
+      <p class="lead">Alles, was du brauchst, um den Sprint zu beherrschen, zu üben und deinen ersten Auftrag aufzubauen.</p>
+    </div>
+    <div class="offer">
+      <div class="offer-head">
+        <span class="eyebrow">KI-Transformation Sprint Masterclass</span>
+        <h3>Sprint Pro — die komplette Ausbildung</h3>
+      </div>
+      <div class="stack">
+        <div class="si"><div class="info"><div class="n">KI-Transformation Sprint Masterclass</div><div class="d">5 Module, 25+ Lektionen — der komplette Prozess von MAP bis COMMIT, Schritt für Schritt.</div></div><div class="val">1.497 €</div></div>
+        <div class="si"><div class="info"><div class="n">6 wöchentliche 1:1-Coaching-Calls mit Nils</div><div class="d">90 Min pro Woche, individuell terminiert. Es geht die ganze Zeit nur um deine Situation, deinen Sprint, deine Kunden.</div></div><div class="val">1.800 €</div></div>
+        <div class="si"><div class="info"><div class="n">15 Done-For-You Sprint-Templates</div><div class="d">Workflow-Maps, Opportunity Canvas, Impact-Effort-Matrix, Pitch-Deck. Du startest professionell statt bei null.</div></div><div class="val">397 €</div></div>
+        <div class="si"><div class="info"><div class="n">„Ersten Sprint in 30 Tagen"-Modul</div><div class="d">Track A Extern (Outreach, Pitch, Pricing) oder Track B Intern (Führung überzeugen, Adoptionsplan).</div></div><div class="val">497 €</div></div>
+        <div class="si"><div class="info"><div class="n">Begleiteter Übungs-Sprint</div><div class="d">Du führst deinen ersten kompletten Sprint durch — mit direktem Feedback von Nils, bevor du Geld dafür verlangst.</div></div><div class="val">unbezahlbar</div></div>
+        <div class="si"><div class="info"><div class="n">Private Community — 12 Monate</div><div class="d">Austausch, Fallbeispiele und Antworten von Menschen, die denselben Weg gehen.</div></div><div class="val">197 €</div></div>
+      </div>
+      <div class="totals">
+        <div class="row gesamt"><div class="l">Gesamtwert</div><div class="v">4.388 €</div></div>
+        <div class="row save"><div class="l">Du sparst</div><div class="v">2.391 €</div></div>
+        <div class="row preis"><div class="l">Dein Preis heute</div><div class="v">1.997 €</div></div>
+        <div class="rate">oder 3× 699 €</div>
+      </div>
+      <div class="offer-cta">
+        <!-- CHECKOUT: href durch Digistore24-/Checkout-Link ersetzen -->
+        <a class="btn btn-green btn-lg btn-block" href="https://www.digistore24.com/product/PLATZHALTER" data-checkout>Jetzt auf 1:1-Platz bewerben</a>
+        <p class="cta-sub center">Sofortiger Zugang nach Annahme · max. 4 neue 1:1-Klienten/Monat · ein einziger Auftrag refinanziert deine Investition</p>
+      </div>
+      <div class="objbuster">
+        <div><b>„Was, wenn ich keine Zeit habe?"</b> 4–6 Std./Woche, du bestimmst das Tempo der 1:1-Calls.</div>
+        <div><b>„Was, wenn es nicht passt?"</b> Deshalb gibt's die Bewerbung — wir klären das vorher, nicht hinterher.</div>
+        <div><b>„Was, wenn ich noch unsicher bin?"</b> Lies die FAQ unten — die häufigsten Fragen sind beantwortet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VERGLEICH ══ -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Was vergleichbare Angebote kosten</h2>
+      <p class="lead">Das Teuerste gibt dir Wissen ohne Methode. Das Günstigere ein Zertifikat ohne Weg zu Kunden.</p>
+    </div>
+    <div class="cmp">
+      <div class="cr ch"><div>Angebot</div><div>Was du bekommst</div><div style="text-align:right">Preis</div></div>
+      <div class="cr"><div class="name">Hilker Consulting KI-Berater Masterclass</div><div class="desc">KI-Berater-Wissen — aber kein Sprint-Framework, keine anwendbare Methode</div><div class="price">7.000 €</div></div>
+      <div class="cr"><div class="name">IHK KI-Manager</div><div class="desc">Zertifikat für Angestellte — kein Wort darüber, wie du Kunden gewinnst</div><div class="price">2.590 €</div></div>
+      <div class="cr us"><div class="name">KI-Transformation Sprint Masterclass</div><div class="desc">Methode + Weg zu Kunden + 6 Wochen 1:1-Begleitung</div><div class="price">1.997 €</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ROI ══ -->
+<section>
+  <div class="wrap">
+    <div class="roi">
+      <p class="kicker" style="color:#9fccab">Die Rechnung ohne Geschwurbel</p>
+      <h2><span class="hl">Ein einziger Auftrag</span> refinanziert alles.</h2>
+      <p>Ein KI-Transformations-Sprint für ein KMU kostet den Kunden 2.500–6.000 €. Die Masterclass kostet dich 1.997 €.</p>
+      <div class="num">1 Auftrag</div>
+      <p>Du brauchst genau <strong>einen</strong>, um deine komplette Investition zurückzuholen. Nicht zehn. Nicht fünf. Alles danach ist reiner Gewinn — und weil es eine Methode ist, die du replizierst, wird jeder weitere Auftrag leichter, schneller und profitabler.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ POSTURE / RISK REVERSAL ══ -->
+<section class="tight">
+  <div class="posture">
+    <h2 class="serif">Keine Garantie. Bewusst nicht.</h2>
+    <p>Eine Geld-zurück-Garantie wäre das falsche Versprechen. Sie suggeriert, dass das Ergebnis allein an uns liegt. Tut es nicht. Diese Methode funktioniert — aber nur, wenn du sie anwendest, deinen Übungs-Sprint durchziehst und den ersten Auftrag aktiv aufbaust.</p>
+    <p>Deshalb arbeiten wir mit <strong>Selektion statt Garantie</strong>. Diese Masterclass ist für Menschen gemacht, die wirklich einen Einkommensstrom aufbauen oder KI in ihrem Unternehmen verantworten wollen — nicht für Sammler von Online-Kursen.</p>
+    <p>Wir versprechen dir kein risikofreies Ergebnis. Wir versprechen dir einen erprobten Prozess, eine ehrliche Begleitung über 6 Wochen — und dass ein einziger Auftrag deine Investition zurückholt. Was du daraus machst, entscheidest du.</p>
+  </div>
+</section>
+
+<!-- ══ ÜBER NILS ══ -->
+<section>
+  <div class="wrap">
+    <div class="about">
+      <div class="photo">Foto Nils Blache</div>
+      <div>
+        <h3>Dein Trainer</h3>
+        <div class="nm">Nils Blache — Gründer von new.thought</div>
+        <p>Nils hilft Beratern, Coaches und Unternehmen dabei, KI nicht nur zu verstehen, sondern <em>wirklich</em> in den Arbeitsalltag zu bringen. Mit new.thought hat er den KI-Transformation Sprint als wiederholbare Methode entwickelt — entstanden aus der Erfahrung, dass Unternehmen nicht an fehlendem Wissen scheitern, sondern an fehlendem Prozess.</p>
+        <p>Statt abstrakter KI-Theorie setzt Nils auf einen klaren, erprobten Ablauf, der in jeder Branche funktioniert. Sein Ansatz: KI-Transformation muss replizierbar, verkäuflich und im Team verankerbar sein — sonst ist sie wertlos. Mit dieser Masterclass gibt er genau diesen Prozess an die nächste Generation von KI-Beratern weiter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS (Platzhalter) ══ -->
+<section class="tight sec-warm">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="sec-h">Was Teilnehmer sagen</h2>
+    </div>
+    <div class="tg">
+      <div class="tcard"><div class="quote">„Sechs Wochen nach Kursstart hatte ich meinen ersten Sprint-Auftrag über 4.500 € — der Prozess gab mir die Sicherheit, die mir vorher gefehlt hat."</div><div class="who"><div class="av">B</div><div><div class="nm">[Name]</div><div class="role">Freiberuflicher Unternehmensberater</div></div></div></div>
+      <div class="tcard"><div class="quote">„Ich hatte das Wissen, aber nie einen verkaufbaren Rahmen. Jetzt habe ich eine Methode, die ich bei jedem Kunden gleich durchführe."</div><div class="who"><div class="av">C</div><div><div class="nm">[Name]</div><div class="role">Agile Coach → KI-Transformationsberater</div></div></div></div>
+      <div class="tcard"><div class="quote">„Endlich ein klarer Fahrplan statt Bauchgefühl. Die Geschäftsführung hat den Adoptionsplan sofort freigegeben."</div><div class="who"><div class="av">D</div><div><div class="nm">[Name]</div><div class="role">Digitalisierungsbeauftragte, Maschinenbau-KMU</div></div></div></div>
+      <div class="tcard"><div class="quote">„Ich bin über die KI-Schulungspflicht beim Kunden reingekommen — und für den ganzen Sprint geblieben."</div><div class="who"><div class="av">E</div><div><div class="nm">[Name]</div><div class="role">Selbstständiger Trainer</div></div></div></div>
+    </div>
+    <p class="ph-note">Platzhalter — vor dem Go-Live durch echte, einholbare Testimonials (Foto, Name, Rolle, konkretes Ergebnis) ersetzen.</p>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section>
+  <div class="read">
+    <div class="sec-head"><h2 class="sec-h">Häufige Fragen</h2></div>
+    <div class="faq">
+      <details><summary>1.997 € sind viel Geld. Lohnt sich das wirklich?</summary><p>Ein einziger KI-Transformations-Sprint bringt dir 3.000–6.000 €. Du brauchst genau einen Auftrag, um die Investition zurückzuholen — alles danach ist Gewinn. Und weil du eine Methode lernst, die du beliebig oft verkaufst, ist das keine Ausgabe, sondern der Aufbau eines wiederkehrenden Einkommensstroms.</p></details>
+      <details><summary>Wie viel Zeit muss ich investieren?</summary><p>Rechne mit etwa 4–6 Stunden pro Woche über 6 Wochen: dein wöchentlicher 1:1-Call mit Nils (90 Min, individuell terminiert) plus Umsetzung in deinem eigenen Tempo. Wer mitarbeitet, hat am Ende einen durchgeführten Übungs-Sprint und einen konkreten Plan für den ersten Auftrag.</p></details>
+      <details><summary>Funktioniert das ohne technisches KI-Vorwissen?</summary><p>Ja — und das ist der Kern. Du lernst keinen Code und keine technische KI-Entwicklung. Du lernst einen Prozess, mit dem du Teams durch KI-Transformation führst. Das Tool-Wissen, das du brauchst, baust du in Phase EXPLORE ganz konkret auf.</p></details>
+      <details><summary>Funktioniert das wirklich bei echten Kunden?</summary><p>Der Sprint ist genau dafür gebaut: ein replizierbarer Ablauf mit greifbarem Ergebnis, das Kunden bezahlen. Du übst ihn zuerst im begleiteten Übungs-Sprint mit Feedback von Nils, bevor du ihn verkaufst — so gehst du mit echter Erfahrung in den ersten bezahlten Auftrag, nicht mit Theorie.</p></details>
+      <details><summary>Gibt es Ratenzahlung?</summary><p>Ja. Du zahlst entweder einmalig 1.997 € oder in 3 Raten zu je 699 €.</p></details>
+      <details><summary>Ich bin noch nicht so erfahren — bin ich bereit dafür?</summary><p>Wenn du bereit bist, 6 Wochen aktiv mitzuarbeiten, ja. Die Methode gibt dir genau die Struktur, die Anfängern sonst fehlt. Der Übungs-Sprint sorgt dafür, dass du Erfahrung sammelst, bevor du vor einem echten Kunden stehst.</p></details>
+      <details><summary>Ich bin schon erfahrener Berater — ist das nicht zu einfach für mich?</summary><p>Dann ist es ein neues, hochaktuelles Angebot für deinen bestehenden Kundenstamm. Du bekommst einen fertigen, verkäuflichen Prozess plus Templates und Go-to-Market-Fahrplan — statt dir alles selbst zusammenzubauen. Erfahrene Berater amortisieren den Kurs meist mit dem ersten Auftrag.</p></details>
+      <details><summary>Ich will KI intern verantworten, nicht extern beraten. Passt das?</summary><p>Ja. Track B im „Ersten Sprint in 30 Tagen"-Modul ist genau dafür: Führung überzeugen, Stakeholder-Präsentation, Betriebsrat einbinden, 30-Tage-Adoptionsplan. Du bekommst die Methode, um KI im eigenen Unternehmen strukturiert einzuführen.</p></details>
+      <details><summary>Wann finden die 1:1-Calls statt?</summary><p>Die Calls sind echtes 1:1 — nur du und Nils. Ihr terminiert sie individuell nach deinem Kalender, und sie lassen sich bei Bedarf flexibel verschieben. Dein Community-Zugang läuft 12 Monate, sodass du auch nach den 6 Wochen Fragen stellen und mit anderen austauschen kannst.</p></details>
+      <details><summary>Was hat der EU AI Act damit zu tun?</summary><p>Seit Februar 2025 verpflichtet der EU AI Act (Art. 4) Unternehmen, ihre Mitarbeiter im Umgang mit KI zu schulen; ab August 2026 drohen Bußgelder. Für dich ist das die ideale Eintrittstür: Viele Unternehmen wissen, dass sie handeln müssen — und der KI-Sprint ist die konkrete Antwort, die du anbietest.</p></details>
+      <details><summary>Und was, wenn ich keine Kunden finde?</summary><p>Genau dafür gibt es das „Ersten Sprint in 30 Tagen"-Modul: LinkedIn-Outreach, Pitch-Deck, Pricing und Angebot — Schritt für Schritt. Wir garantieren nicht, dass Kunden von allein kommen. Aber wir geben dir den konkreten Weg, sie aktiv zu gewinnen — und der EU AI Act liefert dir gerade den perfekten Aufhänger.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MARQUEE 2 ══ -->
+<div class="marquee dark rev" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Max. 4 neue 1:1-Klienten pro Monat</span><span>Werde KI-Berater</span><span>1.997 € oder 3× 699 €</span><span>1 Auftrag refinanziert alles</span><span>Jetzt bewerben</span>
+    <span>Max. 4 neue 1:1-Klienten pro Monat</span><span>Werde KI-Berater</span><span>1.997 € oder 3× 699 €</span><span>1 Auftrag refinanziert alles</span><span>Jetzt bewerben</span>
+  </div>
+</div>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final">
+  <div class="wrap">
+    <span class="scar" id="scarcity">Max. 4 neue 1:1-Klienten pro Monat — Nils' Zeit ist begrenzt</span>
+    <h2>In 6 Wochen hast du entweder einen <span class="hl">verkaufbaren KI-Sprint-Prozess</span> — oder dieselben Fragen wie heute.</h2>
+    <p>Der Markt für KI-Transformation entsteht jetzt. Die Unternehmen, die einen Berater suchen, suchen ihn dieses Jahr. Die Frage ist nur, ob du dann den Prozess hast, um sie zu bedienen.</p>
+    <div style="margin-top:30px">
+      <a class="btn btn-green btn-lg" href="https://www.digistore24.com/product/PLATZHALTER" data-checkout>Jetzt auf 1:1-Platz bewerben — 1.997 €</a>
+      <p class="cta-sub" id="deadline">oder 3× 699 € · Sofortiger Zugang nach Annahme</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span class="brand"><span class="mark"></span>new.thought</span>
+  <div class="fl">
+    <a href="https://www.new-thought.com/impressum.html">Impressum</a>
+    <a href="https://www.new-thought.com/datenschutz.html">Datenschutz</a>
+  </div>
+  <div class="cp">© 2026 new.thought · Nils Blache</div>
+</footer>
+
+<!-- ══ STICKY MOBILE CTA ══ -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-green" href="#angebot">Jetzt bewerben — 1.997 €</a>
+</div>
+
+<script>
+(function(){
+  // Topbar shadow on scroll
+  var tb=document.getElementById('topbar');
+  var sticky=document.getElementById('stickyCta');
+  var onScroll=function(){
+    var y=window.scrollY;
+    tb.classList.toggle('scrolled',y>10);
+    sticky.classList.toggle('show',y>700);
+  };
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Video placeholder: swap to embed on click.
+  // Ersetze EMBED_URL durch deinen YouTube/Vimeo/Perspective-Einbettungslink.
+  var EMBED_URL=""; // z.B. "https://www.youtube.com/embed/XXXX?autoplay=1"
+  var v=document.getElementById('vsl');
+  if(v){
+    var play=function(){
+      if(!EMBED_URL){ window.location.hash='#angebot'; return; }
+      v.innerHTML='<iframe src="'+EMBED_URL+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    };
+    v.addEventListener('click',play);
+    v.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();play();} });
+  }
+
+  // Echtes Monatsende als Deadline anzeigen — kein Fake-Countdown, für alle Besucher im selben Monat identisch.
+  var dl=document.getElementById('deadline');
+  if(dl){
+    var now=new Date();
+    var lastDay=new Date(now.getFullYear(),now.getMonth()+1,0);
+    var months=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+    var dateStr=lastDay.getDate()+'. '+months[lastDay.getMonth()];
+    dl.textContent='oder 3× 699 € · Diese Monats-Kapazität endet am '+dateStr;
+  }
+})();
+</script>
+
+</body>
+</html>

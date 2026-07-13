@@ -12,9 +12,6 @@
 <meta property="og:title" content="Warum KI-Projekte im Mittelstand scheitern | new.thought">
 <meta property="og:description" content="65 % aller KI-Initiativen versanden. Die 5 echten Ursachen und wie man sie mit einem Steuerungssystem löst.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../css/styles.css">
 <script type="application/ld+json">
 {
@@ -75,84 +72,66 @@
   }
 }
 </script>
-<style>
-  .art-header { padding: 100px 0 56px; border-bottom: 1px solid var(--rule); }
-  .art-back { font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); display: inline-flex; align-items: center; gap: 8px; margin-bottom: 36px; transition: color .15s; }
-  .art-back:hover { color: var(--accent); }
-  .art-meta { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
-  .art-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; padding: 4px 9px; border: 1px solid var(--rule); color: var(--ink-mute); }
-  .art-tag--primary { border-color: var(--accent); color: var(--accent); }
-  .art-readtime { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); }
-  .art-title { font-size: clamp(28px, 4.5vw, 56px); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: var(--ink); margin-bottom: 20px; max-width: 20ch; }
-  .art-lead { font-size: 19px; color: var(--ink-soft); max-width: 62ch; line-height: 1.6; }
-  .art-byline { display: flex; align-items: center; gap: 16px; margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--rule); }
-  .art-byline-name { font-weight: 600; font-size: 14px; }
-  .art-byline-role { font-size: 13px; color: var(--ink-mute); }
-  .art-date { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-mute); margin-left: auto; }
 
-  .art-body { max-width: 720px; margin: 0 auto; padding: 64px 0 80px; }
-  .art-toc { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 24px 0; margin-bottom: 52px; background: none; }
-  .art-toc-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 16px; }
-  .art-toc ol { padding-left: 20px; }
-  .art-toc li { margin-bottom: 8px; font-size: 15px; }
-  .art-toc a { color: var(--ink-soft); opacity: 0.7; transition: color .15s, opacity .15s; }
-  .art-toc a:hover { color: var(--accent); opacity: 1; }
-  @media (min-width: 980px) {
-    .art-body { max-width: 1080px; display: grid; grid-template-columns: 196px 1fr; column-gap: 60px; align-items: start; }
-    .art-body > * { grid-column: 2; }
-    .art-toc { grid-column: 1 !important; grid-row: 1 / 99; position: sticky; top: 80px; align-self: start; border-top: 1px solid var(--rule); border-bottom: none; padding: 20px 0 0; margin-bottom: 0; background: none; }
-  }
-
-  .art-body h2 { font-size: clamp(20px, 2vw, 26px); font-weight: 600; letter-spacing: -0.025em; margin: 52px 0 16px; color: var(--ink); line-height: 1.2; }
-  .art-body h3 { font-size: 18px; font-weight: 600; letter-spacing: -0.015em; margin: 36px 0 12px; color: var(--ink); }
-  .art-body p { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 20px; }
-  .art-body p strong { color: var(--ink); }
-  .art-body ul, .art-body ol { padding-left: 24px; margin-bottom: 20px; }
-  .art-body li { font-size: 17px; line-height: 1.7; color: var(--ink-soft); margin-bottom: 8px; }
-  .art-body li strong { color: var(--ink); }
-
-  .callout { background: var(--bg-soft); border-left: 3px solid var(--accent); padding: 20px 24px; margin: 32px 0; border-radius: 0 2px 2px 0; }
-  .callout p { margin: 0; font-size: 16px; }
-  .callout strong { color: var(--ink); }
-
-  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--rule); margin: 36px 0; }
-  .stat-box { padding: 24px; border-right: 1px solid var(--rule); }
-  .stat-box:last-child { border-right: none; }
-  .stat-num { font-size: 40px; font-weight: 600; letter-spacing: -0.04em; color: var(--accent); line-height: 1; margin-bottom: 6px; }
-  .stat-label { font-size: 13px; color: var(--ink-soft); line-height: 1.4; }
-  @media(max-width: 600px) { .stat-row { grid-template-columns: 1fr; } .stat-box { border-right: none; border-bottom: 1px solid var(--rule); } .stat-box:last-child { border-bottom: none; } }
-
-  .ursache-num { font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-  .ursache-box { border: 1px solid var(--rule); padding: 28px 28px 24px; margin: 28px 0; }
-  .ursache-box h3 { margin-top: 0; }
-
-  .art-faq { margin-top: 52px; border-top: 1px solid var(--rule); }
-  .art-faq h2 { margin-top: 36px; }
-  .faq-q { border-bottom: 1px solid var(--rule); padding: 20px 0; }
-  .faq-q strong { display: block; font-size: 16px; color: var(--ink); margin-bottom: 8px; }
-  .faq-q p { font-size: 15px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
-
-  .art-cta-box { background: var(--bg-deep); color: #f3f2ee; padding: 48px; margin-top: 64px; display: flex; flex-direction: column; gap: 20px; }
-  .art-cta-box h3 { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; color: #fff; }
-  .art-cta-box p { font-size: 15px; color: rgba(243,242,238,.65); margin: 0; }
-  .art-cta-box .btn-primary { align-self: flex-start; }
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/ona.css">
+  <link rel="stylesheet" href="../css/article.css">
 </head>
 <body>
 
-<nav class="top">
-  <div class="wrap row">
-    <a class="brand" href="../index.html">new<span class="dot">.</span>thought</a>
-    <div style="display:flex; gap:28px; align-items:center;">
-      <a href="../programme.html" style="font-size:15px; font-weight:600; color:var(--ink);">Programme</a>
-      <a href="../academy.html" style="font-size:15px; font-weight:600; color:var(--ink);">Academy</a>
-      <a href="../ressourcen.html" style="font-size:15px; font-weight:600; color:var(--accent);">Ressourcen</a>
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <div class="dd">
+        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Programme <span class="cv">⌄</span></button>
+        <div class="dd-menu" role="menu">
+          <a href="/kaistart.html" role="menuitem"><span class="di">◆</span><span class="dl"><b>KAISTART</b><small>AI Opportunity Sprint</small></span></a>
+          <a href="/kaidop.html" role="menuitem"><span class="di">◧</span><span class="dl"><b>KAIDOP</b><small>Adoption Workshop</small></span></a>
+          <a href="/kailead.html" role="menuitem"><span class="di">◐</span><span class="dl"><b>KAILEAD</b><small>Führungskräfte-Training</small></span></a>
+          <a href="/kairon.html" role="menuitem"><span class="di">⬡</span><span class="dl"><b>KAIRON</b><small>Steuerungssystem</small></span></a>
+          <a href="/kairon-executive.html" role="menuitem"><span class="di">★</span><span class="dl"><b>Fractional AI Officer</b><small>KI-Führung auf Zeit</small></span></a>
+          <a href="/ai-transformation-facilitator.html" role="menuitem"><span class="di">◈</span><span class="dl"><b>AI Transformation Facilitator</b><small>Interne KI-Befähigung</small></span></a>
+        </div>
+      </div>
+      <div class="dd">
+        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Academy <span class="cv">⌄</span></button>
+        <div class="dd-menu" role="menu">
+          <a href="/academy.html#orchestrator" role="menuitem"><span class="di">⬤</span><span class="dl"><b>KI-Orchestrator</b><small>KAIRON-Zertifizierung · 2 Tage</small></span></a>
+          <a href="/academy.html#manager" role="menuitem"><span class="di">◉</span><span class="dl"><b>KAIDOP Manager</b><small>Change-Agent-Training · 1 Tag</small></span></a>
+          <a href="/ai-transformation-facilitator.html" role="menuitem"><span class="di">◈</span><span class="dl"><b>AI Transformation Facilitator</b><small>Ausbildung · 8 Wochen</small></span></a>
+        </div>
+      </div>
+      <a href="/ressourcen.html">Blog</a>
     </div>
-    <div style="display:flex; justify-content:flex-end;">
-      <a class="nav-cta" href="../programme.html#cta">Erstgespräch buchen</a>
+    <div class="nav-right">
+      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+      <a class="btn btn-dark" href="mailto:nils@new-thought.com?subject=Erstgespräch">Erstgespräch buchen</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="/kaistart.html">KAISTART</a>
+    <a href="/kaidop.html">KAIDOP</a>
+    <a href="/kailead.html">KAILEAD</a>
+    <a href="/kairon.html">KAIRON</a>
+    <a href="/academy.html">Academy</a>
+    <a href="/ressourcen.html">Blog</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="mailto:nils@new-thought.com?subject=Erstgespräch" class="btn btn-dark">Erstgespräch buchen</a>
+  </div>
+</div>
 
 <header class="art-header">
   <div class="wrap">
@@ -307,20 +286,36 @@
 </main>
 
 <footer>
-  <div class="wrap row">
-    <div>© new.thought</div>
-    <div style="display:flex; gap:24px; flex-wrap:wrap;">
-      <a href="../programme.html">Programme</a>
-      <a href="../academy.html">Academy</a>
-      <a href="../ressourcen.html">Ressourcen</a>
-      <a href="../kairon-executive.html">Fractional AI Officer</a>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Adoption &amp; Enablement für den Mittelstand. Anfassbar gemacht.</p>
+      </div>
+      <div class="foot-col"><h4>Programme</h4><a href="/kaistart.html">KAISTART</a><a href="/kaidop.html">KAIDOP</a><a href="/kailead.html">KAILEAD</a><a href="/kairon.html">KAIRON</a><a href="/kairon-executive.html">Fractional AI Officer</a></div>
+      <div class="foot-col"><h4>Academy</h4><a href="/academy.html#orchestrator">KI-Orchestrator</a><a href="/academy.html#manager">KAIDOP Manager</a><a href="/ai-transformation-facilitator.html">AI Transformation Facilitator</a></div>
+      <div class="foot-col"><h4>Ressourcen</h4><a href="/ressourcen.html">Blog</a><a href="/ki-readiness-check.html">KI-Readiness-Check</a><a href="mailto:nils@new-thought.com?subject=Erstgespräch">Erstgespräch</a></div>
+      <div class="foot-col"><h4>Unternehmen</h4><a href="/#loesung">Der Weg</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div>
     </div>
-    <div style="display:flex; gap:20px;">
-      <a href="/impressum.html" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Impressum</a>
-      <a href="/datenschutz.html" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4);">Datenschutz</a>
+    <div class="foot-bottom">
+      <div class="legal"><span>© 2026 new.thought</span><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a></div>
     </div>
   </div>
 </footer>
 
+<script>
+  (function(){
+    var nav=document.getElementById('nav');
+    var onS=function(){nav.classList.toggle('scrolled',window.scrollY>20);}; onS();
+    window.addEventListener('scroll',onS,{passive:true});
+    var ov=document.getElementById('mOverlay');
+    document.getElementById('hamburger').addEventListener('click',function(){ov.classList.add('open');document.body.style.overflow='hidden';});
+    var cl=function(){ov.classList.remove('open');document.body.style.overflow='';};
+    document.getElementById('mClose').addEventListener('click',cl);
+    ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:0.06});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  })();
+</script>
 </body>
 </html>

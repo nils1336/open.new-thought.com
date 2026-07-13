@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Facilitator — Bewerbung | new.thought</title>
+<meta name="description" content="Werde in 8 Wochen der Facilitator, der Unternehmen vom KI-Gerede zur Entscheidung führt — und dieses Format für 10.000–20.000 € pro Mandat verkauft. Bewirb dich für ein Erstgespräch.">
+<!-- Versteckte Funnel-Seite: nicht indexieren, nirgends verlinken. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   go.new-thought.com/facilitator — AI Facilitator
+   HIGH-TICKET APPLICATION FUNNEL — clean Serif-Hausstil.
+   Kein Preis auf der Seite: jeder CTA führt zum Bewerbungsformular.
+   Design-Tokens & Komponenten aus dem new.thought-System (ona.css),
+   hier self-contained (go/ deployt separat).
+   ============================================================ */
+:root{
+  --bg:#f4f3ef; --surface:#ffffff; --surface-2:#faf9f6;
+  --ink:#181816; --ink-2:#6c6c66; --ink-3:#9b9b95;
+  --line:#e7e6e1; --line-2:#efeeea;
+  --green:#2f6b43; --green-deep:#1c3a2b; --green-soft:#eef3ee;
+  --btn:#161616; --danger:#b0402f;
+  --serif:'Newsreader',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --maxw:1120px; --pad:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.narrow{max-width:720px;margin:0 auto}
+.serif{font-family:var(--serif);font-weight:440;letter-spacing:-.01em}
+.center{text-align:center}
+.eyebrow{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.green{color:var(--green)}
+.hl{background:var(--green-soft);color:var(--green-deep);padding:0 .1em;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.pill{display:inline-flex;align-items:center;gap:9px;font-size:12px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--green-deep);background:var(--green-soft);border:1px solid #cfe0d3;padding:8px 16px;border-radius:100px}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(47,107,67,.16)}
+
+/* ── buttons ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;
+  font-size:15px;font-weight:500;cursor:pointer;padding:14px 26px;border:1px solid transparent;
+  transition:transform .15s ease,background .2s ease,border-color .2s ease;white-space:nowrap}
+.btn-dark{background:var(--btn);color:#fff;border-color:var(--btn)}
+.btn-dark:hover{transform:translateY(-1px);background:#000}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#d8d7d1}
+.btn-ghost:hover{border-color:#b9b8b1}
+.btn-light{background:#fff;color:var(--green-deep);border-color:#fff}
+.btn-light:hover{transform:translateY(-1px);background:#f0efe9}
+.btn-accent{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 10px 26px -12px rgba(31,107,67,.75)}
+.btn-accent:hover{transform:translateY(-2px);background:#25794c;box-shadow:0 14px 32px -12px rgba(31,107,67,.8)}
+.btn-lg{font-size:16.5px;font-weight:600;padding:18px 34px;border-radius:11px}
+.btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.cta-note{font-size:13px;color:var(--ink-3);margin-top:14px;line-height:1.5}
+
+.arrow-link{display:inline-flex;align-items:center;gap:7px;color:var(--green);font-weight:500;font-size:14.5px;transition:gap .2s ease}
+.arrow-link:hover{gap:11px}
+
+/* ── nav ── */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .3s ease,box-shadow .3s ease}
+.nav.scrolled{background:rgba(244,243,239,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:16px}
+.brand .mark{width:22px;height:22px;border-radius:6px;background:var(--btn);display:inline-flex;align-items:center;justify-content:center}
+.brand .mark::after{content:"";width:10px;height:10px;border-radius:50%;border:2px solid #fff}
+.nav .tb-cta{font-size:14px;font-weight:500;color:var(--ink);border:1px solid #d8d7d1;padding:9px 18px;border-radius:9px;transition:border-color .2s ease}
+.nav .tb-cta:hover{border-color:#b9b8b1}
+
+/* ── section rhythm ── */
+section{padding:80px 0}
+.tight{padding:52px 0}
+.sec-head{max-width:640px;margin:0 auto 44px;text-align:center}
+.sec-head .eyebrow{margin-bottom:16px}
+.sec-head h2{font-family:var(--serif);font-weight:440;font-size:clamp(30px,4vw,48px);line-height:1.1;letter-spacing:-.015em}
+.sec-head h2 .dim{color:var(--ink-3)}
+.sec-head p{color:var(--ink-2);margin-top:16px;font-size:17px;line-height:1.55}
+
+/* ── hero ── */
+.hero{padding:140px 0 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:70px;left:50%;transform:translateX(-50%);
+  width:760px;height:460px;max-width:120vw;background:radial-gradient(circle,rgba(47,107,67,.11),transparent 66%);
+  z-index:0;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.hero .pill{margin-bottom:26px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(46px,7.1vw,90px);line-height:.98;letter-spacing:-.035em;max-width:15ch;margin:0 auto}
+.hero .sub{font-size:clamp(17px,1.8vw,21px);color:var(--ink-2);max-width:54ch;margin:28px auto 0;line-height:1.5}
+.hero .cta{margin-top:38px;display:flex;flex-direction:column;align-items:center;gap:0}
+
+/* ── quick facts row ── */
+.facts{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;max-width:720px;margin:40px auto 0;
+  padding-top:30px;border-top:1px solid var(--line)}
+.fact{text-align:center}
+.fact .n{font-family:var(--serif);font-weight:440;font-size:26px;color:var(--ink);line-height:1}
+.fact .l{font-size:12.5px;color:var(--ink-3);margin-top:7px;letter-spacing:.02em}
+
+/* ── video ── */
+.video-wrap{max-width:820px;margin:0 auto}
+.video{position:relative;aspect-ratio:16/9;border-radius:18px;overflow:hidden;
+  background:linear-gradient(155deg,#20302a,#16211c);border:1px solid var(--line);cursor:pointer;
+  box-shadow:0 40px 90px -60px rgba(0,0,0,.5)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .vposter{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;color:#fff;text-align:center;padding:28px}
+.video .play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.video:hover .play{transform:scale(1.06)}
+.video .play svg{margin-left:4px}
+.video .vtitle{font-family:var(--serif);font-weight:440;font-size:23px;max-width:34ch;line-height:1.2}
+.video .vlabel{font-size:13px;color:rgba(255,255,255,.6);letter-spacing:.04em}
+.video .vdur{position:absolute;right:14px;bottom:14px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:5px 11px;border-radius:7px;font-weight:500}
+.under-vid{font-size:15px;color:var(--ink-2);max-width:52ch;margin:24px auto 0;line-height:1.55;text-align:center}
+
+/* ── prose (problem) ── */
+.prose p{font-size:18px;line-height:1.72;color:#3a3a36;margin-bottom:22px}
+.prose p:last-child{margin-bottom:0}
+.prose p strong{color:var(--ink);font-weight:600}
+.prose .big{font-family:var(--serif);font-weight:440;font-size:clamp(24px,3.2vw,34px);line-height:1.2;color:var(--ink);letter-spacing:-.01em;margin:6px 0 26px}
+
+/* ── quote cards (pains) ── */
+.qcards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px 26px;
+  font-family:var(--serif);font-weight:440;font-size:19px;line-height:1.4;color:var(--ink)}
+.qcard::before{content:"\201C";color:var(--ink-3)}
+.qcard::after{content:"\201D";color:var(--ink-3)}
+
+/* ── numbered steps (method + programm) ── */
+.steps{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+.step-row{display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:baseline;padding:28px 4px;border-bottom:1px solid var(--line)}
+.step-row .num{font-family:var(--serif);font-weight:440;font-size:34px;color:var(--ink-3);line-height:1}
+.step-row .st-tag{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);font-weight:600}
+.step-row h3{font-family:var(--serif);font-weight:440;font-size:23px;letter-spacing:-.01em;margin:4px 0 8px}
+.step-row p{color:var(--ink-2);font-size:15.5px;line-height:1.6;max-width:52ch}
+.steps-note{max-width:760px;margin:22px auto 0;font-size:13.5px;color:var(--ink-3);text-align:center}
+
+/* ── compare (für wen / nicht) ── */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:0 auto}
+.compare .col{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:34px 32px}
+.compare .col h4{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px}
+.compare .col.no h4{color:var(--ink-3)}
+.compare .col.yes{border-color:#cfe0d3;background:var(--green-soft)}
+.compare .col.yes h4{color:var(--green)}
+.compare ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.compare li{display:flex;gap:12px;font-size:15.5px;line-height:1.5;color:var(--ink)}
+.compare .no li::before{content:"\2715";color:var(--ink-3);flex:none}
+.compare .yes li::before{content:"\2713";color:var(--green);font-weight:700;flex:none}
+
+/* ── toolkit cards ── */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:960px;margin:0 auto}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px 26px}
+.card .ci{width:38px;height:38px;border-radius:10px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:16px}
+.card h3{font-size:17px;font-weight:600;margin-bottom:7px}
+.card p{color:var(--ink-2);font-size:14px;line-height:1.6}
+
+/* ── about (centered, kein Leerraum rechts) ── */
+.about{max-width:640px;margin:0 auto;text-align:center}
+.about .photo{width:84px;height:84px;border-radius:50%;overflow:hidden;margin:0 auto 22px;background:var(--green-deep);
+  display:flex;align-items:center;justify-content:center;color:#bfe0c9;font-size:12px;border:1px solid var(--line)}
+.about .photo img{width:100%;height:100%;object-fit:cover}
+.about .eyebrow{margin-bottom:14px}
+.about p{font-size:18px;line-height:1.72;color:#3a3a36;margin-bottom:20px}
+.about p strong{color:var(--ink);font-weight:600}
+.about .sig{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink-2)}
+
+/* ── quote band (result / social proof) ── */
+.quote-band{background:var(--green-deep);border-radius:28px;color:#fff;text-align:center;padding:80px 40px;
+  background-image:radial-gradient(circle at 50% 120%,rgba(120,180,140,.18),transparent 60%)}
+.quote-band blockquote{font-family:var(--serif);font-weight:440;font-size:clamp(26px,3.6vw,44px);line-height:1.24;letter-spacing:-.015em;max-width:20ch;margin:0 auto 30px}
+.quote-band .who{color:rgba(255,255,255,.62);font-size:14.5px}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:760px;margin:36px auto 0}
+.metric{text-align:center;padding:20px 16px;border-left:1px solid var(--line)}
+.metric:first-child{border-left:none}
+.metric .n{font-family:var(--serif);font-weight:440;font-size:clamp(34px,4.4vw,50px);line-height:1;color:var(--green)}
+.metric .d{color:var(--ink-2);font-size:13.5px;margin-top:12px;line-height:1.45}
+
+/* ── steps-to-apply (Ablauf) ── */
+.apply-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px;margin:0 auto}
+.astep{text-align:center;padding:8px}
+.astep .an{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;color:var(--green);margin:0 auto 16px}
+.astep h4{font-size:16px;font-weight:600;margin-bottom:6px}
+.astep p{color:var(--ink-2);font-size:14px;line-height:1.55;max-width:26ch;margin:0 auto}
+
+/* ── FAQ ── */
+.faq{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;padding:24px 4px;display:flex;align-items:center;justify-content:space-between;gap:18px;font-size:17px;font-weight:500;color:var(--ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--ink-3);font-size:24px;font-weight:400;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .fa{padding:0 4px 26px;color:var(--ink-2);font-size:15.5px;line-height:1.68;max-width:64ch}
+
+/* ============================================================
+   BEWERBUNGSFORMULAR — clean, Hausstil
+   ============================================================ */
+.apply-sec{background:var(--surface-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.formcard{max-width:600px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:22px;
+  overflow:hidden;box-shadow:0 40px 90px -70px rgba(0,0,0,.4)}
+.fc-top{padding:28px 34px 0}
+.progress{height:3px;background:var(--line);border-radius:100px;overflow:hidden}
+.progress .bar{height:100%;width:0;background:var(--green);transition:width .35s ease}
+.step-meta{display:flex;justify-content:space-between;align-items:center;margin-top:14px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.form-body{padding:22px 34px 32px}
+
+.step{display:none}
+.step.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.step .q{font-family:var(--serif);font-weight:440;font-size:26px;letter-spacing:-.01em;line-height:1.16;margin:8px 0 6px}
+.step .hint{font-size:14px;color:var(--ink-3);margin-bottom:22px;line-height:1.5}
+
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--ink)}
+.field input,.field textarea{width:100%;font-family:var(--sans);font-size:15.5px;color:var(--ink);
+  background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:14px 15px;transition:border-color .15s ease,box-shadow .15s ease}
+.field textarea{min-height:112px;resize:vertical;line-height:1.55}
+.field input::placeholder,.field textarea::placeholder{color:#bdbcb5}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(47,107,67,.12)}
+.field .err{display:none;color:var(--danger);font-size:12.5px;font-weight:500;margin-top:7px}
+.field.invalid input,.field.invalid textarea{border-color:var(--danger)}
+.field.invalid .err{display:block}
+
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{position:relative;display:flex;align-items:flex-start;gap:13px;cursor:pointer;
+  border:1px solid var(--line);border-radius:12px;padding:16px 17px;background:var(--surface);transition:border-color .15s ease,background .15s ease}
+.opt:hover{border-color:#cbcac3}
+.opt input{position:absolute;opacity:0;pointer-events:none}
+.opt .box{width:20px;height:20px;border-radius:50%;border:1.5px solid #c4c3bc;flex:none;margin-top:1px;display:flex;align-items:center;justify-content:center;transition:border-color .15s ease,background .15s ease}
+.opt .box::after{content:"";width:9px;height:9px;border-radius:50%;background:#fff;transform:scale(0);transition:transform .15s ease}
+.opt .txt{font-size:15px;font-weight:500;line-height:1.4;color:var(--ink)}
+.opt .txt small{display:block;font-weight:400;color:var(--ink-3);font-size:13px;margin-top:3px}
+.opt input:checked~.box{border-color:var(--green);background:var(--green)}
+.opt input:checked~.box::after{transform:scale(1)}
+.opt:has(input:checked){border-color:var(--green);background:var(--green-soft)}
+
+.form-nav{display:flex;align-items:center;gap:12px;margin-top:28px}
+.form-nav .btn{padding:14px 24px}
+.form-nav .spacer{flex:1}
+.back-link{font-size:14px;font-weight:500;color:var(--ink-3);background:none;border:none;cursor:pointer;padding:8px 2px}
+.back-link:hover{color:var(--ink)}
+.form-legal{font-size:12px;color:var(--ink-3);margin-top:18px;line-height:1.5;text-align:center}
+.form-legal a{color:var(--green);text-decoration:underline;text-underline-offset:2px}
+
+/* result screens */
+.result{display:none;text-align:center;padding:14px 4px 4px}
+.result.active{display:block;animation:fade .35s ease}
+.result .ricon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:28px}
+.result.qualified .ricon{background:var(--green-soft);color:var(--green)}
+.result.declined .ricon{background:var(--surface-2);border:1px solid var(--line);color:var(--ink-3)}
+.result h3{font-family:var(--serif);font-weight:440;font-size:28px;letter-spacing:-.01em;margin-bottom:14px}
+.result p{font-size:15.5px;color:var(--ink-2);line-height:1.62;max-width:44ch;margin:0 auto 16px}
+.cal-embed{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:24px 22px;margin:6px 0 22px;font-size:13.5px;color:var(--ink-3);line-height:1.6}
+.result .btn{width:100%;justify-content:center;margin-bottom:12px}
+
+/* ── final cta ── */
+.final{text-align:center;padding:100px 0 84px}
+.final h2{font-family:var(--serif);font-weight:440;font-size:clamp(34px,4.8vw,62px);line-height:1.06;letter-spacing:-.02em;max-width:18ch;margin:0 auto 20px}
+.final p{color:var(--ink-2);font-size:18px;line-height:1.5;max-width:48ch;margin:0 auto 30px}
+
+/* ── footer ── */
+footer{border-top:1px solid var(--line);padding:52px 0 40px;text-align:center}
+footer .brand{justify-content:center;margin-bottom:16px}
+footer .fl{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;font-size:13.5px;color:var(--ink-2)}
+footer .fl a:hover{color:var(--ink)}
+footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
+
+/* ── sticky mobile cta ── */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);
+  padding:12px 16px;transform:translateY(120%);transition:transform .3s ease;display:none}
+.sticky-cta.show{transform:none}
+.sticky-cta .btn{width:100%}
+
+/* ── responsive ── */
+@media (max-width:860px){
+  .qcards{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .apply-steps{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:680px){
+  section{padding:60px 0}
+  .hero{padding:120px 0 30px}
+  .compare{grid-template-columns:1fr}
+  .metrics{grid-template-columns:1fr}
+  .metric{border-left:none;border-top:1px solid var(--line);padding:22px 16px}
+  .metric:first-child{border-top:none}
+  .nav .tb-cta{display:none}
+  .sticky-cta{display:block}
+  .step-row{grid-template-columns:44px 1fr;gap:16px}
+  .fc-top,.form-body{padding-left:24px;padding-right:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="brand"><span class="mark"></span>new.thought</a>
+    <a class="tb-cta" href="#bewerbung">Jetzt bewerben</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="wrap">
+    <span class="pill"><span class="dot"></span>AI Facilitator</span>
+    <h1 class="serif">Werde der KI-Facilitator, der die <span class="hl">Unternehmen von morgen</span> formt.</h1>
+    <p class="sub">In 8 Wochen lernst du den <b>Transformations-Sprint</b> — das 4-Tage-Format, mit dem du Unternehmen durch echte KI-Transformation führst und die Kompetenzen aufbaust, auf die es morgen ankommt.</p>
+    <div class="cta">
+      <a href="#bewerbung" class="btn btn-accent btn-lg">Jetzt bewerben →</a>
+      <p class="cta-note">Kostenlos &amp; unverbindlich · ca. 3 Minuten · nur wenige Plätze frei</p>
+    </div>
+    <div class="facts">
+      <div class="fact"><div class="n">8</div><div class="l">Wochen, live online</div></div>
+      <div class="fact"><div class="n">12</div><div class="l">Plätze, streng limitiert</div></div>
+      <div class="fact"><div class="n">1</div><div class="l">betreuter Praxis-Sprint</div></div>
+      <div class="fact"><div class="n">0</div><div class="l">Zeilen Code nötig</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ── VSL ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="video-wrap">
+      <div class="video" id="vsl" role="button" tabindex="0" aria-label="Video abspielen">
+        <div class="vposter">
+          <div class="play" aria-hidden="true">
+            <svg width="24" height="26" viewBox="0 0 24 26" fill="none"><path d="M22.5 11.3a2 2 0 0 1 0 3.4L3 26.3A2 2 0 0 1 0 24.6V1.4A2 2 0 0 1 3 -.3L22.5 11.3Z" fill="#1c3a2b"/></svg>
+          </div>
+          <div class="vtitle">Warum die wertvollste Rolle im KI-Markt gerade unbesetzt ist</div>
+          <div class="vlabel">Kurzes Training · mit Nils Blache · ca. 12 Min</div>
+        </div>
+        <div class="vdur">12:00</div>
+      </div>
+    </div>
+    <p class="under-vid">Sieh dir das Video an. Danach weißt du, ob das dein Weg ist — und füllst das kurze Bewerbungsformular aus.</p>
+  </div>
+</section>
+
+<!-- ── PROBLEM ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Das Problem</div>
+      <h2 class="serif">Jedes Unternehmen weiß, dass es KI braucht.<br><span class="dim">Fast keins weiß, wo anfangen.</span></h2>
+    </div>
+    <div class="narrow prose">
+      <p>Die IT sagt „Datenschutz". Der Vertrieb sagt „keine Zeit". Die Geschäftsführung sagt „macht mal". Und Monat für Monat dasselbe Meeting.</p>
+      <p class="big">Es fehlt nicht das Tool. Es fehlt die Entscheidung — und jemand, der sie herbeiführt.</p>
+      <p>Die Automatisierungs-Agenturen liefern Technik. Aber erst, <strong>wenn jemand entschieden hat</strong>, was automatisiert wird und warum. Genau diese Entscheidung ist die wertvollste Dienstleistung im KI-Markt — und sie ist gerade unbesetzt.</p>
+    </div>
+    <div class="qcards narrow" style="max-width:960px">
+      <div class="qcard">Wir müssten mal was mit KI machen.</div>
+      <div class="qcard">Erst muss die IT das mit dem Datenschutz klären.</div>
+      <div class="qcard">Der Pilot lief — und dann ist er versandet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── METHODE ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Der Transformations-Sprint</div>
+      <h2 class="serif">Vier Tage. Ein Ergebnis.</h2>
+      <p>Kein offener Stuhlkreis, sondern ein präziser Ablauf mit fertigen Boards, der dich als Facilitator trägt. Das ist das Format, das du führst — und verkaufst.</p>
+    </div>
+    <div class="steps">
+      <div class="step-row">
+        <div class="num">1</div>
+        <div><div class="st-tag">Tag 1 · Realität</div><h3 class="serif">Wo stehen wir wirklich?</h3><p>Prozess-Mapping mit dem Team, Schatten-KI aufdecken, ehrlicher Reifegrad. Am Abend weiß das Unternehmen zum ersten Mal, wo es steht.</p></div>
+      </div>
+      <div class="step-row">
+        <div class="num">2</div>
+        <div><div class="st-tag">Tag 2 · Potenzial</div><h3 class="serif">Welcher Use Case zählt?</h3><p>Use Cases sammeln, nach Aufwand und Wirkung bewerten, mit dem Führungsteam priorisieren. Aus 40 Ideen wird der eine Kandidat.</p></div>
+      </div>
+      <div class="step-row">
+        <div class="num">3</div>
+        <div><div class="st-tag">Tag 3 · Prototyp</div><h3 class="serif">Funktioniert es?</h3><p>Den Top-Use-Case mit KI- und No-Code-Tools real antesten. Kein Konzeptpapier — ein funktionierender Durchstich.</p></div>
+      </div>
+      <div class="step-row">
+        <div class="num">4</div>
+        <div><div class="st-tag">Tag 4 · Entscheidung</div><h3 class="serif">Was passiert jetzt?</h3><p>Ergebnispräsentation vor der Geschäftsführung, Roadmap, Verantwortlichkeiten. Das Unternehmen verlässt den Raum mit einem Plan.</p></div>
+      </div>
+    </div>
+    <p class="steps-note">Marktpreis dieses Formats: 12.000–20.000 € pro Durchführung. Du lernst es in acht Wochen.</p>
+  </div>
+</section>
+
+<!-- ── FÜR WEN ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Ehrliche Vorauswahl</div>
+      <h2 class="serif">Für wen das gebaut ist.</h2>
+    </div>
+    <div class="compare">
+      <div class="col yes">
+        <h4>Das bist du</h4>
+        <ul>
+          <li>Du verdienst bereits Geld mit Kopfarbeit — Beratung, Coaching, Training, Agentur.</li>
+          <li>Du willst pro Mandat fünfstellig bezahlt werden statt Stundensätze zu verhandeln.</li>
+          <li>Du arbeitest gern mit Gruppen — oder lernst das Handwerk strukturiert.</li>
+          <li>Du kannst 4–6 Stunden pro Woche investieren, acht Wochen lang.</li>
+        </ul>
+      </div>
+      <div class="col no">
+        <h4>Bitte nicht bewerben</h4>
+        <ul>
+          <li>Du suchst „passives Einkommen mit KI". Das hier ist ein Handwerk, kein Hack.</li>
+          <li>Du erwartest ein technisches Entwickler-Training. Wir verkaufen Entscheidungen, nicht Code.</li>
+          <li>Du hast in den nächsten Monaten keine Zeit, das Gelernte anzuwenden.</li>
+          <li>Du willst nicht in deine Positionierung investieren, bevor das erste Mandat zurückfließt.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROGRAMMABLAUF ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Der Programmablauf</div>
+      <h2 class="serif">Acht Wochen bis zum ersten Angebot.</h2>
+      <p>Eine Live-Session pro Woche, dazu 2–3 Stunden betreutes Selbststudium. Gruppe max. 12.</p>
+    </div>
+    <div class="steps">
+      <div class="step-row"><div class="num">1</div><div><div class="st-tag">Woche 1–2</div><h3 class="serif">Die Methode</h3><p>Den Transformations-Sprint vollständig verstehen und an einem Übungsfall durchspielen.</p></div></div>
+      <div class="step-row"><div class="num">2</div><div><div class="st-tag">Woche 3–4</div><h3 class="serif">KI-Substanz</h3><p>Das kritische Nachfragen einer Geschäftsführung zu Use Cases, Tools und Datenschutz souverän bestehen.</p></div></div>
+      <div class="step-row"><div class="num">3</div><div><div class="st-tag">Woche 5</div><h3 class="serif">Facilitation-Handwerk</h3><p>Dominante Teilnehmer einfangen, Energie über vier Tage halten — remote und in Präsenz.</p></div></div>
+      <div class="step-row"><div class="num">4</div><div><div class="st-tag">Woche 6</div><h3 class="serif">Verkauf</h3><p>Dein Angebot steht: Zielbranche, Preis, Pitch, erste Ansprache-Liste.</p></div></div>
+      <div class="step-row"><div class="num">5</div><div><div class="st-tag">Woche 7</div><h3 class="serif">Praxis-Sprint</h3><p>Ersten echten Transformations-Sprint durchgeführt — betreut, mit Feedback, dokumentiert als Referenz-Case.</p></div></div>
+      <div class="step-row"><div class="num">6</div><div><div class="st-tag">Woche 8</div><h3 class="serif">Launch</h3><p>Positionierung geschärft, Zielkunden angesprochen, erstes Mandat in Reichweite.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOLKIT ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Dein Toolkit</div>
+      <h2 class="serif">Kein Wissen — ein Geschäft in Kartons.</h2>
+      <p>Alles fertig aufgebaut, direkt einsetzbar. Duplizieren, Kundenlogo drauf, loslegen.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="ci">▤</div><h3>Miro-Boards für alle 4 Tage</h3><p>Jede Übung, jedes Template, fertig aufgebaut.</p></div>
+      <div class="card"><div class="ci">≡</div><h3>Agenden &amp; Leitfäden</h3><p>Minutengenaue Abläufe mit Timing-Puffern und Plan B für jede Übung.</p></div>
+      <div class="card"><div class="ci">◆</div><h3>Prompt-Bibliothek</h3><p>Kuratierte Prompts für Vorbereitung und Prototyp-Tag — mit jedem Update.</p></div>
+      <div class="card"><div class="ci">⬡</div><h3>Ergebnis-Report</h3><p>Der Abschlussbericht, der im Unternehmen weiterwandert — und Folgeaufträge auslöst.</p></div>
+      <div class="card"><div class="ci">⬤</div><h3>Pricing-Kalkulator</h3><p>Was kostet dein Sprint bei welcher Unternehmensgröße? Logik statt Bauchgefühl.</p></div>
+      <div class="card"><div class="ci">◈</div><h3>12 Monate Alumni</h3><p>Monatliche Sessions, Methoden-Updates, Fallbesprechungen aus echten Mandaten.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ÜBER NILS ── -->
+<section>
+  <div class="wrap">
+    <div class="about">
+      <div class="photo"><img src="https://www.new-thought.com/logo-dark.png" alt="Nils Blache" onerror="this.style.display='none';this.parentNode.textContent='NB';"></div>
+      <div class="eyebrow">Dein Mentor · Nils Blache</div>
+      <p>Ich glaube, dass die wertvollste Rolle im KI-Markt gerade unbesetzt ist: <strong>die Person, die aus dem Gerede einen Plan macht.</strong></p>
+      <p>Mit new.thought begleite ich Mittelständler bei genau der Frage, an der die meisten hängenbleiben — nicht „welches Tool", sondern „welche Entscheidung, wer entscheidet, wie kommt die Organisation mit". Der Transformations-Sprint ist die Methode dahinter. Jetzt gebe ich sie an Facilitatoren weiter, die sie selbst führen wollen.</p>
+      <p class="sig">— Nils Blache, Gründer new.thought</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ERGEBNIS / SOCIAL PROOF ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="quote-band">
+      <blockquote class="serif">Mein erstes Format-Mandat: 14.000 €. Sechs Wochen nach Programmstart.</blockquote>
+      <div class="who">Markus K. · freier Prozessberater</div>
+    </div>
+    <div class="metrics">
+      <div class="metric"><div class="n">10–20k€</div><div class="d">pro Mandat, nach Wert bezahlt</div></div>
+      <div class="metric"><div class="n">4 Tage</div><div class="d">Formatdauer beim Kunden</div></div>
+      <div class="metric"><div class="n">1 Mandat</div><div class="d">refinanziert das Programm</div></div>
+    </div>
+    <p class="steps-note">Illustrative Angaben — echte Namen, Fotos und Zahlen werden vor Launch ergänzt.</p>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2 class="serif">Bevor du fragst.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Was kostet das Programm?</summary><div class="fa">Das besprechen wir im Erstgespräch — ehrlich und passend zu deiner Situation, inklusive Ratenzahlung. Ein einziges Mandat refinanziert das Programm, ab dem zweiten ist alles Marge. Deshalb führen wir zuerst das Gespräch und prüfen gemeinsam, ob sich die Investition für dich rechnet.</div></details>
+      <details><summary>Ich bin nicht technisch. Reicht das?</summary><div class="fa">Ja. Der Transformations-Sprint verkauft Entscheidungen, nicht Code. Das nötige KI-Wissen ist Teil des Programms und bewusst auf das begrenzt, was du im Raum wirklich brauchst. Programmieren musst du an keiner Stelle.</div></details>
+      <details><summary>Ich habe noch nie einen Workshop moderiert.</summary><div class="fa">Dann arbeitest du in Woche 5 am meisten — und stehst in Woche 7 zum ersten Mal vor einer echten Gruppe, betreut und mit Feedback. Die Struktur trägt dich: ein präziser Ablauf mit fertigen Boards.</div></details>
+      <details><summary>Warum nicht einfach Automatisierungen verkaufen?</summary><div class="fa">Kannst du — zusammen mit tausenden anderen, im direkten Preisvergleich. Der Transformations-Sprint ist die Ebene davor: Welcher Prozess, welcher Use Case, wie kommt die Organisation mit. Dieses Gespräch führst du mit der Geschäftsführung, nicht mit der IT — und es wird nach Wert bezahlt.</div></details>
+      <details><summary>Wie viel Zeit brauche ich?</summary><div class="fa">4–6 Stunden pro Woche: eine Live-Session plus Vor-/Nachbereitung und Übungen. Woche 7 (dein Praxis-Sprint) ist intensiver.</div></details>
+      <details><summary>Was passiert im Erstgespräch?</summary><div class="fa">Ein ehrliches 30-Minuten-Gespräch: Wir klären deine Ausgangslage, dein Ziel und ob die Methode passt. Wenn ja, stellen wir das Programm konkret vor. Wenn nicht, sagen wir dir das offen. Kein Druck.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ── BEWERBUNG ── -->
+<section class="apply-sec" id="bewerbung">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">In 3 Schritten</div>
+      <h2 class="serif">So läuft deine Bewerbung.</h2>
+    </div>
+    <div class="apply-steps" style="margin-bottom:52px">
+      <div class="astep"><div class="an serif">1</div><h4>Formular ausfüllen</h4><p>Ein paar Fragen, ca. 3 Minuten. Damit wir vorab prüfen, ob es passt.</p></div>
+      <div class="astep"><div class="an serif">2</div><h4>Erstgespräch</h4><p>30 Minuten mit uns. Wir klären Ausgangslage, Ziel und Fit — ohne Verkaufsdruck.</p></div>
+      <div class="astep"><div class="an serif">3</div><h4>Entscheidung</h4><p>Passt es für beide Seiten, kann es für dich losgehen.</p></div>
+    </div>
+
+    <form class="formcard" id="applyForm" novalidate>
+      <div class="fc-top">
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <div class="step-meta"><span id="stepLabel">Schritt 1 von 8</span><span id="stepPct">12 %</span></div>
+      </div>
+      <div class="form-body">
+
+        <!-- Schritt 1: Kontakt -->
+        <div class="step active" data-step="1">
+          <div class="q serif">Wie erreichen wir dich?</div>
+          <div class="hint">Deine Daten bleiben bei uns und werden nur für das Erstgespräch verwendet.</div>
+          <div class="field" data-req><label>Vor- &amp; Nachname</label><input type="text" name="name" autocomplete="name" placeholder="Max Mustermann"><div class="err">Bitte gib deinen Namen an.</div></div>
+          <div class="field" data-req data-type="email"><label>E-Mail-Adresse</label><input type="email" name="email" autocomplete="email" placeholder="max@firma.de"><div class="err">Bitte gib eine gültige E-Mail-Adresse an.</div></div>
+          <div class="field" data-req data-type="tel"><label>Telefonnummer</label><input type="tel" name="phone" autocomplete="tel" placeholder="+49 …"><div class="err">Bitte gib eine gültige Telefonnummer an.</div></div>
+        </div>
+
+        <!-- Schritt 2: Situation -->
+        <div class="step" data-step="2">
+          <div class="q serif">Was beschreibt deine Situation am besten?</div>
+          <div class="hint">Wähle, was am ehesten passt.</div>
+          <div class="opts" data-radio="situation" data-req>
+            <label class="opt"><input type="radio" name="situation" value="selbststaendig"><span class="box"></span><span class="txt">Selbstständig / freie:r Berater:in<small>Ich verdiene bereits mit Beratung, Coaching oder Training.</small></span></label>
+            <label class="opt"><input type="radio" name="situation" value="agentur"><span class="box"></span><span class="txt">Agentur / Team<small>Ich will den Transformations-Sprint als Angebot ins Portfolio holen.</small></span></label>
+            <label class="opt"><input type="radio" name="situation" value="intern"><span class="box"></span><span class="txt">Angestellt / interne:r KI-Champion<small>Ich will das Format im eigenen Unternehmen einführen.</small></span></label>
+            <label class="opt"><input type="radio" name="situation" value="einstieg"><span class="box"></span><span class="txt">Noch am Anfang<small>Ich baue mir gerade ein Beratungs-Standbein auf.</small></span></label>
+          </div>
+        </div>
+
+        <!-- Schritt 3: Ziel -->
+        <div class="step" data-step="3">
+          <div class="q serif">Wo willst du in 6–12 Monaten stehen?</div>
+          <div class="hint">Je konkreter dein Ziel, desto besser das Gespräch.</div>
+          <div class="field" data-req data-min="15"><textarea name="ziel" placeholder="z. B. „Zwei durchgeführte Transformations-Sprints und ein wiederholbares Angebot am Markt.“"></textarea><div class="err">Bitte beschreibe dein Ziel in ein bis zwei Sätzen.</div></div>
+        </div>
+
+        <!-- Schritt 4: Bisher versucht -->
+        <div class="step" data-step="4">
+          <div class="q serif">Was hast du bisher versucht?</div>
+          <div class="hint">Kurse, Tools, eigene Angebote, nichts Konkretes — alles ist eine ehrliche Antwort.</div>
+          <div class="field" data-req data-min="10"><textarea name="versucht" placeholder="z. B. „Ein paar KI-Kurse gemacht, aber nie ein verkaufbares Format daraus gebaut.“"></textarea><div class="err">Bitte beschreibe kurz, was du bisher versucht hast.</div></div>
+        </div>
+
+        <!-- Schritt 5: Investitionsbereitschaft (QUALIFIZIEREND) -->
+        <div class="step" data-step="5">
+          <div class="q serif">Wie stehst du zu einer Investition in dein Angebot?</div>
+          <div class="hint">Den genauen Betrag nennen wir im Gespräch. Wichtig ist die Größenordnung, mit der du planst.</div>
+          <div class="opts" data-radio="budget" data-req>
+            <label class="opt"><input type="radio" name="budget" value="ready_high"><span class="box"></span><span class="txt">Ich investiere, wenn der Plan überzeugt<small>Ich denke in Rendite, nicht in Kosten — auch fünfstellig-nah.</small></span></label>
+            <label class="opt"><input type="radio" name="budget" value="ready_mid"><span class="box"></span><span class="txt">Einige tausend Euro sind machbar<small>Größenordnung 3.000–8.000 € ist für mich planbar (auch in Raten).</small></span></label>
+            <label class="opt"><input type="radio" name="budget" value="stretch"><span class="box"></span><span class="txt">Es wäre ein Stretch, aber ich plane dafür<small>Ich brauche Ratenzahlung und einen klaren ROI.</small></span></label>
+            <label class="opt"><input type="radio" name="budget" value="none"><span class="box"></span><span class="txt">Aktuell möchte ich nichts investieren<small>Ich suche erstmal kostenlose Informationen.</small></span></label>
+          </div>
+        </div>
+
+        <!-- Schritt 6: Zeitrahmen (QUALIFIZIEREND) -->
+        <div class="step" data-step="6">
+          <div class="q serif">Wie schnell willst du starten?</div>
+          <div class="hint">Die Plätze sind streng limitiert — wir planen sie im Voraus.</div>
+          <div class="opts" data-radio="zeit" data-req>
+            <label class="opt"><input type="radio" name="zeit" value="now"><span class="box"></span><span class="txt">In den nächsten 30 Tagen<small>Ich bin startklar.</small></span></label>
+            <label class="opt"><input type="radio" name="zeit" value="soon"><span class="box"></span><span class="txt">In 1–3 Monaten<small>Ich richte mir gerade den Rahmen ein.</small></span></label>
+            <label class="opt"><input type="radio" name="zeit" value="later"><span class="box"></span><span class="txt">Irgendwann später / weiß noch nicht<small>Ich informiere mich erstmal unverbindlich.</small></span></label>
+          </div>
+        </div>
+
+        <!-- Schritt 7: Entscheidungsfähigkeit -->
+        <div class="step" data-step="7">
+          <div class="q serif">Kannst du die Entscheidung allein treffen?</div>
+          <div class="hint">Damit wir das Gespräch mit den richtigen Personen führen.</div>
+          <div class="opts" data-radio="entscheidung" data-req>
+            <label class="opt"><input type="radio" name="entscheidung" value="alone"><span class="box"></span><span class="txt">Ja, ich entscheide allein<small>Es hängt nur von mir ab.</small></span></label>
+            <label class="opt"><input type="radio" name="entscheidung" value="partner"><span class="box"></span><span class="txt">Ich bespreche es mit Partner:in / Familie<small>Die finanzielle Entscheidung treffe ich nicht ganz allein.</small></span></label>
+            <label class="opt"><input type="radio" name="entscheidung" value="company"><span class="box"></span><span class="txt">Mein Unternehmen entscheidet mit<small>Es läuft über ein Firmenbudget.</small></span></label>
+          </div>
+        </div>
+
+        <!-- Schritt 8: Warum jetzt -->
+        <div class="step" data-step="8">
+          <div class="q serif">Warum jetzt?</div>
+          <div class="hint">Was macht diesen Schritt gerade jetzt für dich wichtig?</div>
+          <div class="field" data-req data-min="10"><textarea name="warum" placeholder="z. B. „Der Markt kippt gerade und ich will die Rolle jetzt besetzen.“"></textarea><div class="err">Bitte beschreibe kurz, warum jetzt der richtige Zeitpunkt ist.</div></div>
+        </div>
+
+        <!-- Ergebnis: qualifiziert -->
+        <div class="result qualified" data-result="qualified">
+          <div class="ricon">✓</div>
+          <h3 class="serif">Passt — buch dir dein Erstgespräch.</h3>
+          <p>Danke, <span id="qName">dir</span>. Auf Basis deiner Antworten passt ein Gespräch. Wähl dir unten direkt einen Termin — wir haben deine Angaben dann schon vorliegen.</p>
+          <div class="cal-embed" id="calEmbed">
+            <!-- KALENDER: Cal.com/Calendly-Embed via CAL_URL / CAL_EMBED unten. -->
+            <strong>Kalender-Platzhalter</strong><br>Hier erscheint dein Buchungskalender. Trage den Link unten im Skript bei <code>CAL_URL</code> ein.
+          </div>
+          <a href="#" class="btn btn-dark" id="calBtn" target="_blank" rel="noopener">Termin für mein Erstgespräch wählen →</a>
+          <p class="form-legal">Du erhältst zusätzlich eine Bestätigung per E-Mail.</p>
+        </div>
+
+        <!-- Ergebnis: nicht qualifiziert -->
+        <div class="result declined" data-result="declined">
+          <div class="ricon">◔</div>
+          <h3 class="serif">Danke für deine Ehrlichkeit.</h3>
+          <p>Auf Basis deiner Antworten ist das Programm gerade nicht der richtige Schritt — ein Erstgespräch wäre für uns beide keine gut investierte Zeit. Ausdrücklich kein Nein für immer.</p>
+          <p>Wenn du dich zuerst kostenlos einarbeiten willst, sind diese Ressourcen ein guter Start:</p>
+          <a href="/ressourcen.html" class="btn btn-ghost" target="_blank" rel="noopener">Kostenlose Ressourcen ansehen</a>
+          <a href="/ki-readiness-check.html" class="btn btn-dark" target="_blank" rel="noopener">KI-Readiness-Check machen</a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="form-nav" id="formNav">
+          <button type="button" class="back-link" id="btnBack" style="visibility:hidden">← Zurück</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn-dark" id="btnNext">Weiter →</button>
+        </div>
+        <p class="form-legal" id="legal">Mit dem Absenden stimmst du zu, dass wir dich zum Erstgespräch kontaktieren. Details in der <a href="/datenschutz.html" target="_blank" rel="noopener">Datenschutzerklärung</a>.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="serif">Die Rolle ist frei. Besetze sie, bevor es alle tun.</h2>
+    <p>Ob du der Facilitator wirst, der aus KI-Gerede ein Mandat macht, entscheidet sich in einem ehrlichen Erstgespräch.</p>
+    <a href="#bewerbung" class="btn btn-accent btn-lg">Jetzt bewerben →</a>
+    <p class="cta-note">Kostenlos &amp; unverbindlich · ca. 3 Minuten · kein Verkaufsdruck</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="wrap">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <div class="fl">
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+    </div>
+    <div class="cp">© 2026 new.thought · Nils Blache</div>
+  </div>
+</footer>
+
+<!-- ── STICKY MOBILE CTA ── -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn btn-accent" href="#bewerbung">Jetzt bewerben →</a>
+</div>
+
+<script>
+(function(){
+  /* ── Nav + Sticky CTA ── */
+  var nav=document.getElementById('nav');
+  var sticky=document.getElementById('stickyCta');
+  var onScroll=function(){
+    var y=window.scrollY;
+    nav.classList.toggle('scrolled',y>20);
+    sticky.classList.toggle('show',y>700);
+  };
+  onScroll();
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* ── VSL Video ── */
+  var EMBED_URL=""; // z.B. "https://www.youtube.com/embed/XXXX?autoplay=1"
+  var v=document.getElementById('vsl');
+  if(v){
+    var play=function(){
+      if(!EMBED_URL){ document.getElementById('bewerbung').scrollIntoView({behavior:'smooth'}); return; }
+      v.innerHTML='<iframe src="'+EMBED_URL+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    };
+    v.addEventListener('click',play);
+    v.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();play();} });
+  }
+
+  /* ============================================================
+     MEHRSTUFIGES BEWERBUNGSFORMULAR
+     ============================================================ */
+  // Kalenderlink — nur qualifizierte Bewerber sehen ihn.
+  // Trage hier deinen Cal.com / Calendly-Link ein:
+  var CAL_URL="https://cal.com/new-thought/erstgespraech";
+  // Auf true setzen, um den Kalender direkt als iframe einzubetten
+  // (nur mit gültigem CAL_URL — sonst genügt der Button).
+  var CAL_EMBED=false;
+
+  var form=document.getElementById('applyForm');
+  var steps=Array.prototype.slice.call(form.querySelectorAll('.step'));
+  var TOTAL=steps.length;
+  var bar=document.getElementById('bar');
+  var stepLabel=document.getElementById('stepLabel');
+  var stepPct=document.getElementById('stepPct');
+  var btnNext=document.getElementById('btnNext');
+  var btnBack=document.getElementById('btnBack');
+  var formNav=document.getElementById('formNav');
+  var legal=document.getElementById('legal');
+  var current=0;
+
+  var emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var telRe=/^[+()\d][\d\s\-()\/]{6,}$/;
+
+  function showStep(i){
+    steps.forEach(function(s,idx){ s.classList.toggle('active',idx===i); });
+    current=i;
+    var pct=Math.round(((i+1)/TOTAL)*100);
+    bar.style.width=pct+'%';
+    stepLabel.textContent='Schritt '+(i+1)+' von '+TOTAL;
+    stepPct.textContent=pct+' %';
+    btnBack.style.visibility = i===0 ? 'hidden':'visible';
+    btnNext.textContent = i===TOTAL-1 ? 'Bewerbung absenden' : 'Weiter →';
+    var f=steps[i].querySelector('input,textarea');
+    if(f){ try{ f.focus({preventScroll:true}); }catch(e){} }
+  }
+
+  function validateStep(i){
+    var step=steps[i];
+    var ok=true;
+    step.querySelectorAll('.field[data-req]').forEach(function(field){
+      var el=field.querySelector('input,textarea');
+      var val=(el.value||'').trim();
+      var type=field.getAttribute('data-type');
+      var min=parseInt(field.getAttribute('data-min')||'0',10);
+      var valid=val.length>0 && val.length>=min;
+      if(valid && type==='email') valid=emailRe.test(val);
+      if(valid && type==='tel') valid=telRe.test(val);
+      field.classList.toggle('invalid',!valid);
+      if(!valid) ok=false;
+    });
+    step.querySelectorAll('[data-radio][data-req]').forEach(function(group){
+      var name=group.getAttribute('data-radio');
+      var checked=step.querySelector('input[name="'+name+'"]:checked');
+      if(!checked){ ok=false; group.style.outline='1px solid var(--danger)'; group.style.outlineOffset='6px'; group.style.borderRadius='14px'; }
+      else { group.style.outline='none'; }
+    });
+    return ok;
+  }
+
+  // Qualifizierungslogik: Kalenderlink NUR bei passenden Antworten.
+  function isQualified(){
+    var d=form.querySelector('input[name="budget"]:checked');
+    var z=form.querySelector('input[name="zeit"]:checked');
+    var budget=d?d.value:'';
+    var zeit=z?z.value:'';
+    if(budget==='none') return false;   // kein Budget
+    if(zeit==='later') return false;     // unverbindlich
+    return true;
+  }
+
+  function submitForm(){
+    bar.style.width='100%';
+    stepLabel.textContent='Fertig';
+    stepPct.textContent='100 %';
+    steps.forEach(function(s){ s.classList.remove('active'); });
+    formNav.style.display='none';
+    legal.style.display='none';
+
+    var qualified=isQualified();
+    var target=form.querySelector('.result[data-result="'+(qualified?'qualified':'declined')+'"]');
+    if(target) target.classList.add('active');
+
+    if(qualified){
+      var nameInput=form.querySelector('input[name="name"]');
+      var first=((nameInput&&nameInput.value)||'').trim().split(' ')[0];
+      if(first) document.getElementById('qName').textContent=first;
+      var calBtn=document.getElementById('calBtn');
+      var calEmbed=document.getElementById('calEmbed');
+      if(CAL_URL){
+        calBtn.href=CAL_URL;
+        if(CAL_EMBED){
+          calEmbed.innerHTML='<iframe src="'+CAL_URL+'" style="width:100%;min-height:520px;border:0;border-radius:10px" title="Termin buchen"></iframe>';
+        } else {
+          calEmbed.style.display='none';
+        }
+      }
+    }
+
+    // Datenerfassung: hier an Backend / Tally / Webhook senden.
+    // var data={}; new FormData(form).forEach(function(v,k){data[k]=v;});
+    // fetch('/api/bewerbung',{method:'POST',body:JSON.stringify(data)});
+    form.scrollIntoView({behavior:'smooth',block:'start'});
+  }
+
+  btnNext.addEventListener('click',function(){
+    if(!validateStep(current)) return;
+    if(current<TOTAL-1){ showStep(current+1); form.scrollIntoView({behavior:'smooth',block:'start'}); }
+    else { submitForm(); }
+  });
+  btnBack.addEventListener('click',function(){
+    if(current>0){ showStep(current-1); form.scrollIntoView({behavior:'smooth',block:'start'}); }
+  });
+  form.addEventListener('keydown',function(e){
+    if(e.key==='Enter' && e.target.tagName!=='TEXTAREA'){ e.preventDefault(); btnNext.click(); }
+  });
+  form.addEventListener('change',function(e){
+    if(e.target.type==='radio'){ var g=e.target.closest('[data-radio]'); if(g) g.style.outline='none'; }
+  });
+
+  showStep(0);
+})();
+</script>
+
+</body>
+</html>
