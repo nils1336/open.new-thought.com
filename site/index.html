@@ -3,18 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>new.thought — Wir zeigen, was KI wirklich kann</title>
-<meta name="description" content="KI anfassbar gemacht: Ihr Team baut in einem Workshop-Tag einen funktionierenden Prototypen. KI-Adoption & Enablement für den Mittelstand.">
+<title>new.thought Circle — Leadership-Enablement für KI-Transformation im Mittelstand</title>
+<meta name="description" content="In 12 Monaten entwickelst du die Führungskompetenz, KI-Transformation im eigenen Unternehmen anzuführen: an echten Use Cases, nicht in der Theorie. Für Führungskräfte im Mittelstand.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.new-thought.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="new.thought — Wir zeigen, was KI wirklich kann">
-<meta property="og:description" content="Nicht in einer Präsentation. Im Prototyp. KI-Adoption für den Mittelstand.">
+<meta property="og:title" content="new.thought Circle — Leadership-Enablement für KI-Transformation im Mittelstand">
+<meta property="og:description" content="Kein Seminar. Echte Führungskompetenz. 12 Monate, in denen du lernst, KI-Transformation in deinem Unternehmen wirklich zu führen.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ona.css">
+<style>
+  .guarantees{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .guarantee-tile{background:var(--green-deep);color:#fff;border-radius:18px;padding:30px 28px}
+  .guarantee-tile .gi{font-size:22px;margin-bottom:14px}
+  .guarantee-tile h3{font-family:var(--serif);font-weight:440;font-size:19px;margin-bottom:10px;letter-spacing:-.01em}
+  .guarantee-tile p{color:#c8ddd0;font-size:14px;line-height:1.6}
+  @media(max-width:680px){.guarantees{grid-template-columns:1fr}}
+  .pillars{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:30px}
+  .pillar{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 18px}
+  .pillar .pn{font-family:var(--serif);font-size:22px;color:var(--ink-3);margin-bottom:10px}
+  .pillar h4{font-size:14.5px;font-weight:600;margin-bottom:6px}
+  .pillar p{font-size:12.5px;color:var(--ink-3);line-height:1.5}
+  @media(max-width:960px){.pillars{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:560px){.pillars{grid-template-columns:1fr}}
+  .waitlist-box{max-width:480px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px}
+  .waitlist-box .field{margin-bottom:14px}
+  .waitlist-box label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+  .waitlist-box input{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:13px 14px}
+  .waitlist-box input:focus{outline:none;border-color:var(--green)}
+  .waitlist-box .wl-note{font-size:12px;color:var(--ink-3);margin-top:14px;text-align:center;line-height:1.5}
+  .waitlist-done{display:none;text-align:center;padding:12px 4px}
+  .waitlist-done.show{display:block}
+  .waitlist-done .wi{width:52px;height:52px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 16px}
+  .waitlist-done h3{font-family:var(--serif);font-weight:440;font-size:22px;margin-bottom:8px}
+  .waitlist-done p{color:var(--ink-2);font-size:14.5px;line-height:1.55}
+  .founder-block{display:grid;grid-template-columns:140px 1fr;gap:44px;align-items:center;max-width:760px;margin:0 auto}
+  @media(max-width:600px){.founder-block{grid-template-columns:1fr;text-align:center}}
+  .founder-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid var(--line);flex-shrink:0}
+  @media(max-width:600px){.founder-photo{margin:0 auto}}
+  .founder-text p{font-size:18px;line-height:1.72;color:#3a3a36;margin-bottom:16px}
+  .founder-text .sig{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-2)}
+</style>
 </head>
 <body>
 
@@ -23,30 +55,14 @@
   <div class="wrap nav-inner">
     <a href="/" class="brand"><span class="mark"></span>new.thought</a>
     <div class="nav-pill">
-      <div class="dd">
-        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Programme <span class="cv">⌄</span></button>
-        <div class="dd-menu" role="menu">
-          <a href="/kaistart.html" role="menuitem"><span class="di">◆</span><span class="dl"><b>KAISTART</b><small>AI Opportunity Sprint</small></span></a>
-          <a href="/kaidop.html" role="menuitem"><span class="di">◧</span><span class="dl"><b>KAIDOP</b><small>Adoption Workshop</small></span></a>
-          <a href="/kailead.html" role="menuitem"><span class="di">◐</span><span class="dl"><b>KAILEAD</b><small>Führungskräfte-Training</small></span></a>
-          <a href="/kairon.html" role="menuitem"><span class="di">⬡</span><span class="dl"><b>KAIRON</b><small>Steuerungssystem</small></span></a>
-          <a href="/kairon-executive.html" role="menuitem"><span class="di">★</span><span class="dl"><b>Fractional AI Officer</b><small>KI-Führung auf Zeit</small></span></a>
-          <a href="/ai-transformation-facilitator.html" role="menuitem"><span class="di">◈</span><span class="dl"><b>AI Transformation Facilitator</b><small>Interne KI-Befähigung</small></span></a>
-        </div>
-      </div>
-      <div class="dd">
-        <button class="dd-toggle" aria-haspopup="true" aria-expanded="false">Academy <span class="cv">⌄</span></button>
-        <div class="dd-menu" role="menu">
-          <a href="/academy.html#orchestrator" role="menuitem"><span class="di">⬤</span><span class="dl"><b>KI-Orchestrator</b><small>KAIRON-Zertifizierung · 2 Tage</small></span></a>
-          <a href="/academy.html#manager" role="menuitem"><span class="di">◉</span><span class="dl"><b>KAIDOP Manager</b><small>Change-Agent-Training · 1 Tag</small></span></a>
-          <a href="/ai-transformation-facilitator.html" role="menuitem"><span class="di">◈</span><span class="dl"><b>AI Transformation Facilitator</b><small>Ausbildung · 8 Wochen</small></span></a>
-        </div>
-      </div>
+      <a href="#betriebssystem">Die Methode</a>
+      <a href="#fuer-wen">Für wen</a>
+      <a href="#weg">Der Weg</a>
       <a href="/ressourcen.html">Blog</a>
     </div>
     <div class="nav-right">
       <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
-      <a class="btn btn-dark" href="#kontakt">Workshop buchen</a>
+      <a class="btn btn-dark" href="#warteliste">Auf die Warteliste</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
@@ -58,16 +74,14 @@
     <button class="m-close" id="mClose" aria-label="Schließen">×</button>
   </div>
   <div class="m-links">
-    <a href="/kaistart.html">KAISTART</a>
-    <a href="/kaidop.html">KAIDOP</a>
-    <a href="/kailead.html">KAILEAD</a>
-    <a href="/kairon.html">KAIRON</a>
-    <a href="/academy.html">Academy</a>
+    <a href="#betriebssystem">Die Methode</a>
+    <a href="#fuer-wen">Für wen</a>
+    <a href="#weg">Der Weg</a>
     <a href="/ressourcen.html">Blog</a>
     <a href="/ki-readiness-check.html">KI-Check</a>
   </div>
   <div class="m-cta">
-    <a href="#kontakt" class="btn btn-dark">Workshop buchen</a>
+    <a href="#warteliste" class="btn btn-dark">Auf die Warteliste</a>
   </div>
 </div>
 
@@ -76,72 +90,19 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="wrap reveal">
-      <h1 class="serif" style="max-width:20ch">Der Umgang mit KI ist keine Technologie-Frage. <span style="color:var(--ink-3)">Er ist eine Organisations-Frage.</span></h1>
-      <p class="sub">Tools gibt es genug. Was fehlt, ist die Steuerung. Wir machen KI anfassbar — nicht in einer Präsentation, sondern im Prototyp.</p>
+      <h1 class="serif" style="max-width:20ch">Werde die Führungskraft, die KI-Transformation im Unternehmen <span style="color:var(--ink-3)">wirklich vorantreibt.</span></h1>
+      <p class="sub">In 12 Monaten entwickelst du die Führungskompetenz, KI-Transformation im eigenen Unternehmen anzuführen: an euren eigenen Use Cases, nicht an Lehrbeispielen. Du lernst on the job, mit echten Ergebnissen statt Workshop-Theorie.</p>
       <div class="cta">
-        <a href="#kontakt" class="btn btn-dark">Workshop buchen</a>
+        <a href="#warteliste" class="btn btn-dark">Auf die Warteliste eintragen</a>
       </div>
-    </div>
-  </section>
-
-  <!-- ── WARUM KI · ARGUMENTE ── -->
-  <section class="block">
-    <div class="wrap reveal">
-      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Warum KI jetzt zählt</div><h2 class="serif">KI ist kein IT-Thema mehr.<br><span class="dim">Sie ist fast so wichtig wie Vertrieb.</span></h2></div>
-      <div class="argcards">
-        <div class="argcard">
-          <div class="ft-tag">Enablement</div>
-          <h3>Ohne Befähigung kein Nutzen</h3>
-          <p>Tools allein verändern nichts. Erst wenn Menschen wissen, wann und wie sie KI einsetzen, entsteht Wert — genau dieser Schritt wird fast immer übersprungen.</p>
-          <div class="mini-mock">
-            <div class="mm-h"><b>Team-Befähigung</b><span class="chip-g">Enablement</span></div>
-            <div class="mm-row yes">Weiß, wann KI hilft</div>
-            <div class="mm-row yes">Kennt die Grenzen</div>
-            <div class="mm-row no">Bisher: niemand geschult</div>
-            <div class="mm-foot"><b>Genutztes Potenzial</b><span class="val">18 %</span></div>
-          </div>
-        </div>
-        <div class="argcard">
-          <div class="ft-tag">Adoption</div>
-          <h3>Gekauft ist nicht genutzt</h3>
-          <p>Die meisten KI-Lizenzen liegen brach. Adoption ist die eigentliche Arbeit — und der eigentliche Hebel. Ohne sie zahlen Sie für Werkzeuge, die niemand anfasst.</p>
-          <div class="mini-mock">
-            <div class="mm-h"><b>Tool-Nutzung</b><span class="chip-g">Adoption</span></div>
-            <div class="mm-row yes">100 Lizenzen gekauft</div>
-            <div class="mm-row yes">12 echte Power-User</div>
-            <div class="mm-row no">71 nie eingeloggt</div>
-            <div class="mm-foot"><b>Aktive Nutzung</b><span class="val">23 %</span></div>
-          </div>
-        </div>
-        <div class="argcard">
-          <div class="ft-tag">Priorität</div>
-          <h3>Fast so wichtig wie Vertrieb</h3>
-          <p>Sales bringt den nächsten Auftrag. KI bestimmt, wie viel Ihr Team aus jedem Auftrag macht — in jedem Bereich. Beide gehören auf die Führungsebene.</p>
-          <div class="mini-mock">
-            <div class="mm-h"><b>Wachstumshebel</b><span class="chip-g">Chefsache</span></div>
-            <div class="mm-row yes">Sales — bringt Umsatz rein</div>
-            <div class="mm-row yes">KI — multipliziert die Leistung</div>
-            <div class="mm-row no">KI ohne Owner</div>
-            <div class="mm-foot"><b>Auf C-Level</b><span class="val">beides</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="darkband">
-        <div class="eyebrow">Die neue Realität</div>
-        <div class="ds-grid">
-          <div class="ds"><div class="n serif">90 %</div><div class="d">der Unternehmen erwarten, dass KI ihr Geschäft verändert.</div></div>
-          <div class="ds"><div class="n serif">5 %</div><div class="d">nutzen KI heute strategisch. Der Rest verliert jeden Monat Boden.</div></div>
-          <div class="ds"><div class="n serif">Nr. 2</div><div class="d">wichtigster Wachstumshebel nach dem Vertrieb — und der einzige, der jeden Bereich betrifft.</div></div>
-        </div>
-        <div class="ds-close">Vertrieb bringt den nächsten Auftrag. KI entscheidet, wie viel Ihr Team daraus macht. Wer KI nicht führt, verschenkt beides.</div>
-      </div>
+      <p class="webinar-micro" style="font-size:13px;color:var(--ink-3);margin-top:14px">new.thought Circle · Nils begleitet jedes Unternehmen persönlich, deshalb nur wenige neue Plätze pro Monat</p>
     </div>
   </section>
 
   <!-- ── PROBLEM ── -->
   <section class="block" id="problem">
     <div class="wrap reveal">
-      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Das Problem</div><h2 class="serif">Die meisten Unternehmen haben KI-Tools.<br><span class="dim">Keines hat ein System.</span></h2><p>Der Umgang mit KI ist keine Technologie-Frage — er ist eine Organisations-Frage. Tools gibt es genug, Teams lernen sie in Wochen. Was fehlt, ist die Steuerung: wer was wann entscheidet.</p></div>
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Das Problem</div><h2 class="serif">Die meisten Unternehmen haben KI-Tools.<br><span class="dim">Keines hat ein System.</span></h2><p>Der Umgang mit KI ist keine Technologie-Frage, sondern eine Organisations-Frage. Tools gibt es genug, Teams lernen sie in Wochen. Was fehlt, ist die Steuerung: wer was wann entscheidet.</p></div>
       <div class="qcards">
         <div class="qcard">Wir haben KI in jedem Bereich. Aber einen Überblick hat niemand.</div>
         <div class="qcard">Wir testen mehrere Use Cases. Die meisten stecken irgendwo fest.</div>
@@ -151,79 +112,35 @@
     </div>
   </section>
 
-  <!-- ── DIE LÖSUNG: PRODUKT-JOURNEY ── -->
-  <section class="block" id="loesung">
-    <div class="wrap">
-      <div class="sheet reveal">
-        <div class="sec-head">
-          <div class="eyebrow" style="margin-bottom:14px">Die Lösung · Ein Weg in vier Schritten</div>
-          <h2 class="serif">Menschen mitnehmen, nicht nur Tools einführen.<br><span class="dim">Vom greifbaren Ergebnis über gelöste Widerstände bis zur Organisation, die KI selbst trägt.</span></h2>
+  <!-- ── DAS BETRIEBSSYSTEM ── -->
+  <section class="block" id="betriebssystem">
+    <div class="wrap reveal">
+      <div class="achieve">
+        <div class="achieve-l">
+          <div>
+            <div class="eyebrow" style="color:#bfe0c9;margin-bottom:14px">Was du lernst</div>
+            <h2 class="serif">Kein Seminar. Eine Führungskompetenz, die bleibt.</h2>
+            <p>Vier Fähigkeiten, die du dir als Führungskraft aneignest und die danach nicht mehr von einem Berater oder Tool abhängen. Entwickelt wird das nicht in der Theorie, sondern direkt an euren eigenen Use Cases. Du lernst on the job, an echten Problemen aus eurem Betrieb.</p>
+          </div>
+          <a href="#weg" class="arrow-link" style="color:#bfe0c9;margin-top:24px">Wie du dort hinkommst <span class="ar">→</span></a>
         </div>
-        <div class="feat-grid">
-          <div class="feat">
-            <div>
-              <div class="ft-tag">01 · KAISTART</div>
-              <h3>AI Opportunity Sprint</h3>
-              <p>In einem Tag identifizieren wir die wertvollste KI-Chance in Ihrem Unternehmen und bauen einen ersten funktionierenden Prototyp.</p>
-              <a href="/kaistart.html" class="arrow-link">Zum Sprint <span class="ar">→</span></a>
-            </div>
-            <svg class="matrix" data-seed="1" viewBox="0 0 176 148" aria-hidden="true"></svg>
-          </div>
-          <div class="feat">
-            <div>
-              <div class="ft-tag">02 · KAIDOP</div>
-              <h3>Adoption Workshop</h3>
-              <p>Mitarbeiterwiderstände sichtbar machen und in umsetzbare Use-Cases überführen — leichter, wenn der Prototyp schon steht.</p>
-              <a href="/kaidop.html" class="arrow-link">Mehr zu KAIDOP <span class="ar">→</span></a>
-            </div>
-            <svg class="matrix" data-seed="2" viewBox="0 0 176 148" aria-hidden="true"></svg>
-          </div>
-          <div class="feat">
-            <div>
-              <div class="ft-tag">03 · KAILEAD</div>
-              <h3>Führungskräfte-Training</h3>
-              <p>KI führen lernen — nicht nur darüber reden. Handwerkszeug für Manager, die ihre Teams durch die Adoption bringen.</p>
-              <a href="/kailead.html" class="arrow-link">Mehr zu KAILEAD <span class="ar">→</span></a>
-            </div>
-            <svg class="matrix" data-seed="3" viewBox="0 0 176 148" aria-hidden="true"></svg>
-          </div>
-          <div class="feat">
-            <div>
-              <div class="ft-tag">04 · KAIRON</div>
-              <h3>Steuerungssystem</h3>
-              <p>Das Betriebssystem für KI im Unternehmen: Ownership, Pipeline, Impact, Compound. In 90 Tagen eingeführt, danach selbsttragend.</p>
-              <a href="/kairon.html" class="arrow-link">Mehr zu KAIRON <span class="ar">→</span></a>
-            </div>
-            <svg class="matrix" data-seed="4" viewBox="0 0 176 148" aria-hidden="true"></svg>
-          </div>
-          <div class="feat">
-            <div>
-              <div class="ft-tag">05 · AI Transformation Facilitator</div>
-              <h3>KI-Adoption begleiten</h3>
-              <p>Ausbildung für Facilitatoren, die KI-Transformationsprozesse professionell moderieren — in Unternehmen, Teams und Organisationen, die KI nachhaltig verankern wollen.</p>
-              <a href="/ai-transformation-facilitator.html" class="arrow-link">Mehr zu AI Transformation Facilitator <span class="ar">→</span></a>
-            </div>
-            <svg class="matrix" data-seed="5" viewBox="0 0 176 148" aria-hidden="true"></svg>
-          </div>
+        <div class="achieve-card">
+          <div class="ac-row"><span class="ic">◆</span><span class="t">Verantwortung vergeben — Initiativen mit klarer Zuständigkeit statt Kollektiv-Diffusion</span></div>
+          <div class="ac-row"><span class="ic">▤</span><span class="t">Priorisieren mit Substanz — Use Cases bewerten und Stopp-Entscheidungen treffen</span></div>
+          <div class="ac-row"><span class="ic">≡</span><span class="t">Wirkung nachweisen — Ergebnisse messen, nicht nur behaupten</span></div>
+          <div class="ac-row"><span class="ic">↻</span><span class="t">Momentum halten — aus jedem Erfolg den nächsten Schritt ableiten</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── SPLIT INTRO HEAD ── -->
+  <!-- ── SPLIT: KONKRETER BEWEIS ── -->
   <section class="block">
-    <div class="wrap reveal">
-      <div class="sec-head">
-        <h2 class="serif">Jeder Schritt funktioniert für sich.<br><span class="dim">Zusammen bauen sie eine lernende Organisation.</span></h2>
-      </div>
-    </div>
-
-    <!-- SPLIT 1: KAISTART (mockup left) -->
     <div class="wrap">
       <div class="split rev reveal">
         <div class="split-media">
           <div class="mock">
-            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> KAISTART · Prototyp</div><span class="chip-g">läuft</span></div>
+            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> Tag 1 · Prototyp</div><span class="chip-g">läuft</span></div>
             <div class="mock-b">
               <div class="mock-field"><div class="k">Problem</div><div class="v">Angebote dauern 3 Tage</div></div>
               <div class="mock-2">
@@ -231,114 +148,94 @@
                 <div class="mock-field"><div class="k">Output</div><div class="v">Angebot in 4 Min.</div></div>
               </div>
               <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
-                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende von Tag&nbsp;1</div></div>
+                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende von Tag 1</div></div>
                 <span class="chip-g">fertig</span>
               </div>
             </div>
           </div>
         </div>
         <div class="split-text">
-          <div class="ft-tag">01 · KAISTART</div>
-          <h3 class="serif">Ein echtes Problem, ein echter Prototyp.</h3>
-          <p>Kein Pilotbericht, keine Folien. Ihr Team wählt ein echtes Problem und baut an einem Tag etwas Laufendes — begleitet, aber selbst gebaut.</p>
-          <div class="rows">
-            <div class="row"><span class="ic">◆</span><span class="rt">Echtes Problem aus Ihrem Betrieb</span></div>
-            <div class="row"><span class="ic">▤</span><span class="rt">Funktionierender Prototyp am ersten Tag</span></div>
-            <div class="row"><span class="ic">≡</span><span class="rt">Priorisierte Use-Case-Liste als Ergebnis</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SPLIT 2: KAIDOP (mockup right) -->
-    <div class="wrap">
-      <div class="split reveal">
-        <div class="split-media">
-          <div class="mock">
-            <div class="mock-h"><div class="mh-l"><span class="mi">◧</span> KAIDOP · Adoption</div><span class="chip-g">priorisiert</span></div>
-            <div class="mock-b">
-              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
-                <div><div class="l" style="color:var(--ink)">Widerstand: „Das ersetzt uns"</div><div class="s" style="color:var(--ink-3)">→ Use-Case: Routine entlasten</div></div>
-                <span class="chip-g">gelöst</span>
-              </div>
-              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
-                <div><div class="l" style="color:var(--ink)">Unsicherheit: Datenschutz</div><div class="s" style="color:var(--ink-3)">→ Leitplanken definiert</div></div>
-                <span class="chip-g">geklärt</span>
-              </div>
-              <div class="mock-2">
-                <div class="mock-field"><div class="k">Initiativen</div><div class="v">12 priorisiert</div></div>
-                <div class="mock-field"><div class="k">Adoptionsplan</div><div class="v">8 Wochen</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="split-text">
-          <div class="ft-tag">02 · KAIDOP</div>
-          <h3 class="serif">Widerstände benennen, Use-Cases umsetzen.</h3>
-          <p>Adoption scheitert selten an der Technik. Wir machen Vorbehalte sichtbar und überführen sie in konkrete, priorisierte Initiativen.</p>
-          <div class="rows">
-            <div class="row"><span class="ic">◆</span><span class="rt">Widerstände sichtbar und besprechbar machen</span></div>
-            <div class="row"><span class="ic">▤</span><span class="rt">Priorisierte Initiativen statt Wunschlisten</span></div>
-            <div class="row"><span class="ic">≡</span><span class="rt">Konkreter Adoptionsplan für 8 Wochen</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SPLIT 3: KAIRON (mockup left) -->
-    <div class="wrap">
-      <div class="split rev reveal">
-        <div class="split-media">
-          <div class="mock">
-            <div class="mock-h"><div class="mh-l"><span class="mi">⬡</span> KAIRON · Governance</div><span class="chip-g">selbsttragend</span></div>
-            <div class="mock-b">
-              <div class="mock-2">
-                <div class="mock-field"><div class="k">Ownership</div><div class="v">je Initiative</div></div>
-                <div class="mock-field"><div class="k">Pipeline</div><div class="v">14 → 8 aktiv</div></div>
-              </div>
-              <div class="mock-field" style="display:flex;align-items:center;justify-content:space-between">
-                <div><div class="k">Wöchentliche Ceremony</div><div class="v">Impact-Review</div></div>
-                <span class="tog"></span>
-              </div>
-              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
-                <div><div class="l" style="color:var(--ink)">Zertifizierter Orchestrator</div><div class="s" style="color:var(--ink-3)">intern · trägt das System</div></div>
-                <span class="chip-g">aktiv</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="split-text">
-          <div class="ft-tag">04 · KAIRON</div>
-          <h3 class="serif">Ein System, das nach 90 Tagen selbst trägt.</h3>
-          <p>Governance, klare Rollen und feste Ceremonies. KAIRON gibt Ihrer KI-Arbeit Struktur — wer entscheidet was, wann, mit welchem Impact.</p>
-          <div class="rows">
-            <div class="row"><span class="ic">◆</span><span class="rt">Klare Ownership je Initiative</span></div>
-            <div class="row"><span class="ic">▤</span><span class="rt">Pipeline mit Stopp-Entscheidungen</span></div>
-            <div class="row"><span class="ic">≡</span><span class="rt">Zertifizierter Orchestrator im eigenen Team</span></div>
-          </div>
+          <div class="ft-tag">So konkret wird es</div>
+          <h3 class="serif">Du startest nicht mit einer Folie. Du startest mit einem Ergebnis.</h3>
+          <p>Kein Konzeptpapier, kein Pilotbericht. Dein Team wählt ein echtes Problem und baut am ersten Tag etwas Laufendes, begleitet, aber selbst gebaut. Das ist der Beweis, auf dem die restlichen 90 Tage aufbauen.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── ACHIEVE DARK BAND ── -->
+  <!-- ── DER WEG / 5 SÄULEN ── -->
+  <section class="block" id="weg">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow" style="margin-bottom:14px">Der Weg</div>
+        <h2 class="serif">Fünf Bausteine, ein Jahr, ein System.</h2>
+        <p>Der new.thought Circle bündelt alles, was du bisher einzeln hättest zusammensuchen müssen, in einem durchgehenden Programm. Jede Phase arbeitet an euren eigenen Use Cases, nicht an Fallstudien fremder Unternehmen.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="pn serif">1</div><h4>Umsetzungspfad</h4><p>4 Phasen in 90 Tagen: Prototyp (Tag 1), Adoption, Führung, eigenständige Steuerung — an einem echten Use Case aus eurem Unternehmen, mit klaren Meilensteinen statt offenem Ende.</p></div>
+        <div class="pillar"><div class="pn serif">2</div><h4>Akademie</h4><p>Erst wird das Wissen strukturiert aufgebaut, dann direkt an eurem Use Case angewendet — keine Theorie ohne Praxis danach.</p></div>
+        <div class="pillar"><div class="pn serif">3</div><h4>Toolkit-Hub</h4><p>Alle Playbooks, Boards und Vorlagen aus dem Umsetzungspfad — fertig aufgebaut, direkt im eigenen Unternehmen einsetzbar.</p></div>
+        <div class="pillar"><div class="pn serif">4</div><h4>Experten-Sessions</h4><p>12 Live-Sessions im Jahr mit Nils zu einem Fokusthema — Governance, Use-Case-Priorisierung, Change Management.</p></div>
+        <div class="pillar"><div class="pn serif">5</div><h4>Community</h4><p>Direkter Austausch mit anderen KI-Verantwortlichen im Mittelstand, die an denselben Problemen arbeiten wie du.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FÜR WEN ── -->
+  <section class="block" id="fuer-wen">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Für wen der Circle gebaut ist und für wen nicht.</h2></div>
+      <div class="compare">
+        <div class="col yes">
+          <h4>Das ist dein Programm, wenn …</h4>
+          <ul>
+            <li>du Geschäftsführer:in, Bereichsleitung oder KI-Verantwortliche:r im Mittelstand bist.</li>
+            <li>dein Unternehmen KI bereits nutzt, aber ohne System: verstreute Piloten, kein Überblick.</li>
+            <li>du bereit bist, die Führung zu übernehmen statt auf die IT oder eine Agentur zu warten.</li>
+            <li>du in Menschen investieren willst, nicht nur in Lizenzen.</li>
+          </ul>
+        </div>
+        <div class="col no">
+          <h4>Spar dir das Geld, wenn …</h4>
+          <ul>
+            <li>du nach dem nächsten Tool suchst, nicht nach einem System dahinter.</li>
+            <li>KI in deinem Unternehmen niemandem gehört — auch dir nicht.</li>
+            <li>du in den nächsten 12 Monaten keine Kapazität hast, das Gelernte umzusetzen.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUNDER ── -->
   <section class="block">
     <div class="wrap reveal">
-      <div class="achieve">
-        <div class="achieve-l">
-          <div>
-            <h2 class="serif">Was Teams mit new.thought erreichen.</h2>
-            <p>Vom ersten anfassbaren Ergebnis bis zur Organisation, die KI selbst steuert.</p>
-          </div>
-          <a href="/#loesung" class="arrow-link" style="color:#bfe0c9;margin-top:24px">Alle Programme ansehen <span class="ar">→</span></a>
+      <div class="founder-block">
+        <img src="/images/nils-blache.png" alt="Nils Blache" class="founder-photo">
+        <div class="founder-text">
+          <div class="eyebrow" style="margin-bottom:14px">Dein Ansprechpartner · Nils Blache</div>
+          <p>Ich habe new.thought aufgebaut, weil ich immer wieder dasselbe Muster sah: Unternehmen kaufen KI-Tools, aber niemand baut das System dahinter: wer entscheidet, wer verantwortet, wie ein Erfolg zum nächsten führt.</p>
+          <p>Der Circle ist keine Beratung von der Stange. Ich begleite jedes teilnehmende Unternehmen persönlich, deshalb ist die Zahl der Plätze, die ich gleichzeitig betreuen kann, bewusst begrenzt.</p>
+          <span class="sig">— Nils Blache, Gründer new.thought</span>
         </div>
-        <div class="achieve-card">
-          <div class="ac-row"><span class="ic">◆</span><span class="t">Prototyp am ersten Workshop-Tag</span></div>
-          <div class="ac-row"><span class="ic">◧</span><span class="t">Widerstände sichtbar gemacht</span></div>
-          <div class="ac-row"><span class="ic">≡</span><span class="t">Initiativen priorisiert</span></div>
-          <div class="ac-row"><span class="ic">◐</span><span class="t">Führung mit Handwerkszeug</span></div>
-          <div class="ac-row"><span class="ic">⬡</span><span class="t">Budget aus gestoppten Projekten freigegeben</span></div>
-          <div class="ac-row"><span class="ic">↻</span><span class="t">System, das selbst trägt</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GARANTIE ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Doppelt abgesichert</div><h2 class="serif">Das Risiko liegt bei uns, nicht bei dir.</h2></div>
+      <div class="guarantees">
+        <div class="guarantee-tile">
+          <div class="gi">↺</div>
+          <h3>14 Tage, kein Wenn und Aber</h3>
+          <p>Merkst du in den ersten zwei Wochen, dass der Circle nicht passt, bekommst du den vollen Betrag zurück. Ohne Begründung, ohne Kleingedrucktes.</p>
+        </div>
+        <div class="guarantee-tile">
+          <div class="gi">✓</div>
+          <h3>Die Kompetenz-Garantie</h3>
+          <p>Kannst du nach den ersten 90 Tagen keinen Use Case eigenständig von der Idee zum Prototyp führen, arbeite ich persönlich so lange weiter mit dir, bis du es kannst.</p>
         </div>
       </div>
     </div>
@@ -352,52 +249,55 @@
         <div class="card">
           <div class="ci">↗</div>
           <h3>Produktivität, die sich multipliziert</h3>
-          <p>Nicht 10 % schneller. Teams, die KI richtig einsetzen, erledigen in Tagen, wofür sie vorher Wochen gebraucht haben — und gewinnen Zeit für das, was wirklich zählt.</p>
+          <p>Nicht 10 % schneller. Teams, die KI richtig einsetzen, erledigen in Tagen, wofür sie vorher Wochen gebraucht haben, und gewinnen Zeit für das, was wirklich zählt.</p>
         </div>
         <div class="card">
           <div class="ci">↻</div>
           <h3>Ein Vorsprung, der sich aufschichtet</h3>
-          <p>Jede Initiative macht die nächste leichter. Wer KI früh steuert, zieht jedes Jahr weiter davon — der Abstand wird nicht kleiner, sondern größer.</p>
+          <p>Jede Initiative macht die nächste leichter. Wer KI früh steuert, zieht jedes Jahr weiter davon. Der Abstand wird nicht kleiner, sondern größer.</p>
         </div>
         <div class="card">
           <div class="ci">◆</div>
           <h3>Eine Fähigkeit, die im Haus bleibt</h3>
-          <p>Aus einzelnen KI-Erfolgen wird eine Kompetenz, die niemand mehr wegnehmen kann — unabhängig von Tools, Beratern und dem nächsten Hype.</p>
+          <p>Aus einzelnen KI-Erfolgen wird eine Kompetenz, die niemand mehr wegnehmen kann, unabhängig von Tools, Beratern und dem nächsten Hype.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── BLOG ── -->
+  <!-- ── FAQ ── -->
   <section class="block">
     <div class="wrap reveal">
-      <div class="sec-head"><h2 class="serif">Aus dem Blog.</h2></div>
-      <div class="blog">
-        <a href="/ressourcen/warum-ki-projekte-scheitern.html" class="post">
-          <div class="pc"><h3>Warum KI-Projekte im Mittelstand scheitern</h3><p>Es liegt selten am Tool — und fast immer an der Organisation.</p><div class="meta">Nils Blache · 6 Min. Lesezeit</div></div>
-          <span class="tag">Adoption</span>
-        </a>
-        <a href="/ressourcen/was-ist-ki-governance.html" class="post">
-          <div class="pc"><h3>Was ist KI-Governance — und warum jetzt?</h3><p>Wer entscheidet was, wann und mit welchem Impact. Eine Einordnung.</p><div class="meta">Nils Blache · 8 Min. Lesezeit</div></div>
-          <span class="tag">Governance</span>
-        </a>
-        <a href="/ressourcen/ki-pilot-skalierung.html" class="post">
-          <div class="pc"><h3>Vom Piloten zur Skalierung</h3><p>Warum die meisten KI-Piloten stecken bleiben — und wie es anders geht.</p><div class="meta">Nils Blache · 5 Min. Lesezeit</div></div>
-          <span class="tag">Skalierung</span>
-        </a>
+      <div class="sec-head"><h2 class="serif">Die Fragen, die du dir vermutlich gerade stellst.</h2></div>
+      <div class="faq">
+        <details><summary>Ist das nur für Geschäftsführer:innen?</summary><div class="fa">Nein. Der Circle passt für jede Person, die im Unternehmen die Verantwortung für KI-Adoption trägt oder tragen soll: Geschäftsführung, Bereichsleitung oder dedizierte KI-Rolle. Entscheidend ist die Verantwortung, die du trägst, nicht der Titel.</div></details>
+        <details><summary>Wir nutzen schon einzelne KI-Tools. Bringt uns das trotzdem was?</summary><div class="fa">Gerade dann. Die meisten Teilnehmer:innen starten nicht bei null, sondern mit verstreuten Piloten ohne System dahinter. Genau hier setzt der Circle an: Wir entwickeln deine Fähigkeit, aus diesem Chaos klare Verantwortlichkeiten, Priorisierung und messbare Wirkung zu machen.</div></details>
+        <details><summary>Wie viel Zeit brauche ich als Führungskraft?</summary><div class="fa">In den ersten 90 Tagen rechne mit 3–4 Stunden pro Woche für den Umsetzungspfad. Danach reduziert sich das auf die monatliche Experten-Session plus die Zeit, die du deinem Team für die laufenden Initiativen gibst.</div></details>
+        <details><summary>Was, wenn es intern nicht funktioniert?</summary><div class="fa">Dafür gibt es zwei Absicherungen: Merkst du in den ersten 14 Tagen, dass es nicht passt, bekommst du dein Geld zurück. Und kannst du nach 90 Tagen keinen Use Case eigenständig von der Idee zum Prototyp führen, arbeite ich persönlich so lange weiter mit dir, bis du es kannst.</div></details>
+        <details><summary>Wie unterscheidet sich das von einer klassischen Beratung?</summary><div class="fa">Eine Beratung liefert ein Ergebnis und geht wieder. Der Circle baut die Fähigkeit im Haus auf, dein Team lernt on the job, direkt an euren eigenen Use Cases, KI-Initiativen selbst zu führen, statt bei jeder neuen Frage wieder extern einzukaufen.</div></details>
+        <details><summary>Was kostet die Teilnahme?</summary><div class="fa">Das besprechen wir im Erstgespräch, passend zur Größe deines Unternehmens und deinem Startzeitpunkt, inklusive Ratenzahlung. Trag dich auf die Warteliste ein, dann melden wir uns für einen Termin.</div></details>
       </div>
     </div>
   </section>
 
-  <!-- ── FINAL CTA ── -->
-  <section class="final" id="kontakt">
+  <!-- ── WARTELISTE ── -->
+  <section class="final" id="warteliste">
     <div class="wrap reveal">
-      <h2 class="serif">KI anfassen, nicht nur verstehen.</h2>
-      <p class="lead">Jedes Unternehmen steht an einem anderen Punkt. Im Erstgespräch finden wir gemeinsam den Einstieg, der zu Ihnen passt — vom ersten Prototyp über die Team-Adoption bis zum ganzen Steuerungssystem.</p>
-      <div class="cta">
-        <a href="mailto:nils@new-thought.com?subject=Erstgespräch" class="btn btn-dark">Erstgespräch vereinbaren</a>
-        <a href="/ki-readiness-check.html" class="btn btn-ghost">Passenden Einstieg finden</a>
-      </div>
+      <h2 class="serif">Trag dich auf die Warteliste ein.</h2>
+      <p class="lead">Nils begleitet jedes Unternehmen im Circle persönlich, deshalb gibt es nur wenige neue Plätze pro Monat. Trag dich ein, dann melden wir uns für ein kurzes Erstgespräch, ob es passt.</p>
+      <form class="waitlist-box" id="waitlistForm" novalidate>
+        <div id="wlFields">
+          <div class="field"><label for="wlName">Name</label><input type="text" id="wlName" name="name" placeholder="Max Mustermann" required></div>
+          <div class="field"><label for="wlEmail">E-Mail-Adresse</label><input type="email" id="wlEmail" name="email" placeholder="max@firma.de" required></div>
+          <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center">Auf die Warteliste eintragen</button>
+          <p class="wl-note">Kein Spam. Details in der <a href="/datenschutz.html" style="color:var(--green)">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="waitlist-done" id="wlDone">
+          <div class="wi">✓</div>
+          <h3>Du bist auf der Liste.</h3>
+          <p>Wir melden uns per E-Mail für ein kurzes Erstgespräch, sobald der nächste Platz frei wird.</p>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -409,31 +309,22 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <span class="brand"><span class="mark"></span>new.thought</span>
-        <p>KI-Adoption &amp; Enablement für den Mittelstand. Anfassbar gemacht.</p>
+        <p>Leadership-Enablement für KI-Transformation im Mittelstand.</p>
       </div>
       <div class="foot-col">
-        <h4>Programme</h4>
-        <a href="/kaistart.html">KAISTART</a>
-        <a href="/kaidop.html">KAIDOP</a>
-        <a href="/kailead.html">KAILEAD</a>
-        <a href="/kairon.html">KAIRON</a>
-        <a href="/kairon-executive.html">Fractional AI Officer</a>
-        <a href="/ai-transformation-facilitator.html">AI Transformation Facilitator</a>
-      </div>
-      <div class="foot-col">
-        <h4>Academy</h4>
-        <a href="/academy.html">KI-Orchestrator</a>
-        <a href="/academy.html">KAIDOP Manager</a>
+        <h4>new.thought Circle</h4>
+        <a href="#betriebssystem">Die Methode</a>
+        <a href="#weg">Der Weg</a>
+        <a href="#fuer-wen">Für wen</a>
+        <a href="#warteliste">Warteliste</a>
       </div>
       <div class="foot-col">
         <h4>Ressourcen</h4>
         <a href="/ressourcen.html">Blog</a>
         <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
-        <a href="#kontakt">Erstgespräch</a>
       </div>
       <div class="foot-col">
         <h4>Unternehmen</h4>
-        <a href="#">Über new.thought</a>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
       </div>
@@ -443,7 +334,6 @@
         <span>© 2026 new.thought</span>
         <a href="/impressum.html">Impressum</a>
         <a href="/datenschutz.html">Datenschutz</a>
-        
       </div>
     </div>
   </div>
@@ -462,35 +352,14 @@
   document.getElementById('mClose').addEventListener('click', close);
   ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 
-  // KAIRON explainer — interactive menu
-  const osItems = document.querySelectorAll('.os-item');
-  const osPanels = document.querySelectorAll('.os-panel .pn');
-  function selectOS(key){
-    osItems.forEach(b => { const on = b.dataset.os === key; b.classList.toggle('active', on); b.setAttribute('aria-selected', on); });
-    osPanels.forEach(p => p.classList.toggle('show', p.dataset.pn === key));
-  }
-  osItems.forEach(b => {
-    b.addEventListener('click', () => selectOS(b.dataset.os));
-    b.addEventListener('mouseenter', () => selectOS(b.dataset.os));
-  });
-
-  // Dot-matrix generator — flowing diagonal band of active dots
-  document.querySelectorAll('.matrix').forEach(svg => {
-    const seed = parseInt(svg.dataset.seed || '1', 10);
-    const cols = 11, rows = 9, gap = 16, r = 3.1, pad = 4;
-    const ns = 'http://www.w3.org/2000/svg';
-    for (let y = 0; y < rows; y++){
-      for (let x = 0; x < cols; x++){
-        const cx = pad + x * gap, cy = pad + y * gap;
-        // diagonal sine band; phase shifted by seed → unique per card
-        const band = Math.sin((x / cols) * Math.PI * 1.4 + seed * 1.3) * 2.2 + (rows - 1 - y);
-        const on = Math.abs(band - x * 0.55) < 1.15;
-        const c = document.createElementNS(ns, 'circle');
-        c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r);
-        c.setAttribute('fill', on ? 'var(--dot-on)' : 'var(--dot)');
-        svg.appendChild(c);
-      }
-    }
+  // Waitlist form
+  const wlForm = document.getElementById('waitlistForm');
+  wlForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('wlFields').style.display = 'none';
+    document.getElementById('wlDone').classList.add('show');
+    // Datenerfassung: hier an Backend / Webhook senden.
+    // fetch('/api/warteliste', {method:'POST', body:new FormData(wlForm)});
   });
 
   // Reveal on scroll

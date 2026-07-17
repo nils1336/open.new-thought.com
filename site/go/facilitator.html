@@ -156,6 +156,9 @@ section{padding:80px 0}
 .card .ci{width:38px;height:38px;border-radius:10px;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:17px;margin-bottom:16px}
 .card h3{font-size:17px;font-weight:600;margin-bottom:7px}
 .card p{color:var(--ink-2);font-size:14px;line-height:1.6}
+.card .val{display:inline-block;margin-top:12px;font-size:12px;font-weight:600;color:var(--green);letter-spacing:.02em}
+.stack-total{max-width:960px;margin:28px auto 0;text-align:center;font-size:15px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:24px}
+.stack-total b{color:var(--ink);font-family:var(--serif);font-weight:440;font-size:19px}
 
 /* ── about (centered, kein Leerraum rechts) ── */
 .about{max-width:640px;margin:0 auto;text-align:center}
@@ -185,6 +188,14 @@ section{padding:80px 0}
   display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;color:var(--green);margin:0 auto 16px}
 .astep h4{font-size:16px;font-weight:600;margin-bottom:6px}
 .astep p{color:var(--ink-2);font-size:14px;line-height:1.55;max-width:26ch;margin:0 auto}
+
+/* ── guarantee stack ── */
+.guarantees{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:900px;margin:0 auto}
+.guarantee{background:var(--green-deep);color:#fff;border-radius:18px;padding:30px 28px}
+.guarantee .gi{font-size:22px;margin-bottom:14px}
+.guarantee h3{font-family:var(--serif);font-weight:440;font-size:19px;margin-bottom:10px;letter-spacing:-.01em}
+.guarantee p{color:#c8ddd0;font-size:14px;line-height:1.6}
+@media (max-width:680px){.guarantees{grid-template-columns:1fr}}
 
 /* ── FAQ ── */
 .faq{max-width:820px;margin:0 auto;border-top:1px solid var(--line)}
@@ -313,12 +324,12 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
     <p class="sub">In 8 Wochen lernst du den <b>Transformations-Sprint</b> — das 4-Tage-Format, mit dem du Unternehmen durch echte KI-Transformation führst und die Kompetenzen aufbaust, auf die es morgen ankommt.</p>
     <div class="cta">
       <a href="#bewerbung" class="btn btn-accent btn-lg">Jetzt bewerben →</a>
-      <p class="cta-note">Kostenlos &amp; unverbindlich · ca. 3 Minuten · nur wenige Plätze frei</p>
+      <p class="cta-note">Kostenlos &amp; unverbindlich · ca. 3 Minuten · begrenzte Plätze pro Monat</p>
     </div>
     <div class="facts">
       <div class="fact"><div class="n">8</div><div class="l">Wochen, live online</div></div>
-      <div class="fact"><div class="n">12</div><div class="l">Plätze, streng limitiert</div></div>
-      <div class="fact"><div class="n">1</div><div class="l">betreuter Praxis-Sprint</div></div>
+      <div class="fact"><div class="n">1:1</div><div class="l">persönlich betreut, wenige Plätze/Monat</div></div>
+      <div class="fact"><div class="n">1</div><div class="l">betreute Simulation</div></div>
       <div class="fact"><div class="n">0</div><div class="l">Zeilen Code nötig</div></div>
     </div>
   </div>
@@ -429,14 +440,14 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
     <div class="sec-head">
       <div class="eyebrow">Der Programmablauf</div>
       <h2 class="serif">Acht Wochen bis zum ersten Angebot.</h2>
-      <p>Eine Live-Session pro Woche, dazu 2–3 Stunden betreutes Selbststudium. Gruppe max. 12.</p>
+      <p>Eine Live-Session pro Woche, dazu 2–3 Stunden betreutes Selbststudium — in kleiner Gruppe.</p>
     </div>
     <div class="steps">
       <div class="step-row"><div class="num">1</div><div><div class="st-tag">Woche 1–2</div><h3 class="serif">Die Methode</h3><p>Den Transformations-Sprint vollständig verstehen und an einem Übungsfall durchspielen.</p></div></div>
       <div class="step-row"><div class="num">2</div><div><div class="st-tag">Woche 3–4</div><h3 class="serif">KI-Substanz</h3><p>Das kritische Nachfragen einer Geschäftsführung zu Use Cases, Tools und Datenschutz souverän bestehen.</p></div></div>
       <div class="step-row"><div class="num">3</div><div><div class="st-tag">Woche 5</div><h3 class="serif">Facilitation-Handwerk</h3><p>Dominante Teilnehmer einfangen, Energie über vier Tage halten — remote und in Präsenz.</p></div></div>
       <div class="step-row"><div class="num">4</div><div><div class="st-tag">Woche 6</div><h3 class="serif">Verkauf</h3><p>Dein Angebot steht: Zielbranche, Preis, Pitch, erste Ansprache-Liste.</p></div></div>
-      <div class="step-row"><div class="num">5</div><div><div class="st-tag">Woche 7</div><h3 class="serif">Praxis-Sprint</h3><p>Ersten echten Transformations-Sprint durchgeführt — betreut, mit Feedback, dokumentiert als Referenz-Case.</p></div></div>
+      <div class="step-row"><div class="num">5</div><div><div class="st-tag">Woche 7</div><h3 class="serif">Simulation</h3><p>Den Transformations-Sprint im Zeitraffer komplett durchmoderiert — deine Trainingsgruppe spielt den Kunden, mit Echtzeit-Feedback.</p></div></div>
       <div class="step-row"><div class="num">6</div><div><div class="st-tag">Woche 8</div><h3 class="serif">Launch</h3><p>Positionierung geschärft, Zielkunden angesprochen, erstes Mandat in Reichweite.</p></div></div>
     </div>
   </div>
@@ -451,13 +462,14 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
       <p>Alles fertig aufgebaut, direkt einsetzbar. Duplizieren, Kundenlogo drauf, loslegen.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="ci">▤</div><h3>Miro-Boards für alle 4 Tage</h3><p>Jede Übung, jedes Template, fertig aufgebaut.</p></div>
-      <div class="card"><div class="ci">≡</div><h3>Agenden &amp; Leitfäden</h3><p>Minutengenaue Abläufe mit Timing-Puffern und Plan B für jede Übung.</p></div>
-      <div class="card"><div class="ci">◆</div><h3>Prompt-Bibliothek</h3><p>Kuratierte Prompts für Vorbereitung und Prototyp-Tag — mit jedem Update.</p></div>
-      <div class="card"><div class="ci">⬡</div><h3>Ergebnis-Report</h3><p>Der Abschlussbericht, der im Unternehmen weiterwandert — und Folgeaufträge auslöst.</p></div>
-      <div class="card"><div class="ci">⬤</div><h3>Pricing-Kalkulator</h3><p>Was kostet dein Sprint bei welcher Unternehmensgröße? Logik statt Bauchgefühl.</p></div>
-      <div class="card"><div class="ci">◈</div><h3>12 Monate Alumni</h3><p>Monatliche Sessions, Methoden-Updates, Fallbesprechungen aus echten Mandaten.</p></div>
+      <div class="card"><div class="ci">▤</div><h3>Miro-Boards für alle 4 Tage</h3><p>Jede Übung, jedes Template, fertig aufgebaut.</p><span class="val">Wert: 890 €</span></div>
+      <div class="card"><div class="ci">≡</div><h3>Agenden &amp; Leitfäden</h3><p>Minutengenaue Abläufe mit Timing-Puffern und Plan B für jede Übung.</p><span class="val">Wert: 650 €</span></div>
+      <div class="card"><div class="ci">◆</div><h3>Prompt-Bibliothek</h3><p>Kuratierte Prompts für Vorbereitung und Prototyp-Tag — mit jedem Update.</p><span class="val">Wert: 490 €</span></div>
+      <div class="card"><div class="ci">⬡</div><h3>Ergebnis-Report</h3><p>Der Abschlussbericht, der im Unternehmen weiterwandert — und Folgeaufträge auslöst.</p><span class="val">Wert: 390 €</span></div>
+      <div class="card"><div class="ci">⬤</div><h3>Pricing-Kalkulator</h3><p>Was kostet dein Sprint bei welcher Unternehmensgröße? Logik statt Bauchgefühl.</p><span class="val">Wert: 290 €</span></div>
+      <div class="card"><div class="ci">◈</div><h3>12 Monate Alumni</h3><p>Monatliche Sessions, Methoden-Updates, Fallbesprechungen aus echten Mandaten.</p><span class="val">Wert: 1.200 €</span></div>
     </div>
+    <div class="stack-total">Gesamtwert deines Toolkits: <b>3.910 €</b> — enthalten, ohne Aufpreis.</div>
   </div>
 </section>
 
@@ -474,19 +486,40 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
   </div>
 </section>
 
-<!-- ── ERGEBNIS / SOCIAL PROOF ── -->
+<!-- ── WAS DAS FORMAT WERT IST ── -->
 <section class="tight">
   <div class="wrap">
     <div class="quote-band">
-      <blockquote class="serif">Mein erstes Format-Mandat: 14.000 €. Sechs Wochen nach Programmstart.</blockquote>
-      <div class="who">Markus K. · freier Prozessberater</div>
+      <blockquote class="serif">Der Transformations-Sprint ist die Methode, mit der ich new.thought selbst aufgebaut habe — bevor ich sie in ein lehrbares Format gegossen habe.</blockquote>
+      <div class="who">Nils Blache · Gründer new.thought</div>
     </div>
     <div class="metrics">
-      <div class="metric"><div class="n">10–20k€</div><div class="d">pro Mandat, nach Wert bezahlt</div></div>
+      <div class="metric"><div class="n">10–20k€</div><div class="d">Marktpreis pro Mandat, nach Wert bezahlt</div></div>
       <div class="metric"><div class="n">4 Tage</div><div class="d">Formatdauer beim Kunden</div></div>
       <div class="metric"><div class="n">1 Mandat</div><div class="d">refinanziert das Programm</div></div>
     </div>
-    <p class="steps-note">Illustrative Angaben — echte Namen, Fotos und Zahlen werden vor Launch ergänzt.</p>
+  </div>
+</section>
+
+<!-- ── GARANTIE ── -->
+<section class="tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Doppelt abgesichert</div>
+      <h2 class="serif">Das Risiko liegt bei uns, nicht bei dir.</h2>
+    </div>
+    <div class="guarantees">
+      <div class="guarantee">
+        <div class="gi">↺</div>
+        <h3>14 Tage, kein Wenn und Aber</h3>
+        <p>Merkst du in den ersten zwei Wochen, dass das Programm nicht passt, bekommst du den vollen Betrag zurück. Ohne Begründung, ohne Kleingedrucktes.</p>
+      </div>
+      <div class="guarantee">
+        <div class="gi">✓</div>
+        <h3>Die Simulations-Garantie</h3>
+        <p>Führst du deine Woche-7-Simulation durch und stehst danach ohne einsatzbereiten Sprint-Ablauf da, arbeite ich so lange kostenlos mit dir weiter, bis du ihn hast.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -502,8 +535,9 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
       <details><summary>Ich bin nicht technisch. Reicht das?</summary><div class="fa">Ja. Der Transformations-Sprint verkauft Entscheidungen, nicht Code. Das nötige KI-Wissen ist Teil des Programms und bewusst auf das begrenzt, was du im Raum wirklich brauchst. Programmieren musst du an keiner Stelle.</div></details>
       <details><summary>Ich habe noch nie einen Workshop moderiert.</summary><div class="fa">Dann arbeitest du in Woche 5 am meisten — und stehst in Woche 7 zum ersten Mal vor einer echten Gruppe, betreut und mit Feedback. Die Struktur trägt dich: ein präziser Ablauf mit fertigen Boards.</div></details>
       <details><summary>Warum nicht einfach Automatisierungen verkaufen?</summary><div class="fa">Kannst du — zusammen mit tausenden anderen, im direkten Preisvergleich. Der Transformations-Sprint ist die Ebene davor: Welcher Prozess, welcher Use Case, wie kommt die Organisation mit. Dieses Gespräch führst du mit der Geschäftsführung, nicht mit der IT — und es wird nach Wert bezahlt.</div></details>
-      <details><summary>Wie viel Zeit brauche ich?</summary><div class="fa">4–6 Stunden pro Woche: eine Live-Session plus Vor-/Nachbereitung und Übungen. Woche 7 (dein Praxis-Sprint) ist intensiver.</div></details>
+      <details><summary>Wie viel Zeit brauche ich?</summary><div class="fa">4–6 Stunden pro Woche: eine Live-Session plus Vor-/Nachbereitung und Übungen. Woche 7 (deine Simulation) ist intensiver.</div></details>
       <details><summary>Was passiert im Erstgespräch?</summary><div class="fa">Ein ehrliches 30-Minuten-Gespräch: Wir klären deine Ausgangslage, dein Ziel und ob die Methode passt. Wenn ja, stellen wir das Programm konkret vor. Wenn nicht, sagen wir dir das offen. Kein Druck.</div></details>
+      <details><summary>Was, wenn es bei mir nicht funktioniert?</summary><div class="fa">Dafür gibt es zwei Absicherungen: Merkst du in den ersten 14 Tagen, dass es nicht passt, bekommst du dein Geld zurück. Und stehst du nach deiner Woche-7-Simulation ohne einsatzbereiten Sprint-Ablauf da, arbeite ich kostenlos weiter mit dir, bis du ihn hast.</div></details>
     </div>
   </div>
 </section>
@@ -578,7 +612,7 @@ footer .cp{margin-top:16px;font-size:12.5px;color:var(--ink-3)}
         <!-- Schritt 6: Zeitrahmen (QUALIFIZIEREND) -->
         <div class="step" data-step="6">
           <div class="q serif">Wie schnell willst du starten?</div>
-          <div class="hint">Die Plätze sind streng limitiert — wir planen sie im Voraus.</div>
+          <div class="hint">Ich betreue jede Simulation persönlich — deshalb nehme ich nur wenige neue Facilitatoren pro Monat auf.</div>
           <div class="opts" data-radio="zeit" data-req>
             <label class="opt"><input type="radio" name="zeit" value="now"><span class="box"></span><span class="txt">In den nächsten 30 Tagen<small>Ich bin startklar.</small></span></label>
             <label class="opt"><input type="radio" name="zeit" value="soon"><span class="box"></span><span class="txt">In 1–3 Monaten<small>Ich richte mir gerade den Rahmen ein.</small></span></label>
