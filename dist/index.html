@@ -10,10 +10,13 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="KI-Workshops für Führungskräfte im Mittelstand | new.thought">
 <meta property="og:description" content="Wir begleiten Change, bauen KI-Kompetenz im Leadership auf und bringen Ihre Führungskräfte zum ersten eigenen Prototypen. Kein Foliensatz.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8.7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='5.8' fill='none' stroke='white' stroke-width='2.9'/%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+<!-- Calendly -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 <style>
   .hero-kicker{font-size:clamp(15px,1.5vw,17.5px);color:var(--ink-2);margin-bottom:20px;line-height:1.4}
   .focus{background:var(--surface);border:1px solid var(--line);border-radius:24px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;margin-top:32px}
@@ -43,6 +46,9 @@
   .guarantee-tile h3{font-family:var(--serif);font-weight:440;font-size:19px;margin-bottom:10px;letter-spacing:-.01em}
   .guarantee-tile p{color:#c8ddd0;font-size:14px;line-height:1.6}
   @media(max-width:920px){.guarantees{grid-template-columns:1fr}}
+  .cal-card{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:14px;margin-top:30px;overflow:hidden}
+  .cal-alt{text-align:center;font-size:13px;color:var(--ink-3);margin-top:16px}
+  .cal-alt a{color:var(--green)}
   .contact-box{max-width:480px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px}
   .contact-box .field{margin-bottom:14px}
   .contact-box label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink)}
@@ -86,7 +92,7 @@
     </div>
     <div class="nav-right">
       <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
-      <a class="btn btn-dark" href="#kontakt">Workshop anfragen</a>
+      <a class="btn btn-dark" href="#kontakt" data-calendly>Workshop anfragen</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
@@ -105,7 +111,7 @@
     <a href="/ki-readiness-check.html">KI-Check</a>
   </div>
   <div class="m-cta">
-    <a href="#kontakt" class="btn btn-dark">Workshop anfragen</a>
+    <a href="#kontakt" class="btn btn-dark" data-calendly>Workshop anfragen</a>
   </div>
 </div>
 
@@ -118,7 +124,7 @@
       <h1 class="serif" style="max-width:28ch">KI scheitert selten an der Technik. <span style="color:var(--ink-3)">Meistens an der Führung.</span></h1>
       <p class="sub">Wir begleiten Change, bauen KI-Kompetenz im Leadership auf und bringen Ihre Führungskräfte zum ersten eigenen Prototypen — vom halbtägigen Impuls bis zum Transformationsprogramm. Kein Foliensatz, kein Trendvortrag: Führung, die KI nicht delegiert.</p>
       <div class="cta">
-        <a href="#kontakt" class="btn btn-dark">Erstgespräch buchen</a>
+        <a href="#kontakt" class="btn btn-dark" data-calendly>Erstgespräch buchen</a>
         <a href="#schwerpunkte" class="btn btn-ghost">Schwerpunkte ansehen</a>
       </div>
     </div>
@@ -373,7 +379,7 @@
       <div class="founder-block">
         <img src="/assets/nils-blache-DrObPAWr.png" alt="Nils Blache" class="founder-photo">
         <div class="founder-text">
-          <div class="eyebrow" style="margin-bottom:14px">Nils Blache · Gründer und Experte für KI &amp; Organisationsentwicklung</div>
+          <div class="eyebrow" style="margin-bottom:14px">Ihr Ansprechpartner · Nils Blache</div>
           <p>Ich habe new.thought aufgebaut, weil ich immer wieder dasselbe Muster sah: Führungskräfte sollen über KI entscheiden, haben aber selbst noch nie etwas damit gebaut. Also wird nach Bauchgefühl entschieden, und niemand versteht, warum die Piloten versanden.</p>
           <!-- PLATZHALTER: echte Zahlen/Hochschule eintragen, bevor das live geht -->
           <p>Seit <strong>vier Jahren</strong> arbeite ich an der Schnittstelle von HR, IT und Führung — in Transformationsprojekten und als Dozent an <strong>verschiedenen Hochschulen</strong>.</p>
@@ -459,7 +465,16 @@
   <section class="final" id="kontakt">
     <div class="wrap reveal">
       <h2 class="serif">Sprechen wir 30 Minuten.</h2>
-      <p class="lead">Kein Verkaufsgespräch: Wir schauen uns an, welches Problem Sie nehmen würden und welches Format dazu passt. Wenn ich Ihnen nicht weiterhelfen kann, sage ich das.</p>
+      <p class="lead">Wir schauen uns an, welches Problem Sie nehmen würden und welches Format dazu passt. Wenn ich Ihnen nicht weiterhelfen kann, sage ich das.</p>
+      <!-- Calendly inline widget begin -->
+      <div class="cal-card">
+        <div class="calendly-inline-widget" data-url="https://calendly.com/nils-new-thought/30min?hide_event_type_details=1&amp;hide_gdpr_banner=1&amp;primary_color=000000" style="min-width:320px;height:700px;"></div>
+      </div>
+      <!-- Calendly inline widget end -->
+      <p class="cal-alt">Lieber schriftlich? Schreiben Sie an <a href="mailto:nils@new-thought.com">nils@new-thought.com</a>.</p>
+
+      <!-- Frühere Formular-Variante (schickte per kontakt.php eine Mail). Zum Zurückholen: Kommentar entfernen
+           und den Calendly-Block oben löschen. Das JS dazu steht unten, ebenfalls auskommentiert.
       <form class="contact-box" id="contactForm" novalidate>
         <div id="ctFields">
           <div class="field"><label for="ctName">Name</label><input type="text" id="ctName" name="name" placeholder="Max Mustermann" required></div>
@@ -478,7 +493,7 @@
           <div class="ct-hp" aria-hidden="true"><label for="ctWebsite">Website</label><input type="text" id="ctWebsite" name="website" tabindex="-1" autocomplete="off"></div>
           <button type="submit" class="btn btn-dark" id="ctSubmit" style="width:100%;justify-content:center">Termin vorschlagen</button>
           <p class="ct-error" id="ctError" role="alert"></p>
-          <p class="ct-note">Kein Spam. Details in der <a href="/datenschutz.html" style="color:var(--green)">Datenschutzerklärung</a>.</p>
+          <p class="ct-note">Kein Spam. Details in der <a href="/datenschutz.html" style="color:var(&#45;&#45;green)">Datenschutzerklärung</a>.</p>
         </div>
         <div class="contact-done" id="ctDone">
           <div class="wi">✓</div>
@@ -486,6 +501,7 @@
           <p>Du bekommst von mir zwei bis drei Terminvorschläge per E-Mail.</p>
         </div>
       </form>
+      -->
     </div>
   </section>
 
@@ -567,40 +583,25 @@
     });
   }
 
-  // Kontaktformular — schickt die Anfrage per kontakt.php an nils@new-thought.com
-  const ctForm   = document.getElementById('contactForm');
-  const ctBtn    = document.getElementById('ctSubmit');
-  const ctError  = document.getElementById('ctError');
-
-  const showError = (msg) => {
-    ctError.innerHTML = msg + ' Alternativ direkt an <a href="mailto:nils@new-thought.com">nils@new-thought.com</a>.';
-    ctError.classList.add('show');
+  const track = (name, props) => {
+    if (typeof gtag !== 'undefined') gtag('event', name, props || {});
+    if (typeof plausible !== 'undefined') plausible(name, { props: props || {} });
   };
 
-  ctForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!ctForm.checkValidity()) { ctForm.reportValidity(); return; }
+  // ── Calendly: Popup auf den CTA-Buttons ──
+  document.querySelectorAll('[data-calendly]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      if (typeof Calendly === 'undefined') return; // Fallback: Anker springt zur Inline-Buchung
+      e.preventDefault();
+      Calendly.initPopupWidget({ url: 'https://calendly.com/nils-new-thought/30min?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=000000' });
+      track('cta_klick', { position: 'popup' });
+    });
+  });
 
-    ctError.classList.remove('show');
-    ctBtn.disabled = true;
-    const label = ctBtn.textContent;
-    ctBtn.textContent = 'Wird gesendet …';
-
-    try {
-      const res = await fetch('kontakt.php', { method:'POST', body:new FormData(ctForm) });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      if (!data.ok) throw new Error(data.error || 'unknown');
-
-      document.getElementById('ctFields').style.display = 'none';
-      document.getElementById('ctDone').classList.add('show');
-      if (typeof gtag !== 'undefined') gtag('event', 'formular_abgesendet');
-      if (typeof plausible !== 'undefined') plausible('formular_abgesendet');
-    } catch (err) {
-      ctBtn.disabled = false;
-      ctBtn.textContent = label;
-      showError('Das hat gerade nicht funktioniert.');
-    }
+  // Calendly meldet die Buchung per postMessage — das ist die Conversion
+  addEventListener('message', (e) => {
+    if (e.origin !== 'https://calendly.com') return;
+    if (e.data && e.data.event === 'calendly.event_scheduled') track('termin_gebucht', { seite: 'startseite' });
   });
 
   // Reveal on scroll
