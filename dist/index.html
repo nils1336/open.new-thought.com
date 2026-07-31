@@ -3,414 +3,446 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KI-Adoption &amp; Enablement für den Mittelstand | new.thought</title>
-<meta name="description" content="KI strukturiert einführen: KAIRON bringt Rollen, Methode und Steuerung in Ihre KI-Projekte. Für Unternehmen im Mittelstand, die KI nicht nur nutzen — sondern wirklich beherrschen wollen.">
+<title>KI-Workshops für Führungskräfte im Mittelstand | new.thought</title>
+<meta name="description" content="Inhouse KI-Workshop für Führungskräfte im Mittelstand: ein oder zwei Tage an einem echten Problem aus eurem Betrieb. Am Abend läuft ein Prototyp, den ihr selbst gebaut habt. Vor Ort oder online, Festpreis ab 5.900 €.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.new-thought.com/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.new-thought.com/">
-<meta property="og:title" content="KI-Adoption &amp; Enablement für den Mittelstand | new.thought">
-<meta property="og:description" content="KI strukturiert einführen: KAIRON bringt Rollen, Methode und Steuerung in Ihre KI-Projekte — in 90 Tagen einsatzbereit.">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="KI-Adoption &amp; Enablement für den Mittelstand | new.thought">
-<meta name="twitter:description" content="KI strukturiert einführen: KAIRON bringt Governance, klare Rollen und Steuerung in Ihre KI-Projekte — in 90 Tagen einsatzbereit.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='white'/%3E%3Ctext x='6' y='22' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23ff3eb5'%3EN%3C/text%3E%3Ctext x='4' y='21' font-family='Inter,Arial,sans-serif' font-weight='900' font-size='20' fill='%23111111'%3EN%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="KI-Workshops für Führungskräfte im Mittelstand | new.thought">
+<meta property="og:description" content="Ein oder zwei Tage mit eurem Führungskreis an einem echten Problem aus eurem Betrieb. Kein Foliensatz: Am Abend läuft ein Prototyp, den ihr selbst gebaut habt.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
 <style>
-  /* ── Landing-specific ── */
-  .landing-hero {
-    min-height: 100svh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 100px 0 80px; border-bottom: 1px solid var(--ink);
-  }
-  .landing-tag {
-    display: inline-flex; align-items: center; gap: 10px;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink-soft); margin-bottom: 32px;
-  }
-  .landing-tag .live { width: 7px; height: 7px; background: var(--accent); border-radius: 50%; animation: pulse 1.8s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.4;transform:scale(1.3);} }
-
-  .landing-headline {
-    font-family: var(--sans); font-weight: 600;
-    font-size: clamp(26px, 7.5vw, 120px);
-    line-height: 0.94; letter-spacing: -0.05em;
-    color: var(--ink); margin-bottom: 24px;
-    overflow-wrap: break-word;
-  }
-  .landing-headline em { font-style: italic; font-weight: 400; color: var(--ink-soft); }
-  .landing-headline .accent { color: var(--accent); }
-  .landing-strike { position: relative; display: inline-block; }
-  .landing-strike::after {
-    content: ""; position: absolute; left: -3%; right: -3%; top: 56%; height: 7px;
-    background: var(--accent); transform: scaleX(0); transform-origin: left;
-    animation: strike 1.2s 0.6s cubic-bezier(.4,1,.4,1) forwards;
-  }
-  @keyframes strike { to { transform: scaleX(1); } }
-
-  .landing-sub {
-    font-size: clamp(16px, 1.4vw, 20px); color: var(--ink-soft); line-height: 1.5;
-    max-width: 58ch; margin-bottom: 64px; font-weight: 400;
-  }
-  .landing-sub strong { color: var(--ink); font-weight: 600; }
-
-  /* ── Splitter ── */
-  .landing-splitter { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--ink); }
-
-  .split-card {
-    display: flex; flex-direction: column; gap: 20px; padding: 52px 48px;
-    text-decoration: none; color: inherit;
-    border-right: 1px solid var(--ink);
-    transition: background .2s;
-    position: relative; overflow: hidden;
-  }
-  .split-card:last-child { border-right: none; }
-  .split-card:hover { background: var(--bg-soft); }
-  .split-card::after {
-    content: "→";
-    position: absolute; bottom: 52px; right: 48px;
-    font-size: 28px; color: var(--rule); transition: color .2s, transform .2s;
-  }
-  .split-card:hover::after { color: var(--accent); transform: translateX(4px); }
-
-  .split-card-eyebrow {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-    color: var(--ink-mute); font-weight: 500;
-  }
-  .split-card--programme .split-card-eyebrow { color: var(--accent); }
-  .split-card--academy .split-card-eyebrow { color: #5e8ebc; }
-
-  .split-card-num {
-    font-family: var(--mono); font-size: 72px; font-weight: 700; line-height: 1;
-    letter-spacing: -0.04em; color: var(--rule); transition: color .2s;
-  }
-  .split-card:hover .split-card-num { color: var(--rule-soft); }
-
-  .split-card-title {
-    font-size: clamp(22px, 2.2vw, 32px); font-weight: 600; letter-spacing: -0.025em;
-    line-height: 1.15; color: var(--ink); max-width: 22ch;
-  }
-
-  .split-card-desc {
-    font-size: 15px; color: var(--ink-soft); line-height: 1.6; max-width: 40ch; flex: 1;
-  }
-
-  .split-card-tags {
-    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px;
-  }
-  .split-card-tag {
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
-    padding: 5px 10px; border: 1px solid var(--rule); color: var(--ink-mute);
-  }
-
-  .split-card-cta {
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-    font-weight: 600; margin-top: 8px;
-  }
-  .split-card--programme .split-card-cta { color: var(--accent); }
-  .split-card--academy .split-card-cta { color: #5e8ebc; }
-
-  /* ── Footer bar ── */
-  .landing-foot {
-    padding: 32px 0; border-top: 1px solid var(--rule);
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--ink-mute); flex-wrap: wrap; gap: 16px;
-  }
-  .landing-foot a { color: inherit; text-decoration: none; }
-  .landing-foot a:hover { color: var(--accent); }
-
-  /* ── Nav landing ── */
-  nav.top .wrap.row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; }
-  .nav-landing { display: flex; gap: 32px; align-items: center; justify-content: center; }
-  .nav-landing > a {
-    font-family: var(--sans); font-size: 15px; letter-spacing: -0.02em; text-transform: none;
-    color: var(--ink); font-weight: 700; transition: color .15s;
-  }
-  .nav-landing > a:hover { color: var(--ink-soft); }
-  .nav-cta-wrap { display: flex; justify-content: flex-end; align-items: center; gap: 12px; }
-  @media(max-width: 760px) { nav.top .wrap.row { display: flex; } .nav-landing { display: none; } }
-
-  /* Dropdown (reused from programme.html style) */
-  .nav-landing .nav-dropdown { position: relative; }
-  .nav-landing .nav-dropdown-trigger {
-    font-family: var(--sans); font-size: 15px; font-weight: 700;
-    letter-spacing: -0.02em; color: var(--ink); cursor: pointer;
-    background: none; border: none; padding: 0; display: flex; align-items: center; gap: 5px; line-height: 1;
-    transition: color .15s;
-  }
-  .nav-landing .nav-dropdown-trigger::after { content: '▾'; font-size: 10px; opacity: 0.4; margin-top: 1px; transition: transform .2s; }
-  .nav-landing .nav-dropdown.open .nav-dropdown-trigger::after { transform: rotate(180deg); }
-  .nav-landing .nav-dropdown-menu {
-    position: absolute; top: calc(100% + 10px); left: 50%;
-    transform: translateX(-50%) translateY(-6px);
-    background: #fff; border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
-    min-width: 200px; padding: 6px 0;
-    opacity: 0; pointer-events: none;
-    transition: opacity .18s, transform .18s; z-index: 200;
-  }
-  .nav-landing .nav-dropdown.open .nav-dropdown-menu {
-    opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0);
-  }
-  .nav-landing .nav-dropdown-menu a {
-    display: block; padding: 9px 20px; font-size: 13px; font-weight: 500;
-    color: var(--ink-soft); text-decoration: none; white-space: nowrap;
-    transition: color .12s, background .12s;
-  }
-  .nav-landing .nav-dropdown-menu a:hover { color: var(--ink); background: var(--bg-soft); }
-
-  @media(max-width: 760px) {
-    .landing-hero { padding: 80px 0 60px; min-height: auto; }
-    .landing-splitter { grid-template-columns: 1fr; }
-    .split-card { padding: 36px 28px; border-right: none; border-bottom: 1px solid var(--ink); }
-    .split-card:last-child { border-bottom: none; }
-    .split-card::after { bottom: 36px; right: 28px; }
-    .split-card-num { font-size: 48px; }
-  }
-  @media(max-width: 480px) {
-    .split-card { padding: 28px 20px; }
-    .split-card::after { bottom: 28px; right: 20px; }
-  }
+  .guarantees{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .guarantee-tile{background:var(--green-deep);color:#fff;border-radius:18px;padding:30px 28px}
+  .guarantee-tile .gi{font-family:var(--serif);font-size:26px;color:#8fbfa1;margin-bottom:14px;line-height:1}
+  .guarantee-tile h3{font-family:var(--serif);font-weight:440;font-size:19px;margin-bottom:10px;letter-spacing:-.01em}
+  .guarantee-tile p{color:#c8ddd0;font-size:14px;line-height:1.6}
+  @media(max-width:920px){.guarantees{grid-template-columns:1fr}}
+  .contact-box{max-width:480px;margin:0 auto;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:36px}
+  .contact-box .field{margin-bottom:14px}
+  .contact-box label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+  .contact-box input,.contact-box select{width:100%;font-family:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:11px;padding:13px 14px;-webkit-appearance:none;appearance:none}
+  .contact-box select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%239b9b95' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
+  .contact-box input:focus,.contact-box select:focus{outline:none;border-color:var(--green)}
+  .contact-box .ct-note{font-size:12px;color:var(--ink-3);margin-top:14px;text-align:center;line-height:1.5}
+  .contact-done{display:none;text-align:center;padding:12px 4px}
+  .contact-done.show{display:block}
+  .contact-done .wi{width:52px;height:52px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 16px}
+  .contact-done h3{font-family:var(--serif);font-weight:440;font-size:22px;margin-bottom:8px}
+  .contact-done p{color:var(--ink-2);font-size:14.5px;line-height:1.55}
+  .founder-block{display:grid;grid-template-columns:140px 1fr;gap:44px;align-items:center;max-width:760px;margin:0 auto}
+  @media(max-width:600px){.founder-block{grid-template-columns:1fr;text-align:center}}
+  .founder-photo{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center top;border:1px solid var(--line);flex-shrink:0}
+  @media(max-width:600px){.founder-photo{margin:0 auto}}
+  .founder-text p{font-size:18px;line-height:1.72;color:#3a3a36;margin-bottom:16px}
+  .founder-text .sig{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink-2)}
 </style>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.new-thought.com/#organization",
-      "name": "new.thought",
-      "url": "https://www.new-thought.com",
-      "logo": "https://www.new-thought.com/logo-dark.png",
-      "description": "new.thought unterstützt Unternehmen im Mittelstand bei der strukturierten KI-Einführung: KI-Adoption, KI-Governance und KI-Zertifizierungen für Manager und Führungskräfte.",
-      "foundingDate": "2024",
-      "founder": {
-        "@type": "Person",
-        "name": "Nils Blache",
-        "jobTitle": "Gründer & KI-Adoption Experte",
-        "url": "https://www.new-thought.com"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "email": "nils@new-thought.com",
-        "telephone": "+49-1516-450933",
-        "contactType": "customer service",
-        "availableLanguage": "German"
-      },
-      "areaServed": ["DE", "AT", "CH"],
-      "knowsAbout": [
-        "KI-Adoption", "KI-Governance", "KI-Einführung Mittelstand",
-        "KI-Projektmanagement", "KI Change Management", "KI-Zertifizierung"
-      ],
-      "sameAs": []
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://www.new-thought.com/#website",
-      "url": "https://www.new-thought.com",
-      "name": "new.thought — KI-Adoption & Enablement für den Mittelstand",
-      "publisher": { "@id": "https://www.new-thought.com/#organization" },
-      "inLanguage": "de-DE"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://www.new-thought.com/#webpage",
-      "url": "https://www.new-thought.com",
-      "name": "KI-Adoption & Enablement für den Mittelstand | new.thought",
-      "description": "KI strukturiert einführen: KAIRON bringt Rollen, Methode und Steuerung in Ihre KI-Projekte. Für Mittelstandsunternehmen.",
-      "isPartOf": { "@id": "https://www.new-thought.com/#website" },
-      "about": { "@id": "https://www.new-thought.com/#organization" },
-      "inLanguage": "de-DE"
-    }
-  ]
-}
-</script>
-  <link rel="stylesheet" crossorigin href="/assets/styles-ChJjtTrs.css">
+  <link rel="stylesheet" crossorigin href="/assets/ona-BbQ0zF3c.css">
 </head>
 <body>
 
-<!-- ====== NAV ====== -->
-<nav class="top">
-  <div class="wrap row">
-    <a class="brand" href="index.html">new<span class="dot">.</span>thought</a>
-    <div class="nav-landing">
-      <div class="nav-dropdown" id="dd-programme">
-        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-programme')">Programme</button>
-        <div class="nav-dropdown-menu">
-          <a href="kairon.html">KAIRON</a>
-          <a href="kaidop.html">KAIDOP</a>
-          <a href="kailead.html">KAILEAD</a>
-          <hr style="border:none; border-top:1px solid rgba(0,0,0,0.08); margin:4px 0;">
-          <a href="kairon-executive.html">Fractional AI Officer</a>
-        </div>
-      </div>
-      <a href="academy.html">Academy</a>
-      <div class="nav-dropdown" id="dd-ressourcen">
-        <button class="nav-dropdown-trigger" onclick="toggleDropdown('dd-ressourcen')">Ressourcen</button>
-        <div class="nav-dropdown-menu">
-          <a href="ressourcen.html">Blog</a>
-          <a href="ki-readiness-check.html">KI-Readiness-Check</a>
-        </div>
-      </div>
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <a href="#workshop">Workshop</a>
+      <a href="#schwerpunkte">Schwerpunkte</a>
+      <a href="#formate">Formate &amp; Preise</a>
+      <a href="/ressourcen.html">Blog</a>
     </div>
-    <div class="nav-cta-wrap">
-      <a class="nav-cta" href="https://cal.meetergo.com/nilsb/discovery" target="_blank" rel="noopener">Erstgespräch buchen →</a>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
-        <span></span><span></span><span></span>
-      </button>
+    <div class="nav-right">
+      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+      <a class="btn btn-dark" href="#kontakt">Erstgespräch vereinbaren</a>
     </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
-<div class="nav-mobile" id="nav-mobile">
-  <a href="programme.html" class="mob-link" style="font-weight:600;">⬡ Programme</a>
-  <a href="academy.html" class="mob-link" style="font-weight:600;">◎ Academy</a>
-  <a href="ressourcen.html" class="mob-link" style="font-weight:600;">◈ Blog</a>
-  <a href="ki-readiness-check.html" class="mob-link" style="font-weight:600;">◈ KI-Readiness-Check</a>
-  <a href="programme.html#cta" class="mob-cta">Erstgespräch buchen →</a>
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="#workshop">Workshop</a>
+    <a href="#schwerpunkte">Schwerpunkte</a>
+    <a href="#formate">Formate &amp; Preise</a>
+    <a href="/ressourcen.html">Blog</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="#kontakt" class="btn btn-dark">Erstgespräch vereinbaren</a>
+  </div>
 </div>
 
-<!-- ====== HERO ====== -->
-<section class="landing-hero" id="top">
-  <div class="wrap">
+<main>
 
-
-    <div class="landing-tag">
-      <span class="live"></span>
-      Die meisten Unternehmen haben KI-Tools. Keines hat ein System.
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="wrap reveal">
+      <h1 class="serif" style="max-width:22ch">KI-Workshops für Führungskräfte — am Abend läuft ein Prototyp, <span style="color:var(--ink-3)">den ihr selbst gebaut habt.</span></h1>
+      <p class="sub">Ein oder zwei Tage mit eurem Führungskreis an einem echten Problem aus eurem Betrieb. Kein Foliensatz, kein Trendvortrag: Ihr baut selbst, und am Abend läuft etwas, das ihr am nächsten Morgen weiterverwenden könnt.</p>
+      <div class="cta">
+        <a href="#kontakt" class="btn btn-dark">Kostenloses Erstgespräch buchen</a>
+        <a href="#formate" class="btn btn-ghost">Formate &amp; Preise ansehen</a>
+      </div>
+      <p class="webinar-micro" style="font-size:13px;color:var(--ink-3);margin-top:14px">Vor Ort in ganz DACH oder online · Festpreis ab 5.900 € · bis zu 6 Führungskräfte</p>
     </div>
+  </section>
 
-    <h1 class="landing-headline" aria-label="KI-Adoption und Enablement für den Mittelstand — Der Umgang mit KI ist eine Organisations-Frage, keine Technologie-Frage.">
-      Der Umgang mit KI ist keine<br>
-      <span class="landing-strike">Technologie&#8209;Frage<span class="accent">.</span></span><br>
-      <em>Er ist eine Organisations&#8209;Frage<span class="accent">.</span></em>
-    </h1>
-
-    <p class="landing-sub">
-      Wählen Sie Ihren Einstiegspunkt.
-    </p>
-
-    <div class="landing-splitter">
-
-      <a href="programme.html" class="split-card split-card--programme">
-        <span class="split-card-eyebrow">Für Unternehmen</span>
-        <div class="split-card-num">01</div>
-        <h2 class="split-card-title">Wir wollen KI im Unternehmen einführen.</h2>
-        <p class="split-card-desc">Diagnose First. KAIRON strukturiert die KI-Einführung, KAIDOP löst Widerstände bei Mitarbeitenden, KAILEAD befähigt Führungskräfte.</p>
-        <div class="split-card-tags">
-          <span class="split-card-tag">KAIDOP</span>
-          <span class="split-card-tag">KAIRON</span>
-          <span class="split-card-tag">KAILEAD</span>
-        </div>
-        <span class="split-card-cta">Programm finden</span>
-      </a>
-
-      <a href="academy.html" class="split-card split-card--academy">
-        <span class="split-card-eyebrow">Für Manager und KI Interessierte</span>
-        <div class="split-card-num">02</div>
-        <h2 class="split-card-title">Wir wollen die Methode lernen und intern anwenden.</h2>
-        <p class="split-card-desc">Zwei Zertifizierungen: KAIRON KI-Orchestrator für interne Manager und KAIDOP Manager für Führungskräfte. Wissen, das im Unternehmen bleibt.</p>
-        <div class="split-card-tags">
-          <span class="split-card-tag">KAIRON KI-Orchestrator</span>
-          <span class="split-card-tag">KAIDOP Manager</span>
-          <span class="split-card-tag">In-Company</span>
-        </div>
-        <span class="split-card-cta">Ausbildung ansehen</span>
-      </a>
-
+  <!-- ── PROBLEM ── -->
+  <section class="block" id="problem">
+    <div class="wrap reveal">
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Das Problem</div><h2 class="serif">Führungskräfte sollen über KI entscheiden.<br><span class="dim">Ohne zu wissen, was damit heute möglich ist.</span></h2><p>Das ist kein Vorwurf, sondern eine Erfahrungslücke. Zwischen dem, was in Demos und auf Konferenzen gezeigt wird, und dem, was im eigenen Betrieb wirklich trägt, liegt ein Abstand, den keine Präsentation schließt. Wer nie selbst etwas gebaut hat, kann nicht einschätzen, welcher Use Case Substanz hat — und priorisiert nach Bauchgefühl.</p></div>
+      <div class="qcards">
+        <div class="qcard">Ich soll über KI entscheiden, habe aber selbst noch nie etwas damit gebaut.</div>
+        <div class="qcard">Jeder erzählt mir etwas anderes, was möglich ist. Ich kann es nicht beurteilen.</div>
+        <div class="qcard">Wir haben Lizenzen gekauft. Was wir davon haben, weiß ich nicht.</div>
+        <div class="qcard">Man fragt mich, wo wir anfangen. Ich habe keine gute Antwort.</div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ── WAS IHR MITNEHMT ── -->
+  <section class="block" id="workshop">
+    <div class="wrap reveal">
+      <div class="achieve">
+        <div class="achieve-l">
+          <div>
+            <div class="eyebrow" style="color:#bfe0c9;margin-bottom:14px">Was ihr mitnehmt</div>
+            <h2 class="serif">Ein Workshop, aus dem ihr nicht mit Folien rausgeht.</h2>
+            <p>Die Erfahrungslücke schließt sich nicht durch Zuhören, sondern durch einmal selbst bauen. Deshalb sitzt hier kein Publikum. Es geht aber nicht nur um das Werkzeug: Genauso wichtig ist die Frage, was sich ändert, wenn ein Team mit KI arbeitet — Vorbehalte, Qualitätssicherung, Führung. Worauf der Schwerpunkt liegt, entscheidet ihr.</p>
+          </div>
+          <a href="#schwerpunkte" class="arrow-link" style="color:#bfe0c9;margin-top:24px">Schwerpunkte ansehen <span class="ar">→</span></a>
+        </div>
+        <div class="achieve-card">
+          <div class="ac-row"><span class="ic">◆</span><span class="t">Einen laufenden Prototyp an einem echten Problem aus eurem Betrieb</span></div>
+          <div class="ac-row"><span class="ic">▤</span><span class="t">Ein belastbares Gefühl dafür, was mit KI heute geht — und was nicht</span></div>
+          <div class="ac-row"><span class="ic">≡</span><span class="t">Eine priorisierte Use-Case-Liste mit Aufwand und erwarteter Wirkung</span></div>
+          <div class="ac-row"><span class="ic">↻</span><span class="t">Antworten auf die Führungsfragen: Vorbehalte im Team, Qualität, Zuständigkeit</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ====== FOOT ====== -->
+  <!-- ── SPLIT: KONKRETER BEWEIS ── -->
+  <section class="block">
+    <div class="wrap">
+      <div class="split rev reveal">
+        <div class="split-media">
+          <div class="mock">
+            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> Tag 1 · Prototyp</div><span class="chip-g">läuft</span></div>
+            <div class="mock-b">
+              <div class="mock-field"><div class="k">Problem</div><div class="v">Angebote dauern 3 Tage</div></div>
+              <div class="mock-2">
+                <div class="mock-field"><div class="k">Datenquelle</div><div class="v">CRM · Preisliste</div></div>
+                <div class="mock-field"><div class="k">Output</div><div class="v">Angebot in 4 Min.</div></div>
+              </div>
+              <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
+                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende von Tag 1</div></div>
+                <span class="chip-g">fertig</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="split-text">
+          <div class="ft-tag">So konkret wird es</div>
+          <h3 class="serif">Ihr startet nicht mit einer Folie. Ihr startet mit einem Ergebnis.</h3>
+          <p>Kein Konzeptpapier, kein Pilotbericht. Ihr wählt ein echtes Problem und baut noch am selben Tag etwas Laufendes — begleitet, aber selbst gebaut. Genau deshalb könnt ihr danach beurteilen, was ein Use Case wirklich wert ist.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SCHWERPUNKTE ── -->
+  <section class="block" id="schwerpunkte">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow" style="margin-bottom:14px">Schwerpunkte</div>
+        <h2 class="serif">Ihr entscheidet, worauf der Tag den Fokus legt.</h2>
+        <p>KI im Unternehmen ist nicht nur eine Werkzeugfrage. Genauso oft scheitert es daran, dass das Team nicht mitzieht oder niemand weiß, wo man anfangen soll. Deshalb ist der Workshop kein festes Curriculum: Im Vorgespräch legen wir gemeinsam fest, welche dieser Bereiche der Tag abdeckt — meist zwei davon, kombiniert mit dem Bauen.</p>
+      </div>
+      <div class="tcards">
+        <div class="tcard">
+          <div class="ix serif">01</div>
+          <h3>KI selbst anwenden</h3>
+          <div class="q">„Ich weiß nicht, was die Tools wirklich können."</div>
+          <p>Ihr baut selbst an einem echten Problem: Wie man eine Aufgabe so formuliert, dass KI sie löst, wo die Grenzen liegen und wie man Ergebnisse prüft, statt ihnen zu glauben.</p>
+        </div>
+        <div class="tcard">
+          <div class="ix serif">02</div>
+          <h3>Use Cases finden und priorisieren</h3>
+          <div class="q">„Wo fangen wir überhaupt an?"</div>
+          <p>Wir gehen eure Prozesse durch und bewerten sie nach Aufwand und Wirkung. Ergebnis ist eine priorisierte Liste — inklusive der Fälle, die man besser bleiben lässt.</p>
+        </div>
+        <div class="tcard">
+          <div class="ix serif">03</div>
+          <h3>Vorbehalte im Team auflösen</h3>
+          <div class="q">„Meine Leute machen nicht mit."</div>
+          <p>Woher Widerstand kommt — Jobangst, Skepsis, schlechte Erfahrungen — und wie man ihn ernst nimmt, ohne die Sache liegen zu lassen. Mit den Formulierungen, die in der Praxis funktionieren.</p>
+        </div>
+        <div class="tcard">
+          <div class="ix serif">04</div>
+          <h3>Führen mit KI</h3>
+          <div class="q">„Was ändert sich an meiner Rolle?"</div>
+          <p>Was Führung anders macht, wenn Teams mit KI arbeiten: delegieren und trotzdem Qualität sichern, Erwartungen setzen, entscheiden, wo ein Mensch drüberschauen muss.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FORMATE & PREISE ── -->
+  <section class="block" id="formate">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow" style="margin-bottom:14px">Formate &amp; Preise</div>
+        <h2 class="serif">Zwei Formate, ein Festpreis.</h2>
+        <p>Beide Formate sind für euren Führungskreis allein, nicht für gemischte Gruppen — vor Ort oder online, wie es euch passt. Der Unterschied liegt darin, wie weit ihr am Ende seid: ein laufender Prototyp, oder ein laufender Prototyp plus geklärte Zuständigkeiten.</p>
+      </div>
+      <div class="cards two">
+        <div class="card">
+          <div class="ft-tag">Am häufigsten gebucht</div>
+          <h3>Prototyp-Tag</h3>
+          <p style="color:var(--ink-3);font-size:13px;margin:2px 0 16px">1 Tag · bis zu 6 Führungskräfte</p>
+          <div class="serif" style="font-weight:440;font-size:38px;line-height:1;margin-bottom:14px">5.900 €</div>
+          <p><strong>Ihr geht raus mit:</strong> einem laufenden Prototyp an einem echten Problem — gebaut von euch, begleitet von mir.</p>
+          <p style="color:var(--ink-3)">Passt, wenn ihr genug geredet habt und endlich etwas sehen wollt.</p>
+        </div>
+        <div class="card">
+          <div class="ft-tag">Für den ganzen Führungskreis</div>
+          <h3>Führungs-Sprint</h3>
+          <p style="color:var(--ink-3);font-size:13px;margin:2px 0 16px">2 Tage · bis zu 6 Führungskräfte</p>
+          <div class="serif" style="font-weight:440;font-size:38px;line-height:1;margin-bottom:14px">9.800 €</div>
+          <p><strong>Ihr geht raus mit:</strong> Prototyp, geklärten Verantwortlichkeiten und einer priorisierten Use-Case-Liste für die nächsten Monate.</p>
+          <p style="color:var(--ink-3)">Passt, wenn KI bei euch bisher niemandem gehört.</p>
+        </div>
+      </div>
+      <p style="font-size:13.5px;color:var(--ink-3);line-height:1.6;margin-top:22px;max-width:70ch">Alle Preise netto zzgl. Reisekosten, gültig für bis zu 6 Teilnehmende. Die kleine Runde ist Absicht: Jede Person baut selbst, und ab sieben Leuten entstehen Zuschauer. Für größere Führungskreise machen wir zwei Termine. Inklusive Vorgespräch, Vorbereitung und Nachbereitung.</p>
+    </div>
+  </section>
+
+  <!-- ── FÜR WEN ── -->
+  <section class="block" id="fuer-wen">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Für wen der Workshop gebaut ist und für wen nicht.</h2></div>
+      <div class="compare">
+        <div class="col yes">
+          <h4>Das ist euer Workshop, wenn …</h4>
+          <ul>
+            <li>du Geschäftsführer:in, Bereichsleitung oder KI-Verantwortliche:r im Mittelstand bist.</li>
+            <li>du über KI entscheiden sollst, ohne selbst schon einmal etwas damit gebaut zu haben.</li>
+            <li>ihr ein konkretes Problem mitbringt, das euch diese Woche Zeit kostet.</li>
+            <li>du bereit bist, einen Tag lang selbst zu arbeiten statt zuzuhören.</li>
+          </ul>
+        </div>
+        <div class="col no">
+          <h4>Spar dir das Geld, wenn …</h4>
+          <ul>
+            <li>ihr einen Impulsvortrag für eine große, gemischte Runde sucht.</li>
+            <li>ihr lieber zuschauen wollt, als einen Tag selbst zu arbeiten.</li>
+            <li>ihr ein Zertifikat braucht und kein Ergebnis.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUNDER ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="founder-block">
+        <img src="/assets/nils-blache-DrObPAWr.png" alt="Nils Blache" class="founder-photo">
+        <div class="founder-text">
+          <div class="eyebrow" style="margin-bottom:14px">Dein Ansprechpartner · Nils Blache</div>
+          <p>Ich habe new.thought aufgebaut, weil ich immer wieder dasselbe Muster sah: Führungskräfte sollen über KI entscheiden, haben aber selbst noch nie etwas damit gebaut. Also entscheiden sie nach Bauchgefühl — und wundern sich, warum die Piloten versanden.</p>
+          <p>Deshalb halte ich keine Vorträge. Ich setze mich mit euch einen Tag an ein echtes Problem, und ihr baut. Jeden Workshop leite ich selbst, deshalb gibt es nur eine begrenzte Zahl Termine pro Monat.</p>
+          <span class="sig">— Nils Blache, Gründer new.thought</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GARANTIE ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Vorher geklärt</div><h2 class="serif">Drei Bedingungen, sonst mache ich es nicht.</h2><p>Ein Prototyp-Tag funktioniert nur unter drei Voraussetzungen. Fehlt eine davon, bekommt ihr einen netten Tag ohne Wirkung — und das verkaufe ich nicht. Ob es passt, klären wir im Vorgespräch. Wenn nicht, sage ich es euch.</p></div>
+      <div class="guarantees">
+        <div class="guarantee-tile">
+          <div class="gi">1</div>
+          <h3>Ein echtes Problem</h3>
+          <p>Kein Übungsbeispiel, sondern etwas, das euch diese Woche Zeit kostet.</p>
+        </div>
+        <div class="guarantee-tile">
+          <div class="gi">2</div>
+          <h3>Jemand, der den Prozess wirklich kennt</h3>
+          <p>Wir bauen mit Demo-Daten, nicht mit euren Echtdaten — kein DSGVO-Thema, keine IT-Freigabe. Dafür muss jemand im Raum sein, der den Ablauf im Detail kennt, sonst wird der Prototyp unrealistisch.</p>
+        </div>
+        <div class="guarantee-tile">
+          <div class="gi">3</div>
+          <h3>Der Wille, es selbst zu verstehen</h3>
+          <p>Nach dem Workshop könnt ihr KI einschätzen — aber nur, wenn ihr das auch wollt. Wer den Tag über zuschauen möchte, statt selbst zu bauen, ist hier falsch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DER WERT VON KI ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head center"><div class="eyebrow" style="margin-bottom:14px">Worum es wirklich geht</div><h2 class="serif">Richtig genutzt ist KI kein Kostenpunkt.<br><span class="dim">Sie ist der größte Hebel, den Ihr Unternehmen gerade hat.</span></h2></div>
+      <div class="cards tinted">
+        <div class="card">
+          <div class="ci">↗</div>
+          <h3>Produktivität, die sich multipliziert</h3>
+          <p>Nicht 10 % schneller. Teams, die KI richtig einsetzen, erledigen in Tagen, wofür sie vorher Wochen gebraucht haben, und gewinnen Zeit für das, was wirklich zählt.</p>
+        </div>
+        <div class="card">
+          <div class="ci">↻</div>
+          <h3>Ein Vorsprung, der sich aufschichtet</h3>
+          <p>Jede Initiative macht die nächste leichter. Wer KI früh steuert, zieht jedes Jahr weiter davon. Der Abstand wird nicht kleiner, sondern größer.</p>
+        </div>
+        <div class="card">
+          <div class="ci">◆</div>
+          <h3>Eine Fähigkeit, die im Haus bleibt</h3>
+          <p>Aus einzelnen KI-Erfolgen wird eine Kompetenz, die niemand mehr wegnehmen kann, unabhängig von Tools, Beratern und dem nächsten Hype.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="block">
+    <div class="wrap reveal">
+      <div class="sec-head"><h2 class="serif">Die Fragen, die du dir vermutlich gerade stellst.</h2></div>
+      <div class="faq">
+        <details><summary>Was kostet das?</summary><div class="fa">Der Prototyp-Tag kostet <strong>5.900 €</strong>, der zweitägige Führungs-Sprint <strong>9.800 €</strong> — jeweils netto zzgl. Reisekosten, für bis zu 12 Teilnehmende. Vorgespräch, Vorbereitung und Nachbereitung sind enthalten. Welches Format zu euch passt, klären wir im Erstgespräch.</div></details>
+        <details><summary>Ist das ein Workshop oder eine Beratung?</summary><div class="fa">Ein Workshop — allerdings einer, in dem gebaut statt präsentiert wird. Eine Beratung liefert ein Ergebnis und geht wieder. Hier entsteht das Ergebnis durch euch: Am Ende des Tages läuft ein Prototyp an einem echten Problem aus eurem Betrieb, und ihr wisst, wie er zustande gekommen ist.</div></details>
+        <details><summary>Können wir den Schwerpunkt selbst wählen?</summary><div class="fa">Ja, das ist der Normalfall. Der Workshop hat kein festes Curriculum: Im Vorgespräch legen wir fest, welche der vier <a href="#schwerpunkte" style="color:var(--green)">Schwerpunkte</a> der Tag abdeckt. An einem Tag sind das realistisch zwei, beim zweitägigen Sprint drei bis vier. Wenn ihr noch nicht wisst, was ihr am dringendsten braucht, schlage ich nach dem Vorgespräch etwas vor.</div></details>
+        <details><summary>Ist das nur für Geschäftsführer:innen?</summary><div class="fa">Nein. Der Workshop passt für jede Person, die im Unternehmen über KI entscheidet oder entscheiden soll: Geschäftsführung, Bereichsleitung oder dedizierte KI-Rolle. Entscheidend ist die Verantwortung, die du trägst, nicht der Titel.</div></details>
+        <details><summary>Wie viele Leute sollten teilnehmen?</summary><div class="fa">Bis zu sechs Führungskräfte. Die kleine Runde ist Absicht: Jede Person baut selbst, und ab sieben Leuten entstehen Zuschauer. Für größere Führungskreise machen wir zwei Termine.</div></details>
+        <details><summary>Brauchen die Teilnehmenden Vorkenntnisse?</summary><div class="fa">Nein. Wer ChatGPT schon einmal geöffnet hat, reicht völlig. Wichtiger als Vorwissen ist, dass jemand im Raum den Prozess wirklich kennt, um den es geht.</div></details>
+        <details><summary>Müssen wir echte Unternehmensdaten bereitstellen?</summary><div class="fa">Nein. Wir arbeiten mit Demo-Daten, die dem Aufbau eurer echten Daten nachempfunden sind. Damit entfällt die Datenschutzfreigabe, und ihr braucht keine IT-Beteiligung, um anzufangen. Das Problem ist echt, die Daten sind es nicht — für den Erkenntnisgewinn macht das keinen Unterschied.</div></details>
+        <details><summary>Wo findet der Workshop statt?</summary><div class="fa">Das ist euch überlassen — bei euch im Haus, in einem angemieteten Raum oder an einem Ort eurer Wahl. Gebraucht werden nur ein Raum, ein Bildschirm und WLAN. Ich komme in ganz DACH.</div></details>
+        <details><summary>Können wir online statt vor Ort?</summary><div class="fa">Ja, das funktioniert. Weil ihr an eigenen Rechnern baut, lässt sich der Workshop auch als Videokonferenz durchführen — und bei verteilten Führungskreisen spart das eine Menge Reisezeit. Vor Ort ist es etwas dichter, weil man sich über die Schulter schauen kann. Beides geht, ihr entscheidet.</div></details>
+        <details><summary>Was, wenn wir keine Idee haben, welches Problem wir nehmen sollen?</summary><div class="fa">Dann bringt das ins Vorgespräch mit. In 20 Minuten finden wir meist zwei bis drei Kandidaten — die Probleme sind fast immer da, sie sind nur noch nicht als KI-Aufgabe formuliert.</div></details>
+        <details><summary>Was passiert nach dem Workshop?</summary><div class="fa">Ihr habt einen laufenden Prototyp, eine priorisierte Use-Case-Liste und eine klare Zuständigkeit, wer das weiterführt. Zwei Wochen später gibt es ein kurzes Nachgespräch: Läuft es noch, was hakt? Viele Unternehmen führen es danach allein weiter — das ist ausdrücklich in Ordnung.</div></details>
+        <details><summary>Wie schnell habt ihr einen Termin frei?</summary><div class="fa">Aktuell etwa drei bis vier Wochen Vorlauf.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── KONTAKT / ERSTGESPRÄCH ── -->
+  <section class="final" id="kontakt">
+    <div class="wrap reveal">
+      <h2 class="serif">Lass uns 20 Minuten sprechen.</h2>
+      <p class="lead">Kein Verkaufsgespräch: Wir schauen uns an, welches Problem ihr nehmen würdet und ob ein Prototyp-Tag, der zweitägige Sprint oder gar nichts davon der richtige nächste Schritt ist. Wenn ich euch nicht weiterhelfen kann, sage ich das.</p>
+      <form class="contact-box" id="contactForm" novalidate>
+        <div id="ctFields">
+          <div class="field"><label for="ctName">Name</label><input type="text" id="ctName" name="name" placeholder="Max Mustermann" required></div>
+          <div class="field"><label for="ctEmail">E-Mail-Adresse</label><input type="email" id="ctEmail" name="email" placeholder="max@firma.de" required></div>
+          <div class="field"><label for="ctCompany">Unternehmen</label><input type="text" id="ctCompany" name="unternehmen" placeholder="Mustermann GmbH" required></div>
+          <div class="field"><label for="ctSize">Anzahl Mitarbeitende</label>
+            <select id="ctSize" name="mitarbeitende" required>
+              <option value="" selected disabled>Bitte auswählen</option>
+              <option value="1-19">1–19</option>
+              <option value="20-49">20–49</option>
+              <option value="50-249">50–249</option>
+              <option value="250-999">250–999</option>
+              <option value="1000+">1.000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center">Termin vorschlagen</button>
+          <p class="ct-note">Kein Spam. Details in der <a href="/datenschutz.html" style="color:var(--green)">Datenschutzerklärung</a>.</p>
+        </div>
+        <div class="contact-done" id="ctDone">
+          <div class="wi">✓</div>
+          <h3>Danke — ich melde mich innerhalb von 24 Stunden.</h3>
+          <p>Du bekommst von mir zwei bis drei Terminvorschläge per E-Mail.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="wrap row">
-    <div>© new.thought</div>
-    <div style="display:flex; gap:24px; flex-wrap:wrap;">
-      <a href="programme.html">Programme</a>
-      <a href="kairon.html">KAIRON</a>
-      <a href="kaidop.html">KAIDOP</a>
-      <a href="kailead.html">KAILEAD</a>
-      <a href="kairon-executive.html">Fractional AI Officer</a>
-      <a href="academy.html">Academy</a>
-      <a href="programme.html#cta">KI Readiness</a>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Workshops für Führungskräfte im Mittelstand.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Workshops</h4>
+        <a href="#formate">Prototyp-Tag · 5.900 €</a>
+        <a href="#formate">Führungs-Sprint · 9.800 €</a>
+        <a href="#fuer-wen">Für wen</a>
+        <a href="#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
     </div>
-    <div style="display:flex; gap:20px;">
-      <button onclick="openModal('modal-impressum')" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); background:none; border:none; cursor:pointer; padding:0; transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Impressum</button>
-      <button onclick="openModal('modal-datenschutz')" style="font:inherit; font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-mute); background:none; border:none; cursor:pointer; padding:0; transition:color .15s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--ink-mute)'">Datenschutz</button>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
     </div>
   </div>
 </footer>
 
-<!-- ====== IMPRESSUM MODAL ====== -->
-<div class="modal-overlay" id="modal-impressum" onclick="closeModalOnBg(event, 'modal-impressum')">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-impressum')">✕</button>
-    <span class="m-label">/ / Rechtliches</span>
-    <h2>Impressum</h2>
-    <h3>Angaben gemäß § 5 TMG</h3>
-    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
-    <h3>Kontakt</h3>
-    <p>Telefon: <a href="tel:+491516450933">+49 1516 450933</a><br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
-    <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
-    <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven</p>
-    <h3>Haftungsausschluss</h3>
-    <p>Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte.</p>
-  </div>
-</div>
-
-<!-- ====== DATENSCHUTZ MODAL ====== -->
-<div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOnBg(event, 'modal-datenschutz')">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('modal-datenschutz')">✕</button>
-    <span class="m-label">/ / Rechtliches</span>
-    <h2>Datenschutzerklärung</h2>
-    <h3>Verantwortlicher</h3>
-    <p>Nils Blache, c/o Postflex #8293, Emsdettener Str. 10, 48268 Greven.<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
-    <h3>Erhebung und Verarbeitung personenbezogener Daten</h3>
-    <p>Diese Website erhebt keine personenbezogenen Daten durch Tracking, Cookies oder Analyse-Tools.</p>
-    <h3>Hosting</h3>
-    <p>Diese Website wird statisch gehostet. Beim Aufruf werden technisch bedingt IP-Adresse und Zugriffszeit kurzfristig im Server-Log gespeichert.</p>
-    <h3>Ihre Rechte (DSGVO)</h3>
-    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung. Kontakt: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
-  </div>
-</div>
-
 <script>
-  // Hamburger
-  const hamburger = document.getElementById('hamburger');
-  const navMobile = document.getElementById('nav-mobile');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    navMobile.classList.toggle('open');
-  });
-  navMobile.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      navMobile.classList.remove('open');
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+
+  // Mobile menu
+  const ov = document.getElementById('mOverlay');
+  document.getElementById('hamburger').addEventListener('click', () => { ov.classList.add('open'); document.body.style.overflow='hidden'; });
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow=''; };
+  document.getElementById('mClose').addEventListener('click', close);
+  ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+  // Alte Links (E-Mails, LinkedIn-Posts) auf #warteliste abfangen
+  if (location.hash === '#warteliste') {
+    history.replaceState(null, '', '#kontakt');
+    // Erst nach dem Laden scrollen — vorher stimmen die Positionen noch nicht.
+    addEventListener('load', () => {
+      document.getElementById('kontakt').scrollIntoView({ behavior:'instant', block:'start' });
     });
-  });
-
-  // Modals
-  function openModal(id) { document.getElementById(id).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-  function closeModal(id) { document.getElementById(id).style.display = 'none'; document.body.style.overflow = ''; }
-  function closeModalOnBg(e, id) { if (e.target === e.currentTarget) closeModal(id); }
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') { document.querySelectorAll('.modal-overlay').forEach(m => { m.style.display='none'; }); document.body.style.overflow=''; } });
-
-  // Nav dropdown
-  function toggleDropdown(id) {
-    document.querySelectorAll('.nav-dropdown').forEach(d => { if (d.id !== id) d.classList.remove('open'); });
-    document.getElementById(id).classList.toggle('open');
   }
-  document.addEventListener('click', e => {
-    if (!e.target.closest('.nav-dropdown')) document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('open'));
+
+  // Kontaktformular
+  const ctForm = document.getElementById('contactForm');
+  ctForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!ctForm.checkValidity()) { ctForm.reportValidity(); return; }
+    document.getElementById('ctFields').style.display = 'none';
+    document.getElementById('ctDone').classList.add('show');
+    // TODO Phase 4.4: Absenden an Backend — bis dahin geht KEINE Anfrage raus.
+    // fetch('/kontakt.php', {method:'POST', body:new FormData(ctForm)});
   });
-  window.toggleDropdown = toggleDropdown;
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold:0.1, rootMargin:'0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
 </body>
