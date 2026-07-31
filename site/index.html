@@ -4,18 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KI-Workshops für Führungskräfte im Mittelstand | new.thought</title>
-<meta name="description" content="Inhouse KI-Workshop für Führungskräfte im Mittelstand: ein oder zwei Tage an einem echten Problem aus eurem Betrieb. Am Abend läuft ein Prototyp, den ihr selbst gebaut habt. Vor Ort oder online, Festpreis ab 5.900 €.">
+<meta name="description" content="Inhouse KI-Workshop für Führungskräfte im Mittelstand: Change Management, KI-Kompetenz und Prototypen-Bau — vom halbtägigen Impuls bis zum Transformationsprogramm, vor Ort oder online.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://www.new-thought.com/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="KI-Workshops für Führungskräfte im Mittelstand | new.thought">
-<meta property="og:description" content="Ein oder zwei Tage mit eurem Führungskreis an einem echten Problem aus eurem Betrieb. Kein Foliensatz: Am Abend läuft ein Prototyp, den ihr selbst gebaut habt.">
+<meta property="og:description" content="Wir begleiten Change, bauen KI-Kompetenz im Leadership auf und bringen Ihre Führungskräfte zum ersten eigenen Prototypen. Kein Foliensatz.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23161616'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='white' stroke-width='2.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/ona.css">
 <style>
+  .hero-kicker{font-size:clamp(15px,1.5vw,17.5px);color:var(--ink-2);margin-bottom:20px;line-height:1.4}
+  .focus{background:var(--surface);border:1px solid var(--line);border-radius:24px;display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;margin-top:32px}
+  .focus-col{padding:40px 38px}
+  .focus-col + .focus-col{border-left:1px solid var(--line)}
+  .focus-col .fn{font-family:var(--serif);font-size:23px;color:var(--ink-3);line-height:1;margin-bottom:28px}
+  .focus-col h3{font-size:19px;font-weight:600;letter-spacing:-.01em;margin-bottom:12px}
+  .focus-col > p{color:var(--ink-2);font-size:14.5px;line-height:1.62}
+  .focus-col ul{list-style:none;margin-top:26px;padding-top:24px;border-top:1px solid var(--line)}
+  .focus-col li{font-size:14.5px;color:var(--ink);padding:6px 0}
+  @media(max-width:920px){.focus{grid-template-columns:1fr}.focus-col + .focus-col{border-left:0;border-top:1px solid var(--line)}}
+  .ab-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:28px 0 26px}
+  .ab-tab{font-family:inherit;font-size:13.5px;font-weight:500;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);border-radius:100px;padding:9px 16px;cursor:pointer;transition:background .2s,border-color .2s,color .2s}
+  .ab-tab:hover{border-color:#cfcec8;color:var(--ink)}
+  .ab-tab[aria-selected="true"]{background:var(--btn);border-color:var(--btn);color:#fff}
+  .ab-pane{display:none}
+  .ab-pane.active{display:block}
+  .formats{margin-top:34px;border-top:1px solid var(--line)}
+  .formats-row{display:grid;grid-template-columns:minmax(170px,1.1fr) minmax(110px,.75fr) 2.5fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--line);align-items:start}
+  .formats-row .fname{font-family:var(--serif);font-weight:440;font-size:22px;letter-spacing:-.01em;color:var(--ink);line-height:1.2}
+  .formats-row .fdur{font-size:14.5px;color:var(--ink-3);padding-top:4px}
+  .formats-row .fdesc{font-size:14.5px;color:var(--ink-2);line-height:1.62;padding-top:3px}
+  @media(max-width:820px){.formats-row{grid-template-columns:1fr;gap:7px;padding:22px 0}.formats-row .fdur,.formats-row .fdesc{padding-top:0}}
   .guarantees{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
   .guarantee-tile{background:var(--green-deep);color:#fff;border-radius:18px;padding:30px 28px}
   .guarantee-tile .gi{font-family:var(--serif);font-size:26px;color:#8fbfa1;margin-bottom:14px;line-height:1}
@@ -29,6 +51,11 @@
   .contact-box select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%239b9b95' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 15px center;padding-right:38px}
   .contact-box input:focus,.contact-box select:focus{outline:none;border-color:var(--green)}
   .contact-box .ct-note{font-size:12px;color:var(--ink-3);margin-top:14px;text-align:center;line-height:1.5}
+  .contact-box .ct-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .contact-box .ct-error{display:none;font-size:13px;color:#a3341f;background:#fbeeeb;border:1px solid #f0d2ca;border-radius:10px;padding:11px 13px;margin-top:14px;line-height:1.5}
+  .contact-box .ct-error.show{display:block}
+  .contact-box .ct-error a{color:#a3341f;font-weight:600}
+  .contact-box button[disabled]{opacity:.6;pointer-events:none}
   .contact-done{display:none;text-align:center;padding:12px 4px}
   .contact-done.show{display:block}
   .contact-done .wi{width:52px;height:52px;border-radius:50%;background:var(--green-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px;margin:0 auto 16px}
@@ -49,14 +76,14 @@
   <div class="wrap nav-inner">
     <a href="/" class="brand"><span class="mark"></span>new.thought</a>
     <div class="nav-pill">
-      <a href="#workshop">Workshop</a>
-      <a href="#schwerpunkte">Schwerpunkte</a>
-      <a href="#formate">Formate &amp; Preise</a>
-      <a href="/ressourcen.html">Blog</a>
+      <a href="#workshop">Angebot</a>
+      <a href="#formate">Formate</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#ueber-uns">Über uns</a>
     </div>
     <div class="nav-right">
-      <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
-      <a class="btn btn-dark" href="#kontakt">Erstgespräch vereinbaren</a>
+      <a class="btn btn-ghost" href="#kontakt">Kontakt</a>
+      <a class="btn btn-dark" href="#kontakt">Workshop anfragen</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
   </div>
@@ -68,14 +95,14 @@
     <button class="m-close" id="mClose" aria-label="Schließen">×</button>
   </div>
   <div class="m-links">
-    <a href="#workshop">Workshop</a>
-    <a href="#schwerpunkte">Schwerpunkte</a>
-    <a href="#formate">Formate &amp; Preise</a>
-    <a href="/ressourcen.html">Blog</a>
+    <a href="#workshop">Angebot</a>
+    <a href="#formate">Formate</a>
+    <a href="#ablauf">Ablauf</a>
+    <a href="#ueber-uns">Über uns</a>
     <a href="/ki-readiness-check.html">KI-Check</a>
   </div>
   <div class="m-cta">
-    <a href="#kontakt" class="btn btn-dark">Erstgespräch vereinbaren</a>
+    <a href="#kontakt" class="btn btn-dark">Workshop anfragen</a>
   </div>
 </div>
 
@@ -84,20 +111,20 @@
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="wrap reveal">
-      <h1 class="serif" style="max-width:22ch">KI-Workshops für Führungskräfte — am Abend läuft ein Prototyp, <span style="color:var(--ink-3)">den ihr selbst gebaut habt.</span></h1>
-      <p class="sub">Ein oder zwei Tage mit eurem Führungskreis an einem echten Problem aus eurem Betrieb. Kein Foliensatz, kein Trendvortrag: Ihr baut selbst, und am Abend läuft etwas, das ihr am nächsten Morgen weiterverwenden könnt.</p>
+      <p class="hero-kicker">Beratung &amp; Workshops für Führungsteams</p>
+      <h1 class="serif" style="max-width:32ch">Führung, die KI nicht delegiert</h1>
+      <p class="sub">Wir begleiten Change, bauen KI-Kompetenz im Leadership auf und bringen Ihre Führungskräfte in wenigen Tagen zum ersten eigenen Prototypen.</p>
       <div class="cta">
-        <a href="#kontakt" class="btn btn-dark">Kostenloses Erstgespräch buchen</a>
-        <a href="#formate" class="btn btn-ghost">Formate &amp; Preise ansehen</a>
+        <a href="#kontakt" class="btn btn-dark">Erstgespräch buchen</a>
+        <a href="#schwerpunkte" class="btn btn-ghost">Schwerpunkte ansehen</a>
       </div>
-      <p class="webinar-micro" style="font-size:13px;color:var(--ink-3);margin-top:14px">Vor Ort in ganz DACH oder online · Festpreis ab 5.900 € · bis zu 6 Führungskräfte</p>
     </div>
   </section>
 
   <!-- ── PROBLEM ── -->
   <section class="block" id="problem">
     <div class="wrap reveal">
-      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Das Problem</div><h2 class="serif">Führungskräfte sollen über KI entscheiden.<br><span class="dim">Ohne zu wissen, was damit heute möglich ist.</span></h2><p>Das ist kein Vorwurf, sondern eine Erfahrungslücke. Zwischen dem, was in Demos und auf Konferenzen gezeigt wird, und dem, was im eigenen Betrieb wirklich trägt, liegt ein Abstand, den keine Präsentation schließt. Wer nie selbst etwas gebaut hat, kann nicht einschätzen, welcher Use Case Substanz hat — und priorisiert nach Bauchgefühl.</p></div>
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Das Problem</div><h2 class="serif">Führungskräfte sollen über KI entscheiden.<br><span class="dim">Ohne zu wissen, was damit heute möglich ist.</span></h2><p>Das ist kein Vorwurf, sondern eine Erfahrungslücke. Zwischen dem, was in Demos und auf Konferenzen gezeigt wird, und dem, was im eigenen Betrieb wirklich trägt, liegt ein Abstand, den keine Präsentation schließt. Wer nie selbst etwas gebaut hat, kann nicht einschätzen, welcher Use Case Substanz hat. Also wird nach Bauchgefühl priorisiert.</p></div>
       <div class="qcards">
         <div class="qcard">Ich soll über KI entscheiden, habe aber selbst noch nie etwas damit gebaut.</div>
         <div class="qcard">Jeder erzählt mir etwas anderes, was möglich ist. Ich kann es nicht beurteilen.</div>
@@ -115,7 +142,7 @@
           <div>
             <div class="eyebrow" style="color:#bfe0c9;margin-bottom:14px">Was ihr mitnehmt</div>
             <h2 class="serif">Ein Workshop, aus dem ihr nicht mit Folien rausgeht.</h2>
-            <p>Die Erfahrungslücke schließt sich nicht durch Zuhören, sondern durch einmal selbst bauen. Deshalb sitzt hier kein Publikum. Es geht aber nicht nur um das Werkzeug: Genauso wichtig ist die Frage, was sich ändert, wenn ein Team mit KI arbeitet — Vorbehalte, Qualitätssicherung, Führung. Worauf der Schwerpunkt liegt, entscheidet ihr.</p>
+            <p>Die Erfahrungslücke schließt sich nicht durch Zuhören, sondern durch einmal selbst bauen. Deshalb sitzt hier kein Publikum. Es geht aber nicht nur um das Werkzeug: Genauso wichtig ist die Frage, was sich ändert, wenn Mitarbeitende mit KI arbeiten: Vorbehalte, Qualitätssicherung, Führung. Worauf der Schwerpunkt liegt, entscheidet ihr.</p>
           </div>
           <a href="#schwerpunkte" class="arrow-link" style="color:#bfe0c9;margin-top:24px">Schwerpunkte ansehen <span class="ar">→</span></a>
         </div>
@@ -123,7 +150,7 @@
           <div class="ac-row"><span class="ic">◆</span><span class="t">Einen laufenden Prototyp an einem echten Problem aus eurem Betrieb</span></div>
           <div class="ac-row"><span class="ic">▤</span><span class="t">Ein belastbares Gefühl dafür, was mit KI heute geht — und was nicht</span></div>
           <div class="ac-row"><span class="ic">≡</span><span class="t">Eine priorisierte Use-Case-Liste mit Aufwand und erwarteter Wirkung</span></div>
-          <div class="ac-row"><span class="ic">↻</span><span class="t">Antworten auf die Führungsfragen: Vorbehalte im Team, Qualität, Zuständigkeit</span></div>
+          <div class="ac-row"><span class="ic">↻</span><span class="t">Antworten auf die Führungsfragen: Vorbehalte, Qualitätssicherung, Zuständigkeit</span></div>
         </div>
       </div>
     </div>
@@ -135,7 +162,7 @@
       <div class="split rev reveal">
         <div class="split-media">
           <div class="mock">
-            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> Tag 1 · Prototyp</div><span class="chip-g">läuft</span></div>
+            <div class="mock-h"><div class="mh-l"><span class="mi">◐</span> Prototyp</div><span class="chip-g">läuft</span></div>
             <div class="mock-b">
               <div class="mock-field"><div class="k">Problem</div><div class="v">Angebote dauern 3 Tage</div></div>
               <div class="mock-2">
@@ -143,7 +170,7 @@
                 <div class="mock-field"><div class="k">Output</div><div class="v">Angebot in 4 Min.</div></div>
               </div>
               <div class="pm-row" style="background:var(--surface-2);border-color:var(--line-2)">
-                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende von Tag 1</div></div>
+                <div><div class="l" style="color:var(--ink)">Funktionierender Prototyp</div><div class="s" style="color:var(--ink-3)">am Ende des Workshops</div></div>
                 <span class="chip-g">fertig</span>
               </div>
             </div>
@@ -162,34 +189,118 @@
   <section class="block" id="schwerpunkte">
     <div class="wrap reveal">
       <div class="sec-head">
-        <div class="eyebrow" style="margin-bottom:14px">Schwerpunkte</div>
-        <h2 class="serif">Ihr entscheidet, worauf der Tag den Fokus legt.</h2>
-        <p>KI im Unternehmen ist nicht nur eine Werkzeugfrage. Genauso oft scheitert es daran, dass das Team nicht mitzieht oder niemand weiß, wo man anfangen soll. Deshalb ist der Workshop kein festes Curriculum: Im Vorgespräch legen wir gemeinsam fest, welche dieser Bereiche der Tag abdeckt — meist zwei davon, kombiniert mit dem Bauen.</p>
+        <h2 class="serif">Drei Schwerpunkte. <span class="dim">Ein roter Faden.</span></h2>
       </div>
-      <div class="tcards">
-        <div class="tcard">
-          <div class="ix serif">01</div>
-          <h3>KI selbst anwenden</h3>
-          <div class="q">„Ich weiß nicht, was die Tools wirklich können."</div>
-          <p>Ihr baut selbst an einem echten Problem: Wie man eine Aufgabe so formuliert, dass KI sie löst, wo die Grenzen liegen und wie man Ergebnisse prüft, statt ihnen zu glauben.</p>
+      <div class="focus">
+        <div class="focus-col">
+          <div class="fn">01</div>
+          <h3>Change Management</h3>
+          <p>KI verändert Rollen, Prozesse und Erwartungen. Wir machen aus Unsicherheit ein steuerbares Programm – mit Zielbild, Stakeholder-Map und Kommunikationsplan.</p>
+          <ul>
+            <li>Readiness-Assessment</li>
+            <li>Zielbild &amp; Roadmap</li>
+            <li>Widerstände adressieren</li>
+          </ul>
         </div>
-        <div class="tcard">
-          <div class="ix serif">02</div>
-          <h3>Use Cases finden und priorisieren</h3>
-          <div class="q">„Wo fangen wir überhaupt an?"</div>
-          <p>Wir gehen eure Prozesse durch und bewerten sie nach Aufwand und Wirkung. Ergebnis ist eine priorisierte Liste — inklusive der Fälle, die man besser bleiben lässt.</p>
+        <div class="focus-col">
+          <div class="fn">02</div>
+          <h3>KI-Kompetenz für Führungskräfte</h3>
+          <p>Kein Buzzword-Bingo. Führungskräfte lernen, was Modelle können, wo Risiken liegen und wie sie Use Cases bewerten und priorisieren.</p>
+          <ul>
+            <li>Grundlagen &amp; Grenzen</li>
+            <li>Use-Case-Bewertung</li>
+            <li>Governance &amp; Compliance</li>
+          </ul>
         </div>
-        <div class="tcard">
-          <div class="ix serif">03</div>
-          <h3>Vorbehalte im Team auflösen</h3>
-          <div class="q">„Meine Leute machen nicht mit."</div>
-          <p>Woher Widerstand kommt — Jobangst, Skepsis, schlechte Erfahrungen — und wie man ihn ernst nimmt, ohne die Sache liegen zu lassen. Mit den Formulierungen, die in der Praxis funktionieren.</p>
+        <div class="focus-col">
+          <div class="fn">03</div>
+          <h3>Prototypen bauen</h3>
+          <p>Im Workshop entsteht Greifbares: Ihre Führungskräfte bauen mit KI-Tools einen funktionierenden Prototypen für einen echten Anwendungsfall aus dem eigenen Haus.</p>
+          <ul>
+            <li>Use Case auswählen</li>
+            <li>Selbst bauen</li>
+            <li>Pilot-Entscheidung</li>
+          </ul>
         </div>
-        <div class="tcard">
-          <div class="ix serif">04</div>
-          <h3>Führen mit KI</h3>
-          <div class="q">„Was ändert sich an meiner Rolle?"</div>
-          <p>Was Führung anders macht, wenn Teams mit KI arbeiten: delegieren und trotzdem Qualität sichern, Erwartungen setzen, entscheiden, wo ein Mensch drüberschauen muss.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABLAUF (variiert je Schwerpunkt) ── -->
+  <section class="block" id="ablauf">
+    <div class="wrap reveal">
+      <div class="sec-head">
+        <div class="eyebrow" style="margin-bottom:14px">Der Ablauf</div>
+        <h2 class="serif">Ein Tag. <span class="dim">Drei mögliche Dramaturgien.</span></h2>
+        <p>Vorab immer ein halbstündiges Gespräch: Welches Thema nehmen wir, wer sollte dabei sein, worauf legen wir den Schwerpunkt. Wie der Tag dann aussieht, hängt davon ab, was ihr gewählt habt.</p>
+      </div>
+
+      <div class="ab-tabs" role="tablist" aria-label="Schwerpunkt wählen">
+        <button class="ab-tab" role="tab" id="abt-1" aria-controls="abp-1" aria-selected="true">Change Management</button>
+        <button class="ab-tab" role="tab" id="abt-2" aria-controls="abp-2" aria-selected="false">KI-Kompetenz</button>
+        <button class="ab-tab" role="tab" id="abt-3" aria-controls="abp-3" aria-selected="false">Prototypen bauen</button>
+      </div>
+
+      <div class="ab-pane active" id="abp-1" role="tabpanel" aria-labelledby="abt-1">
+        <div class="split">
+          <div class="split-media flow-media">
+            <div class="flow-panel">
+              <span class="flow-trigger">Vorher · 30 Minuten</span>
+              <div class="flow-step s1"><h4>09:00 — Standort bestimmen</h4><p>Was läuft schon, was ist versandet, was blockiert gerade.</p></div>
+              <div class="flow-step s1"><h4>10:30 — Zielbild schärfen</h4><p>Woran erkennt ihr in zwölf Monaten, dass es funktioniert hat?</p></div>
+              <div class="flow-step s2"><h4>13:00 — Stakeholder-Map</h4><p>Wer trägt, wer bremst, wer entscheidet — und was jede Gruppe braucht.</p></div>
+              <div class="flow-step s3"><h4>15:00 — Widerstände durchspielen</h4><p>Die häufigsten Einwände, konkret beantwortet statt weggeredet.</p></div>
+              <div class="flow-step s4"><h4>16:30 — Kommunikationsplan</h4><p>Wer sagt was, wann, an wen.</p></div>
+            </div>
+          </div>
+          <div class="split-text">
+            <div class="ft-tag">Schwerpunkt 01</div>
+            <h3 class="serif">Wenn die Technik nicht das Problem ist.</h3>
+            <p>Dieser Tag geht nicht an ein Tool, sondern an die Organisation: Zielbild, Verantwortlichkeiten und die Frage, warum Leute nicht mitziehen. Am Ende steht kein Konzeptpapier, sondern ein Plan, den ihr ab Montag benutzen könnt.</p>
+            <p style="color:var(--ink-3);font-size:14.5px;line-height:1.6">Passt, wenn KI bei euch schon versucht wurde und im Sand verlaufen ist.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ab-pane" id="abp-2" role="tabpanel" aria-labelledby="abt-2">
+        <div class="split">
+          <div class="split-media flow-media">
+            <div class="flow-panel">
+              <span class="flow-trigger">Vorher · 30 Minuten</span>
+              <div class="flow-step s1"><h4>09:00 — Grundlagen und Grenzen</h4><p>Was Modelle können, was sie nicht können, wo sie zuverlässig irren.</p></div>
+              <div class="flow-step s1"><h4>10:30 — Selbst ausprobieren</h4><p>Jede Person löst eine eigene Aufgabe. Zuschauen reicht hier nicht.</p></div>
+              <div class="flow-step s2"><h4>13:00 — Use-Case-Portfolio</h4><p>Eure Prozesse gesammelt und nach Aufwand und Wirkung bewertet.</p></div>
+              <div class="flow-step s3"><h4>15:00 — Governance und Risiken</h4><p>Was geregelt sein muss, bevor breit ausgerollt wird.</p></div>
+              <div class="flow-step s4"><h4>16:30 — Priorisierte Liste</h4><p>Was zuerst kommt — und was ihr bewusst bleiben lasst.</p></div>
+            </div>
+          </div>
+          <div class="split-text">
+            <div class="ft-tag">Schwerpunkt 02</div>
+            <h3 class="serif">Urteilsfähig werden, nicht sprachfähig.</h3>
+            <p>Der Unterschied zwischen „ich kann über KI reden" und „ich kann einen Use Case bewerten" ist eine Stunde eigene Arbeit. Deshalb wird hier nicht vorgetragen, sondern gerechnet, ausprobiert und priorisiert.</p>
+            <p style="color:var(--ink-3);font-size:14.5px;line-height:1.6">Passt, wenn ihr entscheiden müsst, ohne die Grundlage dafür zu haben.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ab-pane" id="abp-3" role="tabpanel" aria-labelledby="abt-3">
+        <div class="split">
+          <div class="split-media flow-media">
+            <div class="flow-panel">
+              <span class="flow-trigger">Vorher · 30 Minuten</span>
+              <div class="flow-step s1"><h4>09:00 — Das Problem schärfen</h4><p>Aus dem Bauchgefühl wird eine Aufgabe mit klarer Grenze.</p></div>
+              <div class="flow-step s1"><h4>10:30 — Bauen</h4><p>Ihr baut, ich begleite. Nicht umgekehrt.</p></div>
+              <div class="flow-step s2"><h4>14:00 — Testen und härten</h4><p>Fälle durchspielen, Fehler finden, nachschärfen.</p></div>
+              <div class="flow-step s3"><h4>16:00 — Wer führt das weiter?</h4><p>Zuständigkeit, nächster Schritt, Messpunkt.</p></div>
+              <div class="flow-step s4"><h4>Danach · 14 Tage später</h4><p>Kurzes Nachgespräch: Läuft es noch? Was hakt?</p></div>
+            </div>
+          </div>
+          <div class="split-text">
+            <div class="ft-tag">Schwerpunkt 03</div>
+            <h3 class="serif">Am Abend läuft etwas.</h3>
+            <p>Kein Konzeptpapier, kein Pilotbericht. Ihr nehmt ein echtes Problem und baut noch am selben Tag etwas Laufendes — begleitet, aber selbst gebaut. Genau deshalb könnt ihr danach beurteilen, was ein Use Case wirklich wert ist.</p>
+            <p style="color:var(--ink-3);font-size:14.5px;line-height:1.6">Passt, wenn genug geredet wurde und endlich etwas zu sehen sein soll.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -199,29 +310,31 @@
   <section class="block" id="formate">
     <div class="wrap reveal">
       <div class="sec-head">
-        <div class="eyebrow" style="margin-bottom:14px">Formate &amp; Preise</div>
-        <h2 class="serif">Zwei Formate, ein Festpreis.</h2>
-        <p>Beide Formate sind für euren Führungskreis allein, nicht für gemischte Gruppen — vor Ort oder online, wie es euch passt. Der Unterschied liegt darin, wie weit ihr am Ende seid: ein laufender Prototyp, oder ein laufender Prototyp plus geklärte Zuständigkeiten.</p>
+        <h2 class="serif">Formate, <span class="dim">die in Ihren Kalender passen.</span></h2>
       </div>
-      <div class="cards two">
-        <div class="card">
-          <div class="ft-tag">Am häufigsten gebucht</div>
-          <h3>Prototyp-Tag</h3>
-          <p style="color:var(--ink-3);font-size:13px;margin:2px 0 16px">1 Tag · bis zu 6 Führungskräfte</p>
-          <div class="serif" style="font-weight:440;font-size:38px;line-height:1;margin-bottom:14px">5.900 €</div>
-          <p><strong>Ihr geht raus mit:</strong> einem laufenden Prototyp an einem echten Problem — gebaut von euch, begleitet von mir.</p>
-          <p style="color:var(--ink-3)">Passt, wenn ihr genug geredet habt und endlich etwas sehen wollt.</p>
+      <div class="formats">
+        <div class="formats-row">
+          <div class="fname">Impuls</div>
+          <div class="fdur">Halber Tag</div>
+          <div class="fdesc">Standortbestimmung für das Leadership-Team. Klarheit über Chancen, Risiken und die nächsten drei Schritte.</div>
         </div>
-        <div class="card">
-          <div class="ft-tag">Für den ganzen Führungskreis</div>
-          <h3>Führungs-Sprint</h3>
-          <p style="color:var(--ink-3);font-size:13px;margin:2px 0 16px">2 Tage · bis zu 6 Führungskräfte</p>
-          <div class="serif" style="font-weight:440;font-size:38px;line-height:1;margin-bottom:14px">9.800 €</div>
-          <p><strong>Ihr geht raus mit:</strong> Prototyp, geklärten Verantwortlichkeiten und einer priorisierten Use-Case-Liste für die nächsten Monate.</p>
-          <p style="color:var(--ink-3)">Passt, wenn KI bei euch bisher niemandem gehört.</p>
+        <div class="formats-row">
+          <div class="fname">Kompetenz-Sprint</div>
+          <div class="fdur">2 Tage</div>
+          <div class="fdesc">Intensiv-Workshop: Grundlagen, Use-Case-Portfolio und Bewertungslogik – am Ende steht eine priorisierte Liste.</div>
+        </div>
+        <div class="formats-row">
+          <div class="fname">Prototyping-Lab</div>
+          <div class="fdur">3 Tage</div>
+          <div class="fdesc">Vom Use Case zum lauffähigen Prototypen inklusive Nutzertest und Entscheidungsvorlage.</div>
+        </div>
+        <div class="formats-row">
+          <div class="fname">Transformationsprogramm</div>
+          <div class="fdur">3–6 Monate</div>
+          <div class="fdesc">Begleitung über mehrere Wellen: Enablement, Piloten, Governance und Verankerung in der Organisation.</div>
         </div>
       </div>
-      <p style="font-size:13.5px;color:var(--ink-3);line-height:1.6;margin-top:22px;max-width:70ch">Alle Preise netto zzgl. Reisekosten, gültig für bis zu 6 Teilnehmende. Die kleine Runde ist Absicht: Jede Person baut selbst, und ab sieben Leuten entstehen Zuschauer. Für größere Führungskreise machen wir zwei Termine. Inklusive Vorgespräch, Vorbereitung und Nachbereitung.</p>
+      <p style="font-size:13.5px;color:var(--ink-3);line-height:1.6;margin-top:22px;max-width:70ch">Alle Formate finden für Ihren Führungskreis allein statt, vor Ort oder online. Kleine Runden sind Absicht: Jede Person arbeitet selbst mit. Was zu Ihnen passt, klären wir im Erstgespräch.</p>
     </div>
   </section>
 
@@ -251,8 +364,8 @@
     </div>
   </section>
 
-  <!-- ── FOUNDER ── -->
-  <section class="block">
+  <!-- ── ÜBER UNS ── -->
+  <section class="block" id="ueber-uns">
     <div class="wrap reveal">
       <div class="founder-block">
         <img src="/images/nils-blache.png" alt="Nils Blache" class="founder-photo">
@@ -269,7 +382,7 @@
   <!-- ── GARANTIE ── -->
   <section class="block">
     <div class="wrap reveal">
-      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Vorher geklärt</div><h2 class="serif">Drei Bedingungen, sonst mache ich es nicht.</h2><p>Ein Prototyp-Tag funktioniert nur unter drei Voraussetzungen. Fehlt eine davon, bekommt ihr einen netten Tag ohne Wirkung — und das verkaufe ich nicht. Ob es passt, klären wir im Vorgespräch. Wenn nicht, sage ich es euch.</p></div>
+      <div class="sec-head"><div class="eyebrow" style="margin-bottom:14px">Vorher geklärt</div><h2 class="serif">Drei Bedingungen, sonst mache ich es nicht.</h2><p>Ein Workshop funktioniert nur unter drei Voraussetzungen. Fehlt eine davon, bekommt ihr einen netten Tag ohne Wirkung — und das verkaufe ich nicht. Ob es passt, klären wir im Vorgespräch. Wenn nicht, sage ich es euch.</p></div>
       <div class="guarantees">
         <div class="guarantee-tile">
           <div class="gi">1</div>
@@ -319,9 +432,7 @@
     <div class="wrap reveal">
       <div class="sec-head"><h2 class="serif">Die Fragen, die du dir vermutlich gerade stellst.</h2></div>
       <div class="faq">
-        <details><summary>Was kostet das?</summary><div class="fa">Der Prototyp-Tag kostet <strong>5.900 €</strong>, der zweitägige Führungs-Sprint <strong>9.800 €</strong> — jeweils netto zzgl. Reisekosten, für bis zu 12 Teilnehmende. Vorgespräch, Vorbereitung und Nachbereitung sind enthalten. Welches Format zu euch passt, klären wir im Erstgespräch.</div></details>
-        <details><summary>Ist das ein Workshop oder eine Beratung?</summary><div class="fa">Ein Workshop — allerdings einer, in dem gebaut statt präsentiert wird. Eine Beratung liefert ein Ergebnis und geht wieder. Hier entsteht das Ergebnis durch euch: Am Ende des Tages läuft ein Prototyp an einem echten Problem aus eurem Betrieb, und ihr wisst, wie er zustande gekommen ist.</div></details>
-        <details><summary>Können wir den Schwerpunkt selbst wählen?</summary><div class="fa">Ja, das ist der Normalfall. Der Workshop hat kein festes Curriculum: Im Vorgespräch legen wir fest, welche der vier <a href="#schwerpunkte" style="color:var(--green)">Schwerpunkte</a> der Tag abdeckt. An einem Tag sind das realistisch zwei, beim zweitägigen Sprint drei bis vier. Wenn ihr noch nicht wisst, was ihr am dringendsten braucht, schlage ich nach dem Vorgespräch etwas vor.</div></details>
+        <details><summary>Können wir den Schwerpunkt selbst wählen?</summary><div class="fa">Ja, das ist der Normalfall. Der Workshop hat kein festes Curriculum: Im Vorgespräch legen wir fest, welche der drei <a href="#schwerpunkte" style="color:var(--green)">Schwerpunkte</a> im Vordergrund stehen. In einem halben Tag ist einer realistisch, in zwei Tagen alle drei. Wenn ihr noch nicht wisst, was ihr am dringendsten braucht, schlage ich nach dem Vorgespräch etwas vor.</div></details>
         <details><summary>Ist das nur für Geschäftsführer:innen?</summary><div class="fa">Nein. Der Workshop passt für jede Person, die im Unternehmen über KI entscheidet oder entscheiden soll: Geschäftsführung, Bereichsleitung oder dedizierte KI-Rolle. Entscheidend ist die Verantwortung, die du trägst, nicht der Titel.</div></details>
         <details><summary>Wie viele Leute sollten teilnehmen?</summary><div class="fa">Bis zu sechs Führungskräfte. Die kleine Runde ist Absicht: Jede Person baut selbst, und ab sieben Leuten entstehen Zuschauer. Für größere Führungskreise machen wir zwei Termine.</div></details>
         <details><summary>Brauchen die Teilnehmenden Vorkenntnisse?</summary><div class="fa">Nein. Wer ChatGPT schon einmal geöffnet hat, reicht völlig. Wichtiger als Vorwissen ist, dass jemand im Raum den Prozess wirklich kennt, um den es geht.</div></details>
@@ -339,7 +450,7 @@
   <section class="final" id="kontakt">
     <div class="wrap reveal">
       <h2 class="serif">Lass uns 20 Minuten sprechen.</h2>
-      <p class="lead">Kein Verkaufsgespräch: Wir schauen uns an, welches Problem ihr nehmen würdet und ob ein Prototyp-Tag, der zweitägige Sprint oder gar nichts davon der richtige nächste Schritt ist. Wenn ich euch nicht weiterhelfen kann, sage ich das.</p>
+      <p class="lead">Kein Verkaufsgespräch: Wir schauen uns an, welches Problem ihr nehmen würdet und welches Format dazu passt — oder ob gerade gar keines der richtige nächste Schritt ist. Wenn ich euch nicht weiterhelfen kann, sage ich das.</p>
       <form class="contact-box" id="contactForm" novalidate>
         <div id="ctFields">
           <div class="field"><label for="ctName">Name</label><input type="text" id="ctName" name="name" placeholder="Max Mustermann" required></div>
@@ -355,7 +466,9 @@
               <option value="1000+">1.000+</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-dark" style="width:100%;justify-content:center">Termin vorschlagen</button>
+          <div class="ct-hp" aria-hidden="true"><label for="ctWebsite">Website</label><input type="text" id="ctWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="btn btn-dark" id="ctSubmit" style="width:100%;justify-content:center">Termin vorschlagen</button>
+          <p class="ct-error" id="ctError" role="alert"></p>
           <p class="ct-note">Kein Spam. Details in der <a href="/datenschutz.html" style="color:var(--green)">Datenschutzerklärung</a>.</p>
         </div>
         <div class="contact-done" id="ctDone">
@@ -379,8 +492,8 @@
       </div>
       <div class="foot-col">
         <h4>Workshops</h4>
-        <a href="#formate">Prototyp-Tag · 5.900 €</a>
-        <a href="#formate">Führungs-Sprint · 9.800 €</a>
+        <a href="#formate">Formate</a>
+        <a href="#ablauf">Ablauf</a>
         <a href="#fuer-wen">Für wen</a>
         <a href="#kontakt">Erstgespräch</a>
       </div>
@@ -418,6 +531,24 @@
   document.getElementById('mClose').addEventListener('click', close);
   ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
 
+  // Ablauf-Tabs: Schwerpunkt wählen
+  const abTabs = [...document.querySelectorAll('.ab-tab')];
+  const selectTab = (i) => {
+    abTabs.forEach((t, j) => {
+      t.setAttribute('aria-selected', j === i ? 'true' : 'false');
+      document.getElementById(t.getAttribute('aria-controls')).classList.toggle('active', j === i);
+    });
+  };
+  abTabs.forEach((t, i) => {
+    t.addEventListener('click', () => selectTab(i));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = (i + (e.key === 'ArrowRight' ? 1 : abTabs.length - 1)) % abTabs.length;
+      selectTab(next); abTabs[next].focus();
+    });
+  });
+
   // Alte Links (E-Mails, LinkedIn-Posts) auf #warteliste abfangen
   if (location.hash === '#warteliste') {
     history.replaceState(null, '', '#kontakt');
@@ -427,15 +558,40 @@
     });
   }
 
-  // Kontaktformular
-  const ctForm = document.getElementById('contactForm');
-  ctForm.addEventListener('submit', (e) => {
+  // Kontaktformular — schickt die Anfrage per kontakt.php an nils@new-thought.com
+  const ctForm   = document.getElementById('contactForm');
+  const ctBtn    = document.getElementById('ctSubmit');
+  const ctError  = document.getElementById('ctError');
+
+  const showError = (msg) => {
+    ctError.innerHTML = msg + ' Alternativ direkt an <a href="mailto:nils@new-thought.com">nils@new-thought.com</a>.';
+    ctError.classList.add('show');
+  };
+
+  ctForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (!ctForm.checkValidity()) { ctForm.reportValidity(); return; }
-    document.getElementById('ctFields').style.display = 'none';
-    document.getElementById('ctDone').classList.add('show');
-    // TODO Phase 4.4: Absenden an Backend — bis dahin geht KEINE Anfrage raus.
-    // fetch('/kontakt.php', {method:'POST', body:new FormData(ctForm)});
+
+    ctError.classList.remove('show');
+    ctBtn.disabled = true;
+    const label = ctBtn.textContent;
+    ctBtn.textContent = 'Wird gesendet …';
+
+    try {
+      const res = await fetch('kontakt.php', { method:'POST', body:new FormData(ctForm) });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (!data.ok) throw new Error(data.error || 'unknown');
+
+      document.getElementById('ctFields').style.display = 'none';
+      document.getElementById('ctDone').classList.add('show');
+      if (typeof gtag !== 'undefined') gtag('event', 'formular_abgesendet');
+      if (typeof plausible !== 'undefined') plausible('formular_abgesendet');
+    } catch (err) {
+      ctBtn.disabled = false;
+      ctBtn.textContent = label;
+      showError('Das hat gerade nicht funktioniert.');
+    }
   });
 
   // Reveal on scroll
