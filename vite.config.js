@@ -42,6 +42,8 @@ export default defineConfig({
         ressourcenVertrieb: resolve(__dirname, 'site/ressourcen/ki-im-vertrieb-use-cases.html'),
         ressourcenRisiko: resolve(__dirname, 'site/ressourcen/ki-risikomanagement-eu-ai-act.html'),
         kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html'),
+        workshopFuehrungskraefte: resolve(__dirname, 'site/ki-workshop-fuehrungskraefte.html'),
+        workshopHr: resolve(__dirname, 'site/ki-workshop-hr.html'),
         kairon: resolve(__dirname, 'site/kairon.html'),
         kaidop: resolve(__dirname, 'site/kaidop.html'),
         kailead: resolve(__dirname, 'site/kailead.html'),
