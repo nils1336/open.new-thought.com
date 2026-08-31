@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KI-Readiness-Check für Unternehmen | new.thought</title>
+  <meta name="description" content="Wo steht Ihr Unternehmen bei KI? 24 gezielte Fragen, 6 Dimensionen, sofortige Auswertung mit Netzgraf und konkreten Handlungsempfehlungen. Kostenlos." />
+  <link rel="canonical" href="https://www.new-thought.com/ki-readiness-check.html" />
+  <meta property="og:title" content="KI-Readiness-Check | new.thought" />
+  <meta property="og:description" content="Wie bereit ist Ihr Unternehmen für KI? 24 Fragen, 6 Dimensionen, Netzgraf-Auswertung." />
+  <meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <style>
+  .progress-wrap{ position:fixed; top:0; left:0; right:0; height:3px; background:var(--line); z-index:300; }
+  .progress-fill{ height:100%; width:0; background:var(--green); transition:width .35s ease; }
+  .main{ padding:118px 0 80px; }
+  .intro-wrap{ max-width:900px; margin:0 auto; padding:0 24px; text-align:center; }
+  .intro-wrap .eyebrow{ color:var(--green); }
+  .intro-h1{ font-family:var(--serif); font-weight:440; font-size:clamp(40px,6vw,74px); line-height:1.04; letter-spacing:-0.02em; margin:16px auto 0; max-width:15ch; }
+  .intro-sub{ color:var(--ink-2); font-size:clamp(17px,1.8vw,20px); max-width:54ch; margin:20px auto 30px; line-height:1.5; }
+  .btn-start{ font-family:var(--sans); background:var(--btn); color:#fff; border:none; padding:14px 28px; border-radius:9px; font-size:15px; font-weight:500; cursor:pointer; transition:transform .15s ease, background .2s; }
+  .btn-start:hover{ transform:translateY(-1px); background:#000; }
+  .intro-benefits{ margin-top:64px; }
+  .intro-benefits-lbl{ font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); font-weight:500; margin-bottom:22px; }
+  .intro-benefits-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .intro-benefit{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:28px; text-align:left; }
+  .intro-benefit-icon{ width:40px; height:40px; border-radius:10px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .intro-benefit-icon svg{ width:20px; height:20px; }
+  .intro-benefit-title{ font-size:17px; font-weight:600; margin-bottom:7px; }
+  .intro-benefit-desc{ color:var(--ink-2); font-size:14.5px; line-height:1.55; }
+  .intro-stats{ display:flex; justify-content:center; gap:56px; margin:56px 0; }
+  .stat-num{ font-family:var(--serif); font-weight:440; font-size:44px; color:var(--green); line-height:1; }
+  .stat-lbl{ color:var(--ink-3); font-size:13px; margin-top:8px; }
+  .intro-dims{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; text-align:left; }
+  .intro-dim{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px; }
+  .intro-dim-icon{ width:34px; height:34px; border-radius:9px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
+  .intro-dim-icon svg{ width:18px; height:18px; }
+  .intro-dim-name{ font-size:15.5px; font-weight:600; margin-bottom:5px; }
+  .intro-dim-desc{ color:var(--ink-2); font-size:13.5px; line-height:1.5; }
+  .quiz-wrap{ max-width:760px; margin:0 auto; padding:0 24px; }
+  .dim-header{ display:flex; align-items:center; gap:16px; padding-bottom:22px; border-bottom:1px solid var(--line); margin-bottom:28px; }
+  .dim-badge{ width:46px; height:46px; border-radius:12px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .dim-badge svg{ width:22px; height:22px; }
+  .dim-eyebrow{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--green); font-weight:600; }
+  .dim-title{ font-family:var(--serif); font-weight:440; font-size:26px; line-height:1.1; }
+  .dim-counter{ margin-left:auto; font-size:13px; color:var(--ink-3); white-space:nowrap; }
+  .q-card{ background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:24px 26px; margin-bottom:14px; transition:border-color .2s; }
+  .q-card.answered{ border-color:#cfe0d3; }
+  .q-num{ font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:8px; }
+  .q-text{ font-size:18px; font-weight:500; line-height:1.4; margin-bottom:16px; }
+  .opts{ display:flex; flex-direction:column; gap:9px; }
+  .opt{ display:flex; align-items:center; gap:13px; border:1px solid var(--line); border-radius:11px; padding:13px 15px; cursor:pointer; transition:border-color .15s, background .15s; }
+  .opt:hover{ border-color:#c9c8c2; background:var(--surface-2); }
+  .opt.sel{ border-color:var(--green); background:var(--green-soft); }
+  .opt-dot{ width:18px; height:18px; border-radius:50%; border:2px solid #cfcec8; flex-shrink:0; position:relative; transition:border-color .15s; }
+  .opt.sel .opt-dot{ border-color:var(--green); }
+  .opt.sel .opt-dot::after{ content:""; position:absolute; inset:3px; border-radius:50%; background:var(--green); }
+  .opt-txt{ font-size:15px; line-height:1.4; }
+  .quiz-nav{ display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:26px; }
+  .btn-back{ font-family:var(--sans); background:transparent; border:1px solid #d8d7d1; color:var(--ink); padding:11px 20px; border-radius:9px; font-size:14px; font-weight:500; cursor:pointer; }
+  .btn-back:hover{ border-color:#b9b8b1; }
+  .q-status{ font-size:13px; color:var(--ink-3); }
+  .btn-next{ font-family:var(--sans); background:var(--btn); color:#fff; border:none; padding:11px 22px; border-radius:9px; font-size:14px; font-weight:500; cursor:pointer; transition:background .2s, opacity .2s; }
+  .btn-next:disabled{ opacity:.35; cursor:not-allowed; }
+  .email-wrap{ max-width:560px; margin:0 auto; padding:40px 24px 0; text-align:center; }
+  .email-icon{ width:60px; height:60px; border-radius:14px; background:var(--green-soft); display:flex; align-items:center; justify-content:center; margin:0 auto 22px; }
+  .email-h2{ font-family:var(--serif); font-weight:440; font-size:clamp(28px,3.4vw,40px); }
+  .email-sub{ color:var(--ink-2); font-size:16px; line-height:1.6; margin:14px 0 28px; }
+  .email-row{ display:flex; gap:10px; }
+  .email-input{ flex:1; font-family:var(--sans); font-size:15px; padding:13px 16px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+  .email-input:focus{ outline:none; border-color:var(--green); }
+  .btn-submit{ font-family:var(--sans); background:var(--btn); color:#fff; border:none; padding:13px 22px; border-radius:10px; font-size:14px; font-weight:500; cursor:pointer; white-space:nowrap; }
+  .email-error{ display:none; color:#b8331a; font-size:13px; margin-top:10px; text-align:left; }
+  .email-error.show{ display:block; }
+  .email-privacy{ color:var(--ink-3); font-size:12.5px; line-height:1.5; }
+  .results-wrap{ max-width:980px; margin:0 auto; padding:0 24px; }
+  .results-hero{ text-align:center; max-width:680px; margin:0 auto 36px; }
+  .score-badge{ display:inline-block; margin-bottom:14px; }
+  .score-lbl{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--green); font-weight:600; }
+  .score-num{ font-family:var(--serif); font-weight:440; font-size:72px; line-height:1; color:var(--green); }
+  .score-max{ color:var(--ink-3); font-size:28px; }
+  .results-h2{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,3.2vw,40px); line-height:1.15; }
+  .results-sub{ color:var(--ink-2); font-size:16px; line-height:1.6; margin-top:12px; }
+  .radar-box{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:32px; margin-bottom:18px; }
+  .radar-box h3{ font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); font-weight:500; text-align:center; margin-bottom:12px; }
+  .radar-inner{ max-width:520px; margin:0 auto; }
+  .profile-box{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:32px; margin-bottom:18px; }
+  .profile-badge{ display:inline-flex; font-size:12px; color:var(--green); background:var(--green-soft); padding:6px 14px; border-radius:100px; font-weight:600; }
+  .profile-desc{ color:var(--ink-2); font-size:16px; line-height:1.62; margin:16px 0 22px; }
+  .profile-dims{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .profile-side-lbl{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); font-weight:600; margin-bottom:12px; }
+  .profile-dim-item{ display:flex; justify-content:space-between; gap:12px; padding:9px 0; border-bottom:1px solid var(--line-2); font-size:14.5px; }
+  .profile-dim-score{ font-family:var(--serif); color:var(--ink); }
+  .profile-dim-item.strong .profile-dim-score{ color:var(--green); }
+  .profile-dim-item.weak .profile-dim-score{ color:#b8733a; }
+  .dim-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px; }
+  .dim-card{ background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:26px; }
+  .dc-head{ display:flex; align-items:flex-start; justify-content:space-between; gap:14px; }
+  .dc-left{ display:flex; gap:12px; align-items:center; }
+  .dc-icon{ width:36px; height:36px; border-radius:9px; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .dc-icon svg{ width:18px; height:18px; }
+  .dc-name{ font-size:16px; font-weight:600; }
+  .dc-level{ font-size:13px; color:var(--ink-3); }
+  .dc-score{ font-family:var(--serif); font-size:30px; color:var(--green); line-height:1; }
+  .dc-score span{ font-size:14px; color:var(--ink-3); }
+  .dc-bar-bg{ height:6px; border-radius:100px; background:var(--line); margin:16px 0 14px; overflow:hidden; }
+  .dc-bar{ height:100%; background:var(--green); border-radius:100px; }
+  .dc-insight{ color:var(--ink-2); font-size:14px; line-height:1.55; margin-bottom:16px; }
+  .dc-rec-lbl{ font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--green); font-weight:600; margin-bottom:5px; }
+  .dc-rec{ font-size:14px; color:var(--ink); line-height:1.5; margin-bottom:12px; }
+  .dc-cta{ display:inline-flex; align-items:center; gap:6px; color:var(--green); font-weight:500; font-size:14px; text-decoration:none; }
+  .results-cta-box{ background:var(--green-deep); color:#fff; border-radius:24px; padding:48px 40px; text-align:center; margin-top:24px; background-image:radial-gradient(circle at 50% 120%, rgba(120,180,140,.18), transparent 60%); }
+  .rcta-eyebrow{ font-size:11.5px; letter-spacing:.12em; text-transform:uppercase; color:#bfe0c9; font-weight:600; }
+  .rcta-h3{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,3vw,38px); margin:10px 0 12px; }
+  .rcta-sub{ color:rgba(255,255,255,.66); font-size:16px; line-height:1.6; max-width:52ch; margin:0 auto 24px; }
+  .rcta-btn{ display:inline-block; background:#fff; color:var(--green-deep); padding:13px 26px; border-radius:9px; font-weight:600; font-size:14px; text-decoration:none; }
+  @media (max-width:860px){
+    .intro-benefits-grid, .intro-dims, .profile-dims, .dim-grid{ grid-template-columns:1fr; }
+    .intro-stats{ gap:36px; }
+    .email-row{ flex-direction:column; }
+  }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/ona-BbQ0zF3c.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+      <div class="nav-pill">
+        <a href="/#workshop">Workshop</a>
+        <a href="/#schwerpunkte">Schwerpunkte</a>
+        <a href="/#formate">Formate &amp; Preise</a>
+        <a href="/ressourcen.html">Blog</a>
+      </div>
+      <div class="nav-right">
+        <a class="lnk" href="/ki-readiness-check.html">KI-Check</a>
+        <a class="btn btn-dark" href="/#kontakt">Erstgespräch vereinbaren</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="m-overlay" id="mOverlay">
+    <div class="m-top">
+      <span class="brand"><span class="mark"></span>new.thought</span>
+      <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+    </div>
+    <div class="m-links">
+      <a href="/#workshop">Angebot</a>
+      <a href="/#formate">Formate</a>
+      <a href="/#ablauf">Ablauf</a>
+      <a href="/#ueber-uns">Über uns</a>
+      <a href="/ki-readiness-check.html">KI-Check</a>
+    </div>
+    <div class="m-cta">
+      <a href="/#kontakt" class="btn btn-dark">Workshop anfragen</a>
+    </div>
+  </div>
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- APP -->
+  <main class="main" id="app"></main>
+
+  <script>
+  // ═══════════════════════════════════════════════════════════
+  //  ICONS (minimalist SVG, stroke-based)
+  // ═══════════════════════════════════════════════════════════
+
+  const ICONS = {
+    strategie: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>`,
+    daten: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v5c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/><path d="M4 10v5c0 1.66 3.58 3 8 3s8-1.34 8-3v-5"/></svg>`,
+    prozesse: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><line x1="6" y1="8.5" x2="12" y2="15.5"/><line x1="18" y1="8.5" x2="12" y2="15.5"/></svg>`,
+    kompetenzen: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.5 3.6-6 8-6s8 2.5 8 6"/></svg>`,
+    governance: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L4 7v5c0 5 4 8.5 8 10 4-1.5 8-5 8-10V7L12 3z"/></svg>`,
+    umsetzung: `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="21" x2="21" y2="21"/><rect x="5" y="13" width="4" height="8" rx="0.5"/><rect x="10" y="8" width="4" height="13" rx="0.5"/><rect x="15" y="4" width="4" height="17" rx="0.5"/></svg>`
+  };
+
+  // ═══════════════════════════════════════════════════════════
+  //  DATA
+  // ═══════════════════════════════════════════════════════════
+
+  const DIMS = [
+    {
+      id: 'strategie',
+      num: 1,
+      title: 'Strategie & Führung',
+      icon: '🎯',
+      desc: 'Verankerung von KI in Strategie, Führung und Ressourcenplanung',
+      radarLabel: 'Strategie',
+      questions: [
+        {
+          text: 'Existiert in Ihrem Unternehmen eine explizite KI-Strategie?',
+          opts: [
+            'KI ist kein priorisiertes Thema auf der Agenda',
+            'KI wird diskutiert, aber nicht strategisch verankert',
+            'Eine KI-Strategie ist in Ausarbeitung',
+            'KI-Strategie existiert, aber ohne klaren Umsetzungsplan',
+            'KI-Strategie mit Roadmap, Budget und benanntem Owner'
+          ]
+        },
+        {
+          text: 'Wenn Sie morgen gefragt werden, wie sich Ihre KI-Agenda von der Ihrer Wettbewerber unterscheidet – was würden Sie antworten?',
+          opts: [
+            'KI ist (noch) kein strategisches Differenzierungsmerkmal',
+            'Allgemeines Statement zu Effizienz und Automatisierung',
+            'Verweis auf laufende Pilotprojekte',
+            'Konkrete differenzierende Initiative mit ersten Ergebnissen',
+            'Klares strategisches KI-Narrativ mit messbaren Belegen'
+          ]
+        },
+        {
+          text: 'Ist für das laufende Geschäftsjahr ein dediziertes KI-Budget eingeplant?',
+          opts: [
+            'Kein KI-Budget vorhanden',
+            'KI-Kosten laufen ungeplant unter IT-Budget',
+            'Kleines Pilotbudget unter 20.000 €',
+            'Dediziertes Budget zwischen 20.000 € und 100.000 €',
+            'Substanzielles KI-Budget über 100.000 € mit Meilensteinen'
+          ]
+        },
+        {
+          text: 'Wie eng ist KI mit Ihren strategischen Unternehmenszielen (OKRs / KPIs) verknüpft?',
+          opts: [
+            'Kein erkennbarer Bezug zur Unternehmensstrategie',
+            'Vage Verbindung zu Effizienz, ohne konkrete Ziele',
+            'Einzelne KI-Projekte haben Geschäftsziele',
+            'KI-Portfolio ist mit Unternehmenszielen verknüpft',
+            'KI ist integraler Bestandteil der Zieldefinition und Steuerung'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'KI-Einsteiger',
+          insight: 'Ohne strategischen Rahmen übernehmen IT-Abteilungen oder externe Anbieter die KI-Agenda – mit technisch korrekten, aber strategisch falsch priorisierten Lösungen. Das Ergebnis nach 12–18 Monaten: Tool-Chaos, Parallelentwicklungen und ein Wettbewerber, der bereits skaliert, während Sie noch abstimmen.',
+          rec: 'Genau hier setzt ein Prototyp-Tag an: Sie wählen einen konkreten Use Case, bauen ihn an einem Tag selbst und wissen danach, was er wirklich wert ist – statt ihn auf Basis einer Präsentation zu bewerten.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Im Aufbau',
+          insight: 'Die Gefahr bei partieller Strategie ist subtiler als beim Neustart: Initiativen starten, weil intern „irgendwie KI" priorisiert ist – aber ohne klares Budget und Executive-Sponsor enden 80 % dieser Projekte als ewige Piloten. Das kostet nicht nur Zeit, sondern verbraucht die Energie genau der Mitarbeitenden, die Sie für KI begeistern wollten.',
+          rec: 'Der zweitägige Führungs-Sprint qualifiziert Ihre Führungsetage an einem echten Fall: Sie bauen selbst, bewerten anschließend Ihre Use Cases nach Aufwand und Wirkung und legen fest, wer welche Initiative verantwortet.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'Strategisch stark',
+          insight: 'Mit starker Strategie entsteht ein neues Problem: zu viele intern legitimierte Initiativen, die um dieselben Ressourcen konkurrieren. Ohne aktives Portfolio-Management entstehen Priorisierungsstaus, die gute Teams frustrieren – weil jeder das Gefühl hat, die wichtigste Initiative zu führen, aber keiner die Entscheidung treffen kann, welche gestoppt wird.',
+          rec: 'Im Führungs-Sprint priorisieren wir Ihr KI-Portfolio an einem konkreten Beispiel: Sie bauen einen Use Case, und daran wird sichtbar, welche Kriterien für Start, Skalierung und Stop bei Ihnen tatsächlich tragen.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    },
+    {
+      id: 'daten',
+      num: 2,
+      title: 'Daten & Infrastruktur',
+      icon: '🗄️',
+      desc: 'Qualität, Verfügbarkeit und Governance Ihrer Datenbasis',
+      radarLabel: 'Daten & IT',
+      questions: [
+        {
+          text: 'Wie verfügbar sind die für KI relevanten Daten in Ihrem Unternehmen?',
+          opts: [
+            'Relevante Daten existieren kaum in digitaler Form',
+            'Daten sind fragmentiert über viele Systeme verteilt',
+            'Daten sind vorhanden, aber schwer zugänglich',
+            'Daten sind strukturiert und weitgehend abrufbar',
+            'Zentralisierter Datenzugriff mit aktiver Governance'
+          ]
+        },
+        {
+          text: 'Wie bewerten Sie die Qualität Ihrer Unternehmensdaten für KI-Anwendungen?',
+          opts: [
+            'Qualität unbekannt, keine systematische Validierung',
+            'Bekannte Qualitätsprobleme, kein Lösungsplan',
+            'Akzeptable Qualität für einfache Analysen',
+            'Gute Qualität mit sporadischer Bereinigung',
+            'Hohe Datenqualität durch aktives Datenmanagement'
+          ]
+        },
+        {
+          text: 'Wie modern ist Ihre IT-Infrastruktur hinsichtlich Cloud, APIs und Systemintegration?',
+          opts: [
+            'Überwiegend Legacy-Systeme, kaum Cloud-Nutzung',
+            'Gemischte Systeme, vereinzelte Cloud-Nutzung',
+            'Teilweise Cloud, kein einheitliches Integrationskonzept',
+            'Weitgehend cloudbasiert, APIs für wichtige Systeme vorhanden',
+            'Moderne Cloud-First-Architektur, vollständig integrierbar'
+          ]
+        },
+        {
+          text: 'Haben Sie ein formales Konzept für Datensicherheit und Datenschutz im KI-Kontext?',
+          opts: [
+            'Keine formalen Richtlinien für KI-relevante Daten',
+            'Basis-DSGVO-Compliance, aber lückenhaft umgesetzt',
+            'Formale Richtlinien existieren, teils umgesetzt',
+            'Richtlinien definiert und überwiegend gelebt',
+            'Umfassendes Data-Governance-Framework inkl. KI-Readiness'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'Kritischer Handlungsbedarf',
+          insight: 'Das Datenproblem zeigt sich immer erst im Projekt: Das KI-Modell ist bereit, aber die Daten sind fragmentiert über fünf Systeme, in unterschiedlichen Formaten und ohne klare Ownership. Das verzögert 70 % aller KI-Implementierungen um 3–6 Monate – und kostet in dieser Zeit die Motivation der Teams, die den Piloten gestartet haben.',
+          rec: 'Ein Prototyp-Tag beginnt mit genau dieser Frage: Welche Daten braucht Ihr erster Use Case überhaupt? Gebaut wird mit Demo-Daten, die Ihren echten nachempfunden sind – so sehen Sie den Datenbedarf, ohne vorher ein Datenprojekt aufzusetzen.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Ausbaufähig',
+          insight: 'Datenprojekte werden überschätzt – und deswegen nicht angegangen. Die häufigste Reaktion lautet: „Erst wenn die Daten sauber sind, starten wir." Diese Entscheidung verschiebt KI-Projekte um Jahre. Perfekte Daten entstehen im Betrieb, nicht davor. Der smarte Ansatz: minimalen Datenpfad für den ersten Use Case definieren und Datenhygiene parallel einführen.',
+          rec: 'Am Prototyp-Tag umreißen wir den minimalen Datenpfad für Ihren Prioritäts-Use-Case – nicht auf dem Papier, sondern indem Sie ihn mit Demo-Daten bauen. Welche Qualität wirklich nötig ist, zeigt sich dabei schneller als in jeder Analyse.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'KI-fähige Basis',
+          insight: 'Solide Datenbasis ist kein Endpunkt, sondern ein laufendes System. Mit wachsendem KI-Einsatz steigen die Governance-Anforderungen überproportional: Mehr Modelle bedeuten mehr Trainingsdaten, mehr Logging-Pflichten und – ab 2025/2026 verbindlich – Anforderungen aus EU AI Act Art. 10. Wer Datenpipelines heute ohne Governance-Layer aufbaut, akkumuliert Compliance-Schulden.',
+          rec: 'Im Führungs-Sprint ergänzen wir Ihre Datenstärke um die Führungsfragen: Wer darf welche Daten für KI nutzen, was wird protokolliert, wer entscheidet über Ausnahmen – diskutiert am laufenden Prototyp statt im Abstrakten.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    },
+    {
+      id: 'prozesse',
+      num: 3,
+      title: 'Prozesse & Organisation',
+      icon: '⚙️',
+      desc: 'Prozessreife, KI-Ownership und organisatorische Bereitschaft',
+      radarLabel: 'Prozesse',
+      questions: [
+        {
+          text: 'Wie gut sind Ihre Kernprozesse dokumentiert und standardisiert?',
+          opts: [
+            'Kaum dokumentiert, stark personenabhängig',
+            'Rudimentäre Dokumentation, viele Ausnahmen',
+            'Wichtige Prozesse dokumentiert, aber lückenhaft',
+            'Weitgehend dokumentiert und regelmäßig aktualisiert',
+            'Vollständig dokumentiert mit Process-Ownern und KPIs'
+          ]
+        },
+        {
+          text: 'Haben Sie konkrete KI-Use-Cases in Ihrem Unternehmen identifiziert und bewertet?',
+          opts: [
+            'Keine Use-Cases oder Ideen benannt',
+            'Vage Vorstellungen, keine Priorisierung',
+            '1–2 spezifische Ideen ohne systematische Bewertung',
+            'Priorisierte Liste mit Potenzialabschätzung',
+            'Bewertetes Use-Case-Portfolio mit Umsetzungsplan'
+          ]
+        },
+        {
+          text: 'Gibt es in Ihrem Unternehmen eine benannte Verantwortlichkeit für KI (KI-Owner / CAIO)?',
+          opts: [
+            'Niemand ist explizit für KI verantwortlich',
+            'KI läuft informell unter IT oder einzelnen Personen',
+            'Teilzeitrolle oder projektbezogene Verantwortung',
+            'Dedizierte KI-Rolle im Organigramm verankert',
+            'Vollzeit KI-Owner mit Entscheidungsbefugnis und Budget'
+          ]
+        },
+        {
+          text: 'Stellen Sie sich vor, ein Team soll eine manuelle Aufgabe durch KI ersetzen. Was passiert erfahrungsgemäß?',
+          opts: [
+            'Heftiger Widerstand – Projekte werden gestoppt',
+            'Stilles Ignorieren oder informeller Gegenwind',
+            'Gemischte Reaktionen, einige unterstützen es',
+            'Geordneter Change-Prozess mit Beteiligung der Betroffenen',
+            'Mitarbeitende gestalten KI-Einführungen aktiv mit'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'Grundlagenarbeit nötig',
+          insight: 'KI automatisiert das, was bereits existiert – Gutes wie Problematisches. Was heute durch Erfahrung und Einzelpersonen funktioniert, bricht unter Automatisierung auf: jede Ausnahme, jede informelle Abstimmung, jede nicht dokumentierte Entscheidungsregel wird sichtbar und blockiert die Lösung. In der Praxis dauert das Klären dieser Voraussetzungen länger als die eigentliche KI-Implementierung.',
+          rec: 'Ein Prototyp-Tag ersetzt das Prozess-Mapping durch einen Test: Sie nehmen den Prozess, der Ihnen regelmäßig am meisten Zeit kostet, und bauen daran. Das Ergebnis ist kein Diagnose-Dokument, sondern etwas, das läuft.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Bereit für erste Schritte',
+          insight: 'Sie haben Potenzial erkannt – aber ohne klare KI-Ownership und verbindliche Entscheidungsstruktur verbleiben Piloten in der Endlosschleife: immer neue Features, nie Produktivbetrieb. Der Engpass ist fast nie die Technologie, sondern die Frage, wer am Ende die Verantwortung für Betrieb, Fehlerfälle und Weiterentwicklung übernimmt.',
+          rec: 'Der Führungs-Sprint klärt genau diese Ownership-Frage: Wer verantwortet den Use Case nach dem Workshop, in welchem Rhythmus wird geprüft, wann gilt ein Pilot als produktiv – entschieden, während das Ergebnis vor Ihnen läuft.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'Skalierungsbereit',
+          insight: 'Hohe Prozessreife ist ein Vorteil – bis die KI-Anwendung den Prozess selbst verändert. Wer Automatisierung in bestehende Abläufe einbaut, optimiert den Status quo. Wer Prozesse für KI neu denkt, erschließt das eigentliche Potenzial. Der Unterschied: 15–20 % Effizienzgewinn versus fundamentale Veränderung von Leistungstiefe und Kostenstruktur.',
+          rec: 'Im Führungs-Sprint gehen Sie die zweite Reifestufe an: einen Prozess nicht nur automatisieren, sondern KI-nativ neu denken – prototypisch an zwei Tagen, bevor Sie Budget dafür binden.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    },
+    {
+      id: 'kompetenzen',
+      num: 4,
+      title: 'Kompetenzen & Kultur',
+      icon: '🧠',
+      desc: 'KI-Wissen, Veränderungsbereitschaft und Lernkultur',
+      radarLabel: 'Kompetenzen',
+      questions: [
+        {
+          text: 'Wie hoch ist das KI-Grundwissen in Ihrer gesamten Belegschaft?',
+          opts: [
+            'KI ist Neuland für fast alle Mitarbeitenden',
+            'Wenige Einzelpersonen haben Grundkenntnisse',
+            'Ca. 10–25 % haben ein basales KI-Verständnis',
+            'Mehrheit versteht KI-Grundkonzepte und Einsatzmöglichkeiten',
+            'KI-Literalität ist flächendeckender Unternehmensstandard'
+          ]
+        },
+        {
+          text: 'Wie offen ist die Unternehmenskultur gegenüber KI-bedingten Veränderungen?',
+          opts: [
+            'Starker Widerstand zu erwarten',
+            'Skepsis überwiegt, wenig Offenheit im mittleren Management',
+            'Gemischte Reaktionen, Einzelne sind offen, andere abwartend',
+            'Überwiegend offen, Change-Prozesse sind etabliert',
+            'Innovationskultur mit aktiver KI-Begeisterung und Eigeninitiative'
+          ]
+        },
+        {
+          text: 'Haben Sie benannte KI-Champions oder Multiplikator:innen, die KI-Nutzung in ihren Teams aktiv vorantreiben?',
+          opts: [
+            'Niemand hat diese Rolle — auch nicht informell',
+            'Einzelne engagieren sich informell, ohne Auftrag',
+            '1–2 inoffizielle KI-Champions aus Eigeninitiative',
+            'Benannte KI-Champions in den wichtigsten Fachbereichen',
+            'KI-Champion-Netzwerk mit Mandat und regelmäßigem Austausch'
+          ]
+        },
+        {
+          text: 'Gibt es strukturierte KI-Weiterbildungsprogramme in Ihrem Unternehmen?',
+          opts: [
+            'Kein KI-Weiterbildungsangebot vorhanden',
+            'Gelegentliche externe Workshops ohne Systematik',
+            'Einzelne Online-Kurse oder Zertifizierungen für Interessierte',
+            'Strukturiertes Programm für Schlüsselpersonen',
+            'Unternehmensweites KI-Lernprogramm mit Rollenpfaden'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'Aufholbedarf',
+          insight: 'Das kritischste KI-Wissensdefizit ist nicht bei Mitarbeitenden – es ist bei Führungskräften. Wer als Entscheider nicht versteht, was KI realistisch kann, was es kostet und was es braucht, genehmigt entweder zu wenig (zu risikoavers) oder zu viel (ohne Grundlage). Beides kostet: einmal Stillstand, einmal Fehlinvestition.',
+          rec: 'Genau hier setzt der Workshop an: bei den Entscheidern. Ihr Führungskreis baut selbst und erarbeitet sich damit ein realistisches KI-Bild – die Voraussetzung dafür, KI-Initiativen zu steuern statt nur zu delegieren.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Wissensinseln vorhanden',
+          insight: 'Wissensinseln sind kein Fundament – sie sind ein Klumpenrisiko. Verlässt Ihre KI-affine Mitarbeiterin das Unternehmen oder wechselt die Abteilung, nimmt sie das Know-how mit. Was wie ein Vorteil aussieht (wir haben jemanden, der sich auskennt), ist in Wahrheit eine Einzelpersonen-Abhängigkeit, die jeden ernsthaften Skalierungsversuch blockiert.',
+          rec: 'Der Führungs-Sprint schafft die Grundlage für die Breite: Wenn Ihr Führungskreis selbst einmal gebaut hat, kann er Multiplikatoren benennen und beurteilen, welche Use Cases sich zum Ausrollen wirklich lohnen.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'Kompetente Organisation',
+          insight: 'Hohe KI-Kompetenz erzeugt einen neuen Engpass: zu viele Optionen. Teams mit gutem KI-Verständnis starten eigenständig Projekte – was gut ist, aber ohne Steuerung zu Fragmentierung führt. Der nächste Reifegrad ist nicht mehr Wissen, sondern strukturierte Anwendung: klare Rollen, definierte Kompetenzstufen und Lernpfade, die mit dem Tempo der KI-Entwicklung Schritt halten.',
+          rec: 'Im Führungs-Sprint klären Sie den Kompetenzrahmen an der Praxis: Welche Rollen brauchen Sie wirklich, was muss wer können – abgeleitet aus einem Use Case, den Sie selbst gebaut haben, nicht aus einem Kompetenzmodell.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    },
+    {
+      id: 'governance',
+      num: 5,
+      title: 'Governance & Compliance',
+      icon: '⚖️',
+      desc: 'KI-Regeln, Risikomanagement und regulatorische Bereitschaft',
+      radarLabel: 'Governance',
+      questions: [
+        {
+          text: 'Wie gut kennt Ihr Unternehmen die Anforderungen des EU AI Act?',
+          opts: [
+            'EU AI Act ist kein Thema im Unternehmen',
+            'Begriff bekannt, aber keine inhaltliche Auseinandersetzung',
+            'Grundkenntnisse vorhanden, keine Risikoklassifizierung durchgeführt',
+            'Risikoklassifizierung eigener KI-Systeme begonnen',
+            'EU AI Act Compliance vollständig etabliert und dokumentiert'
+          ]
+        },
+        {
+          text: 'Existieren interne Richtlinien für den KI-Einsatz (z.B. Datenweitergabe, Nutzung von ChatGPT & Co.)?',
+          opts: [
+            'Keine Richtlinien – KI-Nutzung ist ungeklärt und unkontrolliert',
+            'Informelle Absprachen, nichts Schriftliches',
+            'Basis-Richtlinien für einzelne Tools',
+            'Formale KI-Richtlinien für relevante Bereiche',
+            'Umfassendes KI-Governance-Framework mit Kontrollen und Reviews'
+          ]
+        },
+        {
+          text: 'Wer ist in Ihrem Unternehmen verantwortlich, wenn ein KI-System einen Fehler macht oder Schaden verursacht?',
+          opts: [
+            'Niemand – diese Frage wurde noch nie gestellt',
+            'Informell der IT-Leiter oder das jeweilige Projektteam',
+            'Es gibt Zuordnungen in Risikolisten, aber keine dedizierte Person',
+            'Klar im Organigramm verankert mit Eskalationspfad',
+            'KI-Owner mit definierten Verantwortlichkeiten und Notfallprozessen'
+          ]
+        },
+        {
+          text: 'Wie gehen Sie mit der Qualitätssicherung von KI-generierten Inhalten und Entscheidungen um?',
+          opts: [
+            'Keine Prüfprozesse – KI-Outputs werden direkt verwendet',
+            'Informelle Prüfung durch Einzelpersonen nach Bauchgefühl',
+            'Stichprobenartige Prüfung bei wichtigen Outputs',
+            'Systematische Review-Prozesse für kritische Anwendungen',
+            'Formale QS-Prozesse mit dokumentierter Mensch-im-Loop-Kontrolle'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'Regulatorisches Risiko',
+          insight: 'Viele mittelständische Unternehmen glauben, der EU AI Act betrifft nur KI-Anbieter. Das ist falsch. Wer HR-Software mit algorithmischer Vorauswahl, Kreditbewertungssysteme oder automatisierte Produktionsprüfung einsetzt, ist als „Deployer" direkt in der Pflicht – mit Dokumentationspflichten, die bei Verstößen bis zu 3 % des weltweiten Jahresumsatzes kosten können.',
+          rec: 'Der Führungs-Sprint macht Governance operativ statt dokumentarisch: Risikoklassifizierung und Nutzungsregeln entstehen am konkreten Prototyp – in einem Format, das für Ihren Betrieb praktikabel ist, nicht nur für den Audit.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Erste Strukturen',
+          insight: 'Governance-Dokumente ohne gelebte Praxis sind gefährlicher als gar keine Regeln: Sie signalisieren nach außen Compliance-Bewusstsein, während intern KI-Tools unkontrolliert genutzt werden. Im Schadensfall erhöht das die Haftungsexposition – weil Richtlinien existierten, aber nachweislich nicht durchgesetzt wurden.',
+          rec: 'Der Führungs-Sprint schließt die Lücke zwischen Papier und Praxis: Verantwortlichkeiten werden an benannte Personen vergeben und am laufenden Use Case sofort erprobt – so zeigt sich, ob Ihre Regeln im Alltag tragen.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'Gut aufgestellt',
+          insight: 'Reife Governance schlägt bei wachsendem KI-Portfolio in eine neue Herausforderung um: Geschwindigkeit. Was für drei Systeme handhabbar ist, wird für fünfzehn zum Flaschenhals – wenn Freigabeprozesse, Risikobewertungen und Audit-Logs manuell und dokumentenbasiert bleiben. Der nächste Schritt ist nicht mehr Struktur, sondern Skalierbarkeit dieser Struktur.',
+          rec: 'Im Führungs-Sprint prüfen wir Ihre Governance an einem neuen Use Case: Greifen Klassifizierung und Review-Wege auch beim nächsten Fall, oder bremsen sie? An einem gebauten Beispiel merkt man das schneller als im Regelwerk.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    },
+    {
+      id: 'umsetzung',
+      num: 6,
+      title: 'Umsetzung & Wirkung',
+      icon: '📈',
+      desc: 'Erfahrung, Messbarkeit und Geschwindigkeit Ihrer KI-Initiativen',
+      radarLabel: 'Umsetzung',
+      questions: [
+        {
+          text: 'Welche KI-Tools sind in Ihrem Unternehmen aktuell konkret im Einsatz?',
+          opts: [
+            'Keine bekannten KI-Tools im Einsatz',
+            'Einzelne nutzen private Tools (z.B. ChatGPT) ohne Freigabe',
+            'Ein bis zwei freigegebene Standard-Tools (z.B. Copilot)',
+            'Mehrere Tools mit klarer Zuordnung, wer was wofür nutzt',
+            'Integrierter Tool-Stack mit definierter Rolle je Anwendungsfall'
+          ]
+        },
+        {
+          text: 'Wie messen Sie den Erfolg Ihrer KI-Initiativen?',
+          opts: [
+            'Keine Erfolgsmessung vorhanden',
+            'Subjektive Einschätzungen ohne definierte KPIs',
+            'Einzelne KPIs pro Projekt, keine Standardisierung',
+            'Standardisierte KPIs über alle KI-Projekte',
+            'ROI-Tracking mit validiertem Business Case und Nachweisen'
+          ]
+        },
+        {
+          text: 'Wie lange dauert es typischerweise, eine neue KI-Lösung in den produktiven Betrieb zu bringen?',
+          opts: [
+            'Kein Deployment-Prozess etabliert',
+            'Über 12 Monate durch aufwändige Abstimmungen',
+            '6–12 Monate mit mehreren Freigabe-Instanzen',
+            '1–6 Monate durch etablierte Prozesse',
+            'Unter 4 Wochen durch agile Methoden und klare Strukturen'
+          ]
+        },
+        {
+          text: 'Haben Sie einen strategischen Partner oder Berater für KI-Themen?',
+          opts: [
+            'Keine externe KI-Unterstützung vorhanden',
+            'Vereinzelte Kontakte, kein fester Ansprechpartner',
+            'Technologie-Lieferanten (z.B. Microsoft, SAP), kein KI-Strategieberater',
+            'KI-Berater für spezifische Projekte',
+            'Strategischer KI-Partner mit langfristiger Begleitung'
+          ]
+        }
+      ],
+      levels: [
+        {
+          max: 5, label: 'Noch keine Basis',
+          insight: 'Ohne KI-Erfahrung ist das Kostspieligste nicht der fehlende Start – es ist der falsche Start. Die häufigsten Fehleinsteige: zu komplexe Einstiegsprojekte (sechs Monate bis erste Ergebnisse), KI-Lösungen ohne Business Owner oder Insellösungen, die nicht mit bestehenden Systemen sprechen. Jeder dieser Fehler kostet nicht nur Budget, sondern das nächste interne KI-Budget – weil die erste Erfahrung negativ war.',
+          rec: 'Ein Prototyp-Tag ist strukturierter Einstieg statt blinder Aktivismus: Am Ende des Tages läuft ein Prototyp an einem echten Problem, und Sie haben eine priorisierte Use-Case-Liste für die nächsten Schritte.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 11, label: 'Erste Erfahrungen',
+          insight: 'Pilotprojekte haben eine systematische Verzerrung: Sie funktionieren, weil jemand persönlich dahintersteht. Der Schritt zu produktiven Lösungen scheitert an Faktoren, die im Piloten unsichtbar waren: IT-Integration in Bestandssysteme, formale Budgetgenehmigung für den Betrieb, Qualitätssicherung ohne das ursprüngliche Team – und das Change-Management für alle, die den Piloten nie gesehen haben.',
+          rec: 'Der Führungs-Sprint klärt den Übergang von Pilot zu Produktion an einem konkreten Fall: technische Voraussetzungen, Betriebsfrage, Kennzahl und Zuständigkeit – entschieden, während das Ergebnis vor Ihnen läuft.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        },
+        {
+          max: 16, label: 'KI im Regelbetrieb',
+          insight: 'Etablierter KI-Betrieb ist kein Endpunkt – er ist die Startbedingung für den nächsten Wettbewerbsvorteil. Die Gefahr: Organisationen optimieren intensiv das Bestehende und verlieren den Blick auf grundlegend neue Anwendungen. Wer heute nur optimiert, stellt in 18 Monaten fest, dass Wettbewerber mit neuerer Architektur nicht durch bessere Einzellösungen vorbeiziehen, sondern durch eine andere systemische Grundlage.',
+          rec: 'Im Führungs-Sprint steuern Sie Ihr Portfolio an einem echten Beispiel: Sie bauen einen neuen Use Case, bewerten ihn gegen die laufenden Initiativen und entscheiden, was Priorität bekommt.',
+          cta: 'Workshop-Formate ansehen →',
+          ctaHref: '/#formate'
+        }
+      ]
+    }
+  ];
+
+  // ═══════════════════════════════════════════════════════════
+  //  STATE
+  // ═══════════════════════════════════════════════════════════
+
+  let screen = 'intro';
+  let answers = {}; // 'dimId_qIdx' -> score 0-4
+  let email = '';
+
+  // ═══════════════════════════════════════════════════════════
+  //  HELPERS
+  // ═══════════════════════════════════════════════════════════
+
+  function rawScore(dimId) {
+    const dim = DIMS.find(d => d.id === dimId);
+    return dim.questions.reduce((s, _, qi) => s + (answers[`${dimId}_${qi}`] ?? 0), 0);
+  }
+
+  function normScore(dimId) {
+    return parseFloat(((rawScore(dimId) / 16) * 10).toFixed(1));
+  }
+
+  function overallScore() {
+    const avg = DIMS.reduce((s, d) => s + normScore(d.id), 0) / DIMS.length;
+    return parseFloat(avg.toFixed(1));
+  }
+
+  function dimLevel(dimId) {
+    const dim = DIMS.find(d => d.id === dimId);
+    const r = rawScore(dimId);
+    return dim.levels.find(l => r <= l.max) ?? dim.levels[dim.levels.length - 1];
+  }
+
+  function answeredCount(dimId) {
+    return DIMS.find(d => d.id === dimId).questions
+      .filter((_, qi) => answers[`${dimId}_${qi}`] !== undefined).length;
+  }
+
+  function allAnswered(dimId) {
+    return answeredCount(dimId) === 4;
+  }
+
+  function progress() {
+    if (screen === 'intro') return 0;
+    if (screen === 'results') return 1;
+    if (screen === 'email') return 0.92;
+    const di = DIMS.findIndex(d => d.id === screen.replace('dim_',''));
+    return ((di + answeredCount(DIMS[di].id) / 4) / DIMS.length) * 0.9;
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  //  PROFILE
+  // ═══════════════════════════════════════════════════════════
+
+  function getProfile() {
+    const sortedScores = DIMS.map(d => ({
+      id: d.id, title: d.title, score: normScore(d.id)
+    })).sort((a, b) => b.score - a.score);
+
+    const strongest = sortedScores.slice(0, 2);
+    const weakest   = [...sortedScores].reverse().slice(0, 2);
+    const total     = overallScore();
+
+    let label, desc;
+    if (total < 4) {
+      label = 'KI-Starter';
+      desc  = 'Die größte Gefahr auf diesem Reifegrad ist nicht Stillstand, sondern der falsche erste Schritt: zu früh in Technologie investieren, bevor Strategie, Ownership und Datenbasis stehen. Das Ergebnis sind teure Piloten ohne Anschluss und ein erster Misserfolg, der das nächste KI-Budget schwer macht. Der größte Hebel liegt hier nicht in einem weiteren Tool, sondern in einem klaren Fundament.';
+    } else if (total < 6) {
+      label = 'KI-Entdecker';
+      desc  = 'Sie sind an einem kritischen Schwellenpunkt: genug Erfahrung, um zu wissen, dass KI relevant ist – aber noch keine Struktur, die aus Einzelinitiativen ein steuerbares Programm macht. Ohne klare Ownership und Entscheidungsstruktur bleibt dieser Reifegrad instabil: Initiativen entstehen auf Zuruf, verlieren nach dem ersten Enthusiasmus den Sponsor und versanden. Der Übergang vom Experiment zur Systematik entscheidet, ob KI bei Ihnen trägt.';
+    } else if (total < 7.5) {
+      label = 'KI-Entwickler';
+      desc  = 'Auf diesem Reifegrad entsteht das Paradox: das Gesamtbild wirkt solide, aber einzelne Lücken erzeugen überproportionale Bremswirkung. Ein schwacher Bereich – etwa fehlende Datenbasis oder ungeklärte Governance – blockiert Initiativen aus allen anderen Bereichen. Wer jetzt gezielt die 1–2 kritischen Engpässe schließt statt weiter zu verbreitern, beschleunigt überproportional.';
+    } else {
+      label = 'KI-Optimierer';
+      desc  = 'Sie haben den Punkt erreicht, an dem es nicht mehr um Einstieg oder Aufbau geht, sondern um Architektur: Wie ist Ihr KI-Portfolio strukturiert? Wer trifft Priorisierungsentscheidungen? Wie werden Erfolge validiert und skaliert? Unternehmen auf diesem Niveau scheitern selten an Kompetenz – sie scheitern an fehlender Struktur für die wachsende Komplexität eines aktiven KI-Portfolios.';
+    }
+
+    return { label, desc, strongest, weakest };
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  //  EMAIL NOTIFICATION
+  // ═══════════════════════════════════════════════════════════
+
+  async function sendResultEmail(emailAddr) {
+    const profile = getProfile();
+    const scores  = DIMS.map(d => ({ label: d.title, score: normScore(d.id) }));
+    const payload = {
+      email:       emailAddr,
+      scores:      scores,
+      overall:     overallScore(),
+      profileType: profile.label,
+      profileDesc: profile.desc,
+      strongest:   profile.strongest,
+      weakest:     profile.weakest
+    };
+    try {
+      const res  = await fetch('send-result.php', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify(payload)
+      });
+      const json = await res.json();
+      console.log('[KI-Check] E-Mail-Benachrichtigung:', json.success ? '✅ gesendet' : '❌ fehlgeschlagen', json);
+    } catch(e) {
+      console.warn('[KI-Check] send-result.php nicht erreichbar (lokal oder PHP-Fehler):', e.message);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  //  NAVIGATION
+  // ═══════════════════════════════════════════════════════════
+
+  function go(to) {
+    screen = to;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function selectAnswer(dimId, qi, score) {
+    const key = `${dimId}_${qi}`;
+    answers[key] = score;
+
+    // Patch DOM (no full re-render to avoid scroll jump)
+    const card = document.getElementById(`qc_${key}`);
+    if (card) {
+      card.classList.add('answered');
+      card.querySelectorAll('.opt').forEach((el, oi) => {
+        el.classList.toggle('sel', oi === score);
+      });
+    }
+
+    // Update counter + button
+    const cnt  = document.getElementById('qstatus');
+    const cnt2 = document.getElementById('qstatus2');
+    const btn  = document.getElementById('btnNext');
+    const ac = answeredCount(dimId);
+    if (cnt)  cnt.textContent  = `${ac} von 4 beantwortet`;
+    if (cnt2) cnt2.textContent = `${ac} / 4`;
+    if (btn)  btn.disabled = !allAnswered(dimId);
+
+    // Progress
+    updateProgress();
+  }
+
+  function submitEmail() {
+    const inp = document.getElementById('emailInput');
+    const err = document.getElementById('emailError');
+    const val = inp.value.trim();
+    if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
+      err.classList.add('show');
+      inp.focus();
+      return;
+    }
+    email = val;
+    err.classList.remove('show');
+    sendResultEmail(val); // non-blocking notification
+    go('results');
+  }
+
+  // ═══════════════════════════════════════════════════════════
+  //  RENDER
+  // ═══════════════════════════════════════════════════════════
+
+  const app = document.getElementById('app');
+
+  function updateProgress() {
+    const fill = document.getElementById('progressFill');
+    if (fill) fill.style.width = `${progress() * 100}%`;
+  }
+
+  function render() {
+    updateProgress();
+    if (screen === 'intro') renderIntro();
+    else if (screen.startsWith('dim_')) renderDim(screen.replace('dim_', ''));
+    else if (screen === 'email') renderEmail();
+    else if (screen === 'results') renderResults();
+  }
+
+  // ── INTRO ──────────────────────────────────────────────────
+  function renderIntro() {
+    app.innerHTML = `
+      <section class="screen active">
+        <div class="intro-wrap">
+          <div class="eyebrow">KI-Readiness-Check · new.thought</div>
+          <h1 class="intro-h1">Wo steht Ihr<br>Unternehmen mit&nbsp;KI?</h1>
+          <p class="intro-sub">Ob Sie KI gerade einführen möchten oder bereits erste Schritte gemacht haben – dieser Check zeigt in 8 Minuten, was funktioniert und was als Nächstes zählt.</p>
+          <button class="btn-start" onclick="go('dim_strategie')">Jetzt starten &nbsp;→</button>
+
+          <div class="intro-benefits">
+            <div class="intro-benefits-lbl">Das bekommen Sie aus dem Check</div>
+            <div class="intro-benefits-grid">
+
+              <div class="intro-benefit">
+                <div class="intro-benefit-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/></svg>
+                </div>
+                <div class="intro-benefit-title">Sofortige Klarheit</div>
+                <div class="intro-benefit-desc">In 8 Minuten sehen Sie, wo Ihr Unternehmen wirklich steht – nicht nur wo Sie es vermuten.</div>
+              </div>
+
+              <div class="intro-benefit">
+                <div class="intro-benefit-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.5 8.5 23 9.5 17.5 15 19 22.5 12 19 5 22.5 6.5 15 1 9.5 8.5 8.5"/></svg>
+                </div>
+                <div class="intro-benefit-title">Ihr KI-Netzgraf</div>
+                <div class="intro-benefit-desc">Visuelles Profil über 6 Dimensionen – auf einen Blick erkennbar, was stark ist und was bremst.</div>
+              </div>
+
+              <div class="intro-benefit">
+                <div class="intro-benefit-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </div>
+                <div class="intro-benefit-title">Konkrete Schritte</div>
+                <div class="intro-benefit-desc">Für jede schwache Dimension: ein klar benannter nächster Schritt – kein generischer Ratschlag.</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="intro-stats">
+            <div><div class="stat-num">24</div><div class="stat-lbl">Fragen</div></div>
+            <div><div class="stat-num">6</div><div class="stat-lbl">Dimensionen</div></div>
+            <div><div class="stat-num">~8</div><div class="stat-lbl">Minuten</div></div>
+          </div>
+          <div class="intro-dims">
+            ${DIMS.map(d => `
+              <div class="intro-dim">
+                <div class="intro-dim-icon">${ICONS[d.id]}</div>
+                <div class="intro-dim-name">${d.title}</div>
+                <div class="intro-dim-desc">${d.desc}</div>
+              </div>`).join('')}
+          </div>
+        </div>
+      </section>`;
+  }
+
+  // ── DIMENSION ──────────────────────────────────────────────
+  function renderDim(dimId) {
+    const dim = DIMS.find(d => d.id === dimId);
+    const di = DIMS.findIndex(d => d.id === dimId);
+    const prev = di > 0 ? `go('dim_${DIMS[di-1].id}')` : `go('intro')`;
+    const next = di < DIMS.length - 1 ? `go('dim_${DIMS[di+1].id}')` : `go('email')`;
+    const nextLabel = di < DIMS.length - 1 ? 'Weiter →' : 'Zum Ergebnis →';
+    const ac = answeredCount(dimId);
+
+    app.innerHTML = `
+      <section class="screen active">
+        <div class="quiz-wrap">
+          <div class="dim-header">
+            <div class="dim-badge">${ICONS[dimId]}</div>
+            <div class="dim-meta">
+              <div class="dim-eyebrow">Dimension ${dim.num} von ${DIMS.length}</div>
+              <div class="dim-title">${dim.title}</div>
+            </div>
+            <div class="dim-counter" id="qstatus">${ac} von 4 beantwortet</div>
+          </div>
+
+          ${dim.questions.map((q, qi) => {
+            const key = `${dimId}_${qi}`;
+            const sel = answers[key];
+            return `
+              <div class="q-card ${sel !== undefined ? 'answered' : ''}" id="qc_${key}">
+                <div class="q-num">Frage ${di*4+qi+1} / 24</div>
+                <div class="q-text">${q.text}</div>
+                <div class="opts">
+                  ${q.opts.map((o, oi) => `
+                    <div class="opt ${sel === oi ? 'sel' : ''}"
+                         onclick="selectAnswer('${dimId}',${qi},${oi})">
+                      <span class="opt-dot"></span>
+                      <span class="opt-txt">${o}</span>
+                    </div>`).join('')}
+                </div>
+              </div>`;
+          }).join('')}
+
+          <div class="quiz-nav">
+            <button class="btn-back" onclick="${prev}">← Zurück</button>
+            <span class="q-status" id="qstatus2">${ac} / 4</span>
+            <button class="btn-next" id="btnNext" ${allAnswered(dimId)?'':'disabled'} onclick="${next}">
+              ${nextLabel}
+            </button>
+          </div>
+        </div>
+      </section>`;
+  }
+
+  // ── EMAIL GATE ─────────────────────────────────────────────
+  function renderEmail() {
+    app.innerHTML = `
+      <section class="screen active">
+        <div class="email-wrap">
+          <div class="email-icon"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2f6b43" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></div>
+          <h2 class="email-h2">Ihr Ergebnis ist bereit.</h2>
+          <p class="email-sub">Geben Sie Ihre E-Mail-Adresse ein, um Ihre persönliche KI-Readiness-Auswertung mit Netzgraf-Analyse und konkreten Handlungsempfehlungen für alle 6 Dimensionen zu sehen.</p>
+          <div>
+            <div class="email-row">
+              <input type="email" class="email-input" id="emailInput"
+                     placeholder="ihre@unternehmen.de"
+                     value="${email}"
+                     onkeydown="if(event.key==='Enter')submitEmail()">
+              <button class="btn-submit" onclick="submitEmail()">Ergebnis anzeigen →</button>
+            </div>
+            <div class="email-error" id="emailError">Bitte geben Sie eine gültige E-Mail-Adresse ein.</div>
+            <p class="email-privacy" style="margin-top:14px;">Kein Spam. Wir verwenden Ihre E-Mail ausschließlich für Ihr Ergebnis und mögliche Folgeinformationen. DSGVO-konform.</p>
+          </div>
+        </div>
+      </section>`;
+    setTimeout(() => document.getElementById('emailInput')?.focus(), 80);
+  }
+
+  // ── RESULTS ────────────────────────────────────────────────
+  function renderResults() {
+    const total = overallScore();
+    const levelLabel = total < 4 ? 'Dringender Handlungsbedarf' :
+                       total < 6 ? 'Erste Schritte gemacht' :
+                       total < 8 ? 'Solide Basis – Lücken erkennbar' : 'Gut positioniert für den nächsten Schritt';
+
+    app.innerHTML = `
+      <section class="screen active">
+        <div class="results-wrap">
+
+          <div class="results-hero">
+            <div class="score-badge">
+              <div class="score-lbl">KI-Readiness-Score</div>
+              <div class="score-num">${total}<span class="score-max"> /10</span></div>
+            </div>
+            <h2 class="results-h2">${levelLabel}</h2>
+            <p class="results-sub">Ihre persönliche KI-Readiness-Auswertung. Jede Dimension zeigt, wo Handlungsbedarf besteht – und welche konkreten nächsten Schritte für Ihr Unternehmen sinnvoll sind.</p>
+          </div>
+
+          <div class="radar-box">
+            <h3>Netzgraf — KI-Readiness-Profil</h3>
+            <div class="radar-inner">
+              <canvas id="radarChart"></canvas>
+            </div>
+          </div>
+
+          ${(() => {
+            const p = getProfile();
+            return `
+            <div class="profile-box">
+              <div class="profile-type-row">
+                <span class="profile-badge">${p.label}</span>
+              </div>
+              <p class="profile-desc">${p.desc}</p>
+              <div class="profile-dims">
+                <div>
+                  <div class="profile-side-lbl">Stärken</div>
+                  ${p.strongest.map(d => `
+                    <div class="profile-dim-item strong">
+                      <span class="profile-dim-name">${d.title}</span>
+                      <span class="profile-dim-score">${d.score.toFixed(1)}</span>
+                    </div>`).join('')}
+                </div>
+                <div>
+                  <div class="profile-side-lbl">Handlungsfelder</div>
+                  ${p.weakest.map(d => `
+                    <div class="profile-dim-item weak">
+                      <span class="profile-dim-name">${d.title}</span>
+                      <span class="profile-dim-score">${d.score.toFixed(1)}</span>
+                    </div>`).join('')}
+                </div>
+              </div>
+            </div>`;
+          })()}
+
+          <div class="dim-grid">
+            ${DIMS.map(d => {
+              const ns = normScore(d.id);
+              const rs = rawScore(d.id);
+              const lv = dimLevel(d.id);
+              const pct = (rs/16)*100;
+              return `
+                <div class="dim-card">
+                  <div class="dc-head">
+                    <div class="dc-left">
+                      <span class="dc-icon">${ICONS[d.id]}</span>
+                      <div>
+                        <div class="dc-name">${d.title}</div>
+                        <div class="dc-level">${lv.label}</div>
+                      </div>
+                    </div>
+                    <div class="dc-score">${ns}<span>/10</span></div>
+                  </div>
+                  <div class="dc-bar-bg">
+                    <div class="dc-bar" style="width:${pct}%"></div>
+                  </div>
+                  <div class="dc-insight">${lv.insight}</div>
+                  <div>
+                    <div class="dc-rec-lbl">Empfehlung new.thought</div>
+                    <div class="dc-rec">${lv.rec}</div>
+                    <a class="dc-cta" href="${lv.ctaHref || '/#kontakt'}" target="_blank" rel="noopener">${lv.cta}</a>
+                  </div>
+                </div>`;
+            }).join('')}
+          </div>
+
+          <div class="results-cta-box">
+            <div class="rcta-eyebrow">Nächster Schritt</div>
+            <h3 class="rcta-h3">Ihre Ergebnisse in 30 Minuten besprechen</h3>
+            <p class="rcta-sub">Buchen Sie ein kostenloses Erstgespräch: Wir gehen Ihre drei größten Hebel durch und klären, ob ein Prototyp-Tag, der zweitägige Führungs-Sprint oder gar nichts davon der richtige nächste Schritt ist.</p>
+            <a href="/#kontakt" class="rcta-btn" target="_blank" rel="noopener">Kostenloses Erstgespräch buchen →</a>
+          </div>
+
+        </div>
+      </section>`;
+
+    setTimeout(drawRadar, 60);
+  }
+
+  function drawRadar() {
+    const canvas = document.getElementById('radarChart');
+    if (!canvas || typeof Chart === 'undefined') return;
+    new Chart(canvas, {
+      type: 'radar',
+      data: {
+        labels: DIMS.map(d => d.radarLabel),
+        datasets: [{
+          label: 'Ihr Unternehmen',
+          data: DIMS.map(d => normScore(d.id)),
+          backgroundColor: 'rgba(47,107,67,0.12)',
+          borderColor: '#2f6b43',
+          borderWidth: 2.5,
+          pointBackgroundColor: '#2f6b43',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2.5,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          r: {
+            min: 0, max: 10,
+            ticks: {
+              stepSize: 2,
+              font: { family: "'JetBrains Mono', monospace", size: 10 },
+              color: '#999',
+              backdropColor: 'transparent'
+            },
+            grid: { color: 'rgba(0,0,0,0.07)' },
+            angleLines: { color: 'rgba(0,0,0,0.09)' },
+            pointLabels: {
+              font: { family: "'Inter', sans-serif", size: 13, weight: '600' },
+              color: '#0e0e0c'
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: '#0e0e0c',
+            padding: 10,
+            titleFont: { family: "'Inter', sans-serif", size: 12, weight: '600' },
+            bodyFont: { family: "'JetBrains Mono', monospace", size: 11 },
+            callbacks: { label: ctx => `  ${ctx.parsed.r.toFixed(1)} / 10` }
+          }
+        }
+      }
+    });
+  }
+
+  // ── BOOT ───────────────────────────────────────────────────
+  render();
+  </script>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Workshops für Führungskräfte im Mittelstand.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Workshops</h4>
+        <a href="/#workshop">Workshop</a>
+        <a href="/#formate">Formate &amp; Preise</a>
+        <a href="/#fuer-wen">Für wen</a>
+        <a href="/#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const nav=document.getElementById('nav');
+    const onS=()=>nav.classList.toggle('scrolled',window.scrollY>20); onS();
+    window.addEventListener('scroll',onS,{passive:true});
+    const ov=document.getElementById('mOverlay');
+    document.getElementById('hamburger').addEventListener('click',()=>{ov.classList.add('open');document.body.style.overflow='hidden';});
+    const cl=()=>{ov.classList.remove('open');document.body.style.overflow='';};
+    document.getElementById('mClose').addEventListener('click',cl);
+    ov.querySelectorAll('a').forEach(a=>a.addEventListener('click',cl));
+  })();
+</script>
+
+</body>
+</html>

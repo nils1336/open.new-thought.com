@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KI-Adoption Assessment — Warum adoptiert dein Team KI nicht? | new.thought</title>
+<meta name="description" content="7 Fragen. Sofort-Ergebnis. Identifiziere deinen Widerstandstyp (A–E) und erhalte situatives Führungshandwerk für die KI-Transformation im Mittelstand. Kostenlos.">
+<meta property="og:title" content="Warum adoptiert dein Team KI nicht wirklich?">
+<meta property="og:description" content="7 Fragen. Sofort-Ergebnis. Identifiziere deinen Widerstandstyp (A–E) — kostenlos.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+  <style>
+  :root{ --lead-gold:#2f6b43; --type-a:#2f6b43; --type-b:#3f7d57; --type-c:#b8733a; --type-d:#8a5230; --type-e:#5c6480; }
+  .lead-progress{ position:fixed; top:0; left:0; right:0; height:3px; background:var(--line); z-index:300; }
+  .lead-progress-fill{ height:100%; width:0; background:var(--green); transition:width .35s ease; }
+  .lead-page{ padding:120px 0 80px; }
+  .lead-shell{ max-width:760px; margin:0 auto; padding:0 24px; }
+  .lead-screen{ display:none; }
+  .lead-screen.active{ display:block; animation:lfade .4s ease; }
+  @keyframes lfade{ from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:none} }
+  .lead-kicker,.lead-capture-eyebrow,.lead-result-label,.lead-q-label,.lead-tools-label,.lead-scores-label,.lead-profile-col-label{ font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--green); font-weight:600; }
+  .lead-h1{ font-family:var(--serif); font-weight:440; font-size:clamp(34px,5vw,60px); line-height:1.06; letter-spacing:-0.02em; margin:16px 0 12px; }
+  .lead-subline{ font-size:clamp(18px,2vw,22px); color:var(--ink-2); margin-bottom:26px; }
+  .lead-body{ font-size:17px; line-height:1.7; color:#3a3a36; margin-bottom:16px; }
+  .lead-body strong{ color:var(--ink); font-weight:600; }
+  .lead-meta{ font-size:14px; color:var(--ink-3); margin-top:24px; }
+  .lead-meta-sub{ font-size:13px; color:var(--ink-3); margin-top:4px; }
+  .lead-btn-primary,.lead-btn-gold,.lead-next{ font-family:var(--sans); background:var(--btn); color:#fff; border:none; padding:14px 26px; border-radius:9px; font-size:15px; font-weight:500; cursor:pointer; margin-top:24px; transition:transform .15s,background .2s; }
+  .lead-btn-primary:hover,.lead-btn-gold:hover,.lead-next:hover:not(:disabled){ transform:translateY(-1px); background:#000; }
+  .lead-next:disabled{ opacity:.35; cursor:not-allowed; }
+  .lead-back{ background:none; border:none; color:var(--ink-3); font:inherit; font-size:14px; cursor:pointer; padding:0; margin-bottom:18px; }
+  .lead-back:hover{ color:var(--ink); }
+  .lead-q-text{ font-family:var(--serif); font-weight:440; font-size:clamp(24px,3vw,36px); line-height:1.14; margin:8px 0 8px; }
+  .lead-q-sub{ color:var(--ink-2); font-size:16px; margin-bottom:22px; }
+  .lead-options{ display:flex; flex-direction:column; gap:11px; }
+  .lead-option{ text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:18px 20px; cursor:pointer; font:inherit; transition:border-color .15s,background .15s; }
+  .lead-option:hover{ border-color:#c9c8c2; background:var(--surface-2); }
+  .lead-option.selected{ border-color:var(--green); background:var(--green-soft); }
+  .lead-option-main{ font-size:16px; font-weight:600; color:var(--ink); }
+  .lead-option-sub{ font-size:14px; color:var(--ink-2); margin-top:4px; }
+  .lead-capture-h2{ font-family:var(--serif); font-weight:440; font-size:clamp(26px,3vw,38px); line-height:1.12; margin:10px 0 10px; }
+  .lead-capture-sub{ color:var(--ink-2); font-size:16px; margin-bottom:22px; }
+  .lead-form{ display:flex; flex-direction:column; gap:11px; max-width:420px; }
+  .lead-input{ font:inherit; font-size:15px; padding:13px 16px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+  .lead-input:focus{ outline:none; border-color:var(--green); }
+  .lead-micro{ font-size:12.5px; color:var(--ink-3); margin-top:12px; }
+  .lead-skip{ background:none; border:none; color:var(--ink-3); font:inherit; font-size:14px; text-decoration:underline; cursor:pointer; margin-top:14px; }
+  .lead-profile-primary{ background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:34px; margin-top:18px; }
+  .lead-profile-badge{ display:inline-flex; font-size:12px; color:var(--green); background:var(--green-soft); padding:5px 12px; border-radius:100px; font-weight:600; }
+  .lead-profile-name{ font-family:var(--serif); font-weight:440; font-size:clamp(28px,3.4vw,40px); margin-top:12px; }
+  .lead-profile-sub{ color:var(--ink-3); font-size:14px; margin-top:4px; }
+  .lead-profile-h2{ font-size:19px; font-weight:600; margin:16px 0; line-height:1.4; }
+  .lead-profile-cols{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:18px; }
+  .lead-profile-col-text{ font-size:15px; line-height:1.6; color:#3a3a36; margin-top:8px; }
+  .lead-tools{ margin-top:22px; padding-top:20px; border-top:1px solid var(--line); }
+  .lead-tools-list{ list-style:none; margin:12px 0 0; padding:0; display:flex; flex-direction:column; gap:10px; }
+  .lead-tools-list li{ display:flex; gap:11px; font-size:15px; color:var(--ink); }
+  .lead-tools-list li::before{ content:"\2014"; color:var(--green); }
+  .lead-profile-secondary{ background:var(--surface-2); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin-top:14px; }
+  .lead-scores{ margin-top:24px; }
+  .lead-score-row{ display:flex; align-items:center; gap:12px; margin-top:12px; }
+  .lead-score-type{ font-family:var(--serif); font-weight:600; width:18px; }
+  .lead-score-name{ font-size:14px; width:160px; color:var(--ink-2); }
+  .lead-score-track{ flex:1; height:8px; background:var(--line); border-radius:100px; overflow:hidden; }
+  .lead-score-fill{ height:100%; border-radius:100px; width:0; transition:width .5s ease; }
+  .lead-cta-box{ background:var(--green-deep); color:#fff; border-radius:20px; padding:36px; margin-top:24px; background-image:radial-gradient(circle at 50% 120%, rgba(120,180,140,.18), transparent 60%); }
+  .lead-cta-h3{ font-family:var(--serif); font-weight:440; font-size:clamp(24px,3vw,34px); color:#fff; }
+  .lead-cta-text{ color:rgba(255,255,255,.7); font-size:16px; line-height:1.6; margin:10px 0 20px; }
+  .lead-cta-row{ display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  .lead-cta-btn{ display:inline-block; background:#fff; color:var(--green-deep); padding:13px 24px; border-radius:9px; font-weight:600; font-size:14px; text-decoration:none; }
+  .lead-restart{ background:none; border:none; color:rgba(255,255,255,.6); font:inherit; font-size:14px; text-decoration:underline; cursor:pointer; }
+  @media(max-width:680px){ .lead-profile-cols{ grid-template-columns:1fr; } .lead-score-name{ width:110px; } }
+  </style>
+  <link rel="stylesheet" crossorigin href="/assets/styles-ChJjtTrs.css">
+  <link rel="stylesheet" crossorigin href="/assets/ona-BbQ0zF3c.css">
+</head>
+<body>
+
+<div class="lead-progress" id="progressBar" aria-hidden="true">
+  <div class="lead-progress-fill" id="progressFill"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <a href="/#workshop">Angebot</a>
+      <a href="/#formate">Formate</a>
+      <a href="/#ablauf">Ablauf</a>
+      <a href="/#ueber-uns">Über uns</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="/#kontakt">Kontakt</a>
+      <a class="btn btn-dark" href="/#kontakt">Workshop anfragen</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="/#workshop">Angebot</a>
+    <a href="/#formate">Formate</a>
+    <a href="/#ablauf">Ablauf</a>
+    <a href="/#ueber-uns">Über uns</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="/#kontakt" class="btn btn-dark">Workshop anfragen</a>
+  </div>
+</div>
+
+<div class="lead-page">
+<div class="lead-shell">
+
+  <!-- ══ INTRO SCREEN ══════════════════════════════════════════ -->
+  <div class="lead-screen lead-intro active" id="screen-intro">
+    <span class="lead-kicker">LEAD · Situations-Assessment</span>
+    <h1 class="lead-h1">Warum adoptiert dein Team KI nicht wirklich?</h1>
+    <p class="lead-subline">Gleiche Symptome — fünf völlig verschiedene Ursachen.</p>
+
+    <p class="lead-body">Als Führungskraft weißt du, dass du handeln musst. Du hast vielleicht schon Tools eingeführt, Trainings organisiert, auf Veränderung gedrängt. Trotzdem: die echte Transformation bleibt aus.</p>
+    <p class="lead-body">Das Problem ist nicht mangelnder Wille — deiner oder der deines Teams. Das Problem ist, dass die meisten Führungskräfte dasselbe Werkzeug auf völlig verschiedene Situationen anwenden. Was bei einem 60-Mitarbeiter-Produktionsbetrieb wirkt, scheitert beim wissensintensiven Dienstleister.</p>
+    <p class="lead-body"><strong>Dieses Assessment identifiziert in 7 Fragen, welcher Widerstandstyp dein Unternehmen wirklich lähmt — und was konkret dagegen hilft.</strong></p>
+
+    <p class="lead-meta">7 Fragen · ca. 4 Minuten · Sofort-Ergebnis · Kostenlos</p>
+    <p class="lead-meta-sub">Kein Kurs. Kein Teilnahmebescheinigung. Situatives Handwerkszeug.</p>
+
+    <button class="lead-btn-primary" id="btn-start">Assessment starten →</button>
+  </div>
+
+  <!-- ══ QUESTION SCREENS (generated by JS) ════════════════════ -->
+  <div id="questions-container"></div>
+
+  <!-- ══ LEAD CAPTURE ══════════════════════════════════════════ -->
+  <div class="lead-screen lead-capture" id="screen-capture">
+    <span class="lead-capture-eyebrow">Dein Ergebnis ist bereit</span>
+    <h2 class="lead-capture-h2">Wo sollen wir dein Situations-Profil hinschicken?</h2>
+    <p class="lead-capture-sub">Trag deine E-Mail ein — du erhältst dein Profil sofort angezeigt und als PDF.</p>
+
+    <form class="lead-form" id="lead-form" novalidate>
+      <input class="lead-input" type="text" id="input-name" placeholder="Vorname" autocomplete="given-name">
+      <input class="lead-input" type="email" id="input-email" placeholder="E-Mail-Adresse" required autocomplete="email">
+      <button class="lead-btn-gold" type="submit">Ergebnis jetzt anzeigen →</button>
+    </form>
+    <p class="lead-micro">Kein Spam. Nur dein Ergebnis. Abmeldung jederzeit.</p>
+    <button class="lead-skip" id="btn-skip">Überspringen und Ergebnis direkt anzeigen</button>
+  </div>
+
+  <!-- ══ RESULT SCREEN ══════════════════════════════════════════ -->
+  <div class="lead-screen lead-result" id="screen-result">
+    <span class="lead-result-label">Dein Situations-Profil</span>
+
+    <!-- primary profile — populated by JS -->
+    <div class="lead-profile-primary" id="result-primary" style="--profile-color: var(--lead-gold)">
+      <span class="lead-profile-badge" id="res-badge">TYP A</span>
+      <div class="lead-profile-name" id="res-name">Die Angst</div>
+      <div class="lead-profile-sub" id="res-sub">Existenzielle Bedrohung durch KI</div>
+      <div class="lead-profile-h2" id="res-h2">Dein Team fürchtet um seine Jobs — nicht um seine Faulheit.</div>
+
+      <div class="lead-profile-cols">
+        <div>
+          <span class="lead-profile-col-label">Diagnose</span>
+          <p class="lead-profile-col-text" id="res-diagnose"></p>
+        </div>
+        <div>
+          <span class="lead-profile-col-label">Was wirkt</span>
+          <p class="lead-profile-col-text" id="res-wirkt"></p>
+        </div>
+      </div>
+
+      <div class="lead-tools">
+        <span class="lead-tools-label">Handwerkszeug</span>
+        <ul class="lead-tools-list" id="res-tools"></ul>
+      </div>
+    </div>
+
+    <!-- secondary profile -->
+    <div class="lead-profile-secondary" id="result-secondary" style="--profile-color: var(--lead-gold)">
+      <span class="lead-profile-badge" id="res2-badge">TYP B</span>
+      <div class="lead-profile-name" id="res2-name">Die Gleichgültigkeit</div>
+      <div class="lead-profile-sub" id="res2-sub">Sekundärer Anteil</div>
+      <div class="lead-profile-h2" id="res2-h2"></div>
+    </div>
+
+    <!-- score bars -->
+    <div class="lead-scores">
+      <span class="lead-scores-label">Profil-Verteilung</span>
+      <div class="lead-score-row">
+        <span class="lead-score-type" style="color:var(--type-a)">A</span>
+        <span class="lead-score-name">Die Angst</span>
+        <div class="lead-score-track"><div class="lead-score-fill" id="bar-a" style="background:var(--type-a)"></div></div>
+      </div>
+      <div class="lead-score-row">
+        <span class="lead-score-type" style="color:var(--type-b)">B</span>
+        <span class="lead-score-name">Die Gleichgültigkeit</span>
+        <div class="lead-score-track"><div class="lead-score-fill" id="bar-b" style="background:var(--type-b)"></div></div>
+      </div>
+      <div class="lead-score-row">
+        <span class="lead-score-type" style="color:var(--type-c)">C</span>
+        <span class="lead-score-name">Die Macht</span>
+        <div class="lead-score-track"><div class="lead-score-fill" id="bar-c" style="background:var(--type-c)"></div></div>
+      </div>
+      <div class="lead-score-row">
+        <span class="lead-score-type" style="color:var(--type-d)">D</span>
+        <span class="lead-score-name">Das Trauma</span>
+        <div class="lead-score-track"><div class="lead-score-fill" id="bar-d" style="background:var(--type-d)"></div></div>
+      </div>
+      <div class="lead-score-row">
+        <span class="lead-score-type" style="color:var(--type-e)">E</span>
+        <span class="lead-score-name">Die Lähmung</span>
+        <div class="lead-score-track"><div class="lead-score-fill" id="bar-e" style="background:var(--type-e)"></div></div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="lead-cta-box" id="result-cta" style="--profile-color: var(--lead-gold)">
+      <h3 class="lead-cta-h3" id="cta-headline">Den nächsten Schritt gehen</h3>
+      <p class="lead-cta-text" id="cta-text">Das Profil ist der Anfang. Das LEAD Programm gibt dir in 90 Tagen das Handwerkszeug, deine spezifische Situation zu überwinden — als Führungskraft, nicht als Techniker.</p>
+      <div class="lead-cta-row">
+        <a class="lead-cta-btn" href="index.html#cta" id="cta-btn">Erstgespräch buchen →</a>
+        <button class="lead-restart" id="btn-restart">Assessment neu starten</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /lead-shell -->
+</div><!-- /lead-page -->
+
+<script>
+(function() {
+
+/* ── DATA ──────────────────────────────────────────────────────── */
+const QUESTIONS = [
+  {
+    label: "FRAGE 1 VON 7",
+    text: "Wer zeigt den stärksten Widerstand oder die größte Passivität?",
+    sub: "Denke an die letzten 4 Wochen — wer ist konkret das Hindernis?",
+    options: [
+      { main: "Operative Mitarbeiter / Facharbeiter", sub: "Die Leute, die direkt mit den Prozessen arbeiten", s: {A:3,B:1} },
+      { main: "Teamleiter oder Abteilungsleiter", sub: "Mittlere Führungsebene — zwischen mir und dem Team", s: {C:3} },
+      { main: "Alle gleichmäßig", sub: "Kein klares Zentrum des Widerstands", s: {A:1,E:2} },
+      { main: "Niemand aktiv — es passiert einfach nichts", sub: "Kein Widerstand, aber auch keine Bewegung", s: {B:2,E:3} }
+    ]
+  },
+  {
+    label: "FRAGE 2 VON 7",
+    text: "Wie äußert sich das konkret im Alltag?",
+    sub: "Was beobachtest du, wenn du genau hinschaust?",
+    options: [
+      { main: "Offene Fragen nach Jobsicherheit, direkte Skepsis", sub: "„Macht KI meinen Job überflüssig?"", s: {A:4} },
+      { main: "Stille Nicht-Nutzung ohne Erklärung", sub: "Tool ist da, wird nicht geöffnet", s: {B:3,E:1} },
+      { main: "„Das haben wir schon probiert" — institutionelle Skepsis", sub: "Frühere Erfahrung als Beweis gegen KI", s: {D:4} },
+      { main: "Meetings laufen ins Leere, Info fließt nicht weiter", sub: "Leise Blockaden in der Hierarchie", s: {C:4} },
+      { main: "Komplette Passivität — wartet auf Ansage von oben", sub: "Macht was ich sage, aber nie mehr", s: {E:4} }
+    ]
+  },
+  {
+    label: "FRAGE 3 VON 7",
+    text: "Was wurde bisher konkret versucht?",
+    sub: "Ehrliche Bestandsaufnahme — was ist bereits passiert?",
+    options: [
+      { main: "Noch nichts Konkretes eingeführt", sub: "Wir stehen am Anfang", s: {A:1,B:1,E:1} },
+      { main: "Tool lizenziert — wird kaum genutzt", sub: "Lizenzen laufen, Adoption bleibt aus", s: {B:3,E:2,D:1} },
+      { main: "Training durchgeführt — keine nachhaltige Wirkung", sub: "Begeisterung am Tag X, danach nichts", s: {D:2,C:1,A:1} },
+      { main: "Pilotprojekt still gescheitert oder eingeschlafen", sub: "Wir reden nicht mehr darüber", s: {D:4} }
+    ]
+  },
+  {
+    label: "FRAGE 4 VON 7",
+    text: "Wie ist deine Belegschaft strukturiert?",
+    sub: "Das beeinflusst stark, welcher Ansatz wirkt.",
+    options: [
+      { main: "Überwiegend erfahrene Fachkräfte, 40+, operativ", sub: "Handwerk, Produktion, Facharbeit, langjährig", s: {A:4} },
+      { main: "Gemischt — Wissensarbeit, Dienstleistung, jünger", sub: "Bürojobs, Sachbearbeitung, Beratung, Service", s: {B:3} },
+      { main: "Stark hierarchisch — klare Führungsebenen", sub: "Entscheidungen laufen immer durch die Hierarchie", s: {C:2,E:3} },
+      { main: "Jung, dynamisch — aber trotzdem passiert nichts", sub: "Eigentlich sollten die doch offen sein...", s: {B:2,D:1} }
+    ]
+  },
+  {
+    label: "FRAGE 5 VON 7",
+    text: "Wie verhält sich dein mittleres Management?",
+    sub: "Teamleiter, Abteilungsleiter — die Ebene zwischen dir und dem Team.",
+    options: [
+      { main: "Unterstützt aktiv und macht Druck nach unten", sub: "Die ziehen mit, treiben sogar an", s: {A:2,B:2} },
+      { main: "Neutral — macht mit, treibt aber nicht voran", sub: "Kein Widerstand, aber auch kein Motor", s: {E:3,B:1} },
+      { main: "Zieht nicht aktiv mit — blockiert manchmal leise", sub: "Sagt ja, aber es passiert danach nichts", s: {C:4} },
+      { main: "Keine relevante mittlere Führungsebene", sub: "Flache Struktur, ich bin nah am Team", s: {A:2,B:2,E:1} }
+    ]
+  },
+  {
+    label: "FRAGE 6 VON 7",
+    text: "Wenn Mitarbeiter gefragt werden, warum sie KI nicht nutzen — was kommt?",
+    sub: "Oder: was vermutest du, wenn du direkt fragst?",
+    options: [
+      { main: "„Ich mache mir Sorgen um meinen Job"", sub: "Angst, Unsicherheit, existenzielle Bedenken", s: {A:4} },
+      { main: "„Das bringt mir bei meiner Arbeit nichts"", sub: "Keine wahrgenommene Relevanz für den Alltag", s: {B:4} },
+      { main: "„Das wurde nie klar entschieden oder delegiert"", sub: "Fehlende Erlaubnis oder Klarheit von oben", s: {E:4} },
+      { main: "„Das haben wir schon probiert" oder Ausweichen", sub: "Schlechte Vorerfahrung oder keine klare Antwort", s: {D:3,C:1} }
+    ]
+  },
+  {
+    label: "FRAGE 7 VON 7",
+    text: "Was ist der Hauptgrund, warum du jetzt handeln musst?",
+    sub: "Was ist der eigentliche Druck hinter dieser Analyse?",
+    options: [
+      { main: "Wettbewerber nutzen KI — ich verliere an Boden", sub: "Externer Wettbewerbsdruck, Marktposition", s: {A:1,B:1,C:1,E:1} },
+      { main: "Ich habe bereits investiert und sehe keinen ROI", sub: "Lizenzen, Projekte, Zeit — ohne Ergebnis", s: {D:3,B:2} },
+      { main: "Mein Team zeigt Unsicherheit — ich will das klären", sub: "Führungsverantwortung vor kulturellem Zerfall", s: {A:3,C:1} },
+      { main: "Niemand handelt ohne dass ich explizit Richtung vorgebe", sub: "Alles hängt an mir — das muss sich ändern", s: {E:4} }
+    ]
+  }
+];
+
+const PROFILES = {
+  A: {
+    name: "Die Angst", sub: "Existenzielle Bedrohung durch KI", color: "var(--type-a)",
+    h2: "Dein Team fürchtet um seine Jobs — nicht um seine Faulheit.",
+    diagnose: "Was du als Widerstand erlebst, ist in Wirklichkeit berechtigte Angst. Erfahrene Fachkräfte sehen in KI keine Effizienz-Chance — sie sehen eine Bedrohung ihrer beruflichen Identität. Das ist rational. Und es verändert alles, was du als Führungskraft tun musst.",
+    wirkt: "Vergiss Effizienz-Argumente. Dein Team braucht zuerst das Gefühl, gehört zu werden. Das konkrete Handwerkszeug: 1:1-Gespräche mit spezifischen Skripten, Angst-Mapping im Team, und ein Narrativ-Wechsel von „KI ersetzt" zu „KI macht dich unersetzlich".",
+    tools: ["1:1-Gesprächsskripte für Situationen mit Jobangst","Methodik: Angst-Mapping im Team — wer hat welche Sorge konkret?","Narrative-Arbeit: Wie rahmst du KI ohne Panik zu erzeugen?","Peer-Proof: Mitarbeiter, die KI-Transition positiv erlebt haben"],
+    cta: "Dein Team braucht kein weiteres Tool-Briefing. Es braucht Führung, die Angst ernst nimmt und konkret transformiert."
+  },
+  B: {
+    name: "Die Gleichgültigkeit", sub: "Keine wahrgenommene Relevanz für den Alltag", color: "var(--type-b)",
+    h2: "Dein Team widersetzt sich nicht — es sieht schlicht keinen Grund.",
+    diagnose: "Gleichgültigkeit ist nicht Faulheit. Dein Team hat andere Prioritäten, und KI gehört noch nicht dazu — weil niemand gezeigt hat, wie KI ihr konkretes, alltägliches Problem löst. Eine allgemeine KI-Einführung kommt nie an, weil sie keine spezifische Antwort auf eine spezifische Frustration gibt.",
+    wirkt: "Die Lösung kommt nicht von oben. Die entscheidende Frage ist nicht „Wie führe ich KI ein?" — sondern „Was nervt mein Team täglich am meisten?" Wenn KI dieses Problem löst, adoptieren sie von alleine.",
+    tools: ["Facilitation-Guide: 2-Stunden Team-Workshop zur Use-Case-Ideation","Methodik: „Was nervt euch?" → KI-Matching-Prozess","Quick-Win-Design: Erster sichtbarer Erfolg in 48 Stunden","Tool-Auswahl nach Job-to-be-done, nicht nach Hype"],
+    cta: "Kein Top-Down-Rollout. Die Adoption muss von innen kommen — mit der richtigen Methodik um sie zu zünden."
+  },
+  C: {
+    name: "Die Macht", sub: "Mittleres Management als stilles Hindernis", color: "var(--type-c)",
+    h2: "Das Problem sitzt nicht bei deinen Mitarbeitern — es sitzt eine Ebene drüber.",
+    diagnose: "Teamleiter und Abteilungsleiter sagen ja — aber informieren nicht, delegieren nicht, treiben nicht an. Das ist keine Inkompetenz. KI bedroht ihre Informationshoheit, ihre Statusposition, ihre Entscheidungsrelevanz. Wer das nicht versteht, kämpft gegen ein Problem, das er nicht sieht.",
+    wirkt: "Du kannst die mittlere Führungsebene nicht übergehen. Jeder Versuch, direkt mit dem Team über ihre Köpfe zu kommunizieren, erzeugt stärkeren Widerstand. Die Lösung: Statusbedrohung in Statusgewinn verwandeln.",
+    tools: ["Stakeholder-Mapping: Wer blockiert, wer treibt, wer ist neutral?","Macht-Analyse: Was genau bedroht ihre Position konkret?","Einbindungs-Strategie: KI-Owner-Rolle für mittlere Führungsebene","Gesprächsführung für Statusgefährdungs-Situationen"],
+    cta: "Kein Bypassen. Die mittlere Führungsebene muss Eigentümer werden — sonst gibt es keine Adoption."
+  },
+  D: {
+    name: "Das Trauma", sub: "Frühere Erfahrung blockiert jeden neuen Versuch", color: "var(--type-d)",
+    h2: "„Das haben wir schon probiert." — Die gefährlichsten vier Wörter.",
+    diagnose: "Du hast bereits investiert. Etwas ist gescheitert oder still eingeschlafen. Jetzt ist jeder neue Anlauf gegen institutionelle Skepsis anzukämpfen. Das Vertrauen ist beschädigt — nicht die Technologie. Und beschädigtes Vertrauen heilt nicht durch Argumente.",
+    wirkt: "Nur ein garantierter Quick Win bricht das Muster. Ein konkreter Erfolg, den das Team selbst erlebt — klein genug um sicher zu sein, sichtbar genug um das Narrativ zu ändern. Dazu: eine offene Aufarbeitung dessen, was damals wirklich gescheitert ist.",
+    tools: ["Failure-Postmortem-Methodik: Was ist damals wirklich passiert?","„Minimum Viable Win"-Framework: Kleinster garantierter Erfolg zuerst","Erwartungs-Reset-Gespräch: Explizit über das Scheitern sprechen","Symbolischer Neuanfang: Wie signalisierst du, dass diesmal anders ist?"],
+    cta: "Kein „Jetzt machen wir es richtig". Erst Vertrauen reparieren — weil es das Scheitern war, nicht die Technologie."
+  },
+  E: {
+    name: "Die Lähmung", sub: "Niemand handelt ohne explizite Erlaubnis", color: "var(--type-e)",
+    h2: "Dein Unternehmen wartet auf dich — und das ist das Problem.",
+    diagnose: "Du bist der Engpass. Nicht aus Unvermögen deines Teams, sondern weil eine Kultur entstanden ist, in der eigenständiges Handeln nie belohnt wurde. Jede KI-Initiative, die du anordnest, wird abhängig von dir bleiben.",
+    wirkt: "Du brauchst keine bessere KI-Strategie. Du brauchst sichtbare, explizite Erlaubnisstrukturen. Wer darf was entscheiden ohne mich zu fragen? Was passiert, wenn jemand einen Fehler macht? Wenn die Antwort nicht klar ist, wartet dein Team weiter.",
+    tools: ["Delegation-Framework: Wer darf was entscheiden, ohne mich zu fragen?","„KI-Experimentier-Erlaubnis"-Ritual: Formale, sichtbare Erlaubnis","Fehler-Feier-Methodik: Erste Misserfolge öffentlich würdigen","Micro-Ownership: Jede Person bekommt einen KI-Verantwortungsbereich"],
+    cta: "Kein weiteres Top-Down-Mandat. Das verstärkt die Lähmung — auch wenn es kurzfristig wirkt."
+  }
+};
+
+/* ── STATE ─────────────────────────────────────────────────────── */
+let currentQ = 0;
+let answers = new Array(QUESTIONS.length).fill(null);
+let scores = {A:0, B:0, C:0, D:0, E:0};
+
+/* ── HELPERS ───────────────────────────────────────────────────── */
+function trackEvent(name, props) {
+  if (typeof gtag !== 'undefined') gtag('event', name, props || {});
+  if (typeof plausible !== 'undefined') plausible(name, {props: props || {}});
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.lead-screen').forEach(el => {
+    el.classList.remove('active');
+  });
+  const el = document.getElementById(id);
+  el.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function updateProgress(step) {
+  // step: 0 = intro, 1-7 = questions, 8 = capture, 9 = result
+  const pct = step === 0 ? 0 : Math.round((step / 9) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+}
+
+/* ── BUILD QUESTIONS ───────────────────────────────────────────── */
+const container = document.getElementById('questions-container');
+
+QUESTIONS.forEach((q, qi) => {
+  const div = document.createElement('div');
+  div.className = 'lead-screen lead-q';
+  div.id = 'screen-q' + qi;
+
+  div.innerHTML = `
+    <button class="lead-back" data-qi="${qi}">← Zurück</button>
+    <span class="lead-q-label">${q.label}</span>
+    <h2 class="lead-q-text">${q.text}</h2>
+    <p class="lead-q-sub">${q.sub}</p>
+    <div class="lead-options">
+      ${q.options.map((opt, oi) => `
+        <button class="lead-option" data-qi="${qi}" data-oi="${oi}">
+          <div class="lead-option-main">${opt.main}</div>
+          <div class="lead-option-sub">${opt.sub}</div>
+        </button>
+      `).join('')}
+    </div>
+    <button class="lead-next" data-qi="${qi}" disabled>Weiter →</button>
+  `;
+  container.appendChild(div);
+});
+
+/* ── EVENT DELEGATION ──────────────────────────────────────────── */
+document.getElementById('btn-start').addEventListener('click', () => {
+  trackEvent('assessment_started');
+  currentQ = 0;
+  showScreen('screen-q0');
+  updateProgress(1);
+});
+
+container.addEventListener('click', e => {
+  const opt = e.target.closest('.lead-option');
+  const next = e.target.closest('.lead-next');
+  const back = e.target.closest('.lead-back');
+
+  if (opt) {
+    const qi = +opt.dataset.qi;
+    const oi = +opt.dataset.oi;
+    answers[qi] = oi;
+    // highlight selection
+    opt.closest('.lead-options').querySelectorAll('.lead-option')
+       .forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    // enable next
+    opt.closest('.lead-screen').querySelector('.lead-next').disabled = false;
+    trackEvent('question_answered', {question_number: qi + 1, answer_index: oi});
+  }
+
+  if (next) {
+    const qi = +next.dataset.qi;
+    if (qi + 1 < QUESTIONS.length) {
+      currentQ = qi + 1;
+      // restore previous selection if navigating back
+      const prevAns = answers[currentQ];
+      const nextScreen = document.getElementById('screen-q' + currentQ);
+      nextScreen.querySelectorAll('.lead-option').forEach(o => o.classList.remove('selected'));
+      if (prevAns !== null) {
+        nextScreen.querySelectorAll('.lead-option')[prevAns].classList.add('selected');
+        nextScreen.querySelector('.lead-next').disabled = false;
+      } else {
+        nextScreen.querySelector('.lead-next').disabled = true;
+      }
+      showScreen('screen-q' + currentQ);
+      updateProgress(currentQ + 1);
+    } else {
+      // last question done → lead capture
+      trackEvent('lead_capture_shown');
+      showScreen('screen-capture');
+      updateProgress(8);
+    }
+  }
+
+  if (back) {
+    const qi = +back.dataset.qi;
+    if (qi === 0) {
+      showScreen('screen-intro');
+      updateProgress(0);
+    } else {
+      currentQ = qi - 1;
+      const prevScreen = document.getElementById('screen-q' + currentQ);
+      const prevAns = answers[currentQ];
+      prevScreen.querySelectorAll('.lead-option').forEach(o => o.classList.remove('selected'));
+      if (prevAns !== null) {
+        prevScreen.querySelectorAll('.lead-option')[prevAns].classList.add('selected');
+        prevScreen.querySelector('.lead-next').disabled = false;
+      }
+      showScreen('screen-q' + currentQ);
+      updateProgress(currentQ + 1);
+    }
+  }
+});
+
+/* ── LEAD FORM ─────────────────────────────────────────────────── */
+document.getElementById('lead-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('input-name').value.trim();
+  const email = document.getElementById('input-email').value.trim();
+  if (!email || !email.includes('@')) {
+    document.getElementById('input-email').focus();
+    return;
+  }
+  computeAndShowResult();
+  trackEvent('lead_captured', {profile_primary: getPrimaryType(), profile_secondary: getSecondaryType()});
+});
+
+document.getElementById('btn-skip').addEventListener('click', () => {
+  computeAndShowResult();
+});
+
+/* ── SCORING ───────────────────────────────────────────────────── */
+function computeScores() {
+  scores = {A:0, B:0, C:0, D:0, E:0};
+  QUESTIONS.forEach((q, qi) => {
+    const ans = answers[qi];
+    if (ans !== null && ans < q.options.length) {
+      const s = q.options[ans].s;
+      Object.entries(s).forEach(([k,v]) => scores[k] += v);
+    }
+  });
+}
+
+function getPrimaryType() {
+  return Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
+}
+function getSecondaryType() {
+  return Object.entries(scores).sort((a,b) => b[1]-a[1])[1][0];
+}
+
+function computeAndShowResult() {
+  computeScores();
+  const primary = getPrimaryType();
+  const secondary = getSecondaryType();
+  renderResult(primary, secondary);
+  showScreen('screen-result');
+  updateProgress(9);
+  trackEvent('result_shown', {profile_primary: primary, profile_secondary: secondary});
+
+  // animate bars after a short delay
+  setTimeout(animateBars, 300);
+}
+
+function renderResult(p, s) {
+  const P = PROFILES[p];
+  const S = PROFILES[s];
+
+  // primary
+  document.getElementById('result-primary').style.setProperty('--profile-color', P.color);
+  document.getElementById('res-badge').textContent = 'TYP ' + p;
+  document.getElementById('res-badge').style.color = P.color;
+  document.getElementById('res-name').textContent = P.name;
+  document.getElementById('res-sub').textContent = P.sub;
+  document.getElementById('res-h2').textContent = P.h2;
+  document.getElementById('res-diagnose').textContent = P.diagnose;
+  document.getElementById('res-wirkt').textContent = P.wirkt;
+
+  const toolsList = document.getElementById('res-tools');
+  toolsList.innerHTML = '';
+  P.tools.forEach(t => {
+    const li = document.createElement('li');
+    li.textContent = t;
+    toolsList.appendChild(li);
+  });
+  document.getElementById('res-tools').style.setProperty('--profile-color', P.color);
+  document.querySelector('.lead-tools-list').style.setProperty('--profile-color', P.color);
+
+  // secondary
+  document.getElementById('result-secondary').style.setProperty('--profile-color', S.color);
+  document.getElementById('res2-badge').textContent = 'SEKUNDÄRER ANTEIL · TYP ' + s;
+  document.getElementById('res2-badge').style.color = S.color;
+  document.getElementById('res2-name').textContent = S.name;
+  document.getElementById('res2-sub').textContent = S.sub;
+  document.getElementById('res2-h2').textContent = S.h2;
+
+  // CTA
+  document.getElementById('result-cta').style.setProperty('--profile-color', P.color);
+  document.getElementById('cta-headline').textContent = 'Den nächsten Schritt gehen';
+  document.getElementById('cta-text').textContent = P.cta + ' Das LEAD Programm gibt dir das konkrete Handwerkszeug für genau diese Situation.';
+  document.getElementById('cta-btn').addEventListener('click', () => {
+    trackEvent('cta_clicked', {profile: p});
+  });
+}
+
+function animateBars() {
+  const total = Object.values(scores).reduce((a,b) => a+b, 0) || 1;
+  ['A','B','C','D','E'].forEach(t => {
+    const pct = Math.round((scores[t] / total) * 100);
+    document.getElementById('bar-' + t.toLowerCase()).style.width = pct + '%';
+  });
+}
+
+/* ── RESTART ───────────────────────────────────────────────────── */
+document.getElementById('btn-restart').addEventListener('click', () => {
+  answers = new Array(QUESTIONS.length).fill(null);
+  scores = {A:0, B:0, C:0, D:0, E:0};
+  document.getElementById('input-name').value = '';
+  document.getElementById('input-email').value = '';
+  document.querySelectorAll('.lead-option').forEach(o => o.classList.remove('selected'));
+  document.querySelectorAll('.lead-next').forEach(b => b.disabled = true);
+  showScreen('screen-intro');
+  updateProgress(0);
+});
+
+/* ── INIT ──────────────────────────────────────────────────────── */
+showScreen('screen-intro');
+
+/* ── shared nav + mobile ───────────────────────── */
+(function(){
+  var nav=document.getElementById('nav');
+  var onS=function(){nav.classList.toggle('scrolled',window.scrollY>20);}; onS();
+  window.addEventListener('scroll',onS,{passive:true});
+  var ov=document.getElementById('mOverlay'), hb=document.getElementById('hamburger');
+  if(hb){ hb.addEventListener('click',function(){ov.classList.add('open');document.body.style.overflow='hidden';}); }
+  var cl=function(){ov.classList.remove('open');document.body.style.overflow='';};
+  var mc=document.getElementById('mClose'); if(mc) mc.addEventListener('click',cl);
+  if(ov) ov.querySelectorAll('a').forEach(function(a){a.addEventListener('click',cl);});
+})();
+
+})();
+</script>
+
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Workshops für Führungskräfte im Mittelstand.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Workshops</h4>
+        <a href="/#workshop">Workshop</a>
+        <a href="/#formate">Formate &amp; Preise</a>
+        <a href="/#fuer-wen">Für wen</a>
+        <a href="/#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

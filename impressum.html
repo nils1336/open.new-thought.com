@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Impressum | new.thought</title>
+<meta name="description" content="Impressum der new.thought — Nils Blache, Greven.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.new-thought.com/impressum.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,380;6..72,440;6..72,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" crossorigin href="/assets/ona-BbQ0zF3c.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="/" class="brand"><span class="mark"></span>new.thought</a>
+    <div class="nav-pill">
+      <a href="/#workshop">Angebot</a>
+      <a href="/#formate">Formate</a>
+      <a href="/#ablauf">Ablauf</a>
+      <a href="/#ueber-uns">Über uns</a>
+    </div>
+    <div class="nav-right">
+      <a class="btn btn-ghost" href="/#kontakt">Kontakt</a>
+      <a class="btn btn-dark" href="/#kontakt">Workshop anfragen</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="m-overlay" id="mOverlay">
+  <div class="m-top">
+    <span class="brand"><span class="mark"></span>new.thought</span>
+    <button class="m-close" id="mClose" aria-label="Schließen">×</button>
+  </div>
+  <div class="m-links">
+    <a href="/#workshop">Angebot</a>
+    <a href="/#formate">Formate</a>
+    <a href="/#ablauf">Ablauf</a>
+    <a href="/#ueber-uns">Über uns</a>
+    <a href="/ki-readiness-check.html">KI-Check</a>
+  </div>
+  <div class="m-cta">
+    <a href="/#kontakt" class="btn btn-dark">Workshop anfragen</a>
+  </div>
+</div>
+
+<main>
+  <div class="article-head">
+    <div class="eyebrow">Rechtliches</div>
+    <h1 class="serif">Impressum</h1>
+  </div>
+
+  <section class="block">
+    <div class="prose">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: +49 1516 450933<br>E-Mail: <a href="mailto:nils@new-thought.com">nils@new-thought.com</a></p>
+
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>Nils Blache<br>c/o Postflex #8293<br>Emsdettener Str. 10<br>48268 Greven<br>Deutschland</p>
+
+      <h2>Haftungsausschluss</h2>
+      <p>Trotz sorgfältiger Prüfung übernehmen wir keine Haftung für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte. Für den Inhalt externer Links sind ausschließlich deren Betreiber verantwortlich.</p>
+
+      <hr>
+      <p><a href="/datenschutz.html">Zur Datenschutzerklärung →</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="brand"><span class="mark"></span>new.thought</span>
+        <p>KI-Workshops für Führungskräfte im Mittelstand.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Workshops</h4>
+        <a href="/#workshop">Workshop</a>
+        <a href="/#formate">Formate &amp; Preise</a>
+        <a href="/#fuer-wen">Für wen</a>
+        <a href="/#kontakt">Erstgespräch</a>
+      </div>
+      <div class="foot-col">
+        <h4>Ressourcen</h4>
+        <a href="/ressourcen.html">Blog</a>
+        <a href="/ki-readiness-check.html">KI-Readiness-Check</a>
+      </div>
+      <div class="foot-col">
+        <h4>Unternehmen</h4>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="legal">
+        <span>© 2026 new.thought</span>
+        <a href="/impressum.html">Impressum</a>
+        <a href="/datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive:true });
+  const ov = document.getElementById('mOverlay');
+  document.getElementById('hamburger').addEventListener('click', () => { ov.classList.add('open'); document.body.style.overflow='hidden'; });
+  const close = () => { ov.classList.remove('open'); document.body.style.overflow=''; };
+  document.getElementById('mClose').addEventListener('click', close);
+  ov.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+</script>
+
+</body>
+</html>
