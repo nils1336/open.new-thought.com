@@ -48,6 +48,8 @@ export default defineConfig({
         ressourcenDigitalLeadership: resolve(__dirname, 'site/ressourcen/digital-leadership.html'),
         ressourcenImHr: resolve(__dirname, 'site/ressourcen/ki-im-hr.html'),
         ressourcenFortbildung: resolve(__dirname, 'site/ressourcen/ki-fortbildung-mitarbeiter.html'),
+        ressourcenFuehrungskraefteentwicklung: resolve(__dirname, 'site/ressourcen/fuehrungskraefteentwicklung-ki.html'),
+        ressourcenKiWorkshop: resolve(__dirname, 'site/ressourcen/ki-workshop-unternehmen.html'),
         kiReadinessCheck: resolve(__dirname, 'site/ki-readiness-check.html'),
         workshopFuehrungskraefte: resolve(__dirname, 'site/ki-workshop-fuehrungskraefte.html'),
         workshopHr: resolve(__dirname, 'site/ki-workshop-hr.html'),
